@@ -19,11 +19,11 @@
 # Change the file extension to match the format (.xml for XML, etc...)
 #
 ###
-title: "TODO - Your title"
-abbrev: "TODO - Abbreviation"
+title: "Modelling of Optical Pluggables in Packet Over Optical Network"
+abbrev: "Modelling Optical Pluggables"
 category: info
 
-docname: draft-todo-yourname-protocol-latest
+docname: draft-poidt-ccamp-actn-wdm-pluggable-modelling-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
