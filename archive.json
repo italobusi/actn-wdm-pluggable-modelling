@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-06T01:01:03.301965+00:00",
+  "timestamp": "2024-02-08T01:00:16.715319+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -49,6 +49,23 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOLJuPKM5-kstg",
+      "title": "Gap Analysis: Modelling of Optical Pluggables in Packet Over Optical Network",
+      "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/issues/1",
+      "state": "OPEN",
+      "author": "dieterbeller",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This gap analysis is trying to collect YANG models from various sources (primarily from IETF, OpenConfig, etc.) for modeling optical pluggables located in client devices like IP routers, which are connected to an optical WDM transport network. This material will be analyzed in order to identify potential gaps.\r\n\r\nReferences:\r\n- https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-optical-impairment-topology-yang\r\n- https://github.com/ietf-ccamp-wg/ietf-ccamp-layer0-types-ext-RFC9093-bis\r\n- https://github.com/openconfig/public\r\n- etc.",
+      "createdAt": "2024-02-07T17:41:06Z",
+      "updatedAt": "2024-02-07T17:41:06Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": []
 }
