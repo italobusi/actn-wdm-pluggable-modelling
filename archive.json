@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-08T01:00:16.715319+00:00",
+  "timestamp": "2024-02-11T01:05:36.171154+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -63,6 +63,22 @@
       "body": "This gap analysis is trying to collect YANG models from various sources (primarily from IETF, OpenConfig, etc.) for modeling optical pluggables located in client devices like IP routers, which are connected to an optical WDM transport network. This material will be analyzed in order to identify potential gaps.\r\n\r\nReferences:\r\n- https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-optical-impairment-topology-yang\r\n- https://github.com/ietf-ccamp-wg/ietf-ccamp-layer0-types-ext-RFC9093-bis\r\n- https://github.com/openconfig/public\r\n- etc.",
       "createdAt": "2024-02-07T17:41:06Z",
       "updatedAt": "2024-02-07T17:41:06Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 2,
+      "id": "I_kwDOLJuPKM5-4B_i",
+      "title": "optical-pluggable-attributes-v00",
+      "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/issues/2",
+      "state": "OPEN",
+      "author": "reza-github",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "All,\r\nAs per our discussion last week, attached is the Google Sheet for \"optical-pluggable-attributes-v00\".\r\n\r\nhttps://docs.google.com/spreadsheets/d/1atqBARO76hzRp5ETHzsOYLsfabHQbulf0AtbVAMV66A/edit?usp=share_link\r\n\r\nReza",
+      "createdAt": "2024-02-10T17:18:39Z",
+      "updatedAt": "2024-02-10T17:18:39Z",
       "closedAt": null,
       "comments": []
     }
