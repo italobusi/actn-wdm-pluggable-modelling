@@ -44,7 +44,7 @@ author:
 
   -
     ins: B. Swamynathan 
-    fullname: Swamynathan B
+    fullname: B Swamynathan
     organization: Nokia
     email: swamynathan.b@nokia.com
 
@@ -92,35 +92,10 @@ normative:
               target: https://www.oiforum.com/wp-content/uploads/OIF-CMIS-05.2.pdf
 
 informative:
-   pluggables-operators-requirements:
-              title: "Operator’s Requirements to support Router Optical pluggable interfaces"
-              date: 2023-11-23
-              target: https://datatracker.ietf.org/meeting/118/materials/slides-118-ccamp-07-applicability-of-actn-to-poi-extensions-to-support-router-optical-interfaces
-
-   draft-ietf-ccamp-optical-impairment-topology-yang-14:
-              title: "A YANG Data Model for Optical Impairment-aware Topology"
-              date: 2023-10-23
-              target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-optical-impairment-topology-yang/
-
    actn-rfc:
               title: "Framework for Abstraction and Control of TE Networks ACTN"
               date: 2018-12-19
-              target: https://datatracker.ietf.org/doc/rfc8453/
-
-   draft-davis-ccamp-photonic-plug-control-arch-02:
-              title: "Control Architecture of Optical Pluggables in Packet Devices Under ACTN POI Framework"
-              date: 2024-01-01
-              target: https://datatracker.ietf.org/doc/draft-davis-ccamp-photonic-plug-control-arch/02/
-
-   MANTRA-whitepaper-IPoWDM-convergent-SDN-architecture:
-              title: "IPoWDM convergent SDN architecture - Motivation, technical definition & challenges"
-              date: 2022-08-31 
-              target: https://telecominfraproject.com/wp-content/uploads/TIP_OOPT_MANTRA_IP_over_DWDM_Whitepaper-Final-Version3.pdf          
-
-   ITU-T G.sup39:
-              title: "ITU-T Recommendation G.Sup39 (02/16): Optical system design and engineering considerations"
-              date: 2016-02-26
-              target: https://www.itu.int/rec/T-REC-G.Sup39-201602-I/en  
+              target: https://datatracker.ietf.org/doc/rfc8453/          
 
 --- abstract
 
