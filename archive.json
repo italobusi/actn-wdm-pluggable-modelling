@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-18T01:04:47.315109+00:00",
+  "timestamp": "2024-02-20T01:00:00.005453+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -78,9 +78,17 @@
       "labels": [],
       "body": "All,\r\nAs per our discussion last week, attached is the Google Sheet for \"optical-pluggable-attributes-v00\".\r\n\r\nhttps://docs.google.com/spreadsheets/d/1atqBARO76hzRp5ETHzsOYLsfabHQbulf0AtbVAMV66A/edit?usp=share_link\r\n\r\nReza",
       "createdAt": "2024-02-10T17:18:39Z",
-      "updatedAt": "2024-02-10T17:18:39Z",
+      "updatedAt": "2024-02-19T18:21:24Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I've updated the list of attributes with some other IETF OI parameters I've noticed have not been reported yet\r\n[optical-pluggable-attributes-v00 (1).xlsx](https://github.com/italobusi/actn-wdm-pluggable-modelling/files/14335760/optical-pluggable-attributes-v00.1.xlsx)\r\n",
+          "createdAt": "2024-02-19T18:21:23Z",
+          "updatedAt": "2024-02-19T18:21:23Z"
+        }
+      ]
     }
   ],
   "pulls": []
