@@ -95,21 +95,22 @@ Table of Contents
    4.  Optical Pluggable Building Blocks
    5.  Optical Pluggables Data Modeling
    6.  Optical Pluggables Yang Model
-   7.  Conventions and Definitions
-   8.  Security Considerations
-   9.  IANA Considerations
-   10. References
-     10.1.  Normative References
-     10.2.  Informative References
+   7.  Security Considerations
+   8.  IANA Considerations
+   9.  References
+     9.1.  Normative References
+     9.2.  Informative References
    Acknowledgments
    Contributors
    Authors' Addresses
 
 1.  Terminology
 
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT"
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in the
-   document are to be interpreted as described in [RFC2119].
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
 
    The following terms abbreviations are used in this document:
 
@@ -279,25 +280,17 @@ Table of Contents
 
 6.  Optical Pluggables Yang Model
 
-7.  Conventions and Definitions
-
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
-   "OPTIONAL" in this document are to be interpreted as described in
-   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
-   capitals, as shown here.
-
-8.  Security Considerations
+7.  Security Considerations
 
    TODO Security
 
-9.  IANA Considerations
+8.  IANA Considerations
 
    This document has no IANA actions.
 
-10.  References
+9.  References
 
-10.1.  Normative References
+9.1.  Normative References
 
    [OIF-CMIS] OIF Forum, "OIF Implementation Agreement (IA) Common
               Management Interface Specification (CMIS))", OIF CMIS IA ,
@@ -313,7 +306,7 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
-10.2.  Informative References
+9.2.  Informative References
 
    [RFC8453]  Ceccarelli, D., Ed. and Y. Lee, Ed., "Framework for
               Abstraction and Control of TE Networks (ACTN)", RFC 8453,
