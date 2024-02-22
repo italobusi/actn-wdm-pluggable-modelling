@@ -158,78 +158,15 @@ The document is divided into the following sections:
 
 # Packet over optical converged network context
 
-~~~~
-                  |---------------|
-                  |   P-PNC(s),   |
-                  |   O-PNC(s),   |
-                  |   MDSC        |
-                  |---------------|
-                          ^
-                          |  (A)
-      +-------------------|-------------------+
-      |                   |                   |  Packet Device
-      |                   V                   |  Vendor X
-      |        |---------------------|        |  (i.e, Host)
-      |        |                     |        |
-      |        v                     v        |
-      |  |-----------|          |----------|  |
-      |  | Packet    |          | Coherent |  |
-      |  | Function  |..........| Plug     |  |
-      |  | Data      |          | Data     |  |
-      |  |-----------|          |----------|  |
-      |        .                      .       |
-      |        .                      . (B)   |
-      |        .                      .       |
-      |  |--------------|   (C)   |------------------|  (D)
-      |  |Packet Device |<------->| Coherent Plug #1 |=======
-      |  |Function      |<---|    | Vendor X         |
-      |  |--------------|    |    |------------------|
-      |                      |                |
-      |                      |    |------------------|
-      |                      |--->| Coherent Plug #2 |=======
-      |                           | Vendor Y         |
-      |                           |------------------|
-      |                                       |
-      +---------------------------------------+
-
-  Legend
-    (A) Packet device management interfaces (e.g., YANG, NETCONF, gNMI, etc.)
-    (B) CMIS interface between Optical pluggable and Host
-    (C) Host side of the optical pluggable (towards the Host)
-    (D) Media side of the optical pluggable (towards Optical/Photonic network)
-
-~~~~
+{::include ./figures/poi-device.md}
 {: #figure-details-packet-optical-device title="Packet device with optical pluggables"}
 
 {: #building-blocks}
 
 # Optical Pluggable Building Blocks
 
-~~~~
-
-     Optical Pluggable
-     |--------------------------------------------------------------------------|
-     |                                                                          |
-     |                Host side                         Media side              |
-     | |---------------------------------|  |---------------------------------| |
-     | |                                 |  |                                 | |
-     | | |-----------|    |-----------|  |  | |-----------|    |-----------|  | |
-  -------| Electrical|    | Host      |  |  | | Media     |    | Optical   | -----> (Tx)
-  -------| Channel   |----| Logical   |-------| Logical   |....| Channel   | <----- (Rx)
-  -------|           |    | Channels  |  |  | | Channels  |    | (OTSI)    |  | |
-     | | |-----------|    |-----------|  |  | |-----------|    |-----------|  | |
-     | |                                 |  |                                 | |
-     | |---------------------------------|  |---------------------------------| |
-     |                                                                          |
-     | |----------------------------------------------------------------------| |
-     | |                            Equipment/inventory                       | |
-     | |----------------------------------------------------------------------| |
-     |                                                                          |
-     |--------------------------------------------------------------------------|
-
-~~~~
+{::include ./figures/pluggable-blocks.md}
 {: #figure-optical-pluggable-building-blocks title="Optical Pluggable Building Blocks"}
-
 
 {: #data-model}
 
