@@ -1,0 +1,378 @@
+
+
+
+
+Common Control and Measurement Plane                            R. Rokui
+Internet-Draft                                                     Ciena
+Intended status: Informational                                    A. Guo
+Expires: 25 August 2024                           Futurewei Technologies
+                                                               P. Bedard
+                                                                   Cisco
+                                                          B. Swamynathan
+                                                                   Nokia
+                                                              G. Grammel
+                                                                 Juniper
+                                                        22 February 2024
+
+
+     Modelling of Optical Pluggables in Packet Over Optical Network
+         draft-poidt-ccamp-actn-wdm-pluggable-modelling-latest
+
+Abstract
+
+   This draft outlines the modeling of optical pluggables within a host
+   packet device within the context of a packet over optical network.
+   The model encompasses all pertinent properties of the pluggable for
+   various packet over optical use cases and is partitioned into three
+   primary areas: the optical media interface, the electrical plug to
+   host interconnect, and the physical equipment of the pluggable.
+
+   Included in the model are representations of configuration, states,
+   and telemetry data, as well as profiles and coherent plug
+   capabilities.  Emphasizing the importance of considering both vendor-
+   agnostic and vendor-specific attributes in modeling coherent
+   pluggables.
+
+   Drawing from existing models in IETF, OpenConfig, ITU-T, OIF, and
+   TAPI, this model offers enhanced uniform structuring and naming.
+   Additionally, it provides insight into the mapping to plug interface
+   structures defined in CMIS.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at
+   https://italobusi.github.io/actn-wdm-pluggable-modelling/draft-poidt-
+   ccamp-actn-wdm-pluggable-modelling.html.  Status information for this
+   document may be found at https://datatracker.ietf.org/doc/draft-
+   poidt-ccamp-actn-wdm-pluggable-modelling/.
+
+   Discussion of this document takes place on the Common Control and
+   Measurement Plane Working Group mailing list (mailto:ccamp@ietf.org),
+   which is archived at https://mailarchive.ietf.org/arch/browse/ccamp/.
+   Subscribe at https://www.ietf.org/mailman/listinfo/ccamp/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/italobusi/actn-wdm-pluggable-modelling.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 25 August 2024.
+
+Copyright Notice
+
+   Copyright (c) 2024 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Terminology
+   2.  Introduction
+   3.  Packet over optical converged network context
+   4.  Optical Pluggable Building Blocks
+   5.  Optical Pluggables Data Modeling
+   6.  Optical Pluggables Yang Model
+   7.  Conventions and Definitions
+   8.  Security Considerations
+   9.  IANA Considerations
+   10. References
+     10.1.  Normative References
+     10.2.  Informative References
+   Acknowledgments
+   Contributors
+   Authors' Addresses
+
+1.  Terminology
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT"
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in the
+   document are to be interpreted as described in [RFC2119].
+
+   The following terms abbreviations are used in this document:
+
+   *  Optical Plug / Coherent Pluggables / Pluggable: A small form
+      factor coherent optical module
+
+   *  O-PNC: The control functions specializing in management/control of
+      optical and photonic functions (virtual or physical).  See
+      [RFC8453]
+
+   *  P-PNC: The control functions specializing in management/control of
+      packet functions (virtual or physical).  See [RFC8453]
+
+   *  CMIS: Content Management Interoperability Services developed by
+      OIF is an open standard that allows different content management
+      systems to inter-operate over the Internet
+
+   *  xPonder: Short for Transponder and/or Muxponder
+
+2.  Introduction
+
+   Packet traffic has been transmitted across optical networks for many
+   years, leveraging the advantages of optical transmission and
+   switching combined with packet switching.  Traditionally, optical
+   systems and packet systems have been distinct, each with their own
+   dedicated devices.
+
+   In numerous network setups, packet and optical networks have been
+   engineered, operated, and managed separately, leading to siloed
+   operations that can be suboptimal and inefficient.  The evolution of
+   both packet and optical systems has largely been independent.
+   Optical systems, in particular, have seen advancements in capacity,
+   especially with the adoption of coherent optical techniques.
+
+   Advancements in optical component design have led to increased
+   density, enabling entire coherent optical terminal systems that
+   previously required multiple circuit packs to now fit into a single
+   small form factor "coherent pluggable."  Integrating coherent
+   pluggables into devices with packet functions can result in reduced
+   network costs, power consumption, and footprint, while also enhancing
+   data transfer rates, reducing latency, and expanding capacity,
+   although in some cases, separate packet and optical solutions may
+   still be preferred due to other engineering and deployment
+   considerations.
+
+   These trends, coupled with the desire to utilize the best components
+   available, have given rise to open optical pluggables.  These
+   pluggables allow a plug from one vendor to be installed in a device
+   from another vendor with packet functions.  Communication between
+   coherent pluggables and the packet device host occurs through the
+   CMIS standard developed by OIF [OIF-CMIS].
+
+   While standardized transmission modes like ZR can handle basic
+   applications, proprietary modes from vendors are often necessary to
+   achieve optimal performance.
+
+   This draft outlines the modeling of an optical pluggable within a
+   host packet device within the context of a packet over optical
+   network.  The model presented in this document consolidates various
+   properties of optical pluggables into three key areas:
+
+   *  Optical media interface: This defines the characteristics of the
+      optical solution such as spectrum, polarization, and dispersion,
+      which do not directly affect the behavior of the host packet
+      device.
+
+   *  Electrical plug-to-host interconnect: This defines the
+      characteristics of the bus interconnect between the host and the
+      plug, such as lane count and FEC, which both the optical pluggable
+      and the packet host must understand and act upon.
+
+   *  Physical and functional aspects of the pluggable: This defines
+      attributes of the optical pluggable itself, such as plug type,
+      version, thermal characteristics, and power consumption, which
+      indirectly affect the packet host.
+
+   The coherent pluggable model provides representations for
+   capabilities, profiles, configurations, and states and telemetry
+   data.  Capabilities are defined in profiles related to operational
+   modes, with some capabilities potentially being proprietary
+   Configurations include attributes for optical settings, monitoring
+   capabilities, and test capabilities, while state and telemetry data
+   include dynamic properties such as performance monitoring collections
+   and alarm notifications.
+
+   Both vendor-agnostic and vendor-specific attributes are important
+   considerations in the modeling of coherent pluggables.
+
+   The document is divided into the following sections:
+
+   *  Section 3: Packet over optical converged network context
+
+   *  Section 4: Coherent Pluggables Building Blocks
+
+   *  Section 5: Coherent Pluggables Data Modeling
+
+   *  Section 6: Coherent Pluggables Yang Model
+
+3.  Packet over optical converged network context
+
+                  |---------------|
+                  |   P-PNC(s),   |
+                  |   O-PNC(s),   |
+                  |   MDSC        |
+                  |---------------|
+                          ^
+                          |  (A)
+      +-------------------|-------------------+
+      |                   |                   |  Packet Device
+      |                   V                   |  Vendor X
+      |        |---------------------|        |  (i.e, Host)
+      |        |                     |        |
+      |        v                     v        |
+      |  |-----------|          |----------|  |
+      |  | Packet    |          | Coherent |  |
+      |  | Function  |..........| Plug     |  |
+      |  | Data      |          | Data     |  |
+      |  |-----------|          |----------|  |
+      |        .                      .       |
+      |        .                      . (B)   |
+      |        .                      .       |
+      |  |--------------|   (C)   |------------------|  (D)
+      |  |Packet Device |<------->| Coherent Plug #1 |=======
+      |  |Function      |<---|    | Vendor X         |
+      |  |--------------|    |    |------------------|
+      |                      |                |
+      |                      |    |------------------|
+      |                      |--->| Coherent Plug #2 |=======
+      |                           | Vendor Y         |
+      |                           |------------------|
+      |                                       |
+      +---------------------------------------+
+
+  Legend
+    (A) Packet device management interfaces (e.g., YANG, NETCONF, gNMI, etc.)
+    (B) CMIS interface between Optical pluggable and Host
+    (C) Host side of the optical pluggable (towards the Host)
+    (D) Media side of the optical pluggable (towards Optical/Photonic network)
+
+           Figure 1: Packet device with optical pluggables
+
+4.  Optical Pluggable Building Blocks
+
+     Optical Pluggable
+     |--------------------------------------------------------------------------|
+     |                                                                          |
+     |                Host side                         Media side              |
+     | |---------------------------------|  |---------------------------------| |
+     | |                                 |  |                                 | |
+     | | |-----------|    |-----------|  |  | |-----------|    |-----------|  | |
+  -------| Electrical|    | Host      |  |  | | Media     |    | Optical   | -----> (Tx)
+  -------| Channel   |----| Logical   |-------| Logical   |....| Channel   | <----- (Rx)
+  -------|           |    | Channels  |  |  | | Channels  |    | (OTSI)    |  | |
+     | | |-----------|    |-----------|  |  | |-----------|    |-----------|  | |
+     | |                                 |  |                                 | |
+     | |---------------------------------|  |---------------------------------| |
+     |                                                                          |
+     | |----------------------------------------------------------------------| |
+     | |                            Equipment/inventory                       | |
+     | |----------------------------------------------------------------------| |
+     |                                                                          |
+     |--------------------------------------------------------------------------|
+
+             Figure 2: Optical Pluggable Building Blocks
+
+5.  Optical Pluggables Data Modeling
+
+6.  Optical Pluggables Yang Model
+
+7.  Conventions and Definitions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+8.  Security Considerations
+
+   TODO Security
+
+9.  IANA Considerations
+
+   This document has no IANA actions.
+
+10.  References
+
+10.1.  Normative References
+
+   [OIF-CMIS] OIF Forum, "OIF Implementation Agreement (IA) Common
+              Management Interface Specification (CMIS))", OIF CMIS IA ,
+              April 2022, <https://www.oiforum.com/wp-content/uploads/
+              OIF-CMIS-05.2.pdf>.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+10.2.  Informative References
+
+   [RFC8453]  Ceccarelli, D., Ed. and Y. Lee, Ed., "Framework for
+              Abstraction and Control of TE Networks (ACTN)", RFC 8453,
+              DOI 10.17487/RFC8453, August 2018,
+              <https://www.rfc-editor.org/rfc/rfc8453>.
+
+Acknowledgments
+
+   TODO acknowledge.
+
+Contributors
+
+   Nigel Davis
+   Ciena
+   Email: ndavis@ciena.com
+
+
+   Italo Busi
+   Huawei Technologies
+   Email: italo.busi@huawei.com
+
+
+   Sergio Belotti
+   Nokia
+   Email: sergio.belotti@nokia.com
+
+
+   Dieter Beller
+   Nokia
+   Email: dieter.beller@nokia.com
+
+
+   Roberto Manzotti
+   Cisco
+   Email: rmanzott@cisco.com
+
+
+Authors' Addresses
+
+   Reza Rokui
+   Ciena
+   Email: rrokui@ciena.com
+
+
+   Aihua Guo
+   Futurewei Technologies
+   Email: aihuaguo.ietf@gmail.com
+
+
+   Phil Bedard
+   Cisco
+   Email: phbedard@cisco.com
+
+
+   B Swamynathan
+   Nokia
+   Email: swamynathan.b@nokia.com
+
+
+   Gert Grammel
+   Juniper
+   Email: ggrammel@juniper.net
