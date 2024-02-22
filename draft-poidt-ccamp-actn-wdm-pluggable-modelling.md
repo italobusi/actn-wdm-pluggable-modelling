@@ -149,7 +149,7 @@ The document is divided into the following sections:
 
 # Packet over optical converged network context
 
-~~~
+~~~~
                   |---------------|
                   |   P-PNC(s),   |
                   |   O-PNC(s),   |
@@ -189,13 +189,13 @@ The document is divided into the following sections:
     (C) Host side of the optical pluggable (towards the Host)
     (D) Media side of the optical pluggable (towards Optical/Photonic network)
 
-~~~
+~~~~
 {: #figure-details-packet-optical-device title="Packet device with optical pluggables"}
 
 
 # Optical Pluggable Building Blocks
 
-~~~
+~~~~
 
      Optical Pluggable
      |--------------------------------------------------------------------------|
@@ -217,7 +217,7 @@ The document is divided into the following sections:
      |                                                                          |
      |--------------------------------------------------------------------------|
 
-~~~
+~~~~
 {: #figure-optical-pluggable-building-blocks title="Optical Pluggable Building Blocks"}
 
 
@@ -242,7 +242,8 @@ This document has no IANA actions.
 
 --- back
 
-# Acknowledgments
 {:numbered="false"}
+
+# Acknowledgments
 
 TODO acknowledge.
