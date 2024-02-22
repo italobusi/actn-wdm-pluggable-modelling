@@ -43,7 +43,7 @@ author:
     email: phbedard@cisco.com
 
   -
-    ins: B. Swamynathan 
+    ins: B. Swamynathan
     fullname: B Swamynathan
     organization: Nokia
     email: swamynathan.b@nokia.com
@@ -86,16 +86,13 @@ contributor:
     email: rmanzott@cisco.com
 
 normative:
-   OIF-CMIS:
-              title: "OIF Implementation Agreement (IA) Common Management Interface Specification (CMIS))"
-              date: 2022-04-27  
-              target: https://www.oiforum.com/wp-content/uploads/OIF-CMIS-05.2.pdf
-
-informative:
-   actn-rfc:
-              title: "Framework for Abstraction and Control of TE Networks ACTN"
-              date: 2018-12-19
-              target: https://datatracker.ietf.org/doc/rfc8453/          
+  OIF-CMIS:
+    title: "OIF Implementation Agreement (IA) Common Management Interface Specification (CMIS))"
+    author:
+      org: OIF Forum
+    date: 27 April 2022
+    seriesinfo: OIF CMIS IA
+    target: https://www.oiforum.com/wp-content/uploads/OIF-CMIS-05.2.pdf
 
 --- abstract
 
@@ -115,8 +112,8 @@ document are to be interpreted as described in {{!RFC2119}}.
 The following terms abbreviations are used in this document:
 
 * Optical Plug / Coherent Pluggables / Pluggable: A small form factor coherent optical module
-* O-PNC: The control functions specializing in management/control of optical and photonic functions (virtual or physical). See {{actn-rfc}}
-* P-PNC: The control functions specializing in management/control of packet functions (virtual or physical). See {{actn-rfc}}
+* O-PNC: The control functions specializing in management/control of optical and photonic functions (virtual or physical). See {{?RFC8453}}
+* P-PNC: The control functions specializing in management/control of packet functions (virtual or physical). See {{?RFC8453}}
 * CMIS: Content Management Interoperability Services developed by OIF is an open standard that allows different content management systems to inter-operate over the Internet
 * xPonder: Short for Transponder and/or Muxponder
 
@@ -156,41 +153,41 @@ The document is divided into the following sections:
                   |---------------|
                   |   P-PNC(s),   |
                   |   O-PNC(s),   |
-                  |   MDSC        | 
+                  |   MDSC        |
                   |---------------|
-                          ^ 
+                          ^
                           |  (A)
-      +-------------------|-------------------+ 
-      |                   |                   |  Packet Device 
-      |                   V                   |  Vendor X 
+      +-------------------|-------------------+
+      |                   |                   |  Packet Device
+      |                   V                   |  Vendor X
       |        |---------------------|        |  (i.e, Host)
-      |        |                     |        |  
+      |        |                     |        |
       |        v                     v        |
-      |  |-----------|          |----------|  |   
-      |  | Packet    |          | Coherent |  |  
-      |  | Function  |..........| Plug     |  |  
-      |  | Data      |          | Data     |  |   
-      |  |-----------|          |----------|  | 
-      |        .                      .       |                     
-      |        .                      . (B)   |   
-      |        .                      .       |      
-      |  |--------------|   (C)   |------------------|  (D) 
+      |  |-----------|          |----------|  |
+      |  | Packet    |          | Coherent |  |
+      |  | Function  |..........| Plug     |  |
+      |  | Data      |          | Data     |  |
+      |  |-----------|          |----------|  |
+      |        .                      .       |
+      |        .                      . (B)   |
+      |        .                      .       |
+      |  |--------------|   (C)   |------------------|  (D)
       |  |Packet Device |<------->| Coherent Plug #1 |=======
-      |  |Function      |<---|    | Vendor X         |     
-      |  |--------------|    |    |------------------|  
+      |  |Function      |<---|    | Vendor X         |
+      |  |--------------|    |    |------------------|
       |                      |                |
-      |                      |    |------------------|    
+      |                      |    |------------------|
       |                      |--->| Coherent Plug #2 |=======
-      |                           | Vendor Y         |     
-      |                           |------------------|  
-      |                                       |     
-      +---------------------------------------+       
+      |                           | Vendor Y         |
+      |                           |------------------|
+      |                                       |
+      +---------------------------------------+
 
   Legend
     (A) Packet device management interfaces (e.g., YANG, NETCONF, gNMI, etc.)
     (B) CMIS interface between Optical pluggable and Host
     (C) Host side of the optical pluggable (towards the Host)
-    (D) Media side of the optical pluggable (towards Optical/Photonic network)          
+    (D) Media side of the optical pluggable (towards Optical/Photonic network)
 
 ~~~
 {: #figure-details-packet-optical-device title="Packet device with optical pluggables"}
