@@ -105,17 +105,20 @@ Drawing from existing models in IETF, OpenConfig, ITU-T, OIF, and TAPI, this mod
 --- middle
 
 # Terminology
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT"
-"SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in the
-document are to be interpreted as described in {{!RFC2119}}.
+
+{::boilerplate bcp14-tagged}
 
 The following terms abbreviations are used in this document:
 
-* Optical Plug / Coherent Pluggables / Pluggable: A small form factor coherent optical module
-* O-PNC: The control functions specializing in management/control of optical and photonic functions (virtual or physical). See {{?RFC8453}}
-* P-PNC: The control functions specializing in management/control of packet functions (virtual or physical). See {{?RFC8453}}
-* CMIS: Content Management Interoperability Services developed by OIF is an open standard that allows different content management systems to inter-operate over the Internet
-* xPonder: Short for Transponder and/or Muxponder
+- Optical Plug / Coherent Pluggables / Pluggable: A small form factor coherent optical module
+
+- O-PNC: The control functions specializing in management/control of optical and photonic functions (virtual or physical). See {{?RFC8453}}
+
+- P-PNC: The control functions specializing in management/control of packet functions (virtual or physical). See {{?RFC8453}}
+
+- CMIS: Content Management Interoperability Services developed by OIF is an open standard that allows different content management systems to inter-operate over the Internet
+
+- xPonder: Short for Transponder and/or Muxponder
 
 # Introduction
 
@@ -131,9 +134,11 @@ While standardized transmission modes like ZR can handle basic applications, pro
 
 This draft outlines the modeling of an optical pluggable within a host packet device within the context of a packet over optical network. The model presented in this document consolidates various properties of optical pluggables into three key areas:
 
-* Optical media interface: This defines the characteristics of the optical solution such as spectrum, polarization, and dispersion, which do not directly affect the behavior of the host packet device.
-* Electrical plug-to-host interconnect: This defines the characteristics of the bus interconnect between the host and the plug, such as lane count and FEC, which both the optical pluggable and the packet host must understand and act upon.
-* Physical and functional aspects of the pluggable: This defines attributes of the optical pluggable itself, such as plug type, version, thermal characteristics, and power consumption, which indirectly affect the packet host.
+- Optical media interface: This defines the characteristics of the optical solution such as spectrum, polarization, and dispersion, which do not directly affect the behavior of the host packet device.
+
+- Electrical plug-to-host interconnect: This defines the characteristics of the bus interconnect between the host and the plug, such as lane count and FEC, which both the optical pluggable and the packet host must understand and act upon.
+
+- Physical and functional aspects of the pluggable: This defines attributes of the optical pluggable itself, such as plug type, version, thermal characteristics, and power consumption, which indirectly affect the packet host.
 
 The coherent pluggable model provides representations for capabilities, profiles, configurations, and states and telemetry data. Capabilities are defined in profiles related to operational modes, with some capabilities potentially being proprietary Configurations include attributes for optical settings, monitoring capabilities, and test capabilities, while state and telemetry data include dynamic properties such as performance monitoring collections and alarm notifications.
 
@@ -141,11 +146,15 @@ Both vendor-agnostic and vendor-specific attributes are important considerations
 
 The document is divided into the following sections:
 
-* Section 3: Packet over optical converged network context
-* Section 4: Coherent Pluggables Building Blocks
-* Section 5: Coherent Pluggables Data Modeling
-* Section 6: Coherent Pluggables Yang Model
+- {{network-context}}: Packet over optical converged network context
 
+- {{building-blocks}}: Coherent Pluggables Building Blocks
+
+* {{data-model}}: Coherent Pluggables Data Modeling
+
+* {{yang-model}}: Coherent Pluggables Yang Model
+
+{: #network-context}
 
 # Packet over optical converged network context
 
@@ -192,6 +201,7 @@ The document is divided into the following sections:
 ~~~~
 {: #figure-details-packet-optical-device title="Packet device with optical pluggables"}
 
+{: #building-blocks}
 
 # Optical Pluggable Building Blocks
 
@@ -221,24 +231,21 @@ The document is divided into the following sections:
 {: #figure-optical-pluggable-building-blocks title="Optical Pluggable Building Blocks"}
 
 
+{: #data-model}
+
 # Optical Pluggables Data Modeling
 
+{: #yang-model}
+
 # Optical Pluggables Yang Model
-
-# Conventions and Definitions
-
-{::boilerplate bcp14-tagged}
-
 
 # Security Considerations
 
 TODO Security
 
-
 # IANA Considerations
 
 This document has no IANA actions.
-
 
 --- back
 
