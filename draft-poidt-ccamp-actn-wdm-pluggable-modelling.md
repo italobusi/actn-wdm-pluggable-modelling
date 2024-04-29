@@ -100,7 +100,15 @@ normative:
       org: ITU-T Recommendation G.698.2
     date: November 2018
     seriesinfo: 
-    target: 
+    target: https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.698.2-201811-I!!PDF-E&type=items
+
+  SFF8024:
+    title: "SFF Module Management Reference Code Tables"
+    author:
+      org: SNIA SFF Technology Affiliate (TA) Technical Work Group (TWG), Small Form Factor Technology Affiliate
+    date: November 27, 2023
+    seriesinfo: 
+    target: https://members.snia.org/document/dl/26423
 
 --- abstract
 
@@ -195,6 +203,7 @@ The document is divided into the following sections:
 This draft presents the modeling of the coherent pluggable such as #1 and #2 in {{figure-details-packet-optical-device}} within a host packet device. The model presented in {{data-model}} consolidates properties of coherent pluggable on interfaces (4) and (5) where interface (5) provides the photonic/optical attributes and interface provides the host/electrical attributes.
 
 ~~~~
+
               |--------------------|
               |  packet, optical,  |
               |  and higher layer  |
@@ -379,6 +388,7 @@ Details of optical pluggable operational-mode and host-operational-mode are in a
 ~~~~
 
   Optical Pluggable Manifest
+
   |--------------------------------------------|
   |   For each pair of                         |-|
   |     [organization, operational-mode]       | |-|
@@ -415,23 +425,25 @@ Details of optical pluggable operational-mode and host-operational-mode are in a
 ~~~~
 {: #figure-optical-pluggable-manifest title="Optical Pluggable Manifest"}
 
-This following is an example for standard mode defined by ITU-T
+This following is an example for standard mode defined by OIF:
 
 ~~~~
-organization: ITU-T
+organization: OIF (see SFF 8024 Table 4-7 SMF media interface IDs)
 operational-mode: 0x3E
 list of attributes
-      modulation: 16QUM
+      modulation: DP-16QAM
       bit-rate: 478.75 Gb/s
       baud-rate: 59.84375
+      lane signaling rate: 59.84375 GBd
       more ...
 
-organization: ITU-T
+organization: OIF (see SFF 8024 Table 4-5 Host Electrical Interface IDs)
 host-operational-mode: 0x11
 list of attributes
       number of line: 8
       modulation: PAM4
       application-bit-rate: 425.00 Gb/s
+      lane signaling rate: 26.5625 GBd
       more ...
 ~~~~
 
@@ -482,6 +494,7 @@ As the above examples show, using the coherent pluggable manifest allows us to h
 # Optical Pluggables Manifest Examples
 
 ~~~~
+
    |----------|        |------------------|
    | Coherent |        | Packet, optical, |
    | Pluggable|  <-->  | higher layer     |
@@ -510,7 +523,6 @@ As the above examples show, using the coherent pluggable manifest allows us to h
 
 ~~~~
 {: #figure-optical-pluggable-manifest-example-1 title="Coherent Pluggable Manifest Example 1"}
-
 
 
 {: #plug-lcm}
