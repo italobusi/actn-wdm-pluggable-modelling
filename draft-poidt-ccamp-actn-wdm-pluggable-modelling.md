@@ -237,7 +237,7 @@ This draft presents the modeling of the coherent pluggable such as #1 and #2 in 
    |                                       | 
    +---------------------------------------+
     Host Vendor X 
-    (e.g., Router)     
+     (e.g., Router)     
 
 ~~~~
 {: #figure-details-packet-optical-device title="Packet device with optical pluggables"}
@@ -493,8 +493,23 @@ As the above examples show, using the coherent pluggable manifest allows us to h
 {: #plug-manifest-example}
 # Optical Pluggables Manifest Examples
 
+This section provides a few examples in order to provide more details on optical pluggalbe manifext concept. {{figure-optical-pluggable-manifest-example-1}} is a typical packet over optical network when coherent pluggables p1 and p2 are already inside packet devices R1 and R2 on ports port_a and port_b, respectively. We also assume there are "m" photonic services already setup between pluggables p1 and p2.
+
+In this example, since optical pluggables are already installed in packet devices, the assumption is that that optical/photonic viability had been already done. The following steps ouline the overall process of managing the network by optical and packet controllers,
+
+- Packet devices (R1, R2), pluggables (p1, p2) and photonic devices (m1, m2, m3) are managed by controllers.
+- The network inventory for all packet and photonic devices incluidng the type of optical pluggables p1 and p2 will be provided to controllers.
+- In specific, the inventory of pluggable p1 and p2 includes basic informaiton such as pluggable type, manufacturer, serial number and software version.
+- In addition, the inventory of packet devices R1 and R2, includes all the configuration related to pluggables attributes such as "configured-operational-mode", "configured-centrial-frequency", "configured-output-power" etc.
+- Using the pluggables basic information, the controllers can access the "optical pluggable manifest" at any time to get the full list of attriubtes supported by pluggables including all attriubtes of each operational-mode supported by pluggables. These attributes can be used for further viability/performance evaluation. They can also be exposed to the operators when they want to know the complete list of network devices for entire packet optical network including optical pluggables.
+
 ~~~~
 
+            <------- L0 phtonic service_1 ------->                 
+            <------- L0 phtonic service_2 ------->  
+                          ........               
+            <------- L0 phtonic service_m ------->    
+           
    |----------|        |------------------|
    | Coherent |        | Packet, optical, |
    | Pluggable|  <-->  | higher layer     |
@@ -504,9 +519,9 @@ As the above examples show, using the coherent pluggable manifest allows us to h
                                 |
                                 v
                       |------------------|
-                      |                  |
+         port_a       |                  |
      |------| p1    |------|             |
-     |  R1 ++-\     |  m1  |             |  
+     |  R1 ++-\     |  m1  |             |       port_b
      |------|  \    |------|          |------|  p2 |------|
                 \      |              |  m3  |-----++ R2  |
                  \  |------|          |------|     |------|
@@ -515,11 +530,14 @@ As the above examples show, using the coherent pluggable manifest allows us to h
                       |                  | 
                       |------------------|
 
+
+             
+
   Legend:
     ----        Optical fibers
     ++ p1,p2    Coherent pluggables
-    R1, R2:     Router
-    m1, m2, m3: ROADM                      
+    R1, R2:     Packet device (i.e., Router)
+    m1, m2, m3: Photonic node (ROADM)                      
 
 ~~~~
 {: #figure-optical-pluggable-manifest-example-1 title="Coherent Pluggable Manifest Example 1"}
@@ -530,13 +548,13 @@ As the above examples show, using the coherent pluggable manifest allows us to h
 
 [Editor's note: Some of the material in this section may be better places in earlier sections, in some cases there should be references to earlier sections and some text has implications on earlier sections. This will be dealt with in the second version of this document.]
 
-This section discusses the complete lifecycle of a pluggable. It includes discussion on the pre-purchase evaluation of pluggables through installation to the operation of a pluggable in a live network. 
+This section discusses the complete lifecycle of an optical pluggable. It includes discussion on the pre-purchase evaluation of pluggables through installation to the operation of a pluggable in a live network. 
 
 Some of the terminology is local to this document. where this is the case the terms are clarified in the definitions section.
 
-## Deployment of a pluggable in context
+## Deployment of an optical pluggable in context
 
-Prior to installation of a pluggable in a packet device, various resarch, approval, planning, design and viability activities must have been carried out. All of these activities will require detailed information on the capabilities of the pluggable. This points to the need for a strong separation between the model of operation of the pluggable and the model of capability (as detailed information on the capability of the pluggable is required long before it is installed and operational). This analysis shows that discovery of capability detail from the pluggable is unnecessary. Instead, all that is required to be reported by the pluggable is a complete statement of type and version to the degree sufficient to precisely identify the definition/specification of the plug capability by reference (capability is per type). As will be discussed, this complete statement of type and version is also fundamentally necessary for the coordination of spares.
+Prior to installation of an optical pluggable in a packet device, various resarch, approval, planning, design and viability activities must have been carried out. All of these activities will require detailed information on the capabilities of the pluggable. This points to the need for a strong separation between the model of operation of the pluggable and the model of capability (as detailed information on the capability of the pluggable is required long before it is installed and operational). This analysis shows that discovery of capability detail from the pluggable is unnecessary. Instead, all that is required to be reported by the pluggable is a complete statement of type and version to the degree sufficient to precisely identify the definition/specification of the plug capability by reference (capability is per type). As will be discussed, this complete statement of type and version is also fundamentally necessary for the coordination of spares.
 
 Following sub-sections discuss the overall flow of activities and then work through the lifecycle stages in some detail.
 
