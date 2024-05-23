@@ -85,6 +85,30 @@ contributor:
     org: Cisco
     email: rmanzott@cisco.com
 
+  -
+    ins: P. Manna
+    fullname: Prasenjit Manna
+    org: Cisco
+    email: prmanna@cisco.com
+
+  -
+    ins: G. Galimberti
+    fullname: Gabriele Galimberti
+    org: Individual
+    email: ggalimbe56@gmail.com
+ 
+  -
+    ins: H. Venkatraman
+    fullname: Harish Venkatraman
+    org: Infinera
+    email: hvenkatraman@infinera.com
+
+  -
+    ins: G. Mishra
+    fullname: Gyan Mishra
+    org: Verizon
+    email: gyan.s.mishra@verizon.com
+
 normative:
   OIF-CMIS:
     title: "OIF Implementation Agreement (IA) Common Management Interface Specification (CMIS))"
@@ -93,6 +117,14 @@ normative:
     date: 27 April 2022
     seriesinfo: OIF CMIS IA
     target: https://www.oiforum.com/wp-content/uploads/OIF-CMIS-05.2.pdf
+
+  OIF-400ZR:
+    title: "Implementation Agreement 400ZR"
+    author:
+      org: OIF Forum
+    date: 3 November 2022
+    seriesinfo:
+    target: https://www.oiforum.com/wp-content/uploads/OIF-400ZR-02.0.pdf
 
   G.698.2:
     title: "Amplified multichannel dense wavelength division multiplexing applications with single channel optical interfaces"
@@ -126,7 +158,7 @@ Drawing from existing models in IETF, OpenConfig, ITU-T, OIF, and TAPI, this mod
 
 The following terms abbreviations are used in this document:
 
-- Optical Plug / Coherent Pluggable / Pluggable: A small form factor coherent optical module
+- Optical Pluggable / Coherent Pluggable / Pluggable: A small form factor coherent optical module. This document uses these terms interchangeably
 
 - O-PNC: The control functions specializing in management/control of optical and photonic functions (virtual or physical). See {{?RFC8453}}
 
@@ -178,9 +210,11 @@ The document is divided into the following sections:
 
 - {{yang-model}}: Coherent Pluggables Yang Model
 
-- {{plug-manifest}}: Optical Pluggables Capabilities (Pluggable Manifest)
+- {{pluggable-gap-analysis}}: Coherent pluggable Gap Analysis 
 
-- {{plug-manifest-example}}: Optical Pluggables Manifest Examples
+- {{plug-manifest}}: Coherent Pluggables Manifest
+
+- {{plug-manifest-example}}: Utilization of Coherent Pluggables Manifest
 
 - {{plug-lcm}}: Optical Pluggables Life Cycle Management
 
@@ -353,14 +387,16 @@ The data modelling of each functional blocks provides attributes in four areas:
 
 1. Coherent pluggable capabilities
 2. Coherent pluggable configurations
-3. Coherent pluggable states
+3. Coherent pluggable states and performance monitoring data
+4. Coherent pluggable threshold definition
 4. Coherent pluggable alarm notifications
 
+{: #plug-capabilities-attributes}
 ## Coherent pluggable capabilities attributes
 
 The capability attributes are read-only which defines the functional capabilities of the optical pluggables. These attributes are grouped together in a profile called "operational-mode" which contains attributes such as modulation, bit-rate, baud-rate, chromatic-dispersion, polarization, FEC etc. 
 
-The coherent pluggable capabilities are described by a set of operational-modes it supports, i.e., an optical pluggable might support multiple opeational-modes, where each "operational-mode" can be defined by a standard body or by a vendor. These operational-modes are called "standard-operational-modes" and "custom-operational-modes", respectively. The "standard-operational-modes" are well-define modes which are defined by a standard bodies such as ITU-T {{G.698.2}} whereas the ""custom-operational-modes" are defined by a vendor and might not be supported by all other vendors. 
+The coherent pluggable capabilities are described by a set of operational-modes it supports, i.e., an optical pluggable might support multiple operational-modes, where each "operational-mode" can be defined by a standard body or by a vendor. These operational-modes are called "standard-operational-modes" and "custom-operational-modes", respectively. The "standard-operational-modes" are well-define modes which are defined by a standard bodies such as ITU-T {{G.698.2}} whereas the ""custom-operational-modes" are defined by a vendor and might not be supported by all other vendors. 
 
 {{plug-manifest}} discusses the concept of the "coherent pluggable manifest", which is a repository for all "standard-operational-modes" or "custom-operational-modes". It also outlines the benefit of such repository.
 
@@ -368,27 +404,90 @@ The coherent pluggable capabilities are described by a set of operational-modes 
 
 The coherent pluggables support a set of read-write attributes which are configurable. Example of such configuration attributes are output power, central frequency and operational-mode. Note that since a coherent pluggable may support multiple operational-modes (standard or custom), the read-write operational-mode attribute programs the coherent pluggable to be functional in one of those operational-modes.
 
-## Coherent pluggable states and PM telemetry data attributes
+Refer to {{OIF-400ZR}}.
 
-These read-only attributes will be generated by optical pluggables and represents various states of the optical pluggable such as channel input power, channel output power, central frequency, laser temperature, current OSNR etc. In most cases these attributers are temporal and coherent pluggable reports values such as instantaneous, min, max and average.
+## Coherent pluggable states and performance monitoring data 
+
+These read-only attributes will be generated by optical pluggables and represents various states and performance monitoring data of the optical pluggable such as channel input power, channel output power, central frequency, laser temperature, current OSNR etc. In most cases these attributers are temporal and coherent pluggable reports values such as instantaneous, min, max and average. A "supported threshold profile (STP) can be assigned to each performance monitoring data (see {{plug-threshold-definition}}).
+
+{: #plug-threshold-definition}
+## Coherent pluggable threshold definition
+
+ To provide a general solution for threshold definition of coherent pluggable performance monitoring data,  the concept of "Supported Threshold Profile (STP)" is introduced. As shown in  {{figure-plug-threshold-definition}}, each STP defines upper and lower threshold levels, threshold style and variety of PM metrics such as minimum, maximum and average values.
+
+~~~~
+
+                SUPPORTED-THRESHOLD-PROFILE (STP)
+
+ |----------------------------------------------------------------|
+ |   STP-Type-1:                                                  |  
+ |     Threshold value: upper, lower                              |
+ |     Threshold style: Rolling window of [min-time, max-time]    |
+ |     Collection: min, max, ave, instant, ....                   |
+ |                                                                |
+ |   STP-Type-2:                                                  |
+ |     Threshold value: upper, lower                              |
+ |     Threshold style: Rolling window of [min-time, max-time]    |
+ |     Collection: instant                                        |
+ |                                                                |
+ |   STP-Type-3:                                                  |
+ |     Collection: min, max, instant                              |     
+ |                                                                |
+ |   ...                                                          |
+ |   STP-Type-n:                                                  |
+ |     ...                                                        |
+ |----------------------------------------------------------------|
+
+  (Note: these are just a few examples)   
+
+~~~~
+{: #figure-plug-threshold-definition title="Coherent pluggable threshold definition"}
+
+
+To define the upper and lower thresholds for performance monitoring telemetry data, operator should set upper and lower limits that delineate acceptable performance ranges. This ensures that any deviations can be quickly identified and addressed. A rolling window between min-time and max-time should be employed to dynamically adjust these thresholds based on recent data trends, providing a more accurate reflection of current network conditions. By continuously updating the thresholds, network performance can be maintained within optimal parameters, reducing the risk of undetected issues.
+
+A variety of performance monitoring metrics, including minimum, maximum, average, and instantaneous values, can be collected. These metrics offer a comprehensive view of performance fluctuations, allowing for precise monitoring and quicker response times to anomalies. Minimum and maximum values help identify the extremes of performance, while average values give a sense of typical performance levels. Instantaneous values, on the other hand, provide real-time insights, which are crucial for immediate issue detection and resolution. This multi-faceted approach ensures that network performance is consistently monitored and maintained at high standards.
+
+For each performance monitoring state data, one STP should be assigned.
 
 ## Coherent plug alarm notifications
 
-The coherent pluggables might generate various alarm notifications due to the various reasons.
+The coherent pluggables might generate various alarm notifications due to the various reasons. [Editor's note: More will be added.]
 
 {: #yang-model}
 # Optical Pluggables Yang Model
 
+[Editor's note: This section will be addressed in second version of this document.]
+
+
+{: #pluggable-gap-analysis}
+# Coherent pluggable data modelling gap analysis 
+
+[Editor's note: This section will be added.]
 
 {: #plug-manifest}
-# Optical Pluggables Capabilities (Plug Manifest)
+# Coherent Pluggable Manifest
 
-Details of optical pluggable operational-mode and host-operational-mode are in a public repository such as GitHub, SharePoint which can easily be read/interpreted by any SDN controller. Using this approach, usage of standard and custom operational modes are identical as will be shown later on this section. All attributes associated to operational-mode and host-operational-mode are defined by IETF as part of this draft.
+Referring to {{plug-capabilities-attributes}}, the coherent pluggable capability attributes are crucial aspects of pluggables and should be easily accessible for various activities, including:
+
+- Network Engineers: When they need to know the capabilities and characteristics of any coherent pluggables.
+- Optical Controllers: During the assessment of the viability of any photonic services.
+- Optionally, Host Packet Devices: To provide details of coherent pluggables already installed in packet devices.
+- more ...
+
+To facilitate easy access to these attributes, the details of coherent pluggable operational-modes and host-operational-modes are collected in a public repository, such as GitHub or SharePoint, called the "Coherent Pluggable Manifest." This machine-readable repository can be read or interpreted easily by any SDN controller, operator, or other devices in the network.
+
+{{figure-optical-pluggable-manifest}} illustrates the overall architecture of the Coherent Pluggable Manifest. It contains several "Operational-mode records" or "Host-operational-mode records," where each record includes all the capability attributes for a pair of [organization, operational-mode] or [organization, host-operational-mode]. The "organization" refers to any standardization body that defines standard operational-modes/host-operational-modes (such as ITU-T {{G.698.2}} or {{OIF-400ZR}}) or any vendor that defines custom operational-modes/host-operational-modes.
+
+Each record in the coherent pluggable manifest is uniquely identified by a tuple [organization, operational-mode] or [organization, host-operational-mode].
 
 ~~~~
 
-  Optical Pluggable Manifest
+  Coherent Pluggable Manifest = 
+          One or more Operational-mode records +
+          One or more Host-0perational-mode records +
 
+  Operational-mode records
   |--------------------------------------------|
   |   For each pair of                         |-|
   |     [organization, operational-mode]       | |-|
@@ -405,7 +504,7 @@ Details of optical pluggable operational-mode and host-operational-mode are in a
     |--------------------------------------------| |
       |--------------------------------------------|
 
-
+  Host-Operational-mode records
   |--------------------------------------------|
   |   For each pair of                         |-|
   |     [organization, host-operational-mode]  | |-|
@@ -423,13 +522,13 @@ Details of optical pluggable operational-mode and host-operational-mode are in a
       |--------------------------------------------|
 
 ~~~~
-{: #figure-optical-pluggable-manifest title="Optical Pluggable Manifest"}
+{: #figure-optical-pluggable-manifest title="Coherent Pluggable Manifest"}
 
-This following is an example for standard mode defined by OIF:
+With this approach, the utilization of both standard and custom modes is rendered uniform. Note that all attributes pertaining to operational-modes and host-operational-modes are defined by this IETF document. To exemplify, {{figure-optical-pluggable-manifest-example_1}} illustrates an instance of standard operational-mode 0x3E and host-operational-mode 0x11 as defined by OIF. In this scenario, the associated organization is the OIF.
 
 ~~~~
-organization: OIF (see SFF 8024 Table 4-7 SMF media interface IDs)
-operational-mode: 0x3E
+Organization: OIF (see SFF 8024 Table 4-7 SMF media interface IDs)
+Operational-mode: 0x3E
 list of attributes
       modulation: DP-16QAM
       bit-rate: 478.75 Gb/s
@@ -446,10 +545,12 @@ list of attributes
       lane signaling rate: 26.5625 GBd
       more ...
 ~~~~
+{: #figure-optical-pluggable-manifest-example_1 title="Coherent Pluggable Manifest Example-1"}
 
-The following is an example for vendor-specific mode defined by vendor "Vendor-X"
+{{figure-optical-pluggable-manifest-example_2}} is an example where vendor "Vendor-X" has a coherent pluggable with custom defined operational-mode and host-operational-mode 0x22 and 0x33, respectively. In this case the organization is "Vendor-x". 
 
 ~~~~
+
 organization: Vendor-X
 operational-mode: 0x22
 list of attributes
@@ -459,17 +560,21 @@ list of attributes
       more ...
 
 organization: Vendor-X
-host-operational-mode: ox33
+host-operational-mode: 0x33
 list of attributes
       number of line: ...
       modulation: ...
       application-bit-rate: ...
       more ...
 ~~~~
+{: #figure-optical-pluggable-manifest-example_2 title="Coherent Pluggable Manifest Example-2"}
 
-The following is an example for vendor-specific mode defined by vendor "Vendor-Y". Note that although both Vendor-X and Vendor-Y define operational-mode 0x22, the content for each one is unique and as a result these two operation-modes might be different.
+"{{figure-optical-pluggable-manifest-example_3}}" presents an example where the vendor "Vendor-Y" has a coherent pluggable module with custom-defined operational-mode and host-operational-mode values of 0x22 and 0x44, respectively. In this scenario, the organization associated with the pluggable module is "Vendor-Y."
+
+It is important to note that while the operational-modes in both {{figure-optical-pluggable-manifest-example_2}} and {{figure-optical-pluggable-manifest-example_3}} share the same values, they are defined by different vendors. Consequently, these operational-modes are not related and may differ significantly in their implementation. In other words, although the semantics of these modes are identical, their actual content might vary.
 
 ~~~~
+
 organization: Vendor-Y
 operational-mode: 0x22
 list of attributes
@@ -479,41 +584,47 @@ list of attributes
       more ...
 
 organization: Vendor-Y
-host-operational-mode: ox44
+host-operational-mode: 0x44
 list of attributes
       number of line: ...
       modulation: ...
       application-bit-rate: ...
       more ...
 ~~~~
+{: #figure-optical-pluggable-manifest-example_3 title="Coherent Pluggable Manifest Example-3"}
 
-As the above examples show, using the coherent pluggable manifest allows us to have identical usage for both standard and vendor-defined operational-mode and host-operational-mode. The concept of "optical pluggable manifest" significantly simplifies the definition and usage of both "operational-mode" and "host-operational-mode"
-
+In essence, leveraging the coherent pluggable manifest facilitates uniform utilization of both standard and vendor-defined operational-modes and host-operational-modes. The introduction of the "Coherent pluggable manifest" concept substantially streamlines the definition and application of these modes, encompassing both standard and vendor-specific modes.
 
 {: #plug-manifest-example}
-# Optical Pluggables Manifest Examples
+# Utilization of Coherent Pluggables Manifest
 
-This section provides a few examples in order to provide more details on optical pluggalbe manifext concept. {{figure-optical-pluggable-manifest-example-1}} is a typical packet over optical network when coherent pluggables p1 and p2 are already inside packet devices R1 and R2 on ports port_a and port_b, respectively. We also assume there are "m" photonic services already setup between pluggables p1 and p2.
+Within this section, we present a few examples showcasing the practical application of the coherent pluggable manifest.
 
-In this example, since optical pluggables are already installed in packet devices, the assumption is that that optical/photonic viability had been already done. The following steps ouline the overall process of managing the network by optical and packet controllers,
+{{figure-optical-pluggable-manifest-usage-1}}" illustrates a packet over optical network. Within packet devices R1 and R2, coherent pluggables p1 and p2, are installed, interfacing through ports port_a and port_b, respectively. "m" photonic services is established between these pluggables. As a result of configuring these photonic services, coherent pluggables p1 and p2 are configured with following modes. 
 
-- Packet devices (R1, R2), pluggables (p1, p2) and photonic devices (m1, m2, m3) are managed by controllers.
-- The network inventory for all packet and photonic devices incluidng the type of optical pluggables p1 and p2 will be provided to controllers.
-- In specific, the inventory of pluggable p1 and p2 includes basic informaiton such as pluggable type, manufacturer, serial number and software version.
-- In addition, the inventory of packet devices R1 and R2, includes all the configuration related to pluggables attributes such as "configured-operational-mode", "configured-centrial-frequency", "configured-output-power" etc.
-- Using the pluggables basic information, the controllers can access the "optical pluggable manifest" at any time to get the full list of attriubtes supported by pluggables including all attriubtes of each operational-mode supported by pluggables. These attributes can be used for further viability/performance evaluation. They can also be exposed to the operators when they want to know the complete list of network devices for entire packet optical network including optical pluggables.
+- pluggable p1: "operational-mode" [OIF, 0x3E] and "host-operational-mode" [OIF, 0x11]
+- pluggable p2: "operational-mode" [Vendor_Z, 0x33] and "host-operational-mode" [Vendor_Z, 0x44]
+
+This means that during the optical viability for each of "m" photonic services, the SDN controller utilized the "Coherent Pluggable Manifest" to determine the selection of these specific pluggables and their respective modes for optimal performance. The following steps outline the details of how this network is managed by SDN controllers,
+
+
+- Packet devices (R1, R2), pluggables (p1, p2), and photonic devices (m1, m2, m3) are under the management of SDN controllers
+- The SDN controller has comprehensive knowledge of the network inventory, encompassing coherent pluggables p1 and p2
+- Specifically, leveraging the "Coherent Pluggable Manifest," the SDN controller is equipped with detailed information regarding the inventories of pluggables p1 and p2. This includes data such as pluggable type, manufacturer, serial number, software version, as well as all operational modes and host operational modes supported by them.
+- The inventory of packet devices R1 and R2 incorporates configurations pertaining to pluggable attributes, such as "configured operational mode," "configured central frequency," and "configured output power"
+- During the viability of "m" optical services, the SDN controller accesses the "coherent pluggable manifest" to get the comprehensive list of attributes supported by pluggables p1 and p2. This encompasses all attributes associated with each operational-mode and host-operational-mode supported by the pluggables. Operators can also access these attributes to obtain a complete overview of network devices across the entire packet optical network, including optical pluggables.
 
 ~~~~
 
-            <------- L0 phtonic service_1 ------->                 
-            <------- L0 phtonic service_2 ------->  
+            <------- L0 photonic service_1 ------->                 
+            <------- L0 photonic service_2 ------->  
                           ........               
-            <------- L0 phtonic service_m ------->    
+            <------- L0 photonic service_m ------->    
            
    |----------|        |------------------|
-   | Coherent |        | Packet, optical, |
-   | Pluggable|  <-->  | higher layer     |
-   | Manifest |        | controllers      |
+   | Coherent |        |                  |
+   | Pluggable|  <-->  |  SDN Controller  |
+   | Manifest |        |                  |
    |----------|        |------------------|
                                 ^
                                 |
@@ -530,17 +641,71 @@ In this example, since optical pluggables are already installed in packet device
                       |                  | 
                       |------------------|
 
-
-             
-
   Legend:
     ----        Optical fibers
     ++ p1,p2    Coherent pluggables
-    R1, R2:     Packet device (i.e., Router)
-    m1, m2, m3: Photonic node (ROADM)                      
+    R1, R2      Packet device (i.e., Router)
+    m1, m2, m3  Photonic node (ROADM)                      
 
 ~~~~
-{: #figure-optical-pluggable-manifest-example-1 title="Coherent Pluggable Manifest Example 1"}
+{: #figure-optical-pluggable-manifest-usage-1 title="Coherent Pluggable Manifest Usage 1"}
+
+Another usage of the "Coherent Pluggable Manifest" is depicted in {{figure-optical-pluggable-manifest-usage-2}}". The following steps outline the details of how this network is managed by SDN controllers:
+
+- Currently, there are no coherent pluggables installed in the network.
+- The ports port_a and port_b on packet devices R1 and R2 are unpopulated and do not have coherent pluggables installed. Once the photonic viability check is completed, the SDN controller will select and configure the appropriate pluggables for each port.
+- The ports port_a and port_b on packet devices R1 and R2 are not yet connected to photonic nodes m1, m2, and m3. Following the photonic viability check, the SDN controller will determine the optimal connections between the router ports and the photonic nodes. At that point, the operator can proceed to connect the router ports to the specified photonic nodes.
+- All packet devices (R1, R2) and photonic devices (m1, m2, m3) are managed by the SDN controller.
+- The SDN controller maintains a comprehensive inventory of packet and photonic devices within the network.
+- With access to the "Coherent Pluggable Manifest," the SDN controller has detailed knowledge of all potential coherent pluggables available for network deployment.
+- The operator has decided to establish a new photonic service_1 between packet devices R1 and R2.
+- The SDN controller calculates the optimal route for photonic service_1 between R1 and R2.
+- The SDN controller initiates the photonic viability check and utilizes the "Coherent Pluggable Manifest" to select suitable coherent pluggables that meet the required viability criteria for ports port_a and port_b.
+- Upon completing the photonic viability check, the SDN controller determines which photonic devices (m1, m2, m3) should be connected to ports port_a and port_b on the packet devices.
+- The SDN controller informs the operator of the selected coherent pluggables for ports port_a and port_b and provides instructions on how to connect them to the respective photonic devices (m1, m2, m3).
+- The operator installs the designated pluggables into ports port_a and port_b and connects them to the specified photonic devices.
+- The SDN controller then manages the newly installed pluggables.
+- As part of the photonic viability process, the SDN controller knows the specific attributes of the pluggables, including "configured operational mode," "configured central frequency," and "configured output power."
+- The SDN controller applies these configurations to each pluggable on port_a and port_b
+- The photonic service_1 will be established. The SDN contoller manages the photonic service_1.
+
+~~~~
+
+            <------- L0 photonic service_1 ------->                    
+           
+   |----------|        |------------------|
+   | Coherent |        |                  |
+   | Pluggable|  <-->  |  SDN Controller  |
+   | Manifest |        |                  |
+   |----------|        |------------------|
+                                ^
+                                |
+                                v
+                      |------------------|
+         port_a       |                  |
+     |------|       |------|             |
+     |  R1 .........|  m1  |             |       port_b
+     |------|  .    |------|          |------|     |------|
+                .     |               |  m3  |....... R2  |
+                 .  |------|          |------|     |------|
+                  ..|  m2  |             |
+                    |------|             |
+                      |                  | 
+                      |------------------|
+
+  Legend:
+    .....       Packet device can be potentially 
+                connected to photonic nodes m1, m2, m3
+    R1, R2:     Packet device (i.e., Router)
+    m1, m2, m3  Photonic node (ROADM) 
+    port_a      Router R1 port which is empty and can 
+                potentially populated by coherent pluggables
+    port_b      Router R2 port which is empty and can 
+                potentially populated by coherent pluggables
+    service_1   L0 service which does not exist in the network
+                and will be created
+~~~~
+{: #figure-optical-pluggable-manifest-usage-2 title="Coherent Pluggable Manifest Usage 2"}
 
 
 {: #plug-lcm}
@@ -554,7 +719,7 @@ Some of the terminology is local to this document. where this is the case the te
 
 ## Deployment of an optical pluggable in context
 
-Prior to installation of an optical pluggable in a packet device, various resarch, approval, planning, design and viability activities must have been carried out. All of these activities will require detailed information on the capabilities of the pluggable. This points to the need for a strong separation between the model of operation of the pluggable and the model of capability (as detailed information on the capability of the pluggable is required long before it is installed and operational). This analysis shows that discovery of capability detail from the pluggable is unnecessary. Instead, all that is required to be reported by the pluggable is a complete statement of type and version to the degree sufficient to precisely identify the definition/specification of the plug capability by reference (capability is per type). As will be discussed, this complete statement of type and version is also fundamentally necessary for the coordination of spares.
+Prior to installation of an optical pluggable in a packet device, various research, approval, planning, design and viability activities must have been carried out. All of these activities will require detailed information on the capabilities of the pluggable. This points to the need for a strong separation between the model of operation of the pluggable and the model of capability (as detailed information on the capability of the pluggable is required long before it is installed and operational). This analysis shows that discovery of capability detail from the pluggable is unnecessary. Instead, all that is required to be reported by the pluggable is a complete statement of type and version to the degree sufficient to precisely identify the definition/specification of the plug capability by reference (capability is per type). As will be discussed, this complete statement of type and version is also fundamentally necessary for the coordination of spares.
 
 Following sub-sections discuss the overall flow of activities and then work through the lifecycle stages in some detail.
 
@@ -574,7 +739,7 @@ The capability may be a precise statement with no uncertainty or a range. Where 
 
 For an equipment to be understood and used by a control system, the detailed information on capabilities must be in machine interpretable statements (to the degree necessary for any particular function to be carried out). These machine interpretable statements may be in the form of software, but preferably should be in the form of data (information) and ideally in a standardised language.
 
-In this document, the term Manifest is used for the collection of information, appropriately structured and interrelated, that describes the capabilities of a pluggable. In other terminology spaces the Manifest may be considered to be a Specification, a profile,etc.
+In this document, the term Manifest is used for the collection of information, appropriately structured and interrelated, that describes the capabilities of a pluggable. In other terminology spaces the Manifest may be considered to be a Specification, a profile, etc.
 
 It should be noted that any equipment could have a Manifest describing its capabilities and the manifest may be broken down into units that can be referenced and reused, i.e., the definition can be modular. 
 
@@ -584,31 +749,38 @@ It should be noted that any equipment could have a Manifest describing its capab
 
 Most of this lifecycle discussion applies to a majority equipment types. Where the pluggable is special, this is highlighted.
 
-Pluggables, like all equipmemt are carefully chosen. A network operations company (the operator) will decide what pluggables to use in the network based upon research and an understanding of capabilities of the plugs available in the marketplace. The operator will acquire instances of each type of pluggable of interest and trial them. They will also carry out "type approval" considering each type of pluggable for a particular application etc. The full detail of the Manifest for each type of pluggable is relevant at all of these stages.
+~~~~
+
+           (place holder for a simple picture for pluggable life cycle)                      
+
+~~~~
+{: #figure-overview-lifecycle-pluggable title="Lifecycle of a coherent pluggable"}
+
+Pluggables, like all equipment are carefully chosen. A network operations company (the operator) will decide what pluggables to use in the network based upon research and an understanding of capabilities of the plugs available in the marketplace. The operator will acquire instances of each type of pluggable of interest and trial them. They will also carry out "type approval" considering each type of pluggable for a particular application etc. The full detail of the Manifest for each type of pluggable is relevant at all of these stages.
 
 Specific types of pluggable will be purchased only after detailed planning of the network. To carry out this planning, full knowledge of each type of pluggable will be required. The planning will use predictions of service demand and hence infrastructure need. The exercise may result in identification of several types of pluggable that can be interchanged for a particular specific purpose. Again, during this stage of the lifecycle the full detail of the Manifest for each type of pluggable is relevant.
 
 The research, evaluation and planning exercise is an ongoing activity as the network grows and changes and as new plug types are introduced by vendors and to facilitate this each vendor will provide a Manifest for each plug type.
 
-When optical services are demanded,perhaps to provide underlay for the packet network, optical network analysis (viability etc.) is carried out to evaluate how to efficiently and effectively achieve the specific service demanded. This analysis will consider the plugs.
+When optical services are demanded, perhaps to provide underlay for the packet network, optical network analysis (viability etc.) is carried out to evaluate how to efficiently and effectively achieve the specific service demanded. This analysis will consider the plugs.
 
 Prior to progressing further it is important to note that pluggables are highly valuable, and correspondingly expensive. They are deployed in a controlled fashion. There are a range of policies for deployment of pluggables.
 
 In some cases, at one extreme end of the range of policy choices, an operator may choose to fully populate a packet device with a range of plugs and may cable them to adjacent ROADMS. However, it is more likely that pluggable deployment will be on a just-in-time basis, at the other extreme end of the range of policy choices, so the pluggable is not deployed (and hence is not cabled until the solution to realization of the optical service has been determined.
 
-Regardless of the pluggable deployment approach, the pluggable capability must be accounted for in the optical network analysis activity. Where the pluggable is present, the range of installed pluggables constrain the possible realizations, where the pluggables have not been deployed all approved pluggables could be considered during the analysis, although packet device capability to support pluggables will need to be considered and this may eliminate some pluggables. In addition, if there is some urgency, the availablility of the type of pluggable to the installation engineer and/or in the local spares holding inventory must also be considered.
+Regardless of the pluggable deployment approach, the pluggable capability must be accounted for in the optical network analysis activity. Where the pluggable is present, the range of installed pluggables constrain the possible realizations, where the pluggables have not been deployed all approved pluggables could be considered during the analysis, although packet device capability to support pluggables will need to be considered and this may eliminate some pluggables. In addition, if there is some urgency, the availability of the type of pluggable to the installation engineer and/or in the local spares holding inventory must also be considered.
 
 So, the optical network analysis takes into account the full definitions of the pluggables of interest where each is defined in a corresponding and referenced manifest.
 
 Once the design is available, any necessary physical installation exercise is carried out, driven by work orders that identify the type of pluggable to instal. 
 
-On detection of the pluggable, the control system will validate that the work order has been carried out correctly. To do this, the full type/version of the pluggable is read and compared with the intent. Where there are discrepancies, either a work order is constructed to correct the installation error, or the detected pluggable type/version is evaluated for compatibility with the specific design. This is donu using the Manifest for that type/version. It is possible that the type/version may be acceptable although perhaps a little more expensive than the optimum choice etc.
+On detection of the pluggable, the control system will validate that the work order has been carried out correctly. To do this, the full type/version of the pluggable is read and compared with the intent. Where there are discrepancies, either a work order is constructed to correct the installation error, or the detected pluggable type/version is evaluated for compatibility with the specific design. This is done using the Manifest for that type/version. It is possible that the type/version may be acceptable although perhaps a little more expensive than the optimum choice etc.
 
 Where the pluggable Manifest identifies proprietary capabilities, it is possible that there are proprietary properties available from the pluggable control interface to the packet device. These properties may be expressed in proprietary YANG on the device interface to the controller. For the packet device to be able to express the proprietary properties it needs the YANG augment files, the pluggable control interface definition and a mapping definition. 
 
 In an ideal realization of the control solution, the controller could provide the packet device with the YANG augment definition, and the mapping definition in such a way that this could be run by generic software on the packet device requiring no change to the software of the packet device. 
 
-This approach could also be taken to cater for enhancements to the standard YANG including mappings from proprietary properties on the pluggable and new standard properties in the decice interface to the controller.
+This approach could also be taken to cater for enhancements to the standard YANG including mappings from proprietary properties on the pluggable and new standard properties in the device interface to the controller.
 
 Considering the above, it appears that all pluggable capabilities whether they be proprietary or standard should be fully described in the Manifest. This may be achieved by a reference to a standard that is itself fully defined in machine interpretable form. This approach would allow for a far more flexible and future-proofed control solution.
 
