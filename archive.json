@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-05-23T01:05:43.077606+00:00",
+  "timestamp": "2024-05-26T01:11:18.334466+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -153,6 +153,46 @@
           "updatedAt": "2024-02-24T11:22:03Z"
         }
       ]
+    },
+    {
+      "number": 6,
+      "id": "I_kwDOLJuPKM6KAGOI",
+      "title": "Correcting Figure 3",
+      "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/issues/6",
+      "state": "OPEN",
+      "author": "ggrammel",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The figure does not work like the figure. Some host controller needs to separate the traffic between controllers (switch/router/...). needs alignment with the figure in the Google spreadsheet \"Scope\" top-right. also the naming of the interfaces should align",
+      "createdAt": "2024-05-24T12:23:05Z",
+      "updatedAt": "2024-05-24T12:42:28Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "ggrammel",
+          "authorAssociation": "NONE",
+          "body": "```\r\n                  |---------------|\r\n                  |   P-PNC(s),   |\r\n                  |   O-PNC(s),   |\r\n                  |   MDSC        |\r\n                  |---------------|\r\n                          ^\r\n                          |  (A)\r\n      +-------------------|-------------------+\r\n      |.           |host controller|          |\r\n      |                   |                   |  Packet Device\r\n      |                   V                   |  Vendor X\r\n      |        |---------------------|        |  (i.e, Host)\r\n      |        |                     |        |\r\n      |        v                     v        |\r\n      |  |-----------|          |----------|  |\r\n      |  | Packet    |          | Coherent |  |\r\n      |  | Function  |..........| Plug     |  |\r\n      |  | Data      |          | Data     |  |\r\n      |  |-----------|          |----------|  |\r\n      |        .                      .       |\r\n      |        .                      . (B)   |\r\n      |        .                      .       |\r\n      |  |--------------|   (C)   |------------------|  (D)\r\n      |  |Packet Device |<------->| Coherent Plug #1 |=======\r\n      |  |Function      |<---|    | Vendor X         |\r\n      |  |--------------|    |    |------------------|\r\n      |                      |                |\r\n      |                      |    |------------------|\r\n      |                      |--->| Coherent Plug #2 |=======\r\n      |                           | Vendor Y         |\r\n      |                           |------------------|\r\n      |                                       |\r\n      +---------------------------------------+\r\n\r\n  Legend\r\n    (A) Packet device management interfaces (e.g., YANG, NETCONF, gNMI, etc.)\r\n    (B) CMIS interface between Optical pluggable and Host\r\n    (C) Host side of the optical pluggable (towards the Host)\r\n    (D) Media side of the optical pluggable (towards Optical/Photonic network)\r\n```",
+          "createdAt": "2024-05-24T12:41:32Z",
+          "updatedAt": "2024-05-24T12:41:32Z"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "I_kwDOLJuPKM6KB6ts",
+      "title": "Point to Multi point pluggable (P2MP) attributes",
+      "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/issues/7",
+      "state": "OPEN",
+      "author": "vharish02",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Should we add P2MP attributes to this draft if there any additional attributes that are part of P2MP like identify sub-carriers and mapping of sub-carriers to client.",
+      "createdAt": "2024-05-24T16:07:55Z",
+      "updatedAt": "2024-05-24T16:07:55Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
