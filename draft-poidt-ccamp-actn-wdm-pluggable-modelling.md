@@ -141,6 +141,15 @@ normative:
     date: November 27, 2023
     seriesinfo: 
     target: https://members.snia.org/document/dl/26423
+    
+  Impairment:
+    title: "A YANG Data Model for Optical Impairment-aware Topology"
+    author:
+      org: 
+    date: 2024-03-04
+    seriesinfo: 
+    target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-optical-impairment-topology-yang/
+
 
 --- abstract
 
@@ -385,26 +394,58 @@ The attributes of all functional building block of a coherent pluggable in {{fig
 
 The data modelling of each functional blocks provides attributes in four areas:
 
-1. Coherent pluggable capabilities
+1. Coherent pluggable capabilities (aka supported-modes)
 2. Coherent pluggable configurations
 3. Coherent pluggable states and performance monitoring data
 4. Coherent pluggable threshold definition
 4. Coherent pluggable alarm notifications
 
 {: #plug-capabilities-attributes}
-## Coherent pluggable capabilities attributes
+## Coherent pluggable capabilities (aka supported-modes)
 
-The capability attributes are read-only which defines the functional capabilities of the optical pluggables. These attributes are grouped together in a profile called "operational-mode" which contains attributes such as modulation, bit-rate, baud-rate, chromatic-dispersion, polarization, FEC etc. 
+The supported-modes are read-only capability attributes that define the functional capabilities of coherent pluggables. In other words, these functional capabilities are described by a set of supported-modes, which includes read-only attributes such as modulation, bit rate, baud rate, chromatic dispersion, polarization, and FEC. A coherent pluggable may support multiple supported-modes, each of which can be defined by one of the following approaches:
 
-The coherent pluggable capabilities are described by a set of operational-modes it supports, i.e., an optical pluggable might support multiple operational-modes, where each "operational-mode" can be defined by a standard body or by a vendor. These operational-modes are called "standard-operational-modes" and "custom-operational-modes", respectively. The "standard-operational-modes" are well-define modes which are defined by a standard bodies such as ITU-T {{G.698.2}} whereas the ""custom-operational-modes" are defined by a vendor and might not be supported by all other vendors. 
+* STANDARD: Defined by a Standards Developing Organization (SDO) such as ITU-T.
+* CUSTOM: Defined by a forum such as the Optical Internetworking Forum (OIF) or an individual vendor.
+* EXPLICIT: Defined explicitly by an operator
 
-{{plug-manifest}} discusses the concept of the "coherent pluggable manifest", which is a repository for all "standard-operational-modes" or "custom-operational-modes". It also outlines the benefit of such repository.
+The STANDARD defined supported-modes are well-known capabilities established by standard bodies like ITU-T {{G.698.2}}. These modes are recognized universally by pluggables, routers, and SDN controllers. While the current specification references ITU-T {{G.698.2}}, this document will support the work of other Standards Development Organizations (SDOs) as their specifications become available.
+
+In contrast, CUSTOM defined supported-modes are capabilities specified by forums such as OIF {{OIF-400ZR}}, OpenConfig, or by individual vendors. EXPLICIT defined supported-modes are another approach where specific modes are defined explicitly.
+
+As illustrated in {{figure-plug-supported-mode}}," this document employs a consistent data structure for defining STANDARD, CUSTOM, and EXPLICIT supported-modes. Each supported-mode contains:
+
+* supported-mode-id: ID of the supported mode.
+* organization-id: The authority that defines the supported-mode, such as ITU-T, OIF, OpenConfig, or a vendor.
+* supported-mode-type: The type of supported-mode (e.g., STANDARD, CUSTOM, EXPLICIT).
+* multiple tags: Tags that can be used for various purposes, mainly for future extensibility. For example, these tags can map the supported-mode to CMIS Media-ID. Other potential uses of this tag are reserved for future developments.
+* operational-mode: Contains a list of capability attributes supported by the coherent pluggable.
+
+For more details on supported modes, refer to the IETF draft {{Impairment}}.
+
+~~~~ 
+
+ |------------------------------------------------------------------|
+ |                                                                  |
+ |  supported-mode*                                                 |
+ |                                                                  |
+ |      supported-mode-id                                           |
+ |      organization-id (e.g., ITU-T, OIF, OpenConfig and Vendor_Z) |
+ |      supported-mode-type (e.g. STANDARD, CUSTOM, EXPLICIT)       |
+ |      tag* (has various usage. Also support future use)           |
+ |      operational-mode                                            |
+ |            list-of-supported-attributes                          |
+ |                                                                  |
+ |------------------------------------------------------------------|
+
+~~~~
+{: #figure-plug-supported-mode title="Data structure for Coherent pluggable supported-modes"}
+
+{{plug-manifest}} discusses the concept of the "coherent pluggable manifest", which is a repository for all "standard-supported-modes" or "organizational-supported-modes". It also outlines the benefit of such repository.
 
 ## Coherent pluggable configurations attributes
 
 The coherent pluggables support a set of read-write attributes which are configurable. Example of such configuration attributes are output power, central frequency and operational-mode. Note that since a coherent pluggable may support multiple operational-modes (standard or custom), the read-write operational-mode attribute programs the coherent pluggable to be functional in one of those operational-modes.
-
-Refer to {{OIF-400ZR}}.
 
 ## Coherent pluggable states and performance monitoring data 
 
@@ -483,43 +524,24 @@ Each record in the coherent pluggable manifest is uniquely identified by a tuple
 
 ~~~~
 
-  Coherent Pluggable Manifest = 
-          One or more Operational-mode records +
-          One or more Host-0perational-mode records +
-
-  Operational-mode records
-  |--------------------------------------------|
-  |   For each pair of                         |-|
-  |     [organization, operational-mode]       | |-|
-  |                                            | | |
-  |  organization: X                           | | |
-  |  operational-mode: Y                       | | |
-  |  list of attributes:                       | | |
-  |     attribute 1: ...                       | | |
-  |     attribute 2: ...                       | | |
-  |     ...                                    | | |
-  |     attribute n: ...                       | | |
-  |                                            | | |
-  |--------------------------------------------| | |
-    |--------------------------------------------| |
-      |--------------------------------------------|
-
-  Host-Operational-mode records
-  |--------------------------------------------|
-  |   For each pair of                         |-|
-  |     [organization, host-operational-mode]  | |-|
-  |                                            | | |
-  |  organization: X                           | | |
-  |  host-operational-mode: Z                  | | |
-  |  list of attributes:                       | | |
-  |     attribute 1: ...                       | | |
-  |     attribute 2: ...                       | | |
-  |     ...                                    | | |
-  |     attribute m: ...                       | | |
-  |                                            | | |
-  |--------------------------------------------| | |
-    |--------------------------------------------| |
-      |--------------------------------------------|
+    Coherent Pluggable Manifest
+       - Contains one or more operational-mode records
+       - Is machine-readable/interpretable 
+  |--------------------------------------------------|
+  |  For each pair of                                |-|
+  |    [organization, operational-mode]              | |-|
+  |                                                  | | | 
+  |  organization: X1 (e.g., ITU-T, OIF or Vendor_Z) | | |
+  |  operational-mode: Y1                            | | |
+  |  list of attributes:                             | | |
+  |     attribute 1: ...                             | | |
+  |     attribute 2: ...                             | | |
+  |     ...                                          | | |
+  |     attribute n: ...                             | | |
+  |                                                  | | |
+  |--------------------------------------------------| | |
+    |--------------------------------------------------| |
+      |--------------------------------------------------|
 
 ~~~~
 {: #figure-optical-pluggable-manifest title="Coherent Pluggable Manifest"}
@@ -527,6 +549,7 @@ Each record in the coherent pluggable manifest is uniquely identified by a tuple
 With this approach, the utilization of both standard and custom modes is rendered uniform. Note that all attributes pertaining to operational-modes and host-operational-modes are defined by this IETF document. To exemplify, {{figure-optical-pluggable-manifest-example_1}} illustrates an instance of standard operational-mode 0x3E and host-operational-mode 0x11 as defined by OIF. In this scenario, the associated organization is the OIF.
 
 ~~~~
+
 Organization: OIF (see SFF 8024 Table 4-7 SMF media interface IDs)
 Operational-mode: 0x3E
 list of attributes
@@ -536,14 +559,6 @@ list of attributes
       lane signaling rate: 59.84375 GBd
       more ...
 
-organization: OIF (see SFF 8024 Table 4-5 Host Electrical Interface IDs)
-host-operational-mode: 0x11
-list of attributes
-      number of line: 8
-      modulation: PAM4
-      application-bit-rate: 425.00 Gb/s
-      lane signaling rate: 26.5625 GBd
-      more ...
 ~~~~
 {: #figure-optical-pluggable-manifest-example_1 title="Coherent Pluggable Manifest Example-1"}
 
@@ -560,7 +575,7 @@ list of attributes
       more ...
 
 organization: Vendor-X
-host-operational-mode: 0x33
+host-operational-mode: 0x22
 list of attributes
       number of line: ...
       modulation: ...
