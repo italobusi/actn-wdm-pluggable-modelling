@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-05-28T01:06:33.523805+00:00",
+  "timestamp": "2024-05-30T01:07:17.157021+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -164,9 +164,9 @@
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
-      "body": "The figure does not work like the figure. Some host controller needs to separate the traffic between controllers (switch/router/...). needs alignment with the figure in the Google spreadsheet \"Scope\" top-right. also the naming of the interfaces should align",
+      "body": "The figure does not work like the figure. Some host controller needs to separate the traffic between controllers (switch/router/...). needs alignment with the figure in the Google spreadsheet \"Scope\" top-right. also the naming of the interfaces should align. Furthermore, the PNC(s) are identified as a single box while it appears they are identified as different entities. Suggest to align the figure with the figure in the excel table comparison.",
       "createdAt": "2024-05-24T12:23:05Z",
-      "updatedAt": "2024-05-24T12:42:28Z",
+      "updatedAt": "2024-05-29T15:38:53Z",
       "closedAt": null,
       "comments": [
         {
@@ -215,6 +215,32 @@
       "headRepository": "italobusi/actn-wdm-pluggable-modelling",
       "headRefName": "figures",
       "headRefOid": "2e677f886f798377996706911373c6df1555ceba",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOLJuPKM5w6aul",
+      "title": "Update draft-poidt-ccamp-actn-wdm-pluggable-modelling.md",
+      "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/pull/8",
+      "state": "OPEN",
+      "author": "ggrammel",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Substantial Editing to provide more clarity:\r\nSDN --> P-PNC or O-PNC\r\nadding Ethernet functions\r\nadding PM configuration",
+      "createdAt": "2024-05-29T17:11:07Z",
+      "updatedAt": "2024-05-29T17:11:08Z",
+      "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
+      "baseRefName": "main",
+      "baseRefOid": "71ca120f541f3208a7d13230c696faf3a0bc81a4",
+      "headRepository": "ggrammel/actn-wdm-pluggable-modelling",
+      "headRefName": "patch-1",
+      "headRefOid": "ea1bc288152770cd2c2cbb2a9f13ad9696770697",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
