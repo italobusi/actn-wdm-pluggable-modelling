@@ -3,7 +3,7 @@ title: "Modelling of Optical Pluggables in Packet Over Optical Network"
 abbrev: "Modelling Optical Pluggables"
 category: info
 
-docname: draft-rokui-ccamp-actn-wdm-pluggable-modelling-latest
+docname: draft-rokui-ccamp-actn-wdm-pluggable-modelling-00
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
