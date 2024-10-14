@@ -252,40 +252,46 @@ This draft presents the modeling of the coherent pluggable such as #1 and #2 in 
 
 ~~~~
 
-              |--------------------|
-              |  packet, optical,  |
-              |  and higher layer  |
-              |  controllers       |
-              |--------------------|
-                       ^ ^
-                       | |
-                   (1) | |-----------------------------------|
-   +-------------------|-------------------+                 |
-   |                   v                   |                 |
-   |        |---------------------|        |                 |
-   |        |                     |        |                 | 
-   |        v                     v        |                 |
-   |  |-----------|          |----------|  |                 |
-   |  | Packet    |          | Coherent |  |                 |
-   |  | Function  |..........| Plug     |  |                 |
-   |  | Data      |          | Data     |  |                 |
-   |  |-----------|          |----------|  |                 |
-   |        .                      .       |                 |
-   |        .                      . (3)   |            (2)  |
-   |        .                      .       |                 v
-   |  |--------------|   (4)   |------------------|  (5) |---------|
-   |  |Packet Device |<------->| Coherent Plug #1 |======| Optical |
-   |  |Function      |<---|    | Vendor X         |      | Device  |
-   |  |--------------|    |    |------------------|      |---------|
-   |                      |                |  
-   |                      |    |------------------|      |---------|
-   |                      |--->| Coherent Plug #2 |======| Optical |
-   |                           | Vendor Y         |      | Device  |
-   |                           |------------------|      |---------|
-   |                                       | 
-   +---------------------------------------+
-    Host Vendor X 
-     (e.g., Router)     
+                  |---------------|
+                  |   P-PNC(s),   |
+                  |   O-PNC(s),   |
+                  |   MDSC        |
+                  |---------------|
+                          ^
+                          |  (A)
+      +-------------------|-------------------+
+      |            |host controller|          |
+      |            |---------------|          |
+      |                   |                   |  Packet Device
+      |                   V                   |  Vendor X
+      |        |---------------------|        |  (i.e, Host)
+      |        |                     |        |
+      |        v                     v        |
+      |  |-----------|          |----------|  |
+      |  | Packet    |          | Coherent |  |
+      |  | Function  |..........| Plug     |  |
+      |  | Data      |          | Data     |  |
+      |  |-----------|          |----------|  |
+      |        .                      .       |
+      |        .                      . (B)   |
+      |        .                      .       |
+      |  |--------------|   (C)   |------------------|  (D)
+      |  |Packet Device |<------->| Coherent Plug #1 |=======
+      |  |Function      |<---|    | Vendor X         |
+      |  |--------------|    |    |------------------|
+      |                      |                |
+      |                      |    |------------------|
+      |                      |--->| Coherent Plug #2 |=======
+      |                           | Vendor Y         |
+      |                           |------------------|
+      |                                       |
+      +---------------------------------------+
+
+  Legend
+    (A) Packet device management interfaces (e.g., YANG, NETCONF, gNMI, etc.)
+    (B) CMIS interface between Optical pluggable and Host
+    (C) Host side of the optical pluggable (towards the Host)
+    (D) Media side of the optical pluggable (towards Optical/Photonic network)
 
 ~~~~
 {: #figure-details-packet-optical-device title="Packet device with optical pluggables"}
