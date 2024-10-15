@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-10-13T01:25:40.962505+00:00",
+  "timestamp": "2024-10-15T01:21:29.197719+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -164,9 +164,9 @@
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
-      "body": "The figure does not work like the figure. Some host controller needs to separate the traffic between controllers (switch/router/...). needs alignment with the figure in the Google spreadsheet \"Scope\" top-right. also the naming of the interfaces should align. Furthermore, the PNC(s) are identified as a single box while it appears they are identified as different entities. Suggest to align the figure with the figure in the excel table comparison.",
+      "body": "The figure 3 does not work like indicated. Some host controller needs to separate the traffic between controllers (switch/router/...). needs alignment with the figure in the Google spreadsheet \"Scope\" top-right. also the naming of the interfaces should align. Furthermore, the PNC(s) are identified as a single box while it appears they are identified as different entities. Suggest to align the figure with the figure in the excel table comparison.",
       "createdAt": "2024-05-24T12:23:05Z",
-      "updatedAt": "2024-05-29T15:38:53Z",
+      "updatedAt": "2024-10-13T10:25:31Z",
       "closedAt": null,
       "comments": [
         {
@@ -260,13 +260,139 @@
       "labels": [],
       "body": "Add/modify the v00 of draft.",
       "createdAt": "2024-09-22T19:14:47Z",
-      "updatedAt": "2024-10-01T14:25:25Z",
+      "updatedAt": "2024-10-14T17:56:16Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "3ed421541a2e57267e2a148fe97d065b7dd844c4",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "main",
       "headRefOid": "b4dd805c77a6de8abfb6a6d0f4cbdb4012eb2067",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOLJuPKM6NF-FE",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "prmanna",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-10-14T16:38:26Z",
+          "updatedAt": "2024-10-14T16:38:26Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NGXHo",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "philbedard",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-10-14T17:33:53Z",
+          "updatedAt": "2024-10-14T17:33:53Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NGe2H",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "philbedard",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-14T17:47:23Z",
+          "updatedAt": "2024-10-14T17:47:23Z",
+          "comments": [
+            {
+              "originalPosition": 43,
+              "body": "Can be updated in next revision but CMIS 5.3 has been published.  ",
+              "createdAt": "2024-10-14T17:47:23Z",
+              "updatedAt": "2024-10-14T17:47:24Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NGg7H",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "philbedard",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-14T17:51:31Z",
+          "updatedAt": "2024-10-14T17:51:31Z",
+          "comments": [
+            {
+              "originalPosition": 158,
+              "body": "Need to fix the CMIS expanded naming to \"Common Management Interface Specification\" ",
+              "createdAt": "2024-10-14T17:51:31Z",
+              "updatedAt": "2024-10-14T17:51:31Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NGiKf",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "philbedard",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-14T17:53:12Z",
+          "updatedAt": "2024-10-14T17:53:12Z",
+          "comments": [
+            {
+              "originalPosition": 243,
+              "body": "Think is is supposed to be \"characteristics\" ",
+              "createdAt": "2024-10-14T17:53:12Z",
+              "updatedAt": "2024-10-14T17:53:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NGj2U",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "philbedard",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "I saw a couple of minor typos in the document which I made comments on, otherwise it looks good.  ",
+          "createdAt": "2024-10-14T17:56:16Z",
+          "updatedAt": "2024-10-14T17:56:16Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "id": "PR_kwDOLJuPKM5-ggLs",
+      "title": "Update draft-rokui-ccamp-actn-wdm-pluggable-modelling.md",
+      "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/pull/10",
+      "state": "OPEN",
+      "author": "ggrammel",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Correcting Figure 3 #6 in line with Presentation made at IETF 120: https://datatracker.ietf.org/meeting/120/materials/slides-120-ccamp-use-cases-network-scenarios-and-gap-analysis-for-packet-optical-integration-poi-with-coherent-plugables-under-actn-framework-00",
+      "createdAt": "2024-10-14T08:56:14Z",
+      "updatedAt": "2024-10-14T08:56:14Z",
+      "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
+      "baseRefName": "main",
+      "baseRefOid": "3ed421541a2e57267e2a148fe97d065b7dd844c4",
+      "headRepository": "ggrammel/actn-wdm-pluggable-modelling",
+      "headRefName": "patch-2",
+      "headRefOid": "73168256d475910178d8aef04312ddb1654151f9",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
