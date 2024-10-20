@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-10-17T01:20:45.388522+00:00",
+  "timestamp": "2024-10-20T01:27:05.618037+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -260,7 +260,7 @@
       "labels": [],
       "body": "Add/modify the v00 of draft.",
       "createdAt": "2024-09-22T19:14:47Z",
-      "updatedAt": "2024-10-14T17:56:16Z",
+      "updatedAt": "2024-10-17T17:44:36Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "3ed421541a2e57267e2a148fe97d065b7dd844c4",
@@ -371,6 +371,470 @@
           "createdAt": "2024-10-14T17:56:16Z",
           "updatedAt": "2024-10-14T17:56:16Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6Njbmo",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T10:59:41Z",
+          "updatedAt": "2024-10-17T10:59:41Z",
+          "comments": [
+            {
+              "originalPosition": 43,
+              "body": "Done",
+              "createdAt": "2024-10-17T10:59:41Z",
+              "updatedAt": "2024-10-17T10:59:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NjddM",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T11:03:26Z",
+          "updatedAt": "2024-10-17T11:03:26Z",
+          "comments": [
+            {
+              "originalPosition": 158,
+              "body": "Done",
+              "createdAt": "2024-10-17T11:03:26Z",
+              "updatedAt": "2024-10-17T11:03:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NjfSV",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T11:07:09Z",
+          "updatedAt": "2024-10-17T11:07:09Z",
+          "comments": [
+            {
+              "originalPosition": 243,
+              "body": "Done",
+              "createdAt": "2024-10-17T11:07:09Z",
+              "updatedAt": "2024-10-17T11:07:09Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6KYqBf",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2024-09-23T10:11:16Z",
+          "updatedAt": "2024-10-17T15:29:30Z",
+          "comments": [
+            {
+              "originalPosition": 103,
+              "body": "I'm still not convinced that we should deal with electrical part , but we can debate. ",
+              "createdAt": "2024-09-23T10:11:16Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 113,
+              "body": "This part \"The lifecycle of a coherent pluggable including operators' approval, viability assessment to deployment and deployment is also covered.\" is not  a repetition  of what already present above?",
+              "createdAt": "2024-09-23T10:17:33Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 153,
+              "body": "Just to better understand what is supposed to be defined here: the sentence is supposing can be possible to separate the host packet control from optical pluggable,correct? \r\nIf yes it seems to be possible to suppose two different controller can act on the two different block of function . Is that what you're supposing?",
+              "createdAt": "2024-09-23T10:46:17Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 165,
+              "body": "It is missing the number of interface: \"....... where interface (5) provides the photonic/optical attributes and interface ??provides the host/electrical attributes.\"\r\nNeed to add interface (4)",
+              "createdAt": "2024-09-23T12:21:23Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 252,
+              "body": "I would reword a bit : \" Note that the purpose of this section is to clarify  the role of electrical channel in the coherent pluggable\" \r\nand \"The purpose of this draft is not ....\"",
+              "createdAt": "2024-09-23T12:38:17Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 300,
+              "body": "I do not like the term \"method\" to define the different type of \"mode\" to describe pluggable capabilities. We can define \"approaches to describe the pluggable capabilities\" as in Optical Impairment draft (section 2.6) . \r\nI would reword the last sentence in this way: \"A coherent pluggable can support multiple supported modes, each of which can be defined by one of the following 3 categories  as defined in Optical Impairment (draft-ietf-ccamp-optical-impairment-topology-yang) in section 2.6:\r\n-STANDARD mode (see 2.6.1 of draft-ietf-ccamp-optical-impairment-topology-yang)\r\n-Organizational mode (see 2.6.2 of ....)\r\n-Explicit mode (see 2.6.3 of ...)",
+              "createdAt": "2024-09-23T13:02:12Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 304,
+              "body": "Shall we really re-define again what already defined in OI ? My preference would be to reference what already defined instead to use different wording to define things already present since long time in another draft.\r\n",
+              "createdAt": "2024-09-23T15:58:05Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 305,
+              "body": "Same comment. To describe coherent pluggable capabilities we have defined three different approaches called \"modes\" , and should reference them. ",
+              "createdAt": "2024-09-30T10:21:42Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 308,
+              "body": "Again: the text is a bit confused and trying to re-define what already defined in OI. If we want to add text related to coherent pluggable capabilities way to describe them,, let's take a summary of what defined in section 2.6 of OI draft. Using other words and terminology is creating misunderstanding .",
+              "createdAt": "2024-09-30T12:23:24Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 311,
+              "body": "What is the purpose of this piece of text? ",
+              "createdAt": "2024-09-30T12:24:29Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 321,
+              "body": "We already defined in OI YANG organization-mode that is identified by organization identifier + operational-mode. \r\nYou use the same name attributes in a different way creating confusion to whom is familiar with RFC9093-bis and OI YANG model.",
+              "createdAt": "2024-09-30T12:48:54Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 322,
+              "body": "not clear the intent to me.",
+              "createdAt": "2024-09-30T12:49:27Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 113,
+              "body": "nothing is changed and the repetition is still present. ",
+              "createdAt": "2024-10-17T15:22:02Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 165,
+              "body": "Nothing changed , you need to add interface 4 !!!!",
+              "createdAt": "2024-10-17T15:25:19Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            },
+            {
+              "originalPosition": 252,
+              "body": "for me the wording is still not clear. Please follow my suggestion above.",
+              "createdAt": "2024-10-17T15:27:49Z",
+              "updatedAt": "2024-10-17T15:29:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnDSg",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:15:11Z",
+          "updatedAt": "2024-10-17T17:15:11Z",
+          "comments": [
+            {
+              "originalPosition": 103,
+              "body": "sure we can discuss this. \r\nIMO, Electrical side is not needed for configuration but is needed for telemetry PM and alarms (for troubleshooting)",
+              "createdAt": "2024-10-17T17:15:11Z",
+              "updatedAt": "2024-10-17T17:15:11Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnEjs",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:18:10Z",
+          "updatedAt": "2024-10-17T17:18:10Z",
+          "comments": [
+            {
+              "originalPosition": 113,
+              "body": "You are right. It is removed.",
+              "createdAt": "2024-10-17T17:18:10Z",
+              "updatedAt": "2024-10-17T17:18:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnGQa",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:21:47Z",
+          "updatedAt": "2024-10-17T17:21:47Z",
+          "comments": [
+            {
+              "originalPosition": 153,
+              "body": "Yes it is possible.\r\nThis can be one deployment model (aka Realization) operator might use. There might be other deployments. The point of this sentence is just separation of responsibilities for IP and Optical",
+              "createdAt": "2024-10-17T17:21:47Z",
+              "updatedAt": "2024-10-17T17:21:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnH-n",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:25:21Z",
+          "updatedAt": "2024-10-17T17:25:21Z",
+          "comments": [
+            {
+              "originalPosition": 165,
+              "body": "Nice catch. Added",
+              "createdAt": "2024-10-17T17:25:21Z",
+              "updatedAt": "2024-10-17T17:25:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnJWN",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:27:22Z",
+          "updatedAt": "2024-10-17T17:27:22Z",
+          "comments": [
+            {
+              "originalPosition": 252,
+              "body": "Agreed. Replaced",
+              "createdAt": "2024-10-17T17:27:22Z",
+              "updatedAt": "2024-10-17T17:27:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnLQn",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:31:41Z",
+          "updatedAt": "2024-10-17T17:31:41Z",
+          "comments": [
+            {
+              "originalPosition": 300,
+              "body": "Sergio, since this needs for discussion, my suggestion is to keep this comment open and have  more discussions during our weekly meetings.",
+              "createdAt": "2024-10-17T17:31:41Z",
+              "updatedAt": "2024-10-17T17:31:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnL91",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:33:14Z",
+          "updatedAt": "2024-10-17T17:33:14Z",
+          "comments": [
+            {
+              "originalPosition": 304,
+              "body": "This is the intent. \r\nSo, would you suggest what is needed to be added/replaced here?",
+              "createdAt": "2024-10-17T17:33:14Z",
+              "updatedAt": "2024-10-17T17:33:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnMWc",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:34:09Z",
+          "updatedAt": "2024-10-17T17:34:09Z",
+          "comments": [
+            {
+              "originalPosition": 305,
+              "body": "Similar to previous comment, let's have this item as one of the topics for discussion during our weekly meetings.",
+              "createdAt": "2024-10-17T17:34:09Z",
+              "updatedAt": "2024-10-17T17:35:05Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnMze",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:35:11Z",
+          "updatedAt": "2024-10-17T17:35:11Z",
+          "comments": [
+            {
+              "originalPosition": 308,
+              "body": "Similar to previous comment, let's have this item as one of the topics for discussion during our weekly meetings.",
+              "createdAt": "2024-10-17T17:35:11Z",
+              "updatedAt": "2024-10-17T17:35:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnN4k",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:37:41Z",
+          "updatedAt": "2024-10-17T17:37:42Z",
+          "comments": [
+            {
+              "originalPosition": 311,
+              "body": "the intention is this:\r\nRegardless of which authority defined this mode, the list of \"Capability Attributes\" represented by this mode are important. ",
+              "createdAt": "2024-10-17T17:37:41Z",
+              "updatedAt": "2024-10-17T17:37:42Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnOIk",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:38:16Z",
+          "updatedAt": "2024-10-17T17:38:17Z",
+          "comments": [
+            {
+              "originalPosition": 321,
+              "body": "Similar to previous comment, let's have this item as one of the topics for discussion during our weekly meetings.",
+              "createdAt": "2024-10-17T17:38:16Z",
+              "updatedAt": "2024-10-17T17:38:17Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnQeH",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:42:48Z",
+          "updatedAt": "2024-10-17T17:42:48Z",
+          "comments": [
+            {
+              "originalPosition": 322,
+              "body": "Are you referring to \"tag\"?\r\nIf so, the intention is to have something similar to service-tag introduced in https://datatracker.ietf.org/doc/html/draft-ietf-teas-ietf-network-slice-nbi-yang-07\r\nIts purpose is to provide flexibility to the pluggable YANG for future extensibility. As described, one example might be mapping of supported-mode to CMIS media-ID.",
+              "createdAt": "2024-10-17T17:42:48Z",
+              "updatedAt": "2024-10-17T17:42:48Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnQyM",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:43:31Z",
+          "updatedAt": "2024-10-17T17:43:31Z",
+          "comments": [
+            {
+              "originalPosition": 113,
+              "body": "Can you suggest what is needed to be replaced/removed? I will revise the text",
+              "createdAt": "2024-10-17T17:43:31Z",
+              "updatedAt": "2024-10-17T17:44:00Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnRCG",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:44:05Z",
+          "updatedAt": "2024-10-17T17:44:05Z",
+          "comments": [
+            {
+              "originalPosition": 165,
+              "body": "Can you suggest what is needed to be replaced/removed? I will revise the text",
+              "createdAt": "2024-10-17T17:44:05Z",
+              "updatedAt": "2024-10-17T17:44:05Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6NnRRb",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-17T17:44:36Z",
+          "updatedAt": "2024-10-17T17:44:36Z",
+          "comments": [
+            {
+              "originalPosition": 252,
+              "body": "Can you suggest an alternative text. I will add it",
+              "createdAt": "2024-10-17T17:44:36Z",
+              "updatedAt": "2024-10-17T17:44:36Z"
+            }
+          ]
         }
       ]
     },
@@ -386,7 +850,7 @@
       "labels": [],
       "body": "Correcting Figure 3 #6 in line with Presentation made at IETF 120: https://datatracker.ietf.org/meeting/120/materials/slides-120-ccamp-use-cases-network-scenarios-and-gap-analysis-for-packet-optical-integration-poi-with-coherent-plugables-under-actn-framework-00",
       "createdAt": "2024-10-14T08:56:14Z",
-      "updatedAt": "2024-10-14T08:56:14Z",
+      "updatedAt": "2024-10-17T10:53:44Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "3ed421541a2e57267e2a148fe97d065b7dd844c4",
@@ -397,7 +861,15 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Agreed. Your suggestion is included in the latest version.",
+          "createdAt": "2024-10-17T10:53:28Z",
+          "updatedAt": "2024-10-17T10:53:28Z"
+        }
+      ],
       "reviews": []
     }
   ]
