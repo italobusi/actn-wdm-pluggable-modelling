@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-10-20T01:27:05.618037+00:00",
+  "timestamp": "2024-10-22T01:21:40.567928+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -260,7 +260,7 @@
       "labels": [],
       "body": "Add/modify the v00 of draft.",
       "createdAt": "2024-09-22T19:14:47Z",
-      "updatedAt": "2024-10-17T17:44:36Z",
+      "updatedAt": "2024-10-21T11:43:58Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "3ed421541a2e57267e2a148fe97d065b7dd844c4",
@@ -271,7 +271,15 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "ggalimba56",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hi All,\r\n\r\nI can\u2019t attend the call today dua to a conflict.\r\n\r\nSorry about that,\r\n\r\nBest Regards,\r\n\r\nGabriele Galimberti\r\n\r\nVia Melgacciata, 13\r\n20813 \u2013 Bovisio Masciago (MB)\r\nItaly\r\n\r\n+39 3357481947\r\n\r\nDa: reza-github ***@***.***>\r\nRisposta: italobusi/actn-wdm-pluggable-modelling ***@***.***>\r\nData: luned\u00ec 21 ottobre 2024 alle ore 13:21\r\nA: italobusi/actn-wdm-pluggable-modelling ***@***.***>\r\nCc: Gabriele Galimberti ***@***.***>, Review requested ***@***.***>\r\nOggetto: Re: [italobusi/actn-wdm-pluggable-modelling] Add/modify the v00 of draft. (PR #9)\r\n\r\n\r\n@reza-github commented on this pull request.\r\n\r\n________________________________\r\n\r\nIn draft-rokui-ccamp-actn-wdm-pluggable-modelling.md<https://github.com/italobusi/actn-wdm-pluggable-modelling/pull/9#discussion_r1808596674>:\r\n\r\n>\r\n\r\n 4. The data flow between the coherent pluggable and the packet data function through this interface. This is electrical interface between coherent pluggable and the host. {{building-blocks}} will discuss this in more details.\r\n\r\n\r\n\r\n 5. Optical fiber connecting the optical devices to optical pluggables. This carries the flow of photonic signal from the optical device to the coherent pluggables. {{building-blocks}} will discuss this in more details.\r\n\r\n\r\n\r\n-This draft presents the modeling of the coherent pluggable such as #1 and #2 in {{figure-details-packet-optical-device}} within a host packet device. The model presented in {{data-model}} consolidates properties of coherent pluggable on interfaces (4) and (5) where interface (5) provides the photonic/optical attributes and interface provides the host/electrical attributes.\r\n\r\n+This draft presents the modeling of the coherent pluggable such as (4) and (5) in {{figure-details-packet-optical-device}} within a host packet device. The model presented in {{data-model}} consolidates properties of coherent pluggable on interfaces (4) and (5) where interface (5) provides the photonic/optical attributes and interface provides the host/electrical attributes.\r\n\r\nI have replaced the original text with your suggested one.\r\n\r\n\u2014\r\nReply to this email directly, view it on GitHub<https://github.com/italobusi/actn-wdm-pluggable-modelling/pull/9#discussion_r1808596674>, or unsubscribe<https://github.com/notifications/unsubscribe-auth/ADQWFMED75LCUYSTVCVLOXDZ4TPUJAVCNFSM6AAAAABOUZ53E2VHI2DSMVQWIX3LMV43YUDVNRWFEZLROVSXG5CSMV3GSZLXHMZDGOBRG42DIMZXGU>.\r\nYou are receiving this because your review was requested.Message ID: ***@***.***>\r\n",
+          "createdAt": "2024-10-21T11:43:57Z",
+          "updatedAt": "2024-10-21T11:43:57Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOLJuPKM6NF-FE",
@@ -833,6 +841,126 @@
               "body": "Can you suggest an alternative text. I will add it",
               "createdAt": "2024-10-17T17:44:36Z",
               "updatedAt": "2024-10-17T17:44:36Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6N8Dn4",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-21T08:39:09Z",
+          "updatedAt": "2024-10-21T08:39:10Z",
+          "comments": [
+            {
+              "originalPosition": 113,
+              "body": "It seems to me that this part \"This document also covers an analysis of the gap between current IETF drafts and the corresponding works in other standards bodies and industry. The lifecycle of a coherent pluggable including operators' approval, viability assessment to deployment and deployment is also covered.\" is already reported before and it seems a repetition with other words. Am I missed something?",
+              "createdAt": "2024-10-21T08:39:10Z",
+              "updatedAt": "2024-10-21T08:39:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6N8FYt",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-21T08:41:29Z",
+          "updatedAt": "2024-10-21T08:41:29Z",
+          "comments": [
+            {
+              "originalPosition": 165,
+              "body": "\"The model presented in {{data-model}} consolidates properties of coherent pluggable on interfaces (4) and (5) where interface (5) provides the photonic/optical attributes and interface provides the host/electrical attributes.\"\r\nYou need to add \"....and interface (4) provides the host/electrical attributes\"",
+              "createdAt": "2024-10-21T08:41:29Z",
+              "updatedAt": "2024-10-21T08:41:29Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6N8HOv",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-21T08:44:31Z",
+          "updatedAt": "2024-10-21T08:44:31Z",
+          "comments": [
+            {
+              "originalPosition": 252,
+              "body": "I would reword a bit : \" Note that the purpose of this section is to clarify the role of electrical channel in the coherent pluggable\"\r\nand \"The purpose of this draft is not ....\"",
+              "createdAt": "2024-10-21T08:44:31Z",
+              "updatedAt": "2024-10-21T08:44:31Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6N9fHe",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-21T11:10:50Z",
+          "updatedAt": "2024-10-21T11:10:50Z",
+          "comments": [
+            {
+              "originalPosition": 252,
+              "body": "Done",
+              "createdAt": "2024-10-21T11:10:50Z",
+              "updatedAt": "2024-10-21T11:10:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6N9i87",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-21T11:15:49Z",
+          "updatedAt": "2024-10-21T11:15:50Z",
+          "comments": [
+            {
+              "originalPosition": 113,
+              "body": "this sentence outlines two aspects:\r\n1- this talk about life cycle of coherent Pluggables\r\n2- Covering Gap analysis\r\nBoth are not discussed in previous sentences. ",
+              "createdAt": "2024-10-21T11:15:49Z",
+              "updatedAt": "2024-10-21T11:15:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6N9oj3",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-10-21T11:21:18Z",
+          "updatedAt": "2024-10-21T11:21:18Z",
+          "comments": [
+            {
+              "originalPosition": 165,
+              "body": "I have replaced the original text with your suggested one.",
+              "createdAt": "2024-10-21T11:21:18Z",
+              "updatedAt": "2024-10-21T11:21:19Z"
             }
           ]
         }
