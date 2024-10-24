@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-10-22T01:21:40.567928+00:00",
+  "timestamp": "2024-10-24T01:20:36.391608+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -260,7 +260,7 @@
       "labels": [],
       "body": "Add/modify the v00 of draft.",
       "createdAt": "2024-09-22T19:14:47Z",
-      "updatedAt": "2024-10-21T11:43:58Z",
+      "updatedAt": "2024-10-22T17:03:03Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "3ed421541a2e57267e2a148fe97d065b7dd844c4",
@@ -963,6 +963,19 @@
               "updatedAt": "2024-10-21T11:21:19Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6ONJfS",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "vharish02",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-10-22T17:03:03Z",
+          "updatedAt": "2024-10-22T17:03:03Z",
+          "comments": []
         }
       ]
     },
