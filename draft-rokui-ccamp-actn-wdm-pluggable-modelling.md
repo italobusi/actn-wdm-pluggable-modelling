@@ -1,9 +1,9 @@
 ---
-title: "Modelling of Optical Pluggables in Packet Over Optical Network"
+title: "Data Modelling and Gap Analysis of Optical Pluggables in Packet Over Optical Network"
 abbrev: "Modelling Optical Pluggables"
 category: info
 
-docname: draft-rokui-ccamp-actn-wdm-pluggable-modelling-00
+docname: draft-rokui-ccamp-actn-wdm-pluggable-modelling-01
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
@@ -108,20 +108,38 @@ contributor:
     fullname: Gyan Mishra
     org: Verizon
     email: gyan.s.mishra@verizon.com
+  
+  -
+    ins: S. Melin
+    fullname: Stefan Melin
+    org: Telia
+    email: stefan.melin@teliacompany.com
+
+  -
+    ins: M. Hossein Poor
+    fullname: Majid Hossein Poor
+    org: Telstra
+    email: majid.hosseinpoor@team.telstra.com
+
+  -
+    ins: D. Demeter
+    fullname: Dacian Demeter
+    org: Telus
+    email: dacian.demeter@telus.com 
 
 normative:
   OIF-CMIS:
     title: "OIF Implementation Agreement (IA) Common Management Interface Specification (CMIS))"
     author:
-      org: OIF Forum
-    date: 27 April 2022
+    org: OIF Forum
+    date: 4 September 2024
     seriesinfo: OIF CMIS IA
-    target: https://www.oiforum.com/wp-content/uploads/OIF-CMIS-05.2.pdf
+    target: https://www.oiforum.com/wp-content/uploads/OIF-CMIS-05.3.pdf
 
   OIF-400ZR:
     title: "Implementation Agreement 400ZR"
     author:
-      org: OIF Forum
+    org: OIF Forum
     date: 3 November 2022
     seriesinfo:
     target: https://www.oiforum.com/wp-content/uploads/OIF-400ZR-02.0.pdf
@@ -129,7 +147,7 @@ normative:
   G.698.2:
     title: "Amplified multichannel dense wavelength division multiplexing applications with single channel optical interfaces"
     author:
-      org: ITU-T Recommendation G.698.2
+    org: ITU-T Recommendation G.698.2
     date: November 2018
     seriesinfo: 
     target: https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.698.2-201811-I!!PDF-E&type=items
@@ -137,7 +155,7 @@ normative:
   SFF8024:
     title: "SFF Module Management Reference Code Tables"
     author:
-      org: SNIA SFF Technology Affiliate (TA) Technical Work Group (TWG), Small Form Factor Technology Affiliate
+    org: SNIA SFF Technology Affiliate (TA) Technical Work Group (TWG), Small Form Factor Technology Affiliate
     date: November 27, 2023
     seriesinfo: 
     target: https://members.snia.org/document/dl/26423
@@ -145,21 +163,41 @@ normative:
   Impairment:
     title: "A YANG Data Model for Optical Impairment-aware Topology"
     author:
-      org: 
+    org: 
     date: 2024-03-04
     seriesinfo: 
     target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-optical-impairment-topology-yang/
 
+informative:
+
+   ietf-impairment-yang:
+     title: "A YANG Data Model for Optical Impairment-aware Topology"
+     date: 2025-01-06 
+     target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-optical-impairment-topology-yang/
+
+   ietf-layer0-yang:
+     title: "Common YANG Data Types for Layer 0 Networks"
+     date: 2025-01-26 
+     target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-rfc9093-bis/
+
+   ietf-optical-interface-yang:
+     title: "A YANG model to manage the optical interface parameters for an external transponder in a WDM network"
+     date: 2025-01-06 
+     target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-dwdm-if-param-yang/
+
+  
 
 --- abstract
 
-This draft outlines the modeling of optical pluggables within a host packet device in the context of a packet over optical network. The model encompasses all pertinent properties of the pluggable for various packet over optical use cases and is partitioned into three primary areas: the optical media interface, the electrical plug to host interconnect, and the physical equipment of the pluggable.
+This draft outlines the modeling of optical pluggables within a host packet device in the context of a packet over optical network. The model encompasses all pertinent properties of the pluggable for various packet over optical use cases and is partitioned into three primary areas: the optical media side, the electrical plug to host interconnect, and the physical equipment of the pluggable.
 
 Included in the model are representations of configuration, states, and telemetry data, as well as of profiles and coherent plug capabilities. Emphasizing the importance of considering both vendor-agnostic and vendor-specific attributes in modeling coherent pluggables.
 
-Drawing from existing models in IETF, OpenConfig, ITU-T, OIF, and TAPI, this model offers enhanced uniform structuring and naming. Additionally, it provides insight into the mapping to plug interface structures defined in CMIS.
+Drawing from existing IETF models and potentially complementing that with input from other standard or industrial forum models (ITU-T, OpenConfig , ONF TAPI etc.) , this model offers enhanced uniform structuring and naming.
 
-This draft introduces the concpet of "Coherent Pluggable Manifest", where a represents the capabilities of a type&version of pluggable, maintained in a public repository of all pluggables. This document also covers gap analysis of current IETF drafts and other SDOs on coherent pluggables attributes and provides the complete lifecycle of a coherent pluggable from operators' approval through viability assessment to deployment.
+This draft introduces the concept of "Coherent Pluggable Manifest", where it represents the capabilities of pluggable, maintained in a repository. This document also covers gap analysis of current IETF drafts and other SDOs on coherent Pluggable attributes and provides the complete lifecycle of a coherent pluggable from operators' approval through viability assessment to deployment.
+
+This document also covers an analysis of the gap between current IETF drafts and the corresponding works in other standards bodies and industry. The lifecycle of a coherent pluggable from operators' approval, viability assessment to deployment and monitoring is also covered.
 
 --- middle
 
@@ -175,9 +213,14 @@ The following terms abbreviations are used in this document:
 
 - P-PNC: The control functions specializing in management/control of packet functions (virtual or physical). See {{?RFC8453}}
 
-- CMIS: Content Management Interoperability Services developed by OIF is an open standard that allows different content management systems to inter-operate over the Internet
+- CMIS: The Common Management Interface Specification is an OIF Implementation Agreement (IA) which provides a well-defined mechanism to initialize and manage optical (and copper) modules in a standard way, while still providing the capability to provide custom functionality. This commonality makes integration into different host platforms easier for both the host and module vendors.
 
-- xPonder: Short for Transponder and/or Muxponder
+- optical pluggable media side:
+
+- optical pluggable host side:
+
+- Monitored attributes: The Coherent Pluggable attributes which can be measured, monitored, estimated, or otherwise observed. The monitored attributes are the inputs to performance monitors which in turn provide real time samples, threshold crossing supervision, and sometimes sample statistics. 
+
 
 # Introduction
 
@@ -205,9 +248,7 @@ For each of these functional blocks, coherent pluggable model provides attribute
 
 - Configurations: Since an optical pluggable can support multiple operational-modes, these read-write attributes configure the pluggables to be functional in one of those operational- modes. Example of configuration attributes are output power, central frequency and operational-mode.
 
-- States and performance monitoring telemetry data: These read-only attributes will be generated by optical pluggables and represents various states of the optical pluggable such as channel input power, channel output power, central frequency, laser temperature, current OSNR etc. In most cases these attributers are changing with time and pluggable reports instantaneous, min , max, average values.
-
-- Alarm notifications
+- States and performance monitoring telemetry data: These read-only attributes will be generated by optical pluggables and represents various states and PM data of the optical pluggable such as channel input power, channel output power, central frequency, laser temperature, current OSNR, Link Up/Down State, Alarm State, Laser On/Off State etc. In most cases these attributes are changing with time and pluggable reports current, average, min and max values. It is also possible to apply thresholds on each of these attributes to support thershold crossing alert (TCA).
 
 Both vendor-agnostic and vendor-specific attributes are important considerations in the modeling of coherent pluggables.
 
@@ -236,56 +277,61 @@ The document is divided into the following sections:
 
 # Optical Pluggable in a Device with Packet Functions
 
-{{figure-details-packet-optical-device}} shows a packet device from vendor X, which is connected to optical device, equipped with optical pluggables from vendor X and Y. This figure exposes the following internal and external interfaces:
+{{figure-details-packet-optical-device}} shows a host packet device from vendor X, which is connected to optical device, equipped with optical pluggables from vendor X and Y. This figure exposes the following internal and external interfaces:
 
-1. This interface provides the control of packet device packet and optical functions. It provides these functions which can be decoupled such that there is no overlap between the optical and packet control functions.
+A. This interface provides the control of host packet functions and optical functions. It provides these functions which can be decoupled such that there is no overlap between the optical and packet control functions.
 
-2. The optical controller has read/write access to the optical network
+B. The CMIS communication interface between host packet devices) and optical pluggables.
 
-3. The CMIS (content management interoperability services) communication interface between hosts (e.g., packet devices) and optical pluggable
+C. The data flow between the coherent pluggable and the packet data function through this interface. This is electrical interface between coherent pluggable and the host. {{building-blocks}} will discuss this in more details.
 
-4. The data flow between the coherent pluggable and the packet data function through this interface. This is electrical interface between coherent pluggable and the host. {{building-blocks}} will discuss this in more details.
+D. Optical fiber connecting the optical devices to optical pluggables. This carries the flow of photonic signal from the optical device to the coherent pluggables. {{building-blocks}} will discuss this in more details.
 
-5. Optical fiber connecting the optical devices to optical pluggables. This carries the flow of photonic signal from the optical device to the coherent pluggables. {{building-blocks}} will discuss this in more details.
+This draft presents the modeling of the coherent pluggable such as (D) and (C) in {{figure-details-packet-optical-device}} within a host packet device. The model presented in {{data-model}} consolidates properties of coherent pluggable on interfaces (D) and (C) where interface (D) provides the photonic/optical attributes and interface (C) provides the host/electrical attributes.
 
-This draft presents the modeling of the coherent pluggable such as #1 and #2 in {{figure-details-packet-optical-device}} within a host packet device. The model presented in {{data-model}} consolidates properties of coherent pluggable on interfaces (4) and (5) where interface (5) provides the photonic/optical attributes and interface provides the host/electrical attributes.
+~~~~         
+                  |---------------|
+                  |   P-PNC(s),   |
+                  |   O-PNC(s),   |
+                  |   MDSC        |
+                  |---------------|
+                          ^
+                          |  (A)
+      +-------------------|-------------------+
+      |            |---------------|          |
+      |            |Host Management|          |
+      |            |---------------|          |
+      |                   |                   |  Packet Device
+      |                   V                   |  Vendor X
+      |        |---------------------|        |  (i.e, Host)
+      |        v                     v        |
+      |  |-----------|          |----------|  |
+      |  | Packet    |          | Coherent |  |
+      |  | Function  |..........| Plug     |  |
+      |  | Data      |          | Data     |  |
+      |  |-----------|          |----------|  |
+      |        .                      .       |
+      |        .                      . (B)   |
+      |        .                      .       |
+      |  |--------------|   (C)   |------------------|  (D)
+      |  |Packet Device |<------->| Coherent Plug #1 |=======
+      |  |Function      |<---|    | Vendor X         |
+      |  |--------------|    |    |------------------|
+      |                      |                |
+      |                      |    |------------------|
+      |                      |--->| Coherent Plug #2 |=======
+      |                           | Vendor Y         |
+      |                           |------------------|
+      |                                       |
+      +---------------------------------------+
 
-~~~~
-
-              |--------------------|
-              |  packet, optical,  |
-              |  and higher layer  |
-              |  controllers       |
-              |--------------------|
-                       ^ ^
-                       | |
-                   (1) | |-----------------------------------|
-   +-------------------|-------------------+                 |
-   |                   v                   |                 |
-   |        |---------------------|        |                 |
-   |        |                     |        |                 | 
-   |        v                     v        |                 |
-   |  |-----------|          |----------|  |                 |
-   |  | Packet    |          | Coherent |  |                 |
-   |  | Function  |..........| Plug     |  |                 |
-   |  | Data      |          | Data     |  |                 |
-   |  |-----------|          |----------|  |                 |
-   |        .                      .       |                 |
-   |        .                      . (3)   |            (2)  |
-   |        .                      .       |                 v
-   |  |--------------|   (4)   |------------------|  (5) |---------|
-   |  |Packet Device |<------->| Coherent Plug #1 |======| Optical |
-   |  |Function      |<---|    | Vendor X         |      | Device  |
-   |  |--------------|    |    |------------------|      |---------|
-   |                      |                |  
-   |                      |    |------------------|      |---------|
-   |                      |--->| Coherent Plug #2 |======| Optical |
-   |                           | Vendor Y         |      | Device  |
-   |                           |------------------|      |---------|
-   |                                       | 
-   +---------------------------------------+
-    Host Vendor X 
-     (e.g., Router)     
+  Legend
+    (A) Packet device management interfaces 
+              (e.g., YANG, NETCONF, gNMI, etc.)
+    (B) CMIS interface between Optical pluggable and Host
+    (C) Host side of coherent pluggable (towards the Host)
+    (D) Media side of coherent pluggable 
+              (towards Optical/Photonic network)
 
 ~~~~
 {: #figure-details-packet-optical-device title="Packet device with optical pluggables"}
@@ -298,7 +344,7 @@ This draft presents the modeling of the coherent pluggable such as #1 and #2 in 
 
 The functional building blocks of the coherent pluggables of {{figure-details-packet-optical-device}} are shown in {{figure-optical-pluggable-building-blocks}} and has three major functions:
 
-- Media side: This functional block represents all Photonic/Optical attributes of the coherent pluggables (interface (5) in {{figure-details-packet-optical-device}}). These attributes define the characteristics of the optical and photonic properties such as spectrum, polarization, dispersion etc., which do not directly affect the behavior of the host packet device.
+- Media side: This functional block represents all Photonic/Optical attributes of the coherent pluggables (interface (5) in {{figure-details-packet-optical-device}}). These attributes define the characteristics of the optical and photonic properties such as spectrum, polarization, dispersion etc., which do not directly affect the behavior of the host packet device. Note that the goal of this draft is to eventually provide the YANG data model with these specific paramters which can be exposed in the model towards the controllers.
 
 - Host side: This functional block represents all Host/Electrical attributes of the coherent pluggables (interface (4) in {{figure-details-packet-optical-device}}). These attributes defines the characteristics of interconnect between the host and the optical pluggable, such as lane count, FEC etc., which both the optical pluggable and the packet host should understand and act upon.
 
@@ -306,8 +352,12 @@ The functional building blocks of the coherent pluggables of {{figure-details-pa
 
 ~~~~
 
-Optical Pluggable
+  Coherent Pluggable
  |--------------------------------------------------------------|
+ |                                                              |
+ |  |--------------------------------------------------------|  |
+ |  |                        Equipment                       |  |
+ |  |--------------------------------------------------------|  |
  |                                                              |
  |           Host side                      Media side          |
  | |---------------------------|  |---------------------------| |
@@ -320,10 +370,6 @@ Optical Pluggable
  | |                           |  |                           | |
  | |---------------------------|  |---------------------------| |
  |                                                              |
- | |----------------------------------------------------------| |
- | |                        Equipment                         | |
- | |----------------------------------------------------------| |
- |                                                              |
  |--------------------------------------------------------------|
 
 ~~~~
@@ -335,7 +381,7 @@ The following sections are describing the details of coherent pluggable function
 
 The media side of the coherent pluggable is further divided into two functional blocks; Optical Channel/OTSI and Media Logical Channels. The characterises of the Optical channel/OTSI are:
 
-* This is the optical network facing interfaces
+* This is the pluggable interfaces facing the optical network.
 
 * Represents the digital wrapper that transports services over a wavelength
 
@@ -349,7 +395,7 @@ The media side of the coherent pluggable is further divided into two functional 
 
 ## Media Logical Channels
 
-The characterises of the Media Logical Channels are:
+The characteristics of the Media Logical Channels are:
 
 * Logical representation of the hierarchical view of the digital framing layers used for transport of services over the wavelength
 
@@ -369,13 +415,15 @@ The host side of the coherent pluggable is further divided into two functional b
 
 The characteristics of the Electrical Channels are:
 
-* The host interface lanes of the device forming the physical interface to the host platform data path device(s)
+Note that the purpose of this section is to clarify the role of electrical channel in the coherent pluggable. This purpose of this draft is not to define the data model of the electrical channels.
+
+* The host side lanes of the device forming the physical interface to the host platform data path device(s)
 
 * Lanes grouped to support the type/format and bandwidth of the signal used for a service
 
 * Provides information for configuration and monitoring characteristics of the signal for a service in the electrical domain, e.g., Interface-format, FEC, alarming thresholds, etc.
 
-* Provides monitoring capabilities in the Tx (toward fiber) and Rx (from the fiber)
+* Provides monitoring capabilities in the Tx (toward fiber) and Rx (from the fiber). 
  
 ## Equipment 
 
@@ -383,7 +431,7 @@ The "Equipment functional block" in {{figure-optical-pluggable-building-blocks}}
 
 * Provides manufacturer identification information for the device
 
-* Advertises capabilities of the device including capabilities for the host/client interface and the media/line interface
+* Advertises capabilities of the device including capabilities for the host/client side and the media/line side
 
 * Provides monitoring capabilities of physical characteristics and health of the device, e.g., temperature, voltage, coherent transmitter/receiver characteristics
 
@@ -397,177 +445,502 @@ The "Equipment functional block" in {{figure-optical-pluggable-building-blocks}}
 
 The attributes of all functional building block of a coherent pluggable in {{figure-optical-pluggable-building-blocks}} will be exposed to external packet and optical controllers via host interface (1) shown in {{figure-details-packet-optical-device}}. To this end, we need to model the coherent pluggable building blocks described in {{building-blocks}}.
 
-The data modelling of each functional blocks provides attributes in five areas:
+The data modeling of each functional blocks provides attributes in following areas:
 
-1. Coherent pluggable capabilities (aka supported-modes)
-2. Coherent pluggable configurations
-3. Coherent pluggable states and performance monitoring data
-4. Coherent pluggable threshold definition
-5. Coherent pluggable alarm notifications
+* {{plug-capabilities-attributes}}: Coherent pluggable capability attributes (i.e., supported-modes)
+* {{plug-config-attribute}}: Coherent pluggable configuration attributes
+* {{plug-pm-definition}}: Coherent pluggable performance monitoring data (including State data)
+* {{plug-threshold-definition}}: Coherent pluggable threshold definition
+* {{plug-alarm-definition}}: Coherent pluggable alarm notifications
+* {{plug-vendor-specific-attributes}}: Support of Vendor-Specific Attributes
 
 {: #plug-capabilities-attributes}
+## Coherent Pluggable Capability Attributes (aka, Supported-Modes)
 
-## Coherent pluggable capabilities (i.e., supported-modes)
+Coherent pluggable have revolutionized optical networking by offering a powerful combination of high performance, flexibility, and ease of deployment. These modules support a broad range of capabilities, making them both efficient and versatile. Their extensive functional capabilities further enhance their effectiveness in diverse networking environments.
 
-The supported-modes are read-only capability attributes that define the functional capabilities of coherent pluggables. In other words, the coherent pluggable functional capabilities are described by a set of supported-modes, which includes read-only attributes such as modulation, bit rate, baud rate, chromatic dispersion, polarization, and FEC. For some attributes it includes value range (min. max) as well. A coherent pluggable may support multiple supported-modes, where each mode can be defined by one of the following methods:
+From a coherent pluggable data modeling perspective, a set of attributes is grouped together and represented by a single identifier known as the "Supported Mode." In essence, each supported mode encapsulates a combination of functional capabilities for coherent pluggables, such as modulation type, bit rate, baud rate, chromatic dispersion, polarization, FEC, and more. Some of these attributes may also include value ranges (e.g., minimum and maximum). A coherent pluggable can support multiple supported modes, each of which can be defined by one of the following methods:
 
-* STANDARD: Defined by a Standards Developing Organization (SDO) such as ITU-T
-* NON-STANDARD: Defined by a forum such as Optical Internetworking Forum (OIF), OpenConfig or by an individual vendor or by an operator
+* Method 1: Defined by a Standards Developing Organization (SDO) such as ITU-T
+* Method 2: Defined by a forum such as Optical Internetworking Forum (OIF), a group of operators (OpenConfig) or by an individual vendor
 
-The STANDARD defined supported-modes are well-known capabilities established by standard bodies such as ITU-T {{G.698.2}}. These modes are recognized and supported by coherent pluggables, routers, and SDN controllers. While the current specification references ITU-T {{G.698.2}}, this document will support the work of other Standards Development Organizations (SDOs) as their specifications become available.
+These methods define a namespace for the authority that specified the particular supported mode, whether it be a standards body, an association, a group of operators, or an individual vendor. For example, the supported modes in method 1 are well-known capabilities established by standards bodies such as the ITU-T {{G.698.2}}. These modes are recognized and supported by coherent pluggables, routers, and SDN controllers. This draft also supports the work of other Standards Development Organizations (SDOs), forums, or individual vendors as their specifications become available. In contrast, the supported-modes in method 2 are capabilities specified by forums such as OIF {{OIF-400ZR}}, OpenConfig, or by individual vendors. These supported-modes might not be supported by all coherent-pluggables, routers or SDN controllers. In specific, the supported-modes defined by an individual vendor might be not be recognized and supported by any routers and SDN controllers.
 
-In contrast, the NON-STANDARD defined supported-modes are capabilities specified by forums such as OIF {{OIF-400ZR}}, OpenConfig, or by individual vendors. These supported-modes might not be supported by all coherent-pluggables, routers or SDN controllers. In specific, the supported-modes defined by an individual vendor might be not be recognized and supported by any routers and SDN controllers.
+It is important to note that, from a functional perspective of coherent pluggables, the authority that defined the supported modes is less critical than the specific attributes associated with each supported mode. The key consideration is the list of attributes defined by these supported modes.
 
-As illustrated in {{figure-plug-supported-mode}}," this document employs a consistent data structure for defining STANDARD and NON-STANDARD supported-modes where each supported-mode contains:
+As illustrated in {{figure-plug-supported-mode}}, this document utilizes a consistent data structure for defining supported modes, irrespective of the authority that specified them. It includes:
 
-* supported-mode-id: ID of the supported mode.
-* organization-id: The authority that defines the supported-mode, such as ITU-T, OIF, OpenConfig, or a vendor. This provides a name space for an authority who defines the supported-mode.
-* supported-mode-type: The type of supported-mode which is STANDARD or NON-STANDARD
-* multiple tags: Optional tags that can be used for various purposes, mainly for future extensibility. For example, these tags can map the supported-mode to CMIS Media-ID. Other potential uses of this tag are reserved for future developments.
+* supported-mode-id: Identification of the supported mode
+* organization-id: This provides a name space for an authority who defines the supported-mode, i.e., the authority that defines the supported-mode, such as ITU-T, OIF, OpenConfig, or a vendor
+* tags: Optional multiple tags that can be used for various purposes, mainly for future extensibility. For example, these tags can map the supported-mode to CMIS Media-ID (if they are not the same). Other potential uses of this tag are reserved for future developments.
 * operational-mode: This is the main part of this document which contains a list of capability attributes supported by the coherent pluggable.
 
+{{plug-manifest}} discusses the concept of the "coherent pluggable manifest", which is a repository for all supported-modes". It also outlines the benefit of such repository and various use-cases.
 Some details of supported modes can be found in IETF draft {{Impairment}}.
-
-{{plug-manifest}} discusses the concept of the "coherent pluggable manifest", which is a repository for all supported-modes" either STANDARD or NON-STANDARD. It also outlines the benefit of such repository and various use-cases.
 
 ~~~~ 
 
  |-----------------------------------------------------------------|
- |                                                                 |
  |  supported-mode*    // list of supported-modes                  |
- |                                                                 |
  |      supported-mode-id                                          |
  |      organization-id (e.g., ITU-T, OIF, OpenConfig or Vendor)   |
- |      supported-mode-type (e.g. STANDARD, NON-STANDARD)          |
- |      tag* (has various usage. Also support future use)          |
+ |      tag* // Optional. It has various usage in future           |
  |      operational-mode                                           |
- |              supported-attribute-1                              |
- |              supported-attribute-2                              |
+ |              capability-attribute-1                             |
+ |              capability-attribute-2                             |
  |              ....                                               |
- |              supported-attribute-n                              |
- |                                                                 |
+ |              capability-attribute-n                             |
  |-----------------------------------------------------------------|
 
 ~~~~
 {: #figure-plug-supported-mode title="Data structure for Coherent pluggable supported-modes"}
 
-## Coherent pluggable configurations attributes
-
-The coherent pluggables support a set of read-write attributes which are configurable. Example of such configuration attributes are output power, central frequency and operational-mode. Note that since a coherent pluggable may support multiple operational-modes (standard or custom), the read-write operational-mode attribute programs the coherent pluggable to be functional in one of those operational-modes.
-
-## Coherent pluggable states and performance monitoring data 
-
-These read-only attributes will be generated by optical pluggables and represents various states and performance monitoring data of the optical pluggable such as channel input power, channel output power, central frequency, laser temperature, current OSNR etc. In most cases these attributers are temporal and coherent pluggable reports values such as instantaneous, min, max and average. A "supported threshold profile (STP) can be assigned to each performance monitoring data (see {{plug-threshold-definition}}).
-
-{: #plug-threshold-definition}
-## Coherent pluggable threshold definition
-
- To provide a general solution for threshold definition of coherent pluggable performance monitoring data,  the concept of "Supported Threshold Profile (STP)" is introduced. As shown in  {{figure-plug-threshold-definition}}, each STP defines upper and lower threshold levels, threshold style and variety of PM metrics such as minimum, maximum and average values.
+As an example, the operational-mode 0x3E introduced by OIF contains the following read-only capability attributes. Notes that in general a coherent pluggable can support multiple operational modes.
 
 ~~~~
+organization-id:  OIF 
+operational-mode: 0x3E
+      modulation: DP-16QAM
+      bit-rate: 478.75 Gbps
+      baud-rate: 59.84375 Gbd
+      more attributes ...
+~~~~
 
-                SUPPORTED-THRESHOLD-PROFILE (STP)
 
- |----------------------------------------------------------------|
- |   STP-Type-1:                                                  |
- |     Threshold value: upper, lower                              |
- |     Threshold style: Rolling window of [min-time, max-time]    |
- |     Collection: min, max, ave, instant, ....                   |
- |                                                                |
- |   STP-Type-2:                                                  |
- |     Threshold value: upper, lower                              |
- |     Threshold style: Rolling window of [min-time, max-time]    |
- |     Collection: instant                                        |
- |                                                                |
- |   STP-Type-3:                                                  |
- |     Collection: min, max, instant                              |
- |                                                                |
- |   ...                                                          |
- |   STP-Type-n:                                                  |
- |     ...                                                        |
- |----------------------------------------------------------------|
+{: #plug-config-attribute}
+## Coherent Pluggable Configurations Attributes
 
-  (Note: these are just a few examples)   
+Referring to {{figure-plug-config-pm}}, the coherent pluggables support a set of read-write attributes which are configurable. Example of such configuration attributes are output power, central frequency and operational-mode. Note that as discussed in {{plug-capabilities-attributes}}, since a coherent pluggable may support multiple operational-modes, as part of these configuration attributes, operator should configure which of these operational-mode is desired and should be functional.
+
+~~~~ 
+
+ |-----------------------------------------------------------------|
+ |  optical-channel  // OTSI channels                              |
+ |      configuration // list of R/W plug configuration attributes |
+ |           config-attribute-1                                    |
+ |           config-attribute-2                                    |
+ |           .....                                                 |
+ |           config-attribute-m                                    |
+ |      pm and states  // list of R/O pm and state attributes      |
+ |                     // Note-1: Each pm-attribute might have     |
+ |                     //         threshold definitions            |
+ |                     // Note-2: For each monitored attributes,   |
+ |                     //         one SCTP profile can be assigned |
+ |           monitored-attribute-1                                 |
+ |           monitored-attribute-2                                 |
+ |           .....                                                 |
+ |           monitored-attribute-p                                 |
+ |-----------------------------------------------------------------|
 
 ~~~~
-{: #figure-plug-threshold-definition title="Coherent pluggable threshold definition"}
+{: #figure-plug-config-pm title="Data structure for Coherent pluggable Configuration and PM Attributes"}
 
+{: #plug-pm-definition}
+## Coherent Pluggable Performance Monitoring Data 
 
-To define the upper and lower thresholds for performance monitoring telemetry data, operator should set upper and lower limits that delineate acceptable performance ranges. This ensures that any deviations can be quickly identified and addressed. A rolling window between min-time and max-time should be employed to dynamically adjust these thresholds based on recent data trends, providing a more accurate reflection of current network conditions. By continuously updating the thresholds, network performance can be maintained within optimal parameters, reducing the risk of undetected issues.
+{{figure-plug-config-pm}} shows the list of pluggable Performance Monitoring (PM) and state data, which are critical components in optical networks, enabling network engineers to ensure optimal performance, identify issues, and maintain network reliability. Operators monitor a range of attributes on both the optical/photonic and electrical sides of coherent pluggables, including channel input power, channel output power, central frequency, current Optical Signal-to-Noise Ratio (OSNR), Bit Error Rate (BER), chromatic dispersion, laser temperature, link status, and more. These parameters directly impact the quality and integrity of the transmitted data across both optical and electrical domains.
+
+As coherent optical technology continues to gain traction, PM has evolved to include more advanced techniques, such as monitoring the quality of modulated signals and detecting impairments that could degrade performance over long distances. By leveraging these PM capabilities, engineers can ensure that the optical layer operates effectively, optimize the utilization of optical resources, and maintain high levels of service continuity and performance throughout the network.
+
+It is important to note that the "monitored attributes" encompass parameters from the media side, host side, and hardware components of coherent pluggables.
+
+Performance Monitoring (PM) data is generated for various "monitored attributes" by optical pluggables, representing a range of real-time metrics, including current, average, minimum, and maximum values, as well as counters and states. The PM data can be categorized as follows:
+
+* Basic Monitoring PM data: The analogue values which provide the "current values" of a "monitored attributes" such as laser temperature, eSNR (Effective Signal-to-Noise Ratio) at media input, eSNR at host input, laser frequency error, and more.
+* Advanced Monitoring PM data: The analogue values which provide the "current, average, minimum, and maximum values" of "monitored attributes" such as transmit signal power, Bit Error Rate (BER), chromatic dispersion, etc.
+* Up Counters: The discrete counter values of "monitored attributes" that only increment, such as Bit Error Count, FEC (Forward Error Correction) Uncorrected Errors, Loss of Signal (LOS) count, Loss of Frame (LOF) count, and others. 
+* Up/Down Counters: The discrete counter values of "monitored attributes" that can both incremented and decremented.
+* Operational/Admin States: Represents the states of "monitored attributes" such as link up/down state, alarm state, laser on/off state, Automatic Power Control (APC) status, and more.
+
+For "Up Counters" there might be two approaches:
+
+* Continuous Increment: The counter value continuously increments without resetting upon read.
+* Reset on Read: The counter value resets either on read or based on a predefined condition.
+
+For "advanced monitoring performance management (PM) data", where current, average, minimum, and maximum values are provided by the coherent pluggable, a "windowing mechanism" is essential. Currently, this mechanism is implemented by the host platform, not the pluggable itself. For instance, the host platform utilizes the windowing mechanism to segment the PM data collected by the coherent pluggable. Within each window, the host calculates the minimum, maximum, and average values of the PM data, enabling a granular and time-specific analysis of the pluggable's performance.
 
 A variety of performance monitoring metrics, including minimum, maximum, average, and instantaneous values, can be collected. These metrics offer a comprehensive view of performance fluctuations, allowing for precise monitoring and quicker response times to anomalies. Minimum and maximum values help identify the extremes of performance, while average values give a sense of typical performance levels. Instantaneous values, on the other hand, provide real-time insights, which are crucial for immediate issue detection and resolution. This multi-faceted approach ensures that network performance is consistently monitored and maintained at high standards.
 
-For each performance monitoring state data, one STP should be assigned.
+{{plug-threshold-definition}} will discuss the collection type and how they are related to the above-mentioned PM data. It also covers the coherent pluggables support for threshold crossing alerts (TCA) for all or a subset of monitored attributes. 
 
-## Coherent plug alarm notifications
+{: #plug-threshold-definition}
+## Coherent Pluggable Threshold Definition
+
+As indicated in {{plug-pm-definition}}, coherent pluggables are capable of providing the threshold crossing alert (TCA) for all or subset of "monitored attributes". In this situation, the coherent pluggable raises an alert which informs the host about operationally undesired situations or about critical threshold crossings of monitored attributes. The coherent pluggable raises an alert by setting an associated Flag on pluggable memory-map that represents the alert.
+
+As mentioned previously, the TCA might be supported for a subset of coherent pluggable monitored attributes. Since it is possible that the coherent pluggable has different capabilities to raise threshold for different monitored attributes, to provide a general solution for threshold definition on coherent pluggable monitored attributes, this draft introduces the concept of "Supported Collection and Threshold Profile (SCTP)" shown in {{figure-plug-threshold-definition}} which defines the configurable threshold values and collection types (i.e., the collection of current value, average value, min/max value are supported). The SCTP types will be used in list of coherent pluggables Sheet.
+
+To define the warning, minor, major, critical threshold values for a coherent pluggable monitored attribute, operator should set upper and lower limits that delineate acceptable performance ranges. This ensures that any deviations can be quickly identified and addressed. A rolling window between min-time and max-time should be employed to dynamically adjust these thresholds based on recent data trends, providing a more accurate reflection of current network conditions. By continuously updating the thresholds, network performance can be maintained within optimal parameters, reducing the risk of undetected issues.
+
+Note that sometimes these thresholds are configurable and sometime they are hard-coded. It is also possible that a vendor can support a sub-set and super-set of monitored attributes (for super-set they need to augment the yang model). 
+
+
+
+
+~~~~
+         Supported-Collection-and-Threshold-Profile (SCTP)
+ |----------------------------------------------------------------|
+ |   SCTP-Type-1:                                                 |
+ |     Collection: current, average, min, max                     |
+ |     Configured Threshold: warning, minor, major, critical      |
+ |                                                                |
+ |   SCTP-Type-2:                                                 |
+ |     Collection: current                                        |
+ |     Configured Threshold: warning, minor, major, critical      |
+ |                                                                |
+ |   SCTP-Type-3:                                                 |
+ |     Collection: current, average, min, max                     |
+ |   ...                                                          |
+ |   SCTP-Type-n:                                                 |
+ |----------------------------------------------------------------|
+    // Note: These are just a few examples. More SCTP profile 
+    //       can be defined
+~~~~
+{: #figure-plug-threshold-definition title="Coherent pluggable Collection and Threshold Profile Definition"}
+
+
+{: #plug-alarm-definition}
+## Coherent Pluggable Alarm Notifications
 
 [Editor's note: To be added in a later release.]
 
 The coherent pluggables might generate various alarm notifications due to the various reasons.
 
-{: #yang-model}
-# Optical Pluggables Yang Model
+{: #plug-vendor-specific-attributes}
+## Support of Vendor-Specific Attributes
 
-[Editor's note: To be added in a later release.]
+In some instances, a coherent pluggable may support attributes that are specific to a vendor. These are vendor-specific attributes which should be supported by the host. In most cases the host packet device does not understand the semantics of these vendor-specific capability attributes but should be able to understand their syntax and communicate them to the SDN controller.
+
+Note that these vendor-specific attributes could be 
+
+* read-only capability attributes
+* read-write configuration attributes or 
+* read-only performance monitoring attributes. 
+
+As part of coherent pluggable work, we need to address this situation where a vendor has proprietary attributes which need to be configured on coherent pluggables or read from them. In this situation we also need to address how the proprietary attributes are treated by both host and internal protocol between host and pluggable (i.e., CMIS protocol). This allows different coherent pluggables to be used in various multi-vendor hosts (e.g., routers) in plug-and-play fashion.
+
+To achieve this, the coherent pluggable YANG data model (the work done as part of this draft -  Google Sheet) should first be augmented with vendor proprietary capability, configuration or PM attributes. As noted above, it might be also necessary to define how these new attributes are mapped to the internal protocol between the host and the pluggable via CMIS protocol. A key consideration is that the host does not need to understand the semantics of these new attributes and may not even need to know their syntax.
+
+Another consideration is the privacy of vendor specific attributes, i.e., these proprietary attributes may be commercially sensitive. It would be quite reasonable to encrypt the related properties allowing for them to be passed to a specific vendor control component without being observed or interpreted in any way by other control components (from other vendors). 
+
+There are multiple solutions to this problem which will be discussed below. To demonstrate these solutions, consider the host Vendor-X and pluggable Vendor-Y in {{figure-details-packet-optical-device}}. Let's assume: 
+
+* Vendor-Y has a new read-write proprietary configuration attributes "AA" which should be configured in pluggable (in addition to well-known attributes such as central-frequency, power and operational-mode). The value of attribute AA is 100 and its memory map in coherent pluggable is 0x1100. 
+* In addition, consider a new read-only proprietary capability attributes "CC" supported on pluggable in range of {CC-min, CC-max}={1.1,3.3}.
+
+### Vendor-Specific Capability Attributes
+
+The coherent pluggable YANG data model is augmented with a list of new capability attributes. As demonstrated in {{solution-vs-cap-attributes}}, the YANG data model is augmented with the following information:
+
+* ID of new capability proprietary attribute
+* Name of new capability proprietary attribute
+* Minimum value of new attribute
+* Maximum value of new attribute
+
+The {{solution-vs-cap-attributes}} shows an example of new capability attribute "CC" whose min and max values are 1.1 and 3.3, respectively.
+
+~~~~ 
+ +--ro vendor-specific-capability-attribute-list* [cap-attribute-id]
+     +--ro cap-attribute-id              uint32
+     +--ro cap-attribute-name            string
+     +--ro cap-min-value                 decimal64
+     +--ro cap-max-value                 decimal64
+
+<vendor-specific-cap-attribute-list xmlns="urn:example:cc">
+  <cap-attribute-id> 1 </cap-attribute-id >
+  <cap-attribute-name> CC </cap-attribute-name>
+  <cap-min-value> 1.1 </cap-min-value>
+  <cap-max-value> 3.3 </cap-max-value>
+</vendor-specific-cap-attribute-list>
+~~~~
+{: #solution-vs-cap-attributes title="Support of Vendor-Specific Capability Attributes"}
+
+To support the vendor-specific configuration attributes, there are a few potential solutions which are discussed below.
+
+{: #vendor-specfic-config-solution-1}
+
+### Vendor-Specific Configuration Attributes (Solution-1)
+
+This approach is the simplest solution, as it requires no interpretation by the host platform. The coherent pluggable YANG data model is augmented with a list that directly maps the values of new configuration attributes to the corresponding memory-map locations on the pluggable device. In this solution, the memory-map locations must be known to the operator, potentially provided in the Coherent Pluggable Manifest. The {{solution-1}} illustrates the coherent pluggable YANG data model, which has been augmented with the following information:
+
+* ID of new proprietary configuration attribute
+* Name of new proprietary configuration attribute
+* Value of new proprietary attribute
+* The memory map of new proprietary attribute (which is used in CMIS communication between host and pluggable)
+
+For instance, consider a scenario where the operator intends to configure a new proprietary attribute, "AA," with a value of 100, and a memory-map location on the pluggable set to 0x1100. In this process, the host platform receives the attribute "AA" as defined in {{solution-1}}. The host platform then relays this information to the coherent pluggable via the CMIS protocol, without performing any interpretation. In other words, the host platform is not required to understand the syntax or semantics of these attributes; it functions merely as a conduit, transmitting the values from the NBI to the designated memory-map locations on the pluggable.
+
+~~~~ 
+ +--rw vendor-specific-config-attribute-list* [conf-attribute-id]
+     +--rw conf-attribute-id             uint32
+     +--rw conf-attribute-name           string
+     +--rw value                         decimal64
+     +--rw memory-map                    decimal64
+
+<vendor-specific-config-attribute-list xmlns="urn:example:cc">
+  <config-attribute-id> 1 </config-attribute-id >
+  <config-attribute-name> AA </config-attribute-name>
+  <value> 100 </value>
+  <memory-map> 1100 </memory-map>
+</vendor-specific-config-attribute-list>
+~~~~
+{: #solution-1 title="Solution-1 for support of vendor proprietary config attributes"}
+
+### Vendor-Specific Configuration Attributes (Solution-2)
+
+This approach is similar to {{solution-1}} but requires the host platform to implement lookup logic to determine the memory-map location on the pluggables. In this solution, the coherent pluggable YANG data model is augmented with the following new attributes, as shown in {{solution-2}}:
+
+* ID of new proprietary configuration attribute
+* Name of new proprietary configuration attribute
+* Value of new proprietary attribute
+
+The operator does not have visibility into the specific memory-map locations for these attributes on the coherent pluggable device. Instead, the memory-map for each new attribute is provided in the Coherent Pluggable Manifest. In this scenario, the host platform must search the pluggable manifest to locate the corresponding memory-map location for each new attribute. These values are then communicated to the pluggable via the CMIS protocol for configuration. As in {{solution-1}}, the host platform does not need to understand the syntax or semantics of the new attributes; it only needs to search the pluggable manifest to identify the memory-map locations for the new attributes.
+
+As illustrated in {{solution-2}}, the host platform receives the new attribute "AA" via its Northbound Interface (NBI), with a configuration value of 0x1100. The host then searches the coherent pluggable manifest to determine the memory-map location associated with this attribute and identifies it as 0x1100. Without interpreting the attribute's syntax or semantics, the host platform communicates this information to the coherent pluggable via the CMIS protocol. Essentially, the host platform functions as a proxy, transmitting the values from the NBI to the appropriate memory-map locations on the pluggable without needing to understand the meaning of the attributes.
+
+~~~~ 
+ +--rw vendor-specific-config-attribute-list* [conf-attribute-id]
+     +--rw conf-attribute-id             uint32
+     +--rw conf-attribute-name           string
+     +--rw value                         decimal64
+     Note: The memory-map for each new attribute is provided in
+           pluggable Manifest.
+
+<vendor-specific-config-attribute-list xmlns="urn:example:cc">
+  <config-attribute-id> 1 </config-attribute-id >
+  <config-attribute-name> AA </config-attribute-name>
+  <value> 100 </value>
+</vendor-specific-config-attribute-list>
+
+~~~~
+{: #solution-2 title="Solution-2 for support of vendor proprietary config attributes"}
+
+### Vendor-Specific Configuration Attributes (Solution-3)
+
+This solution represents an advanced approach when a new vendor-specific proprietary configuration attribute is mapped to multiple memory-map locations on a pluggable device, or when multiple such attributes are mapped to a single memory-map location on pluggable. Similar to {{solution-2}}, the mapping between these new attributes and their corresponding memory-map locations should be detailed in the pluggable manifest. For each new vendor-specific attribute, the host platform is required to perform a lookup in the pluggable manifest to identify the relevant memory-map locations. The platform then assembles the corresponding values, which are communicated to the pluggable device via the CMIS protocol.
+
+Although this solution is included for completeness, it is not practical or desirable due to its complexity and the need for interpretation by the host software
+
+### Vendor-Specific Secret Capability Attributes
+
+to be added
+
+### Vendor-Specific Secret Configuration Attributes
+
+There are situations where vendor-specific configuration attributes are confidential, and the vendor wishes to conceal their meanings and values. When considering the interface from the pluggable device to the host via CMIS, it is crucial that the pluggable does not expose the meaning or value of these confidential attributes. Ideally, the pluggable device would encrypt the data. Within the context of CMIS, it may be sufficient to allocate an array of register locations to convey the property values. These registers would store an encrypted data blob for read-only properties and accept an encrypted blob for writable registers. The specific value might be set or read through different register positions on each read/write, depending on the encryption technique used.
+
+It is important to note that since the pluggable device encrypts the data, mapping the data offers no additional benefit. The YANG model would simply convey the register values as requested. The properties are applied to the memory map in a manner that may appear disordered. The location values must always be read together and written as specified, potentially requiring multiple reads to retrieve all properties. This approach could be incorporated into the basic register-based option discussed in {{vendor-specfic-config-solution-1}}.
+
+As an example, let's assume a vendor defines secret attribute "DD" for its coherent plggable. Vendor first needs to augment IETF data model with a list of encrypted values and memory-maps shown in {{solution-4}}. This very similar to {{solution-1}} where essentially the host functions as a proxy, transmitting the values from the NBI to the appropriate memory-map locations on the pluggable without needing to understand the meaning and semantics of these attributes.
+
+~~~~ 
+ +--rw vendor-specific-config-attribute-list* [conf-attribute-id]
+     +--rw conf-attribute-id             uint32
+     +--rw encrypted-attribute-name      string
+     +--rw encrypted-attribute-value     string
+     +--rw memory-map                    decimal64
+~~~~
+{: #solution-4 title="Solution-4 for support of vendor secret attributes"}
+
+
+{: #support-plug-vendor-pm}
+### Support of Vendor-Specific Performance Monitoring Data
+
+As with any vendor-specific/proprietary property, the additional support is defined in the manifest. The host is informed of the properties via YANG augments and appropriate mapping definitions. The mapping definitions tell the host that the related properties are related to performance monitoring data such that the host will periodically read the appropriate parts of the pluggable interface as for any other performance monitoring data. AS for all other performance monitoring data, the host does not need to understand the data. The client controller can carry out analysis or can propagate the measures transparently to some other controller etc.
+
+{: #yang-model}
+# Coherent Pluggables Yang Data Model
+
+As discussed in the sections on capabilities, configuration, and performance monitoring in {{plug-capabilities-attributes}}, {{plug-config-attribute}}, and {{plug-pm-definition}}, the coherent pluggable module includes various read-only capability attributes, read-write configuration attributes, and read-only performance monitoring attributes. For a comprehensive list of these attributes, refer to the accompanying coherent pluggable Google Sheet (Q: how can we incorporate the Google Sheet?).
+
+Considering the next step involves converting the Coherent Pluggable Google Sheet into the 'Coherent Pluggable YANG data model', this draft proposes utilizing the methodology outlined in {{plug-yang-method}} for each attribute within the Google Sheet. The primary objective of this approach is to categorize the attributes associated with coherent pluggables. These attributes may fall under supported capabilities, configuration, or performance monitoring (PM) attributes. Here are a few examples:
+
+* The read-write attributes "channel-output-power" and "central-frequency" are supported attributes that can be configured, and the coherent pluggable can collect PM data and assign PM thresholds to them.
+* The read-only attribute "chromatic-dispersion", which is solely part of the supported capabilities and PM attributes. This attribute cannot be configured on coherent pluggables.
+* The read-only attribute "supply-voltage" could be considered, which is exclusively part of the PM attributes. It neither falls under supported capabilities nor is it a configurable attribute.
+
+~~~~
+
+// To convert the "Coherent Pluggable Google Sheet" to 
+// "Coherent Pluggable Yang Data Model", apply the following 
+// methodology to all attributes in "Coherent Pluggable Google Sheet" 
+
+// Note: This example uses attribute "channel-output-power" just 
+//       as an example.
+//       This methodology provided is applicable to any attributes.
+
+    channel-output-power{    
+        is-capability-attributes = (TRUE or FALSE)
+        {
+          // if "TRUE", the following needed to be added
+          ro min-channel-output-power = ...   
+          ro max-channel-output-power = ...
+          ro default-channel-output-power = ... 
+        }
+
+        is-configurable = (TRUE or FALSE)
+        {
+          // if "TRUE", this is R/W attribute
+          rw channel-output-power = ...
+        }
+
+        is-monitorable = (TRUE or FALSE)
+        {
+          // if "TRUE", following PM data from pluggable might 
+          // be available and can be read
+          ro current-channel-output-power (if applicable)
+          ro average-channel-output-power (if applicable)
+          ro min-channel-output-power     (if applicable)
+          ro max-channel-output-power     (if applicable)
+        }
+
+        is-threshold-available = (TRUE or FALSE)
+        {
+          // if "TRUE", following PM thresholds might be configurable
+          rw threshold-for-warning-alert  (if applicable)
+          rw threshold-for-minor-alert    (if applicable)
+          rw threshold-for-major-alert    (if applicable)
+          rw threshold-for-critical-alert (if applicable
+        }
+    }
+
+~~~~
+{: #plug-yang-method title="Coherent pluggable Data Yang Model"}
+
 
 {: #pluggable-gap-analysis}
-# Coherent pluggable data modelling gap analysis 
+# Coherent Pluggable Data Modeling Gap Analysis 
 
-[Editor's note: To be added in a later release.]
+This draft on "coherent pluggable data model and gap analysis" was initiated to examine existing IETF models related to pluggables for "completeness" to assess existing IETF properties/structures which are relevant to coherent pluggables and also to look for missing properties/structures. The goal of current work is to achieve best positioning of the IETF work with respect to the other related activities in the industry.
 
-This activity was initiated to examine existing IETF models related to pluggables for "completeness":
+To carry out this ongoing examination, properties/structures from relevant external bodies are collected and compared with properties/structures present in IETF models related to coherent pluggables. Where properties/structures differ the differences are examined and justifications considered and justification provided for changes to the IETF models these are proposed.
 
-* To assess existing properties/structures
-* To look for missing properties/structures
+The following items are identified as gap related to coherent pluggables:
 
-It is recognized that there is uncompleted work on properties in other bodies so this activity will be ongoing. The aim is to achieve best positioning of the IETF work with respect to the other related activities in the industry.
+* Syntax gaps: Naming inconsistency on existing IETF drafts {{ietf-impairment-yang}}, {{ietf-layer0-yang}} and {{ietf-optical-interface-yang}}. As an example, the capability attribute "max-channel-input-power" is also referred to as "rx-channel-power-max". We need to fix this. This draft proposes the following structure (note that there will be multiple valid proposals). 
 
-To carry out this ongoing examination, Properties/structures from relevant external bodies are collected and compared with properties/structures present in IETF models related to pluggables. Where properties/structures differ the differences are examined and justifications considered. Where there is justification for changes to the IETF models these are proposed.
+~~~~
+Naming convention:
+  direction [tx/rx/both/none]-
+  [name of the attribute]-
+  value [min / max / current / none]
+
+Examples:
+    for IETF attribute rx-channel-power-max, use 
+      rx-channel-power-max (no change)
+    
+    for ITU-T attribute "Minimum (residual) chromatic dispersion", use
+       residual-chromatic-dispersion-min 
+
+    for IETF attribute "max-central-frequency", use
+      central-frequency-max 
+
+    for IETF attribute "channel-output-power", use
+       tx-channel-power
+~~~~
+
+* Semantic gaps: For a complete solution for coherent pluggable, the capabilities, configuration, PM attributes and PM thresholds supported by IETF coherent pluggable should be consistent with coherent pluggable attributes supported by {{OIF-CMIS}}. This needs fuhrer investigation.
+
+* Statement of Capability: For any attribute defined in IETF drafts {{ietf-impairment-yang}}, {{ietf-layer0-yang}} and {{ietf-optical-interface-yang}} which is configurable or is measurable and threshold can be set, we need a capability statement.
+
+* [Editor's note: More to be added .]
+
 
 {: #plug-manifest}
 # Coherent Pluggable Manifest
 
-Referring to {{plug-capabilities-attributes}}, the coherent pluggable capability attributes (i.e., supported-modes) are crucial aspects of coherent pluggables and should be easily accessible by anyone for various activities, including:
+Referring to {{plug-capabilities-attributes}}, the coherent pluggable capability attributes (i.e., supported-modes) are crucial aspects of coherent pluggables and should be easily accessible for various reasons and activities. Those might include:
 
-- Network Engineers: Need to know the capabilities and characteristics of any coherent pluggable whether the coherent pluggable is already deployed or will potentially be installed and deployed in their network
-- SDN Controllers: The optical, packet or higher-layer SDN controllers need to have detailed knowledge of the coherent pluggables for various reasons such as the assessment of the viability of any photonic services from plug-to-plug, configuration and fulfilment of the coherent pluggables and others.
-- Packet Device (e.g., Router): Optionally the host packet device can also access the "coherent pluggable manifest" to provide details of coherent pluggables already installed in packet devices.
+- Network Engineers: Network engineers needs to know the capabilities and characteristics of any coherent pluggable whether the coherent pluggable is already deployed or will potentially be installed and deployed in their network
+- SDN Controllers: The optical, packet or higher-layer SDN controllers need to have detailed knowledge of the coherent pluggables for various reasons such as network planning, viability assessment of the photonic services from plug-to-plug, configuration and performance monitoring collection, alarm notifications etc.
+- Packet Device (e.g., Router): Optionally the host packet device need also access to coherent pluggable capabilities to provide details of coherent pluggables already installed in packet devices for example during the debugging and troubleshooting of pluggables.
 
-The term "Coherent Pluggable Manifest" is used for the collection of information, appropriately structured and interrelated, that describes the capabilities of a pluggable. In other terminology spaces the Manifest may be considered to be a Specification, a Profile, etc.
+To facilitate the utilization of coherent pluggable attributes, this draft introduces the concept of the "Coherent Pluggable Manifest." The manifest serves as a comprehensive collection of information that is appropriately structured and interrelated, providing a detailed description of the capabilities of a pluggable device. In alternative terminology, the manifest may also be referred to as a Specification, a Profile, or a Plug database, among other terms.
 
-It should be noted that any equipment could have a Manifest describing its capabilities and the Manifest may be broken down into units that can be referenced and reused, i.e., the definition can be modular. 
+It should be noted that any equipment could have a Manifest describing its capabilities and the Manifest may be broken down into units that can be referenced and reused, i.e., the definition can be modular. To facilitate the stages, each vendor would be expected to provide a Manifest for each pluggable type & version.
 
-To facilitate the stages, each vendor would be expected to provide a Manifest for each pluggable type & version.
+A pluggable type & version may offer a subset of standard capabilities. The subset is described by simply omitting definitions. 
 
-Considering the above, it appears reasonable that all pluggable capabilities whether they be proprietary or standard should be fully described in the Manifest. This may be achieved by a reference to a standard that is itself fully defined in machine interpretable form. This approach would allow for a far more flexible and future-proofed control solution.
+A pluggable type & version may offer a super-set. The super-set is detailed by adding definitions via "augmentation" to the set of standard definitions available for use in the matiest. These capability augmentations relate to augmentations to the YANG model used at the interface to the host. Note that host has no need to understand the semantics of the augmented properties, but does need to know the mapping to the pluggable interface. This is discussed in more detail elsewhere in this document.
 
-To facilitate easy access to coherent pluggable attributes, the details of coherent pluggable operational-modes are collected in a public repository, such as GitHub and SharePoint, called "Coherent Pluggable Manifest". This machine-readable repository can be read and interpreted easily by any SDN controller, operator, or other devices in the network.
+We should also consider the fact that some proprietary attributes and capabilities of the coherent pluggable might be commercially sensitive and hence confidential and a vendor might not want to provide it to publicly to everyone. In other words, some guidelines and restriction might be applicable to some portion of "Coherent Pluggable Manifest". To provide more security, the access to the pluggable manifest could be restricted or password protected and potentially encrypted. It is also possible to provided restrict access to an operator or a team or group of people of an operator where there may also be a requirement for an NDA to enable access to the data. It is also possible that the encrypted section of the Manifest might only be passed to a specific vendor control component (without being meaningfully observed by other control components from other vendors). The encrypted information may be passed via a special secure channel directly to a component authorized to decrypt the information into machine interpretable form and use it.
 
-{{figure-optical-pluggable-manifest}} illustrates the overall structure of the "Coherent Pluggable Manifest". It contains several operational-mode records where each record includes all the capability attributes for a pair of [organization-id, operational-mode]. As discussed in {{plug-capabilities-attributes}}, "organization-id" refers to any authority that defines them such as ITU-T {{G.698.2}} or {{OIF-400ZR}}) or a vendor.
+Considering the above, it appears reasonable that all pluggable capabilities whether they be proprietary or standard should be fully described in the Manifest (considering that some portions of the Manifest might have restrictions as previously described). This may be achieved by a reference to a standard that is itself fully defined in machine interpretable form. This approach would allow for a far more flexible and future-proofed control solution.
+
+In summary, to facilitate easy access to coherent pluggable attributes, the details of coherent pluggable operational-modes are collected in a repository (access restriction might be applicable to some portions of this document), such as GitHub and SharePoint, called "Coherent Pluggable Manifest". The manifest must be both human and machine-readable repository and can be read and interpreted easily by any SDN controller, operators, or other devices in the network. A manifest contains multiple records which are uniquely identified by tuple [organization-id, operational-mode].
+
+The manifest contains four sections:
+
+* Photonic/Optical capability section: This section contains all photonic/optical capabilities of the coherent pluggable and identifies all read-only attributes. It also allow augmentation of this section for vendor-specific attributes.
+
+
+* Configuration attributes: This section contains all read-writer attributes which can be configured on coherent pluggable. It also allow augmentation of this section for vendor-specific configuration attributes.
+* PM Collection style for monitored attributes: List of all read-only monitored attributes where the coherent pluggable can collect PM data. This section identifies if the collection of current, average, min and max values are possible. 
+* PM Threshold values: For all or a subset of read-only monitored attributes, this section contains the threshold settings for threshold crossing alerts (TCA) if applicable.
+
+{{figure-optical-pluggable-manifest}} illustrates the overall structure of the "Coherent Pluggable Manifest". It contains several operational-mode records where each record includes all the capability attributes for tuple [organization-id, operational-mode]. As discussed in {{plug-capabilities-attributes}}, "organization-id" refers to any authority that defines these attributes such as ITU-T {{G.698.2}} or {{OIF-400ZR}}) or an individual vendor.
 
 Each record in the coherent pluggable manifest is machine readable/interpretable and is uniquely identified by a tuple [organization-id, operational-mode].
 
-Using "Coherent Pluggable Manifest", the format and usage of STANDARD or NON-STANDARD operational-modes is the same. Note that all attributes pertaining to operational-modes are defined by this IETF document. 
+Using "Coherent Pluggable Manifest", the format of all operational-modes are identical whether it is defined by for example ITU-T, OIF, OpenConfig, or defined by a vendor.
 
 ~~~~
  
-  |-------------------------------------------------------|
-  |  For tuple [organization-id, operational-mode]        |-|
-  |                                                       | |-| 
-  |  organization-id:  X1 (e.g., ITU-T, OIF or Vendor)    | | |
-  |  operational-mode: Y1                                 | | |
-  |  version: y.y                                         | | |
-  |  formally approved: Y/N                               | | |
-  |  type (e.g. STANDARD, NON-STANDARD)                   | | |  
-  |  list of attributes:                                  | | |
-  |     attribute 1: ...                                  | | |
-  |     attribute 2: ...                                  | | |
-  |     ...                                               | | |
-  |     attribute n: ...                                  | | |
-  |                                                       | | |
-  |-------------------------------------------------------| | |
-    |-------------------------------------------------------| |
-      |-------------------------------------------------------|
+   A record identified by 
+   tuple [organization-id, operational-mode]
+   
+  |--------------------------------------------------------|
+  |                                                        |-|
+  |  organization-id:  (e.g., ITU-T, OIF or Vendor)        | |-|
+  |  operational-mode: (described in this draft)           | | |
+  |                    (see also Google Sheet)             | | |
+  |  version:                                              | | |
+  |                                                        | | |
+  |  Photonic/Optical capabilities attributes              | | |
+  |  -----------------------------------------             | | | 
+  |  (i.e., Read-only attributes defined in                | | |
+  |   operational-mode of this draft. For each attribute,  | | |
+  |   min, max, default values might be available)         | | |
+  |    - attribute A1                                      | | |
+  |    - attribute A2                                      | | |
+  |      ...                                               | | |
+  |    - attribute An                                      | | |
+  |    - List of vendor-specific capability attributes     | | |
+  |      (augmented yang model)                            | | |
+  |                                                        | | |
+  |  Configuration attributes                              | | |
+  |  --------------------------                            | | | 
+  |  ( The list of all read-write attributes where         | | |
+  |   can be configured on coherent pluggables )           | | |
+  |   are possible )                                       | | | 
+  |    - attribute C1                                      | | |
+  |    - attribute C2                                      | | |
+  |    ...                                                 | | |
+  |    - attributeCWm                                      | | | 
+  |    - some vendor specific config attributes            | | |
+  |      (augmented yang model)                            | | |
+  |                                                        | | | 
+  |  Monitored attributes PM collection                    | | |
+  |  ------------------------------------                  | | |
+  |  (i.e., list of monitored attributes where             | | |
+  |   coherent pluggable can collect PM data for           | | |
+  |   current, average, min, max values)                   | | |
+  |    - attribute M1                                      | | |
+  |    - attribute M2                                      | | |
+  |    ...                                                 | | |
+  |    - attribute Mp                                      | | |
+  |                                                        | | |
+  |  Monitored attributes Threshold setting                | | |
+  |  ---------------------------------------               | | |            
+  |  For all or some attribute M1,... Mp, define           | | |
+  |    - threshold-for-warning-alert   (if applicable)     | | |
+  |    - threshold-for-minor-alert     (if applicable)     | | |
+  |    - threshold-for-major-alert     (if applicable)     | | |
+  |    - threshold-for-critical-alert  (if applicable)     | | |
+  |                                                        | | |
+  |--------------------------------------------------------| | |
+    |--------------------------------------------------------| |
+      |--------------------------------------------------------|
 
  Coherent Pluggable Manifest
    - Contains one or more operational-mode records 
@@ -577,52 +950,57 @@ Using "Coherent Pluggable Manifest", the format and usage of STANDARD or NON-STA
 ~~~~
 {: #figure-optical-pluggable-manifest title="Coherent Pluggable Manifest"}
 
-In essence, the introduction of the concept of "Coherent pluggable manifest" substantially streamlines the definition and application of these modes, encompassing both STANDARD and NON-STANDARD operational-mode.
-
-Below a few examples are provided to demonstrate the concept of the "Coherent Pluggable Manifest". {{figure-optical-pluggable-manifest-example_1}} illustrates the content of a manifest record for NON-STANDARD operational-mode 0x3E which is defined by OIF forum. In practice this operational mode is supported by almost all coherent pluggables. The detail information for this operational-mode can be found at {{SFF8024}} Table 4-7.
+Below are several examples that demonstrate the concept of the "Coherent Pluggable Manifest." {{figure-optical-pluggable-manifest-example_1}} illustrates the content of a manifest record for operational mode 0x3E, as defined by the OIF forum. This operational mode is widely recognized and supported by nearly all coherent pluggable devices. Detailed information regarding this operational mode can be found in {{SFF8024}}, Table 4-7.
 
 ~~~~
-
 organization-id:  OIF 
 operational-mode: 0x3E
-type: NON-STANDARD
+// Photonic/Optical capabilities attributes
 list of attributes
       modulation: DP-16QAM
       bit-rate: 478.75 Gbps
       baud-rate: 59.84375 Gbd
       more attributes ...
+// Configuration attributes  
+// Monitored attributes PM collection   
+// Monitored attributes Threshold setting  
 ~~~~
 {: #figure-optical-pluggable-manifest-example_1 title="Coherent Pluggable Manifest Defined by OIF"}
 
-{{figure-optical-pluggable-manifest-example_2}} is anther manifest record where the Vendor-X has defined a NON-STANDARD operational-mode 0x22. In this case, Vendor-X defines all the attributes related to operational-mode 0x22 which might not be supported by other pluggable vendors.
+{{figure-optical-pluggable-manifest-example_2}} is anther manifest record where the Vendor-X has defined the operational-mode 0x22. In this case, Vendor-X defines all the attributes related to this operational-mode, which might not be supported by other pluggable vendors.
 
 ~~~~
-
 organization: Vendor-X
 operational-mode: 0x22
-type: NON-STANDARD
+// Photonic/Optical capabilities attributes
 list of attributes
       modulation: 16-QAM
       bit-rate: 400 Gbps
       baud-rate: 56 GBd
       more attributes ...
+// Configuration attributes  
+// Monitored attributes PM collection   
+// Monitored attributes Threshold setting 
 ~~~~
 {: #figure-optical-pluggable-manifest-example_2 title="Coherent Pluggable Manifest Example-2"}
 
-"{{figure-optical-pluggable-manifest-example_3}}" presents an example where the Vendor-Y has a coherent pluggable module with NON-STANDARD operational-mode 0x22 as well. In this scenario, the organization associated with the pluggable module is Vendor-Y, which defined the same operational-mode 0x22 as "Vendor-X"
+"{{figure-optical-pluggable-manifest-example_3}}" presents an example where the Vendor-Y defined an operational-mode 0x22 as well. In this scenario, the organization associated with the pluggable module is Vendor-Y, which defined the same operational-mode 0x22 as "Vendor-X"
 
 It is important to note that while the operational-modes in both {{figure-optical-pluggable-manifest-example_2}} and {{figure-optical-pluggable-manifest-example_3}} share the same values, they are defined by different vendors. Consequently, these operational-modes are not related and may differ significantly in their attributes. In other words, although the semantics of these modes are identical, their actual content might vary significantly. This is one of the reasons that any record in Coherent Pluggable Manifest is uniquely identified by tuple [organization-id, operational-mode].
 
 ~~~~
-
 organization: Vendor-Y
 operational-mode: 0x22
+// Photonic/Optical capabilities attributes
 type: NON-STANDARD
 list of attributes
       modulation: QPSK
       bit-rate: 800 Gbps
       baud-rate: 96 GBd
-        more attributes ...
+      more attributes ...
+// Configuration attributes  
+// Monitored attributes PM collection   
+// Monitored attributes Threshold setting       
 ~~~~
 {: #figure-optical-pluggable-manifest-example_3 title="Coherent Pluggable Manifest Example-3"}
 
@@ -643,7 +1021,7 @@ Note: The stages and the terminology used are not intended to reflect any specif
   Market research                   \
        |                            |
        v                            |
-  Testing of pluggable samples      | See
+  Testing of pluggable samples      | Refer to
        |                            | Section 9.1
        v                            |
   Trials & PoCs                     |
@@ -654,7 +1032,7 @@ Note: The stages and the terminology used are not intended to reflect any specif
        v                            \ 
   Service demand Analysis           | 
        |                            |
-       v                            | See
+       v                            | Refer to
   Network planning                  | Section 9.2
        |                            |
        v                            |
@@ -667,7 +1045,7 @@ Note: The stages and the terminology used are not intended to reflect any specif
   Optical infrastructure creation   |
        |                            |
        v                            |
-  Service demand received           | See
+  Service demand received           | Refer to
        |                            | Section 9.3
        v                            |
   Design service                    |
@@ -680,7 +1058,7 @@ Note: The stages and the terminology used are not intended to reflect any specif
        |                            |
        v                            |
   Installation of pluggables etc.   |
-       |                            | See
+       |                            | Refer to
        v                            | Section 9.4
   Service configuration             |
        |                            |
@@ -776,17 +1154,6 @@ For an equipment to be understood and used by a control system, the detailed inf
 
 Traditionally, the published statements of capability have been in somewhat ambiguous text that require interpretation and conversion into a machine interpretable form through a manual intermediate step (normally performed, with errors and performed many times for any particular device type etc.). It is suggested here that the best source of the machine interpretable data is the specifying authority (e.g., ITU-T for standard applications, the vendor for plug capabilities, an operator for non-standard applications).
 
-{: #proprietary-capabilities}
-## Dealing with proprietary capabilities
-
-Where the pluggable offers proprietary capabilities, it is possible that there are proprietary properties available from the pluggable control interface to the packet device. These properties may be expressed, on the device interface to the controller, in data conforming to a proprietary definition stated in YANG. For the packet device to be able to express the proprietary properties it needs the YANG augment files, the pluggable control interface definition and a mapping definition (where that provides the details of the transforms necessary to generate the exposed property from the information provided by the pluggable). 
-
-In an ideal realization of the control solution, the controller could provide the packet device with the YANG augment definition, and the mapping definition in such a way that this could be run by generic software on the packet device requiring no change to the software of the packet device. 
-
-This approach could also be taken to cater for enhancements to the standard YANG including mappings from proprietary properties on the pluggable and new standard properties in the device interface to the controller.
-
-Some proprietary capability statements may be commercially sensitive. It would be quite reasonable to encrypt the related capability statements allowing for them to be passed to a specific vendor control component without being observed or interpreted in any way by other control components (from other vendors). There may be a requirement for an NDA to enable access to the data. This NDA can be used to gate the delivery of this commercially sensitive encrypted information. The encrypted information may be passed via a special secure channel directly to a component authorized to decrypt the information into machine interpretable form and use it.
-
 {: #architecture-implications}
 # Implications for the Functional Control Architecture
 
@@ -799,7 +1166,7 @@ The following section considers the interaction sequence, resulting from the plu
 
 Within this section, we present a few use-cases showcasing the practical application of the coherent pluggable manifest.
 
-## Coherent Pluggables Manifest Example-1
+## Example-1: Coherent Pluggables Manifest 
 
 The first example is illustrated in {{figure-optical-pluggable-manifest-usage-1}}. This is a simple example where the packet over optical network has been already provisioned with both optical underlay and packet overlay services. The role of SDN controller is just to discover and manage the network. In other words, the SDN controller was not involved in various aspects of service provisioning and viability. The second example will come all these aspects in more detail. 
 
@@ -856,7 +1223,7 @@ A single photonic service is established between these pluggables and an IP link
 - The SDN controller can collect all alarm notifications from the network (including pluggables).
 - The SDN controller can further change, modify, optimize the network (if needed).
 
-## Coherent Pluggables Manifest Example-2
+## Example-2: Coherent Pluggables Manifest
 
 The example in {{figure-optical-pluggable-manifest-usage-2}} demonstrates the usage of the "Coherent Pluggable Manifest" for entire lifecycle of photonic service from including service planning, viability, provisioning, collection of PM telemetry, collection of alarm notifications and optimization. 
 
