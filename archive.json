@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-07T01:19:32.899553+00:00",
+  "timestamp": "2024-11-10T01:24:13.730378+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -253,21 +253,21 @@
       "id": "PR_kwDOLJuPKM58Szy5",
       "title": "Add/modify the v00 of draft.",
       "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/pull/9",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "reza-github",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Add/modify the v00 of draft.",
       "createdAt": "2024-09-22T19:14:47Z",
-      "updatedAt": "2024-10-22T17:03:03Z",
+      "updatedAt": "2024-11-07T22:14:14Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
-      "baseRefOid": "3ed421541a2e57267e2a148fe97d065b7dd844c4",
+      "baseRefOid": "72936d21022ef6d6a965381e6a36fb35c181efc7",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "main",
-      "headRefOid": "b4dd805c77a6de8abfb6a6d0f4cbdb4012eb2067",
-      "closedAt": null,
+      "headRefOid": "72936d21022ef6d6a965381e6a36fb35c181efc7",
+      "closedAt": "2024-11-07T22:14:14Z",
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
@@ -976,6 +976,26 @@
           "createdAt": "2024-10-22T17:03:03Z",
           "updatedAt": "2024-10-22T17:03:03Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6QSmXN",
+          "commit": {
+            "abbreviatedOid": "b4dd805"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-07T12:06:37Z",
+          "updatedAt": "2024-11-07T12:06:37Z",
+          "comments": [
+            {
+              "originalPosition": 103,
+              "body": "```suggestion\r\nThis draft outlines the modeling of optical pluggables within a host packet device in the context of a packet over optical network. The model encompasses all pertinent properties of the pluggable for various packet over optical use cases and is partitioned into three primary areas: the optical media side, the electrical plug to host interconnect, and the physical equipment of the pluggable..\r\n```",
+              "createdAt": "2024-11-07T12:06:37Z",
+              "updatedAt": "2024-11-07T12:06:37Z"
+            }
+          ]
         }
       ]
     },
