@@ -944,7 +944,7 @@ Using "Coherent Pluggable Manifest", the format of all operational-modes are ide
 
  Coherent Pluggable Manifest
    - Contains one or more operational-mode records
-   - Each record for tuple \[organization-id, operational-mode]
+   - Each record for tuple [organization-id, operational-mode]
    - It is machine-readable/interpretable
 
 ~~~~
