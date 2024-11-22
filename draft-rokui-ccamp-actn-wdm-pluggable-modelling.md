@@ -3,7 +3,7 @@ title: "Data Modelling and Gap Analysis of Optical Pluggables in Packet Over Opt
 abbrev: "Modelling Optical Pluggables"
 category: info
 
-docname: draft-rokui-ccamp-actn-wdm-pluggable-modelling-01
+docname: draft-rokui-ccamp-actn-wdm-pluggable-modelling-02
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
@@ -287,7 +287,7 @@ C. The data flow between the coherent pluggable and the packet data function thr
 
 D. Optical fiber connecting the optical devices to optical pluggables. This carries the flow of photonic signal from the optical device to the coherent pluggables. {{building-blocks}} will discuss this in more details.
 
-This draft presents the modeling of the coherent pluggable such as (D) and (C) in {{figure-details-packet-optical-device}} within a host packet device. The model presented in {{data-model}} consolidates properties of coherent pluggable on interfaces (D) and (C) where interface (D) provides the photonic/optical attributes and interface (C) provides the host/electrical attributes.
+"The model presented in in {{data-model}} consolidates properties of coherent pluggable on interfaces (D) and (C) in {{figure-details-packet-optical-device}} where interface (D) provides the photonic/optical attributes and interface (C) provides the host/electrical attributes."
 
 ~~~~         
                   |---------------|
@@ -452,7 +452,7 @@ The data modeling of each functional blocks provides attributes in following are
 * {{plug-pm-definition}}: Coherent pluggable performance monitoring data (including State data)
 * {{plug-threshold-definition}}: Coherent pluggable threshold definition
 * {{plug-alarm-definition}}: Coherent pluggable alarm notifications
-* {{plug-vendor-specific-attributes}}: Support of Vendor-Specific Attributes
+* {{plug-vendor-specific-attributes}}: Support of Opaque Attributes
 
 {: #plug-capabilities-attributes}
 ## Coherent Pluggable Capability Attributes (aka, Supported-Modes)
@@ -607,21 +607,25 @@ Note that sometimes these thresholds are configurable and sometime they are hard
 The coherent pluggables might generate various alarm notifications due to the various reasons.
 
 {: #plug-vendor-specific-attributes}
-## Support of Vendor-Specific Attributes
+## Support of Opaque Attributes
 
-In some instances, a coherent pluggable may support attributes that are specific to a vendor. These are vendor-specific attributes which should be supported by the host. In most cases the host packet device does not understand the semantics of these vendor-specific capability attributes but should be able to understand their syntax and communicate them to the SDN controller.
+[Editorial Note: This section in under Revision and Review.]
 
-Note that these vendor-specific attributes could be 
+In certain cases, a coherent pluggable may support attributes that are specific to a particular vendor. This draft refers to such attributes as "Opaque Attributes". Given that coherent pluggables encompass capability, configuration, and performance monitoring (PM)/state attributes, each category may contain additional opaque attributes. Consequently, the opaque attributes could include the following:
 
-* read-only capability attributes
-* read-write configuration attributes or 
-* read-only performance monitoring attributes. 
+* Read-only opaque capability attributes
+* Read-write opaque configuration attributes
+* Read-only opaque PM/state attributes
 
-As part of coherent pluggable work, we need to address this situation where a vendor has proprietary attributes which need to be configured on coherent pluggables or read from them. In this situation we also need to address how the proprietary attributes are treated by both host and internal protocol between host and pluggable (i.e., CMIS protocol). This allows different coherent pluggables to be used in various multi-vendor hosts (e.g., routers) in plug-and-play fashion.
+As part of coherent pluggable work, we need to address this situation where a coherent pluggable contains some proprietary capability, configuration and PM/states attributes which are needed to be configured or accessed from coherent pluggables. In this situation we need to address how these attributes are treated by packet device host. This allows different coherent pluggables to be used in various multi-vendor hosts in plug-and-play fashion.
+
+When such opaque attributes exist, although the host packet device may not comprehend the semantics of these opaque attributes, it should function as a proxy and mediator between the coherent pluggable and the northbound SDN controller. Specifically, the host packet device should understand the syntax of the opaque attributes and facilitate communication between the coherent pluggable and the northbound SDN controller. To achieve plug-and-play functionality in a multi-vendor environment, the host packet device should be capable of supporting these opaque attributes. The rest of this section will provide details on how to achieve this.
+
+Another consideration is the privacy of opaque attributes, i.e., there are situations where these attributes may be commercially sensitive. In these cases, it would be reasonable to assume that the opaque attributes are in encrypted format allowing them to be passed from coherent pluggable to northbound of the host without being observed or interpreted in any way by host. 
 
 To achieve this, the coherent pluggable YANG data model (the work done as part of this draft -  Google Sheet) should first be augmented with vendor proprietary capability, configuration or PM attributes. As noted above, it might be also necessary to define how these new attributes are mapped to the internal protocol between the host and the pluggable via CMIS protocol. A key consideration is that the host does not need to understand the semantics of these new attributes and may not even need to know their syntax.
 
-Another consideration is the privacy of vendor specific attributes, i.e., these proprietary attributes may be commercially sensitive. It would be quite reasonable to encrypt the related properties allowing for them to be passed to a specific vendor control component without being observed or interpreted in any way by other control components (from other vendors). 
+
 
 There are multiple solutions to this problem which will be discussed below. To demonstrate these solutions, consider the host Vendor-X and pluggable Vendor-Y in {{figure-details-packet-optical-device}}. Let's assume: 
 
