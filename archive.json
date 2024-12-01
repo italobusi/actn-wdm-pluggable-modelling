@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-28T01:26:29.862004+00:00",
+  "timestamp": "2024-12-01T01:47:15.323663+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -1045,19 +1045,136 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2024-11-25T14:10:20Z",
+      "updatedAt": "2024-11-28T15:35:28Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "bb388041c3b96babe101c1d66641a2d8d060fa31",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "main",
-      "headRefOid": "b25297c8c8df2618074da848da322556755b91dd",
+      "headRefOid": "9e0f26379a798d578412b08ed219ebf7acf7657a",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOLJuPKM6Sr6CP",
+          "commit": {
+            "abbreviatedOid": "8f30cc7"
+          },
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "Partial review",
+          "createdAt": "2024-11-26T10:02:30Z",
+          "updatedAt": "2024-11-28T15:28:54Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "The tooling requires to use '-latest' and it will take care to version it when creating the I-D for submission\r\n\r\n```suggestion\r\ndocname: draft-rokui-ccamp-actn-wdm-pluggable-modelling-latest\r\n```",
+              "createdAt": "2024-11-26T10:02:30Z",
+              "updatedAt": "2024-11-28T15:28:54Z"
+            },
+            {
+              "originalPosition": 81,
+              "body": "Why this text is within quotes?\r\n\r\n```suggestion\r\nThe model presented in in {{data-model}} consolidates properties of coherent pluggable on interfaces (D) and (C) in {{figure-details-packet-optical-device}} where interface (D) provides the photonic/optical attributes and interface (C) provides the host/electrical attributes.\r\n```",
+              "createdAt": "2024-11-26T10:18:20Z",
+              "updatedAt": "2024-11-28T15:28:54Z"
+            },
+            {
+              "originalPosition": 267,
+              "body": "I would move this paragraph back before the table to introduce the concept of SCTG\r\n\r\nWhat does it mean that \"The SCTG types will be used in list of coherent pluggables Sheet\"?",
+              "createdAt": "2024-11-26T10:57:49Z",
+              "updatedAt": "2024-11-28T15:28:54Z"
+            },
+            {
+              "originalPosition": 286,
+              "body": "```suggestion\r\nIn certain cases, a coherent pluggable may support attributes that are specific to a particular vendor of the pluggable module which may be different from the vendor of the  Packet Device.\r\n\r\nThis draft refers to such attributes as \"Opaque Attributes\". Given that coherent pluggables encompass capability, configuration, and performance monitoring (PM)/state attributes, each category may contain opaque attributes. Consequently, the opaque attributes could include the following:\r\n```\r\n",
+              "createdAt": "2024-11-26T11:03:44Z",
+              "updatedAt": "2024-11-28T15:28:54Z"
+            },
+            {
+              "originalPosition": 439,
+              "body": "In this context it would be better to qualify the vendor as pluggable vendor or packet device vendor:\r\n\r\n```suggestion\r\nAs an example, let's assume a pluggable vendor defines secret attribute \"DD\" for its coherent pluggable. Vendor first needs to augment IETF data model with a list of encrypted values and memory-maps shown in {{solution-4}}. This very similar to {{solution-1}} where essentially the host functions as a proxy, transmitting the values from the NBI to the appropriate memory-map locations on the pluggable without needing to understand the meaning and semantics of these attributes.\r\n```",
+              "createdAt": "2024-11-26T11:11:17Z",
+              "updatedAt": "2024-11-28T15:28:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6TIYVM",
+          "commit": {
+            "abbreviatedOid": "8f30cc7"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-28T15:26:22Z",
+          "updatedAt": "2024-11-28T15:32:18Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "test comment. Change 2 to 3",
+              "createdAt": "2024-11-28T15:26:23Z",
+              "updatedAt": "2024-11-28T15:32:18Z"
+            },
+            {
+              "originalPosition": 20,
+              "body": "```suggestion\r\n           draft-rokui-ccamp-actn-wdm-pluggable-modelling-03\r\n```",
+              "createdAt": "2024-11-28T15:27:04Z",
+              "updatedAt": "2024-11-28T15:32:18Z"
+            },
+            {
+              "originalPosition": 5,
+              "body": "for test purposes, the changes are not ok.",
+              "createdAt": "2024-11-28T15:31:11Z",
+              "updatedAt": "2024-11-28T15:32:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6TIbXz",
+          "commit": {
+            "abbreviatedOid": "8f30cc7"
+          },
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-28T15:32:46Z",
+          "updatedAt": "2024-11-28T15:32:46Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "for test purposes: this is my reply",
+              "createdAt": "2024-11-28T15:32:46Z",
+              "updatedAt": "2024-11-28T15:32:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6TIcZk",
+          "commit": {
+            "abbreviatedOid": "8f30cc7"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-28T15:35:04Z",
+          "updatedAt": "2024-11-28T15:35:04Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\ndocname: draft-rokui-ccamp-actn-wdm-pluggable-modelling-latest\r\n```",
+              "createdAt": "2024-11-28T15:35:04Z",
+              "updatedAt": "2024-11-28T15:35:04Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
