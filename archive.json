@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-01T01:47:15.323663+00:00",
+  "timestamp": "2024-12-03T01:35:47.179214+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -191,6 +191,38 @@
       "body": "Should we add P2MP attributes to this draft if there any additional attributes that are part of P2MP like identify sub-carriers and mapping of sub-carriers to client.",
       "createdAt": "2024-05-24T16:07:55Z",
       "updatedAt": "2024-05-24T16:07:55Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 12,
+      "id": "I_kwDOLJuPKM6hnrTW",
+      "title": "Numbers interfaces represented in the figure figure-optical-pluggable-building-blocks",
+      "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/issues/12",
+      "state": "OPEN",
+      "author": "sergiobelotti",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "https://github.com/italobusi/actn-wdm-pluggable-modelling/blob/b25297c8c8df2618074da848da322556755b91dd/draft-rokui-ccamp-actn-wdm-pluggable-modelling.md?plain=1#L431\r\n\r\nThere is misalignment between the text and the  figure-optical-pluggable-building-blocks, where the interfaces are marked with capital letter while in the text they have bee referenced as numbers ",
+      "createdAt": "2024-12-02T11:10:00Z",
+      "updatedAt": "2024-12-02T11:10:00Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 13,
+      "id": "I_kwDOLJuPKM6hnwTZ",
+      "title": "Opaque attributes",
+      "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/issues/13",
+      "state": "OPEN",
+      "author": "sergiobelotti",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "https://github.com/italobusi/actn-wdm-pluggable-modelling/blob/b25297c8c8df2618074da848da322556755b91dd/draft-rokui-ccamp-actn-wdm-pluggable-modelling.md?plain=1#L440",
+      "createdAt": "2024-12-02T11:18:00Z",
+      "updatedAt": "2024-12-02T11:18:00Z",
       "closedAt": null,
       "comments": []
     }
