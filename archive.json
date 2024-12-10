@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-08T01:41:35.041596+00:00",
+  "timestamp": "2024-12-10T01:37:28.143162+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -220,9 +220,9 @@
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
-      "body": "https://github.com/italobusi/actn-wdm-pluggable-modelling/blob/b25297c8c8df2618074da848da322556755b91dd/draft-rokui-ccamp-actn-wdm-pluggable-modelling.md?plain=1#L440",
+      "body": "https://github.com/italobusi/actn-wdm-pluggable-modelling/blob/b25297c8c8df2618074da848da322556755b91dd/draft-rokui-ccamp-actn-wdm-pluggable-modelling.md?plain=1#L440\r\n\r\nOpaque attributes have still to be discussed and agreed. I've open a specific issue for that.\r\nThe related section in the proposed version of the draft should be deleted here, and copied/pasted into this issue",
       "createdAt": "2024-12-02T11:18:00Z",
-      "updatedAt": "2024-12-02T11:18:00Z",
+      "updatedAt": "2024-12-09T09:20:00Z",
       "closedAt": null,
       "comments": []
     }
