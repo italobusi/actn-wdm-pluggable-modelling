@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-10T01:37:28.143162+00:00",
+  "timestamp": "2024-12-12T01:27:39.664829+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -161,7 +161,7 @@
       "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/issues/6",
       "state": "OPEN",
       "author": "ggrammel",
-      "authorAssociation": "NONE",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "The figure 3 does not work like indicated. Some host controller needs to separate the traffic between controllers (switch/router/...). needs alignment with the figure in the Google spreadsheet \"Scope\" top-right. also the naming of the interfaces should align. Furthermore, the PNC(s) are identified as a single box while it appears they are identified as different entities. Suggest to align the figure with the figure in the excel table comparison.",
@@ -171,7 +171,7 @@
       "comments": [
         {
           "author": "ggrammel",
-          "authorAssociation": "NONE",
+          "authorAssociation": "COLLABORATOR",
           "body": "```\r\n                  |---------------|\r\n                  |   P-PNC(s),   |\r\n                  |   O-PNC(s),   |\r\n                  |   MDSC        |\r\n                  |---------------|\r\n                          ^\r\n                          |  (A)\r\n      +-------------------|-------------------+\r\n      |.           |host controller|          |\r\n      |                   |                   |  Packet Device\r\n      |                   V                   |  Vendor X\r\n      |        |---------------------|        |  (i.e, Host)\r\n      |        |                     |        |\r\n      |        v                     v        |\r\n      |  |-----------|          |----------|  |\r\n      |  | Packet    |          | Coherent |  |\r\n      |  | Function  |..........| Plug     |  |\r\n      |  | Data      |          | Data     |  |\r\n      |  |-----------|          |----------|  |\r\n      |        .                      .       |\r\n      |        .                      . (B)   |\r\n      |        .                      .       |\r\n      |  |--------------|   (C)   |------------------|  (D)\r\n      |  |Packet Device |<------->| Coherent Plug #1 |=======\r\n      |  |Function      |<---|    | Vendor X         |\r\n      |  |--------------|    |    |------------------|\r\n      |                      |                |\r\n      |                      |    |------------------|\r\n      |                      |--->| Coherent Plug #2 |=======\r\n      |                           | Vendor Y         |\r\n      |                           |------------------|\r\n      |                                       |\r\n      +---------------------------------------+\r\n\r\n  Legend\r\n    (A) Packet device management interfaces (e.g., YANG, NETCONF, gNMI, etc.)\r\n    (B) CMIS interface between Optical pluggable and Host\r\n    (C) Host side of the optical pluggable (towards the Host)\r\n    (D) Media side of the optical pluggable (towards Optical/Photonic network)\r\n```",
           "createdAt": "2024-05-24T12:41:32Z",
           "updatedAt": "2024-05-24T12:41:32Z"
@@ -261,7 +261,7 @@
       "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/pull/8",
       "state": "OPEN",
       "author": "ggrammel",
-      "authorAssociation": "NONE",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Substantial Editing to provide more clarity:\r\nSDN --> P-PNC or O-PNC\r\nadding Ethernet functions\r\nadding PM configuration",
@@ -1038,7 +1038,7 @@
       "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/pull/10",
       "state": "OPEN",
       "author": "ggrammel",
-      "authorAssociation": "NONE",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Correcting Figure 3 #6 in line with Presentation made at IETF 120: https://datatracker.ietf.org/meeting/120/materials/slides-120-ccamp-use-cases-network-scenarios-and-gap-analysis-for-packet-optical-integration-poi-with-coherent-plugables-under-actn-framework-00",
@@ -1077,7 +1077,7 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2024-11-28T15:35:28Z",
+      "updatedAt": "2024-12-11T14:21:53Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "bb388041c3b96babe101c1d66641a2d8d060fa31",
@@ -1203,6 +1203,544 @@
               "body": "```suggestion\r\ndocname: draft-rokui-ccamp-actn-wdm-pluggable-modelling-latest\r\n```",
               "createdAt": "2024-11-28T15:35:04Z",
               "updatedAt": "2024-11-28T15:35:04Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6Uuu5q",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T11:32:23Z",
+          "updatedAt": "2024-12-11T11:32:24Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "This Implementation Agreement (IA) defines the Common Management Interface\r\nNote that CMIS targets any pluggable modules, not only Coherent ones\r\n\r\nAbstract: Specification (CMIS), which may be used by pluggable or on-board modules, such as\r\nQSFP Double Density (QSFP-DD), OSFP, COBO, QSFP, as well as by existing or future\r\nmodule developments with host to module management communication based on a\r\ntwo-wire interface. This IA is targeted for systems manufacturers, system integrators,\r\nand suppliers of CMIS compliant modules.",
+              "createdAt": "2024-12-11T11:32:24Z",
+              "updatedAt": "2024-12-11T11:32:24Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6Uu1Cx",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T11:35:44Z",
+          "updatedAt": "2024-12-11T11:35:45Z",
+          "comments": [
+            {
+              "originalPosition": 38,
+              "body": "Why is this for coherent only? I would have thought that a Repository could be applicable for any kind of pluggable, rather than limiting it to coherent. IOW there is a gap between focus on coherent work and pluggable work related to non-coherent stuff.",
+              "createdAt": "2024-12-11T11:35:44Z",
+              "updatedAt": "2024-12-11T11:35:45Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6Uu8gQ",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T11:39:38Z",
+          "updatedAt": "2024-12-11T11:39:39Z",
+          "comments": [
+            {
+              "originalPosition": 41,
+              "body": "we should be clear about what we are discussing in this draft:\r\n- not all pluggables are coherent\r\n- not all coherent pluggables are DWDM\r\n- not all DWDM interfaces are pluggable\r\n- ",
+              "createdAt": "2024-12-11T11:39:39Z",
+              "updatedAt": "2024-12-11T11:39:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UvL3m",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T11:48:24Z",
+          "updatedAt": "2024-12-11T11:48:24Z",
+          "comments": [
+            {
+              "originalPosition": 41,
+              "body": "I can't find O-PNC and P-PNC being defined in RFC845. Besides, the term \"The control functions specializing in management/control of optical and photonic functions (virtual or physical).\" is quite nebulous. E.g.:\r\n- is interface up/down a photonic function because the laser is switched off?\r\n- are uncorrected errors packet or optical \"specialities\"?\r\n- is a transponder with a non coherent interface on client side and a coherent one on the media side supposed to be managed/controlled by the P-PNC?\r\n\r\n",
+              "createdAt": "2024-12-11T11:48:24Z",
+              "updatedAt": "2024-12-11T11:48:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6Uv2X7",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T12:47:14Z",
+          "updatedAt": "2024-12-11T12:47:14Z",
+          "comments": [
+            {
+              "originalPosition": 90,
+              "body": "The goal of this draft is to identify gaps pertinent to pluggables. It should not be the goal to define YANG data models that are rlated to the media side and independent from the fact that there is a pluggable module or a fixed implementation.",
+              "createdAt": "2024-12-11T12:47:14Z",
+              "updatedAt": "2024-12-11T12:47:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6Uv6JF",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T12:53:14Z",
+          "updatedAt": "2024-12-11T12:53:15Z",
+          "comments": [
+            {
+              "originalPosition": 93,
+              "body": "as there is no guaranteed 1:1 mapping between Media Logical Channels and Host Logical Channels, the figure should contain a mapping-block function in between.\r\nDepending on the L0/L1 modeling discussion, we may need to structure this accordingly (FFS)",
+              "createdAt": "2024-12-11T12:53:15Z",
+              "updatedAt": "2024-12-11T12:53:15Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6Uv72h",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T12:56:18Z",
+          "updatedAt": "2024-12-11T12:56:18Z",
+          "comments": [
+            {
+              "originalPosition": 121,
+              "body": "we did not define what we'd count as \"functional capabilities\" in general. I would assume these are related to pluggables in general and not limited to the media side only.",
+              "createdAt": "2024-12-11T12:56:18Z",
+              "updatedAt": "2024-12-11T12:56:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6Uv9XN",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T12:59:07Z",
+          "updatedAt": "2024-12-11T12:59:07Z",
+          "comments": [
+            {
+              "originalPosition": 138,
+              "body": "ITU-T defined the application code which is a particular branch. It is confusing (but not wrong) to add it to the list of organizational modes. Suggest to remove it from the list of examples.",
+              "createdAt": "2024-12-11T12:59:07Z",
+              "updatedAt": "2024-12-11T12:59:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwA3C",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:04:44Z",
+          "updatedAt": "2024-12-11T13:04:45Z",
+          "comments": [
+            {
+              "originalPosition": 120,
+              "body": "Supported modes are per media interface and not specific to pluggable optical modules. The following description is intended to provide the context along coherent interfaces. YANG Modeling work is being performed in: https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-optical-impairment-topology-yang and https://datatracker.ietf.org/doc/draft-ietf-ccamp-dwdm-if-param-yang/) for further details.",
+              "createdAt": "2024-12-11T13:04:44Z",
+              "updatedAt": "2024-12-11T13:06:33Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwGqC",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:15:14Z",
+          "updatedAt": "2024-12-11T13:15:14Z",
+          "comments": [
+            {
+              "originalPosition": 34,
+              "body": "Isn't this draft about he gap analysis? I would suggest to split the current text into two drafts:\r\n- gap analysis: Identifies gaps related to existing work in IETF\r\n- pluggable modeling: adding YANG models to to cover pluggable specifics referring to the gaps identified earlier",
+              "createdAt": "2024-12-11T13:15:14Z",
+              "updatedAt": "2024-12-11T13:15:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwHDi",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:15:58Z",
+          "updatedAt": "2024-12-11T13:15:59Z",
+          "comments": [
+            {
+              "originalPosition": 267,
+              "body": "We should draw clearer distinction between gap analysis vs. modeling proposals. If there is a gap identified related to TCA, it has to be clear which is the reference for the gap. \r\nif there is a proposed solution for the gap it is better to discuss this in a separate draft.",
+              "createdAt": "2024-12-11T13:15:58Z",
+              "updatedAt": "2024-12-11T13:15:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwImN",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:17:30Z",
+          "updatedAt": "2024-12-11T13:17:31Z",
+          "comments": [
+            {
+              "originalPosition": 272,
+              "body": "see earlier comment. All of above is reasonable, but where are the gaps and what has to be done to close them? we should be clearer on the scope of this work.",
+              "createdAt": "2024-12-11T13:17:31Z",
+              "updatedAt": "2024-12-11T13:17:31Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwMWL",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:23:46Z",
+          "updatedAt": "2024-12-11T13:23:46Z",
+          "comments": [
+            {
+              "originalPosition": 286,
+              "body": "found this in RFC3224 and suggest to copy it to describe a VOE: \r\n   This specification introduces only one new protocol element, the\r\n   Vendor Opaque Extension.  This Extension makes it possible for a\r\n   vendor to extend SLP independently, once the vendor has registered\r\n   itself with IANA and obtained an Enterprise Number.  This is useful\r\n   for vendor-specific applications.",
+              "createdAt": "2024-12-11T13:23:46Z",
+              "updatedAt": "2024-12-11T13:23:46Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwN9E",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:26:20Z",
+          "updatedAt": "2024-12-11T13:26:20Z",
+          "comments": [
+            {
+              "originalPosition": 296,
+              "body": "what is the specific thing here related to pluggables? vendor opaque attributes are not bound to pluggable form factors. Furthermore, what is the gap identified here compared to e.g. SNIA/OIF ids?",
+              "createdAt": "2024-12-11T13:26:20Z",
+              "updatedAt": "2024-12-11T13:26:20Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwQFG",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:29:56Z",
+          "updatedAt": "2024-12-11T13:29:57Z",
+          "comments": [
+            {
+              "originalPosition": 299,
+              "body": "I don't get this rationale. it is up to the host implementation to decide which attributes to recognize and support. Even non-opaque attributes may not be supported on all platforms and for good reasons.",
+              "createdAt": "2024-12-11T13:29:56Z",
+              "updatedAt": "2024-12-11T13:29:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwT40",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:36:03Z",
+          "updatedAt": "2024-12-11T13:36:03Z",
+          "comments": [
+            {
+              "originalPosition": 304,
+              "body": "Is there any precedent for such far-reaching decisions in IETF? If vendors want to add vendor specific extensions, they are at liberty to do so. It is not the job of a standard to define how to do it. Probably a good idea to ask the OPS-WG about feedback and suggestions.",
+              "createdAt": "2024-12-11T13:36:03Z",
+              "updatedAt": "2024-12-11T13:36:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwV2b",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:39:24Z",
+          "updatedAt": "2024-12-11T13:39:25Z",
+          "comments": [
+            {
+              "originalPosition": 312,
+              "body": "This is about reading/writing memory maps, which is exactly what CMIS wants to improve because it is not scalable and hard to understand and debug. I would not suggest to see a YANG model for register map programming.",
+              "createdAt": "2024-12-11T13:39:24Z",
+              "updatedAt": "2024-12-11T13:39:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwYMe",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:43:24Z",
+          "updatedAt": "2024-12-11T13:43:25Z",
+          "comments": [
+            {
+              "originalPosition": 316,
+              "body": "As discussed earlier, we better split the draft into a gap analysis and YANG proposal. The gap (opaque attributes) have not been defined and agreed as a gap compared to current IETF work. Coming up with YANG work that is detached from existing work isn't helpful and should not be mixed in tha same draft as the gaps.",
+              "createdAt": "2024-12-11T13:43:24Z",
+              "updatedAt": "2024-12-11T13:43:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwZLW",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:45:02Z",
+          "updatedAt": "2024-12-11T13:45:02Z",
+          "comments": [
+            {
+              "originalPosition": 353,
+              "body": "it may look simple but is impossible to debug. We should leave register maps to other SDOs",
+              "createdAt": "2024-12-11T13:45:02Z",
+              "updatedAt": "2024-12-11T13:45:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwaSV",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:46:42Z",
+          "updatedAt": "2024-12-11T13:46:43Z",
+          "comments": [
+            {
+              "originalPosition": 390,
+              "body": "This is not what a standard is supposed to cover. Vendors are free to implement their proprietary extensions.memory-map programming is not what a standard should facilitate.",
+              "createdAt": "2024-12-11T13:46:43Z",
+              "updatedAt": "2024-12-11T13:46:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6Uwb2n",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:49:12Z",
+          "updatedAt": "2024-12-11T13:49:12Z",
+          "comments": [
+            {
+              "originalPosition": 393,
+              "body": "I would really be interested in the feedback of the OPS-WG on such things. My take is that such things should be kept outside of standards.YANG modules are not supposed to program register maps.",
+              "createdAt": "2024-12-11T13:49:12Z",
+              "updatedAt": "2024-12-11T13:49:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwcGS",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:49:36Z",
+          "updatedAt": "2024-12-11T13:49:36Z",
+          "comments": [
+            {
+              "originalPosition": 421,
+              "body": "see earlier comments",
+              "createdAt": "2024-12-11T13:49:36Z",
+              "updatedAt": "2024-12-11T13:49:37Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6Uwhcd",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:57:46Z",
+          "updatedAt": "2024-12-11T13:57:46Z",
+          "comments": [
+            {
+              "originalPosition": 433,
+              "body": "which vendors want to conceal and why are they confidential and to whom and for what purpose? I'd expect from a gap analysis a much clearer identification of the gap and why it needs to be defined in a standard.",
+              "createdAt": "2024-12-11T13:57:46Z",
+              "updatedAt": "2024-12-11T13:57:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwicX",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T13:59:10Z",
+          "updatedAt": "2024-12-11T13:59:10Z",
+          "comments": [
+            {
+              "originalPosition": 436,
+              "body": "Encryption? I would be very curious how the Security AD would view this.",
+              "createdAt": "2024-12-11T13:59:10Z",
+              "updatedAt": "2024-12-11T13:59:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwjVD",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-11T14:00:32Z",
+          "updatedAt": "2024-12-11T14:00:32Z",
+          "comments": [
+            {
+              "originalPosition": 439,
+              "body": "If a vendor has a secret attribute, let him decide how to augment the model instead of poking a security hole into the system.",
+              "createdAt": "2024-12-11T14:00:32Z",
+              "updatedAt": "2024-12-11T14:00:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UwkKV",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "The current text looks is mixing three aspects together and should be split into 3 drafts:\r\n1. Lifecycle Management: this could be a framework document to provide the necessary definitions and context for the subsequent work.\r\n2. Gap analysis of programmable optical pluggables: This shall identify the unique properties of pluggables and identify gaps with respect the baseline drafts (basically topology and dwdm-if) which already cover the media-side.\r\n3. YANG-model extensions: this shall reference the gaps identified and suggest YANG augmentations to current work.\r\n\r\nAnother aspect is to suggest opaque provisioning, which is a dangerous thing to do because it is a security hole and cannot be debugged. Such proposals need to be well motivated and ought to be cleared by the Security-AD and OPS-WG before pursuing them.",
+          "createdAt": "2024-12-11T14:01:39Z",
+          "updatedAt": "2024-12-11T14:21:53Z",
+          "comments": [
+            {
+              "originalPosition": 458,
+              "body": "What is the gap and why is this related to pluggables?",
+              "createdAt": "2024-12-11T14:01:39Z",
+              "updatedAt": "2024-12-11T14:21:53Z"
+            },
+            {
+              "originalPosition": 466,
+              "body": "the google sheet can be used to identify gaps in current modeling (ietf-drafts) and should be part of the gap analysis.",
+              "createdAt": "2024-12-11T14:04:15Z",
+              "updatedAt": "2024-12-11T14:21:53Z"
+            },
+            {
+              "originalPosition": 720,
+              "body": "Which gap is adressed here? Does a repository address this gap or is more required?",
+              "createdAt": "2024-12-11T14:06:53Z",
+              "updatedAt": "2024-12-11T14:21:53Z"
+            },
+            {
+              "originalPosition": 729,
+              "body": "what is the purpose of this description? does it address a gap? if so which one?",
+              "createdAt": "2024-12-11T14:07:55Z",
+              "updatedAt": "2024-12-11T14:21:53Z"
             }
           ]
         }
