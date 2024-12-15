@@ -181,15 +181,14 @@ informative:
 
 --- abstract
 
-This draft outlines the modeling of optical pluggables within a host packet device in the context of a packet over optical network. The model encompasses all pertinent properties of the pluggable for various packet over optical use cases and is partitioned into three primary areas: the optical media side, the electrical plug to host interconnect, and the physical equipment of the pluggable.
+This draft outlines the optical pluggable attributes within a host packet device, focusing on their role in a packet-over-optical network. It includes representations of coherent pluggable capabilities, configuration, states, and telemetry data. These attributes draws from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI, to ensure uniform structuring and consistent naming conventions.
 
-Included in the model are representations of configuration, states, and telemetry data, as well as of profiles and coherent plug capabilities. Emphasizing the importance of considering both vendor-agnostic and vendor-specific attributes in modeling coherent pluggables.
+A gap analysis is included to compare optical pluggable attributes with current IETF drafts, identifying any modeling gaps. Based on the identified gaps, the draft proposes solutions to address missing attributes, such as augmenting or updating existing IETF YANG models.
 
-Drawing from existing IETF models and potentially complementing that with input from other standard or industrial forum models (ITU-T, OpenConfig , ONF TAPI etc.) , this model offers enhanced uniform structuring and naming.
+The lifecycle of an optical pluggable, from operator approval and viability assessment to deployment and monitoring, is also addressed.
 
-This draft introduces the concept of "Coherent Pluggable Repository", where it represents the capabilities of pluggable, maintained in a repository. This document also covers gap analysis of current IETF drafts and other SDOs on coherent Pluggable attributes and provides the complete lifecycle of a coherent pluggable from operators' approval through viability assessment to deployment.
-
-This document also covers an analysis of the gap between current IETF drafts and the corresponding works in other standards bodies and industry. The lifecycle of a coherent pluggable from operators' approval, viability assessment to deployment and monitoring is also covered.
+[Editor’s note: This may be covered in a separate document, currently under investigation.]
+Additionally, this draft introduces the concept of a "Coherent Pluggable Repository", which maintains a repository of pluggable capabilities. It also includes a gap analysis of coherent pluggable attributes in existing IETF drafts and other SDOs, providing a comprehensive view of the lifecycle of a coherent pluggable, from operator approval through to deployment.
 
 --- middle
 
@@ -205,7 +204,8 @@ The following terms abbreviations are used in this document:
 
 - P-PNC: The control functions specializing in management/control of packet functions (virtual or physical). See {{?RFC8453}}
 
-- CMIS: The Common Management Interface Specification is an OIF Implementation Agreement (IA) which provides a well-defined mechanism to initialize and manage optical (and copper) modules in a standard way, while still providing the capability to provide custom functionality. This commonality makes integration into different host platforms easier for both the host and module vendors.
+- CMIS: The Common Management Interface Specification is an OIF Implementation Agreement (IA) which provides a well-defined mechanism to initialize and manage optical (and copper) modules in a standard way, while still providing the capability to provide custom functionality. This commonality makes integration into different host platforms easier for both the host and module vendors. This Implementation Agreement (IA) defines the Common Management Interface. Note that CMIS targets any pluggable modules, not only Coherent ones. Specification (CMIS), which may be used by pluggable or on-board modules, such as QSFP Double Density (QSFP-DD), OSFP, COBO, QSFP, as well as by existing or future module developments with host to module management communication based on a
+two-wire interface. This IA is targeted for systems manufacturers, system integrators, and suppliers of CMIS compliant modules.
 
 - optical pluggable media side:
 
@@ -329,7 +329,7 @@ The model presented in {{data-model}} consolidates properties of coherent plugga
 
 The functional building blocks of the coherent pluggables of {{figure-details-packet-optical-device}} are shown in {{figure-optical-pluggable-building-blocks}} and has three major functions:
 
-- Media side: This functional block represents all Photonic/Optical attributes of the coherent pluggables (interface (5) in {{figure-details-packet-optical-device}}). These attributes define the characteristics of the optical and photonic properties such as spectrum, polarization, dispersion etc., which do not directly affect the behavior of the host packet device. Note that the goal of this draft is to eventually provide the YANG data model with these specific parameters which can be exposed in the model towards the controllers.
+- Media side: This functional block represents all Photonic/Optical attributes of the coherent pluggables (interface (5) in {{figure-details-packet-optical-device}}). These attributes define the characteristics of the optical and photonic properties such as spectrum, polarization, dispersion etc., which do not directly affect the behavior of the host packet device. Note that the goal of this draft is to identify coherent pluggable capabilities, configuration, states, and telemetry data attributes from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI and then perform the gap analysis to compare optical pluggable attributes with current IETF drafts, identifying any modeling gaps. Eventually based on the identified gaps, the draft proposes solutions to address missing attributes, such as augmenting or updating existing IETF YANG models.
 
 - Host side: This functional block represents all Host/Electrical attributes of the coherent pluggables (interface (4) in {{figure-details-packet-optical-device}}). These attributes defines the characteristics of interconnect between the host and the optical pluggable, such as lane count, FEC etc., which both the optical pluggable and the packet host should understand and act upon.
 
@@ -524,6 +524,12 @@ A variety of performance monitoring metrics, including minimum, maximum, average
 
 As indicated in {{plug-pm-definition}}, coherent pluggables are capable of providing the threshold crossing alert (TCA) for all or subset of "monitored attributes". In this situation, the coherent pluggable raises an alert which informs the host about operationally undesired situations or about critical threshold crossings of monitored attributes. The coherent pluggable raises an alert by setting an associated Flag on pluggable memory-map that represents the alert.
 
+As mentioned previously, the TCA might be supported for a subset of coherent pluggable monitored attributes. Since it is possible that the coherent pluggable has different capabilities to raise threshold for different monitored attributes, to provide a general solution for threshold definition on coherent pluggable monitored attributes, this draft introduces the concept of "Supported Collection and Threshold Group (SCTG)" shown in {{figure-plug-threshold-definition}} which defines the configurable threshold values and collection types (i.e., the collection of current value, average value, min/max value are supported). 
+
+In summary, as outlined in {{plug-pm-definition}} and {{plug-threshold-definition}}, each optical pluggable PM/State attribute can have multiple Performance Monitoring (PM) values, such as current, average, minimum, and maximum, as well as multiple threshold levels, including warning, minor, major, and critical. To streamline this representation in a Google Sheet, each optical pluggable PM/State attribute will be associated with a corresponding SCTG-Type reference.
+
+For example, consider the coherent pluggable PM attribute "channel-input-power." Tthe optical pluggable collects PM values for current, average, minimum, and maximum, while also supporting the configuration of threshold values for warning, minor, major, and critical levels. As illustrated in {{figure-plug-threshold-definition}}, the PM attribute "channel-input-power" is linked to "SCTG-Type-1" to simplify its representation in Google Sheet.
+
 ~~~~
          Supported-Collection-and-Threshold-Group (SCTG)
  |----------------------------------------------------------------|
@@ -544,8 +550,6 @@ As indicated in {{plug-pm-definition}}, coherent pluggables are capable of provi
     // These are just a few examples. More SCTG can be defined
 ~~~~
 {: #figure-plug-threshold-definition title="Coherent pluggable Collection and Threshold Group Definition"}
-
-As mentioned previously, the TCA might be supported for a subset of coherent pluggable monitored attributes. Since it is possible that the coherent pluggable has different capabilities to raise threshold for different monitored attributes, to provide a general solution for threshold definition on coherent pluggable monitored attributes, this draft introduces the concept of "Supported Collection and Threshold Group (SCTG)" shown in {{figure-plug-threshold-definition}} which defines the configurable threshold values and collection types (i.e., the collection of current value, average value, min/max value are supported). The SCTG types will be used in list of coherent pluggables Sheet.
 
 To define the warning, minor, major, critical threshold values for a coherent pluggable monitored attribute, operator should set upper and lower limits that delineate acceptable performance ranges. This ensures that any deviations can be quickly identified and addressed. A rolling window between min-time and max-time should be employed to dynamically adjust these thresholds based on recent data trends, providing a more accurate reflection of current network conditions. By continuously updating the thresholds, network performance can be maintained within optimal parameters, reducing the risk of undetected issues.
 
