@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-12T01:27:39.664829+00:00",
+  "timestamp": "2024-12-15T01:41:27.832223+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -1077,13 +1077,13 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2024-12-11T14:21:53Z",
+      "updatedAt": "2024-12-13T20:34:56Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "bb388041c3b96babe101c1d66641a2d8d060fa31",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "main",
-      "headRefOid": "9e0f26379a798d578412b08ed219ebf7acf7657a",
+      "headRefOid": "026ac666b376c4d82daf39fc4e5f5a0049ffd6ab",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -1741,6 +1741,136 @@
               "body": "what is the purpose of this description? does it address a gap? if so which one?",
               "createdAt": "2024-12-11T14:07:55Z",
               "updatedAt": "2024-12-11T14:21:53Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6VJhc2",
+          "commit": {
+            "abbreviatedOid": "b25297c"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-13T13:29:06Z",
+          "updatedAt": "2024-12-13T13:29:07Z",
+          "comments": [
+            {
+              "originalPosition": 81,
+              "body": "Just typo. Should be removed.",
+              "createdAt": "2024-12-13T13:29:06Z",
+              "updatedAt": "2024-12-13T13:29:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6UFDMV",
+          "commit": {
+            "abbreviatedOid": "fd3cbae"
+          },
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "Partial review (part 2)",
+          "createdAt": "2024-12-06T10:48:34Z",
+          "updatedAt": "2024-12-13T16:41:02Z",
+          "comments": [
+            {
+              "originalPosition": 47,
+              "body": "The second part of the paragraph above seems duplicated with the paragraph below\r\n\r\n```suggestion\r\n   This draft introduces the concept of \"Coherent Pluggable Repository\",\r\n   where it represents the capabilities of pluggable, maintained in a\r\n   repository.\r\n```\r\n\r\nI would also suggest to create one or more open issues in github to track the status of the discussion about the \"Coherent Pluggable Repository\"\r\n",
+              "createdAt": "2024-12-06T10:48:34Z",
+              "updatedAt": "2024-12-13T16:41:02Z"
+            },
+            {
+              "originalPosition": 459,
+              "body": "There is no interface (5) in Figure 1:\r\n\r\n```suggestion\r\n      attributes of the coherent pluggables (interface (D) in Figure 1).\r\n```",
+              "createdAt": "2024-12-09T10:51:26Z",
+              "updatedAt": "2024-12-13T16:41:02Z"
+            },
+            {
+              "originalPosition": 468,
+              "body": "There is no interface (4) in Figure 1:\r\n\r\n```suggestion\r\n      attributes of the coherent pluggables (interface (C) in Figure 1).\r\n```\r\n\r\n",
+              "createdAt": "2024-12-09T10:52:29Z",
+              "updatedAt": "2024-12-13T16:41:02Z"
+            },
+            {
+              "originalPosition": 628,
+              "body": "There is no interface (1) in Figure 1:\r\n\r\n```suggestion\r\n   controllers via host interface (A) shown in Figure 1.  To this end,\r\n```",
+              "createdAt": "2024-12-09T10:55:59Z",
+              "updatedAt": "2024-12-13T16:41:02Z"
+            },
+            {
+              "originalPosition": 664,
+              "body": "The configuration of a pluggable module is provided by the selected mode plus additional attributes (e.g., centra frequency). The supported mode provides the range for these additional attributes:\r\n\r\n```suggestion\r\n   dispersion, polarization, FEC, and more.  Some of these attributes\r\n   may also include value ranges (e.g., minimum and maximum) for additional attributes that are configurable, in addition to the selected mode.  A\r\n```",
+              "createdAt": "2024-12-09T10:59:36Z",
+              "updatedAt": "2024-12-13T16:41:02Z"
+            },
+            {
+              "originalPosition": 81,
+              "body": "There is a typo ...",
+              "createdAt": "2024-12-13T16:40:47Z",
+              "updatedAt": "2024-12-13T16:41:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6VLFgd",
+          "commit": {
+            "abbreviatedOid": "fd3cbae"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-13T16:45:06Z",
+          "updatedAt": "2024-12-13T16:45:06Z",
+          "comments": [
+            {
+              "originalPosition": 81,
+              "body": "```suggestion\r\nThe model presented in {{data-model}} consolidates properties of coherent pluggable on interfaces (D) and (C) in {{figure-details-packet-optical-device}} where interface (D) provides the photonic/optical attributes and interface (C) provides the host/electrical attributes.\r\n```",
+              "createdAt": "2024-12-13T16:45:06Z",
+              "updatedAt": "2024-12-13T16:45:06Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6VLLLM",
+          "commit": {
+            "abbreviatedOid": "026ac66"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-13T16:57:26Z",
+          "updatedAt": "2024-12-13T16:57:26Z",
+          "comments": [
+            {
+              "originalPosition": 286,
+              "body": "I agree with Italo's comment. Not committed pending discussion on Gert's comment.",
+              "createdAt": "2024-12-13T16:57:26Z",
+              "updatedAt": "2024-12-13T16:58:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6VM-bu",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-13T20:34:56Z",
+          "updatedAt": "2024-12-13T20:34:56Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "Gert, that is correct.\r\nI will add your suggested text to the document.",
+              "createdAt": "2024-12-13T20:34:56Z",
+              "updatedAt": "2024-12-13T20:34:56Z"
             }
           ]
         }
