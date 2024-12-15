@@ -5,68 +5,58 @@
 Common Control and Measurement Plane                            R. Rokui
 Internet-Draft                                                     Ciena
 Intended status: Informational                                    A. Guo
-Expires: 1 June 2025                              Futurewei Technologies
+Expires: 18 June 2025                             Futurewei Technologies
                                                                P. Bedard
                                                                    Cisco
                                                           B. Swamynathan
                                                                    Nokia
                                                               G. Grammel
                                                                  Juniper
-                                                        28 November 2024
+                                                        15 December 2024
 
 
   Data Modelling and Gap Analysis of Optical Pluggables in Packet Over
                             Optical Network
-           draft-rokui-ccamp-actn-wdm-pluggable-modelling-02
+         draft-rokui-ccamp-actn-wdm-pluggable-modelling-latest
 
 Abstract
 
-   This draft outlines the modeling of optical pluggables within a host
-   packet device in the context of a packet over optical network.  The
-   model encompasses all pertinent properties of the pluggable for
-   various packet over optical use cases and is partitioned into three
-   primary areas: the optical media side, the electrical plug to host
-   interconnect, and the physical equipment of the pluggable.
+   This draft outlines the optical pluggable attributes within a host
+   packet device, focusing on their role in a packet-over-optical
+   network.  It includes representations of coherent pluggable
+   capabilities, configuration, states, and telemetry data.  These
+   attributes draws from existing IETF standards and incorporates input
+   from other industry forums and standards, such as ITU-T, OpenConfig,
+   OIF and ONF TAPI, to ensure uniform structuring and consistent naming
+   conventions.
 
-   Included in the model are representations of configuration, states,
-   and telemetry data, as well as of profiles and coherent plug
-   capabilities.  Emphasizing the importance of considering both vendor-
-   agnostic and vendor-specific attributes in modeling coherent
-   pluggables.
+   A gap analysis is included to compare optical pluggable attributes
+   with current IETF drafts, identifying any modeling gaps.  Based on
+   the identified gaps, the draft proposes solutions to address missing
+   attributes, such as augmenting or updating existing IETF YANG models.
 
-   Drawing from existing IETF models and potentially complementing that
-   with input from other standard or industrial forum models (ITU-T,
-   OpenConfig , ONF TAPI etc.) , this model offers enhanced uniform
-   structuring and naming.
+   The lifecycle of an optical pluggable, from operator approval and
+   viability assessment to deployment and monitoring, is also addressed.
 
-   This draft introduces the concept of "Coherent Pluggable Repository",
-   where it represents the capabilities of pluggable, maintained in a
-   repository.  This document also covers gap analysis of current IETF
-   drafts and other SDOs on coherent Pluggable attributes and provides
-   the complete lifecycle of a coherent pluggable from operators'
-   approval through viability assessment to deployment.
-
-
-
-
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                  [Page 1]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
-   This document also covers an analysis of the gap between current IETF
-   drafts and the corresponding works in other standards bodies and
-   industry.  The lifecycle of a coherent pluggable from operators'
-   approval, viability assessment to deployment and monitoring is also
-   covered.
+   [Editor’s note: This may be covered in a separate document, currently
+   under investigation.]  Additionally, this draft introduces the
+   concept of a "Coherent Pluggable Repository", which maintains a
+   repository of pluggable capabilities.  It also includes a gap
+   analysis of coherent pluggable attributes in existing IETF drafts and
+   other SDOs, providing a comprehensive view of the lifecycle of a
+   coherent pluggable, from operator approval through to deployment.
 
 About This Document
 
    This note is to be removed before publishing as an RFC.
+
+
+
+
+Rokui, et al.             Expires 18 June 2025                  [Page 1]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
 
    The latest revision of this draft can be found at
    https://italobusi.github.io/actn-wdm-pluggable-modelling/draft-rokui-
@@ -97,22 +87,12 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 June 2025.
+   This Internet-Draft will expire on 18 June 2025.
 
 Copyright Notice
 
    Copyright (c) 2024 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
-
-
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                  [Page 2]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
 
    This document is subject to BCP 78 and the IETF Trust's Legal
    Provisions Relating to IETF Documents (https://trustee.ietf.org/
@@ -123,6 +103,17 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    described in Section 4.e of the Trust Legal Provisions and are
    provided without warranty as described in the Revised BSD License.
 
+
+
+
+
+
+
+Rokui, et al.             Expires 18 June 2025                  [Page 2]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
 Table of Contents
 
    1.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   4
@@ -130,46 +121,38 @@ Table of Contents
    3.  Optical Pluggable in a Device with Packet Functions . . . . .   7
    4.  Coherent Pluggable Functional Building Blocks . . . . . . . .   9
      4.1.  Optical Channel/OTSI  . . . . . . . . . . . . . . . . . .  10
-     4.2.  Media Logical Channels  . . . . . . . . . . . . . . . . .  10
-     4.3.  Host Logical Channels . . . . . . . . . . . . . . . . . .  10
+     4.2.  Media Logical Channels  . . . . . . . . . . . . . . . . .  11
+     4.3.  Host Logical Channels . . . . . . . . . . . . . . . . . .  11
      4.4.  Electrical Channels . . . . . . . . . . . . . . . . . . .  11
-     4.5.  Equipment . . . . . . . . . . . . . . . . . . . . . . . .  11
+     4.5.  Equipment . . . . . . . . . . . . . . . . . . . . . . . .  12
    5.  Optical Pluggables Data Modeling  . . . . . . . . . . . . . .  12
      5.1.  Coherent Pluggable Capability Attributes (aka,
-           Supported-Modes)  . . . . . . . . . . . . . . . . . . . .  12
-     5.2.  Coherent Pluggable Configurations Attributes  . . . . . .  13
+           Supported-Modes)  . . . . . . . . . . . . . . . . . . . .  13
+     5.2.  Coherent Pluggable Configurations Attributes  . . . . . .  14
      5.3.  Coherent Pluggable Performance Monitoring Data  . . . . .  14
      5.4.  Coherent Pluggable Threshold Definition . . . . . . . . .  16
-     5.5.  Coherent Pluggable Alarm Notifications  . . . . . . . . .  17
-     5.6.  Support of Opaque Attributes  . . . . . . . . . . . . . .  17
-       5.6.1.  Support of Opaque Capability Attributes . . . . . . .  19
-       5.6.2.  Support of Opaque Secret Capability Attributes  . . .  19
+     5.5.  Coherent Pluggable Alarm Notifications  . . . . . . . . .  18
+     5.6.  Support of Opaque Attributes  . . . . . . . . . . . . . .  18
+       5.6.1.  Support of Opaque Capability Attributes . . . . . . .  20
+       5.6.2.  Support of Opaque Secret Capability Attributes  . . .  20
        5.6.3.  Support of Opaque Configuration Attributes
                (Solution-1)  . . . . . . . . . . . . . . . . . . . .  20
        5.6.4.  Support of Opaque Configuration Attributes
                (Solution-2)  . . . . . . . . . . . . . . . . . . . .  21
        5.6.5.  Support of Opaque Configuration Attributes
                (Solution-3)  . . . . . . . . . . . . . . . . . . . .  22
-       5.6.6.  Support of Opaque Secret Configuration Attributes . .  22
-       5.6.7.  Support of Opaque Performance Monitoring Data . . . .  23
+       5.6.6.  Support of Opaque Secret Configuration Attributes . .  23
+       5.6.7.  Support of Opaque Performance Monitoring Data . . . .  24
    6.  Addressing Coherent Pluggables Attributes From Google
-           Sheet . . . . . . . . . . . . . . . . . . . . . . . . . .  23
+           Sheet . . . . . . . . . . . . . . . . . . . . . . . . . .  24
    7.  Coherent Pluggable Data Modeling Gap Analysis . . . . . . . .  24
-   8.  Optical Pluggables Lifecycle Management . . . . . . . . . . .  25
+   8.  Optical Pluggables Lifecycle Management . . . . . . . . . . .  26
      8.1.  Approving the pluggable type and version  . . . . . . . .  27
      8.2.  Planning the network  . . . . . . . . . . . . . . . . . .  28
-     8.3.  Dealing with service demand . . . . . . . . . . . . . . .  28
-     8.4.  Installing and operationalizing the pluggable . . . . . .  29
-     8.5.  Expressing capabilities . . . . . . . . . . . . . . . . .  30
+     8.3.  Dealing with service demand . . . . . . . . . . . . . . .  29
+     8.4.  Installing and operationalizing the pluggable . . . . . .  30
+     8.5.  Expressing capabilities . . . . . . . . . . . . . . . . .  31
    9.  Appendix A - Coherent Pluggable Examples  . . . . . . . . . .  32
-
-
-
-Rokui, et al.              Expires 1 June 2025                  [Page 3]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
      9.1.  Example-1: Coherent Pluggables Already Provisioned  . . .  32
      9.2.  Example-2: Coherent Pluggables Planning . . . . . . . . .  34
    10. Appendix B - Coherent Pluggable Repository  . . . . . . . . .  38
@@ -179,6 +162,14 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
      13.1.  Normative References . . . . . . . . . . . . . . . . . .  44
      13.2.  Informative References . . . . . . . . . . . . . . . . .  45
    Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  45
+
+
+
+Rokui, et al.             Expires 18 June 2025                  [Page 3]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
    Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  45
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  47
 
@@ -209,7 +200,15 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
       a standard way, while still providing the capability to provide
       custom functionality.  This commonality makes integration into
       different host platforms easier for both the host and module
-      vendors.
+      vendors.  This Implementation Agreement (IA) defines the Common
+      Management Interface.  Note that CMIS targets any pluggable
+      modules, not only Coherent ones.  Specification (CMIS), which may
+      be used by pluggable or on-board modules, such as QSFP Double
+      Density (QSFP-DD), OSFP, COBO, QSFP, as well as by existing or
+      future module developments with host to module management
+      communication based on a two-wire interface.  This IA is targeted
+      for systems manufacturers, system integrators, and suppliers of
+      CMIS compliant modules.
 
    *  optical pluggable media side:
 
@@ -221,9 +220,10 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                  [Page 4]
+
+Rokui, et al.             Expires 18 June 2025                  [Page 4]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    *  Monitored attributes: The Coherent Pluggable attributes which can
@@ -277,9 +277,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                  [Page 5]
+Rokui, et al.             Expires 18 June 2025                  [Page 5]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    *  Photonic/Optical attributes: These attributes defines the
@@ -333,9 +333,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                  [Page 6]
+Rokui, et al.             Expires 18 June 2025                  [Page 6]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    *  Section 4: Coherent Pluggables Building Blocks
@@ -373,10 +373,10 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    optical device to the coherent pluggables.  Section 4 will discuss
    this in more details.
 
-   "The model presented in in Section 5 consolidates properties of
-   coherent pluggable on interfaces (D) and (C) in Figure 1 where
-   interface (D) provides the photonic/optical attributes and interface
-   (C) provides the host/electrical attributes."
+   The model presented in Section 5 consolidates properties of coherent
+   pluggable on interfaces (D) and (C) in Figure 1 where interface (D)
+   provides the photonic/optical attributes and interface (C) provides
+   the host/electrical attributes.
 
 
 
@@ -389,9 +389,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                  [Page 7]
+Rokui, et al.             Expires 18 June 2025                  [Page 7]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
                      |---------------|
@@ -445,9 +445,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                  [Page 8]
+Rokui, et al.             Expires 18 June 2025                  [Page 8]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
 4.  Coherent Pluggable Functional Building Blocks
@@ -460,9 +460,15 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
       These attributes define the characteristics of the optical and
       photonic properties such as spectrum, polarization, dispersion
       etc., which do not directly affect the behavior of the host packet
-      device.  Note that the goal of this draft is to eventually provide
-      the YANG data model with these specific parameters which can be
-      exposed in the model towards the controllers.
+      device.  Note that the goal of this draft is to identify coherent
+      pluggable capabilities, configuration, states, and telemetry data
+      attributes from existing IETF standards and incorporates input
+      from other industry forums and standards, such as ITU-T,
+      OpenConfig, OIF and ONF TAPI and then perform the gap analysis to
+      compare optical pluggable attributes with current IETF drafts,
+      identifying any modeling gaps.  Eventually based on the identified
+      gaps, the draft proposes solutions to address missing attributes,
+      such as augmenting or updating existing IETF YANG models.
 
    *  Host side: This functional block represents all Host/Electrical
       attributes of the coherent pluggables (interface (4) in Figure 1).
@@ -474,6 +480,31 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    *  Equipment attributes: These attributes represent all physical and
       functional aspects of the coherent pluggable such as plug type,
       software version, thermal characteristics, power consumption etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rokui, et al.             Expires 18 June 2025                  [Page 9]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
 
      Coherent Pluggable
     |--------------------------------------------------------------|
@@ -496,15 +527,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
     |--------------------------------------------------------------|
 
                 Figure 2: Optical Pluggable Building Blocks
-
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                  [Page 9]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
 
    The following sections are describing the details of coherent
    pluggable functional blocks in more details.
@@ -529,6 +551,16 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
       BER, fail/degrade thresholds, raw corrected/uncorrected counts
 
    *  Provides configuration of the signal and monitoring capabilities
+
+
+
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 10]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
 
    *  Provides monitoring capabilities in the Tx (toward fiber/medium)
       and Rx (from fiber/medium) directions, Total optical power,
@@ -555,13 +587,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    functional blocks; Host Logical Channels and Electrical channels.
    The characteristics of the Host Logical Channels are:
 
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 10]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
    *  Logical representation of the hierarchical view of the digital
       framing layers for services carried on the electrical lanes of the
       device
@@ -583,6 +608,15 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
    *  The host side lanes of the device forming the physical interface
       to the host platform data path device(s)
+
+
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 11]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
 
    *  Lanes grouped to support the type/format and bandwidth of the
       signal used for a service
@@ -611,13 +645,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    *  Provides for configuration where applicable – e.g., of device
       environmental thresholds
 
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 11]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
    *  Supports device level capabilities such as firmware installation,
       restarts, etc.
 
@@ -639,6 +666,13 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
    *  Section 5.3: Coherent pluggable performance monitoring data
       (including State data)
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 12]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
 
    *  Section 5.4: Coherent pluggable threshold definition
 
@@ -665,15 +699,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    coherent pluggable can support multiple supported modes, each of
    which can be defined by one of the following methods:
 
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 12]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
    This current draft adheres to the definitions provided in draft
    [ietf-impairment-yang].  Specifically, Section 2.6 of draft
    [ietf-impairment-yang] outlines three distinct approaches for
@@ -697,6 +722,14 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    For more detailed information, please refer to draft
    [ietf-impairment-yang].
 
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 13]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
 5.2.  Coherent Pluggable Configurations Attributes
 
    Referring to Figure 3, the coherent pluggables support a set of read-
@@ -718,17 +751,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
        Figure 3: Data structure for Coherent pluggable Configuration
                                  Attributes
-
-
-
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 13]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
 
 5.3.  Coherent Pluggable Performance Monitoring Data
 
@@ -757,6 +779,13 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
     |           monitored-attribute-p                                 |
     |-----------------------------------------------------------------|
 
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 14]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
        Figure 4: Data structure for Coherent pluggable PM Attributes
 
    As coherent optical technology continues to gain traction, PM has
@@ -777,14 +806,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    metrics, including current, average, minimum, and maximum values, as
    well as counters and states.  The PM data can be categorized as
    follows:
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 14]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
 
    *  Basic Monitoring PM data: The analogue values which provide the
       "current values" of a "monitored attributes" such as laser
@@ -813,6 +834,14 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    *  Continuous Increment: The counter value continuously increments
       without resetting upon read.
 
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 15]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
    *  Reset on Read: The counter value resets either on read or based on
       a predefined condition.
 
@@ -834,14 +863,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    performance, while average values give a sense of typical performance
    levels.  Instantaneous values, on the other hand, provide real-time
    insights, which are crucial for immediate issue detection and
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 15]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
    resolution.  This multi-faceted approach ensures that network
    performance is consistently monitored and maintained at high
    standards.
@@ -860,6 +881,48 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    situations or about critical threshold crossings of monitored
    attributes.  The coherent pluggable raises an alert by setting an
    associated Flag on pluggable memory-map that represents the alert.
+
+
+
+
+
+
+
+
+
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 16]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
+   As mentioned previously, the TCA might be supported for a subset of
+   coherent pluggable monitored attributes.  Since it is possible that
+   the coherent pluggable has different capabilities to raise threshold
+   for different monitored attributes, to provide a general solution for
+   threshold definition on coherent pluggable monitored attributes, this
+   draft introduces the concept of "Supported Collection and Threshold
+   Group (SCTG)" shown in Figure 5 which defines the configurable
+   threshold values and collection types (i.e., the collection of
+   current value, average value, min/max value are supported).
+
+   In summary, as outlined in Section 5.3 and Section 5.4, each optical
+   pluggable PM/State attribute can have multiple Performance Monitoring
+   (PM) values, such as current, average, minimum, and maximum, as well
+   as multiple threshold levels, including warning, minor, major, and
+   critical.  To streamline this representation in a Google Sheet, each
+   optical pluggable PM/State attribute will be associated with a
+   corresponding SCTG-Type reference.
+
+   For example, consider the coherent pluggable PM attribute "channel-
+   input-power."  Tthe optical pluggable collects PM values for current,
+   average, minimum, and maximum, while also supporting the
+   configuration of threshold values for warning, minor, major, and
+   critical levels.  As illustrated in Figure 5, the PM attribute
+   "channel-input-power" is linked to "SCTG-Type-1" to simplify its
+   representation in Google Sheet.
 
             Supported-Collection-and-Threshold-Group (SCTG)
     |----------------------------------------------------------------|
@@ -886,28 +949,10 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-
-
-
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 16]
+Rokui, et al.             Expires 18 June 2025                 [Page 17]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
-
-   As mentioned previously, the TCA might be supported for a subset of
-   coherent pluggable monitored attributes.  Since it is possible that
-   the coherent pluggable has different capabilities to raise threshold
-   for different monitored attributes, to provide a general solution for
-   threshold definition on coherent pluggable monitored attributes, this
-   draft introduces the concept of "Supported Collection and Threshold
-   Group (SCTG)" shown in Figure 5 which defines the configurable
-   threshold values and collection types (i.e., the collection of
-   current value, average value, min/max value are supported).  The SCTG
-   types will be used in list of coherent pluggables Sheet.
 
    To define the warning, minor, major, critical threshold values for a
    coherent pluggable monitored attribute, operator should set upper and
@@ -947,13 +992,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
    *  Read-write opaque configuration attributes
 
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 17]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
    *  Read-only opaque PM/state attributes
 
    As part of coherent pluggable work, we need to address this situation
@@ -963,6 +1001,14 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    we need to address how opaque attributes are treated by packet device
    host.  This allows different coherent pluggables to be used in
    various multi-vendor hosts in plug-and-play fashion.
+
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 18]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
 
    It is important to note that "opaque attributes" are not simply
    attributes that can be addressed through augmentation of the YANG
@@ -1003,13 +1049,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    below.  To demonstrate these solutions, consider the host Vendor-X
    and pluggable Vendor-Y in Figure 1.  Let's assume:
 
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 18]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
    *  Vendor-Y has a new read-write proprietary configuration attributes
       "AA" which should be configured in pluggable (in addition to well-
       known attributes such as central-frequency, power and operational-
@@ -1019,6 +1058,13 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    *  In addition, consider a new read-only proprietary capability
       attributes "CC" supported on pluggable in range of {CC-min, CC-
       max}={1.1,3.3}.
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 19]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
 
 5.6.1.  Support of Opaque Capability Attributes
 
@@ -1056,16 +1102,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
    to be added
 
-
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 19]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
 5.6.3.  Support of Opaque Configuration Attributes (Solution-1)
 
    To support the opaque configuration attributes, there are a few
@@ -1078,6 +1114,13 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    operator, potentially provided in the Coherent Pluggable Repository.
    The Figure 7 illustrates the coherent pluggable YANG data model,
    which has been augmented with the following information:
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 20]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
 
    *  ID of new proprietary configuration attribute
 
@@ -1114,14 +1157,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
         Figure 7: Solution-1 for support of opaque config attributes
 
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 20]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
 5.6.4.  Support of Opaque Configuration Attributes (Solution-2)
 
    This approach is similar to Figure 7 but requires the host platform
@@ -1134,6 +1169,14 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    *  Name of new proprietary configuration attribute
 
    *  Value of new proprietary attribute
+
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 21]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
 
    The operator does not have visibility into the specific memory-map
    locations for these attributes on the coherent pluggable device.
@@ -1159,25 +1202,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    locations on the pluggable without needing to understand the meaning
    of the attributes.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 21]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
     +--rw opaque-config-attribute-list* [conf-attribute-id]
         +--rw conf-attribute-id             uint32
         +--rw conf-attribute-name           string
@@ -1202,6 +1226,14 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    mapping between these new attributes and their corresponding memory-
    map locations should be detailed in the pluggable Repository.  For
    each new opaque attribute, the host platform is required to perform a
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 22]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
    lookup in the pluggable Repository to identify the relevant memory-
    map locations.  The platform then assembles the corresponding values,
    which are communicated to the pluggable device via the CMIS protocol.
@@ -1224,15 +1256,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    writable registers.  The specific value might be set or read through
    different register positions on each read/write, depending on the
    encryption technique used.
-
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 22]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
 
    It is important to note that since the pluggable device encrypts the
    data, mapping the data offers no additional benefit.  The YANG model
@@ -1260,6 +1283,13 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
       Figure 9: Solution-4 for support of opaque secret configuration
                                  attributes
 
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 23]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
 5.6.7.  Support of Opaque Performance Monitoring Data
 
    The host packet device is informed of the properties via YANG
@@ -1276,19 +1306,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
    [Editorial Note: This section in under review.  It depends on the Gap
    Analysis as well]
-
-
-
-
-
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 23]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
 
    As discussed in the sections on capabilities, configuration, and
    performance monitoring in Section 5.1, Section 5.2, and Section 5.3,
@@ -1322,6 +1339,13 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    positioning of the IETF work with respect to the other related
    activities in the industry.
 
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 24]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
    To carry out this ongoing examination, properties/structures from
    relevant external bodies are collected and compared with properties/
    structures present in IETF models related to coherent pluggables.
@@ -1332,19 +1356,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    The following items are identified as initial gap related to coherent
    pluggables.  Note that the complete list will be provided after
    finishing the Google Sheet.
-
-
-
-
-
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 24]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
 
    *  Syntax gaps: Naming inconsistency on existing IETF drafts
       [ietf-impairment-yang], [ietf-layer0-yang] and
@@ -1380,6 +1391,17 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
    *  [Editor's note: More to be added after Gap Analysis.]
 
+
+
+
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 25]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
 8.  Optical Pluggables Lifecycle Management
 
    This section discusses the complete lifecycle of an optical pluggable
@@ -1394,14 +1416,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    all stages will be running in parallel for various plug versions etc.
    and there may be feedback from any stage to a previous stage.  For
    example, the research, evaluation and planning exercises are ongoing
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 25]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
    activities that continue as the network grows and changes and as new
    pluggable type & versions are introduced by vendors and insight from
    deployment may feed back to the evaluation stage.
@@ -1436,6 +1450,14 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
      Service type realization analysis |
           |                            |
           v                            |
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 26]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
      Purchase pluggables               /
           |                   ---------
           v                            \
@@ -1450,14 +1472,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
           v                            |
      Validate optical design           /
           |                   ---------
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 26]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
           v                            \
      Work Order (physical)             |
           |                            |
@@ -1491,6 +1505,15 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    use cases and scenarios that are of relevance to the operator's
    business.
 
+
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 27]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
    It is expected that these applications, use cases and scenarios will
    be developed through "Market research" and as pluggables etc. are
    assessed.  The use cases and scenarios will be applied extensively in
@@ -1505,14 +1528,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    each type & version of pluggable is relevant at all of these stages
    (see Section 8.5).  The capabilities are expected to be expressed in
    a Repository.
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 27]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
 
    The market analysis will lead to Service type design (some of which
    will be innovative) and will lead to an understanding of potential
@@ -1546,6 +1561,15 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    deploying each service type is defined for each operational context
    (application etc.)
 
+
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 28]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
    As a result of the planning exercise, numbers of each pluggable
    type&version required will be known and purchasing can be initiated.
    The purchased pluggables will be added to the inventory and spares
@@ -1562,14 +1586,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    When optical "services demand" is received, perhaps to provide
    underlay for the packet network or driven by a specific service
    contract, optical network analysis is carried out to evaluate how to
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 28]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
    efficiently and effectively achieve the specific service demanded.
    This analysis will consider the whole optical network including the
    plugs and ROADMs etc.  In most cases this "Service design" will use
@@ -1601,6 +1617,15 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    pluggable to the installation engineer and/or in the local spares
    holding inventory may also be considered.
 
+
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 29]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
    The optical design will be "validated" in terms of "viability" and
    compatibility prior to proceeding.  This analysis takes into account
    the full definitions of the pluggable type&versions of interest,
@@ -1618,14 +1643,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    this, the full type&version of the pluggable is read and compared
    with the intent.  Where there are discrepancies, either a work order
    is constructed to correct the installation error after the detected
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 29]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
-
    pluggable type&version is evaluated for compatibility with the
    specific design.  This evaluation is done using the Repository for
    that type&version.  It is possible that the type&version may be
@@ -1658,6 +1675,13 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    understanding of capability of pluggables (and any other equipment)
    is relevant.
 
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 30]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
 8.5.  Expressing capabilities
 
    As highlighted above, prior to installation of an optical pluggable
@@ -1674,13 +1698,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    of the pluggable).  This also suggest that discovery of capability
    detail from the pluggable is not sufficient/appropriate for
    deployment (although it may be useful in a lab context).
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 30]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
 
    A machine interpretable definition/specification for the pluggable
    should be available (independent of the pluggable instance) for each
@@ -1713,6 +1730,14 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    *  connector type (the capability to physically interconnect with a
       compatible connector)
 
+
+
+
+Rokui, et al.             Expires 18 June 2025                 [Page 31]
+
+Internet-Draft        Modelling Optical Pluggables         December 2024
+
+
    *  bus architecture (the capability to communicate with a compatible
       component)
 
@@ -1727,16 +1752,6 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
    uncertainty, a range, a collection of related ranges and thresholds
    etc.  Where some aspect has variability or is controllable, this is
    also required to be specified.
-
-
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 31]
-
-Internet-Draft        Modelling Optical Pluggables         November 2024
-
 
    For an equipment to be understood and used by a control system, the
    detailed information on capabilities must be available in machine
@@ -1774,24 +1789,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Rokui, et al.              Expires 1 June 2025                 [Page 32]
+Rokui, et al.             Expires 18 June 2025                 [Page 32]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
          <------------------ L3 service-1 ------------------->
@@ -1845,9 +1845,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 33]
+Rokui, et al.             Expires 18 June 2025                 [Page 33]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    steps outline the details of how this network is discovered and
@@ -1901,9 +1901,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 34]
+Rokui, et al.             Expires 18 June 2025                 [Page 34]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    Note that the packet over optical network in Figure 12 is not created
@@ -1957,9 +1957,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 35]
+Rokui, et al.             Expires 18 June 2025                 [Page 35]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
          <------------------ L3 service-2 ------------------->
@@ -2013,9 +2013,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 36]
+Rokui, et al.             Expires 18 June 2025                 [Page 36]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    The following steps outline the details of how this network is
@@ -2069,9 +2069,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 37]
+Rokui, et al.             Expires 18 June 2025                 [Page 37]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    *  The operator installs the designated pluggables into ports port_a
@@ -2125,9 +2125,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 38]
+Rokui, et al.             Expires 18 June 2025                 [Page 38]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    *  Network Engineers: Network engineers needs to know the
@@ -2181,9 +2181,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 39]
+Rokui, et al.             Expires 18 June 2025                 [Page 39]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    We should also consider the fact that some proprietary attributes and
@@ -2237,9 +2237,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 40]
+Rokui, et al.             Expires 18 June 2025                 [Page 40]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    *  PM Collection style for monitored attributes: List of all read-
@@ -2293,9 +2293,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 41]
+Rokui, et al.             Expires 18 June 2025                 [Page 41]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
     |  ( The list of all read-write attributes where         | | |
@@ -2349,9 +2349,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 42]
+Rokui, et al.             Expires 18 June 2025                 [Page 42]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    organization-identifier:  OIF
@@ -2405,9 +2405,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 43]
+Rokui, et al.             Expires 18 June 2025                 [Page 43]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    organization-identifier: Vendor-Y
@@ -2461,9 +2461,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 44]
+Rokui, et al.             Expires 18 June 2025                 [Page 44]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
@@ -2517,9 +2517,9 @@ Contributors
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 45]
+Rokui, et al.             Expires 18 June 2025                 [Page 45]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
    Email: sergio.belotti@nokia.com
@@ -2573,9 +2573,9 @@ Internet-Draft        Modelling Optical Pluggables         November 2024
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 46]
+Rokui, et al.             Expires 18 June 2025                 [Page 46]
 
-Internet-Draft        Modelling Optical Pluggables         November 2024
+Internet-Draft        Modelling Optical Pluggables         December 2024
 
 
 Authors' Addresses
@@ -2629,4 +2629,4 @@ Authors' Addresses
 
 
 
-Rokui, et al.              Expires 1 June 2025                 [Page 47]
+Rokui, et al.             Expires 18 June 2025                 [Page 47]
