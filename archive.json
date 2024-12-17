@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-15T01:41:27.832223+00:00",
+  "timestamp": "2024-12-17T01:27:43.091295+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -215,14 +215,54 @@
       "id": "I_kwDOLJuPKM6hnwTZ",
       "title": "Opaque attributes",
       "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/issues/13",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "sergiobelotti",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "https://github.com/italobusi/actn-wdm-pluggable-modelling/blob/b25297c8c8df2618074da848da322556755b91dd/draft-rokui-ccamp-actn-wdm-pluggable-modelling.md?plain=1#L440\r\n\r\nOpaque attributes have still to be discussed and agreed. I've open a specific issue for that.\r\nThe related section in the proposed version of the draft should be deleted here, and copied/pasted into this issue",
       "createdAt": "2024-12-02T11:18:00Z",
-      "updatedAt": "2024-12-09T09:20:00Z",
+      "updatedAt": "2024-12-15T14:03:05Z",
+      "closedAt": "2024-12-15T14:02:20Z",
+      "comments": [
+        {
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Agreed.\r\nClosing the issue as DUPLICATE of following issue.\r\nI've raised the following issue for addressing the need for coherent pluggable opaque attributes.\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/14#issue-2740643907\r\n\r\n",
+          "createdAt": "2024-12-15T14:02:20Z",
+          "updatedAt": "2024-12-15T14:03:05Z"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "id": "I_kwDOLJuPKM6jWuhD",
+      "title": "Address the need for coherent pluggable opaque attributes.",
+      "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/issues/14",
+      "state": "OPEN",
+      "author": "reza-github",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This issue is created to discuss the various aspects of coherent pluggable opaque attributes\"\r\n- Why we need them?\r\n- Why YANG augmentation is not engough? We need to discuss plug&play what is the role of host, plug interaction\r\n\r\n---\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/blob/b25297c8c8df2618074da848da322556755b91dd/draft-rokui-ccamp-actn-wdm-pluggable-modelling.md?plain=1#L440\r\n\r\nOpaque attributes have still to be discussed and agreed. I've open a specific issue for that.\r\nThe related section in the proposed version of the draft should be deleted here, and copied/pasted into this issue\r\n\r\nSee issue #13 ",
+      "createdAt": "2024-12-15T13:29:51Z",
+      "updatedAt": "2024-12-16T14:16:14Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 15,
+      "id": "I_kwDOLJuPKM6jWvbF",
+      "title": "Discussion on Coherent Pluggable Repository",
+      "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/issues/15",
+      "state": "OPEN",
+      "author": "reza-github",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This issue is raised to provide discussions on various aspects of the \"coherent pluggable Repository\".\r\nWe need to bring operators to this discussion as well.",
+      "createdAt": "2024-12-15T13:38:23Z",
+      "updatedAt": "2024-12-15T13:38:23Z",
       "closedAt": null,
       "comments": []
     }
@@ -1077,13 +1117,13 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2024-12-13T20:34:56Z",
+      "updatedAt": "2024-12-15T14:05:59Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "bb388041c3b96babe101c1d66641a2d8d060fa31",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "main",
-      "headRefOid": "026ac666b376c4d82daf39fc4e5f5a0049ffd6ab",
+      "headRefOid": "e33814bcd8f19b830873154342a8b28be1e48de7",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -1848,9 +1888,9 @@
           "comments": [
             {
               "originalPosition": 286,
-              "body": "I agree with Italo's comment. Not committed pending discussion on Gert's comment.",
+              "body": "The text is corrected as per Italo's comment.\r\n\r\nGert,\r\nGood idea. Please revise this paragraph with your suggest text. I want to make sure it is captured correctly in this draft. ",
               "createdAt": "2024-12-13T16:57:26Z",
-              "updatedAt": "2024-12-13T16:58:25Z"
+              "updatedAt": "2024-12-15T13:23:34Z"
             }
           ]
         },
