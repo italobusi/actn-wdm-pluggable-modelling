@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-30T01:40:51.201523+00:00",
+  "timestamp": "2025-04-10T01:27:26.431948+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -1117,7 +1117,7 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2024-12-15T14:05:59Z",
+      "updatedAt": "2025-04-09T13:49:02Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "bb388041c3b96babe101c1d66641a2d8d060fa31",
@@ -1911,6 +1911,86 @@
               "body": "Gert, that is correct.\r\nI will add your suggested text to the document.",
               "createdAt": "2024-12-13T20:34:56Z",
               "updatedAt": "2024-12-13T20:34:56Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6j3bAg",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "ggalimba56",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-08T08:57:59Z",
+          "updatedAt": "2025-04-08T08:58:00Z",
+          "comments": [
+            {
+              "originalPosition": 139,
+              "body": "Isn'it a duplication of the first bullet ?",
+              "createdAt": "2025-04-08T08:57:59Z",
+              "updatedAt": "2025-04-08T08:58:00Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6kFeP7",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "ggalimba56",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-09T09:59:15Z",
+          "updatedAt": "2025-04-09T09:59:15Z",
+          "comments": [
+            {
+              "originalPosition": 99,
+              "body": "The CMIS may not be the only management interface for the pluggable.\r\nThere will be an enhanced CMIS probably using a more powerful I2C or even the XGMII introduction to have an Ethernet communication in the pluggable. I would keep the point B. more open.",
+              "createdAt": "2025-04-09T09:59:15Z",
+              "updatedAt": "2025-04-09T09:59:15Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6kH8hL",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "ggalimba56",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-09T13:44:24Z",
+          "updatedAt": "2025-04-09T13:44:25Z",
+          "comments": [
+            {
+              "originalPosition": 304,
+              "body": "agree.  The vendor should be responsible to define the encryption as well",
+              "createdAt": "2025-04-09T13:44:25Z",
+              "updatedAt": "2025-04-09T13:44:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6kIASc",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "ggalimba56",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-09T13:49:01Z",
+          "updatedAt": "2025-04-09T13:49:02Z",
+          "comments": [
+            {
+              "originalPosition": 312,
+              "body": "Agree. also because very often a Yang parameter or a YANG provisioning session can cover a definite CMIS sequence and order register writing that can not be replicated with Yang.",
+              "createdAt": "2025-04-09T13:49:02Z",
+              "updatedAt": "2025-04-09T13:49:02Z"
             }
           ]
         }
