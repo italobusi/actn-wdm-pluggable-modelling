@@ -181,7 +181,7 @@ informative:
 
 --- abstract
 
-This draft outlines the optical pluggable attributes within a host packet device, focusing on their role in a packet-over-optical network. It includes representations of coherent pluggable capabilities, configuration, states, and telemetry data. These attributes draws from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI, to ensure uniform structuring and consistent naming conventions.
+This draft outlines the optical pluggable attributes within a host packet device, focusing on their role in a packet-over-optical network. It includes representations of coherent pluggable capabilities, configuration, states, and telemetry data. These attributes draws from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI, to ensure uniform structuring and consistent naming conventions. Note that the IETF terminology shall be given precedence wherever possible. In case there is a duplication of an attribute, this draft may describe how the attribute is named in the related document. Only if no attribute exists in IETF RFCs or IETF WG drafts, new attributes shall be introduced if they are needed.
 
 A gap analysis is included to compare optical pluggable attributes with current IETF drafts, identifying any modeling gaps. Based on the identified gaps, the draft proposes solutions to address missing attributes, such as augmenting or updating existing IETF YANG models.
 
@@ -205,7 +205,7 @@ The following terms abbreviations are used in this document:
 - P-PNC: The control functions specializing in management/control of packet functions (virtual or physical). See {{?RFC8453}}
 
 - CMIS: The Common Management Interface Specification is an OIF Implementation Agreement (IA) which provides a well-defined mechanism to initialize and manage optical (and copper) modules in a standard way, while still providing the capability to provide custom functionality. This commonality makes integration into different host platforms easier for both the host and module vendors. This Implementation Agreement (IA) defines the Common Management Interface. Note that CMIS targets any pluggable modules, not only Coherent ones. Specification (CMIS), which may be used by pluggable or on-board modules, such as QSFP Double Density (QSFP-DD), OSFP, COBO, QSFP, as well as by existing or future module developments with host to module management communication based on a
-two-wire interface. This IA is targeted for systems manufacturers, system integrators, and suppliers of CMIS compliant modules.
+two-wire interface. This IA is targeted for systems manufacturers, system integrators, and suppliers of CMIS compliant modules {{CMIS}}.
 
 - optical pluggable media side:
 
@@ -264,7 +264,7 @@ The document is divided into the following sections:
 
 {{figure-details-packet-optical-device}} shows a host packet device from vendor X, which is connected to optical device, equipped with optical pluggables from vendor X and Y. This figure exposes the following internal and external interfaces:
 
-A. This interface provides the control of host packet functions and optical functions. It provides these functions which can be decoupled such that there is no overlap between the optical and packet control functions.
+A. This interface provides the control of host packet functions and optical functions. It provides these functions which can be decoupled such that there is no overlap between the optical and packet control functions. Note that the YANG data model for the pluggable will be provided at interface (A), i.e., the management interface of the device.
 
 B. The CMIS communication interface between host packet devices) and optical pluggables.
 
@@ -329,9 +329,9 @@ The model presented in {{data-model}} consolidates properties of coherent plugga
 
 The functional building blocks of the coherent pluggables of {{figure-details-packet-optical-device}} are shown in {{figure-optical-pluggable-building-blocks}} and has three major functions:
 
-- Media side: This functional block represents all Photonic/Optical attributes of the coherent pluggables (interface (5) in {{figure-details-packet-optical-device}}). These attributes define the characteristics of the optical and photonic properties such as spectrum, polarization, dispersion etc., which do not directly affect the behavior of the host packet device. Note that the goal of this draft is to identify coherent pluggable capabilities, configuration, states, and telemetry data attributes from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI and then perform the gap analysis to compare optical pluggable attributes with current IETF drafts, identifying any modeling gaps. Eventually based on the identified gaps, the draft proposes solutions to address missing attributes, such as augmenting or updating existing IETF YANG models.
+- Media side: This functional block represents all Photonic/Optical attributes of the coherent pluggables (interface (D) in {{figure-details-packet-optical-device}}). These attributes define the characteristics of the optical and photonic properties such as spectrum, polarization, dispersion etc., which do not directly affect the behavior of the host packet device. Note that the goal of this draft is to identify coherent pluggable capabilities, configuration, states, and telemetry data attributes from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI and then perform the gap analysis to compare optical pluggable attributes with current IETF drafts, identifying any modeling gaps. Eventually based on the identified gaps, the draft proposes solutions to address missing attributes, such as augmenting or updating existing IETF YANG models.
 
-- Host side: This functional block represents all Host/Electrical attributes of the coherent pluggables (interface (4) in {{figure-details-packet-optical-device}}). These attributes defines the characteristics of interconnect between the host and the optical pluggable, such as lane count, FEC etc., which both the optical pluggable and the packet host should understand and act upon.
+- Host side: This functional block represents all Host/Electrical attributes of the coherent pluggables (interface (Cx) in {{figure-details-packet-optical-device}}). These attributes defines the characteristics of interconnect between the host and the optical pluggable, such as lane count, FEC etc., which both the optical pluggable and the packet host should understand and act upon.
 
 - Equipment attributes: These attributes represent all physical and functional aspects of the coherent pluggable such as plug type, software version, thermal characteristics, power consumption etc.
 
@@ -350,7 +350,7 @@ The functional building blocks of the coherent pluggables of {{figure-details-pa
  | | |---------|  |---------|  |  | |---------|  |---------|  | |(Tx)
 -----| Elec.   |  | Host    |  |  | | Media   |  | Optical | -----> 
 -----| Channels|--| Logical |-------| Logical |--| Channel | <----- 
------|         |  | Channels|  |  | | Channels|  | (OTSI)  |  | |(Rx)
+-----|         |  | Channels|  |  | | Channels|  | (OTSi)  |  | |(Rx)
  | | |---------|  |---------|  |  | |---------|  |---------|  | |
  | |                           |  |                           | |
  | |---------------------------|  |---------------------------| |
@@ -362,9 +362,9 @@ The functional building blocks of the coherent pluggables of {{figure-details-pa
 
 The following sections are describing the details of coherent pluggable functional blocks in more details.
 
-## Optical Channel/OTSI
+## Optical Channel/OTSi
 
-The media side of the coherent pluggable is further divided into two functional blocks; Optical Channel/OTSI and Media Logical Channels. The characteristics of the Optical channel/OTSI are:
+The media side of the coherent pluggable is further divided into two functional blocks; Optical Channel/OTSi and Media Logical Channels. The characteristics of the Optical channel/OTSi are (See section 2.3.1 of {{ietf-impairment-yang}}).
 
 * This is the pluggable interfaces facing the optical network.
 
@@ -428,7 +428,9 @@ The "Equipment functional block" in {{figure-optical-pluggable-building-blocks}}
 {: #data-model}
 # Optical Pluggables Data Modeling
 
-The attributes of all functional building block of a coherent pluggable in {{figure-optical-pluggable-building-blocks}} will be exposed to external packet and optical controllers via host interface (1) shown in {{figure-details-packet-optical-device}}. To this end, we need to model the coherent pluggable building blocks described in {{building-blocks}}.
+[Editor's notes: As part of Gap analysis, YANG reference/YANG code might be added to the data modeling section/subsections and that the current content shall be considered as placeholder for the model.]
+
+The attributes of all functional building block of a coherent pluggable in {{figure-optical-pluggable-building-blocks}} will be exposed to external packet and optical controllers via host interface (A) shown in {{figure-details-packet-optical-device}}. To this end, we need to model the coherent pluggable building blocks described in {{building-blocks}}.
 
 The data modeling of each functional blocks provides attributes in following areas:
 
@@ -462,7 +464,7 @@ Referring to {{figure-plug-config}}, the coherent pluggables support a set of re
 ~~~~ 
 
  |-----------------------------------------------------------------|
- |  optical-channel  // OTSI channels                              |
+ |  optical-channel  // OTSi channels                              |
  |      configuration // list of R/W plug configuration attributes |
  |           config-attribute-1                                    |
  |           config-attribute-2                                    |
@@ -481,7 +483,7 @@ Referring to {{figure-plug-config}}, the coherent pluggables support a set of re
 ~~~~ 
 
  |-----------------------------------------------------------------|
- |  optical-channel  // OTSI channels                              |
+ |  optical-channel  // OTSi channels                              |
  |      pm and states  // list of R/O pm and state attributes      |
  |                     // Note-1: Each pm-attribute might have     |
  |                     //         threshold definitions            |
@@ -562,150 +564,6 @@ Note that sometimes these thresholds are configurable and sometime they are hard
 
 The coherent pluggables might generate various alarm notifications due to the various reasons.
 
-{: #plug-vendor-specific-attributes}
-## Support of Opaque Attributes
-
-[Editorial Note: This section in under review.]
-
-In certain cases, a coherent pluggable may support attributes that are specific to a particular vendor. This draft refers to such attributes as "Opaque Attributes". Given that coherent pluggables encompass capability, configuration, and performance monitoring (PM)/state attributes, each category may contain opaque attributes. Consequently, the opaque attributes could include the following:
-
-* Read-only opaque capability attributes
-* Read-write opaque configuration attributes
-* Read-only opaque PM/state attributes
-
-As part of coherent pluggable work, we need to address this situation where a coherent pluggable contains some proprietary capability, configuration and PM/states attributes which are needed to be configured or accessed from coherent pluggables. In this situation we need to address how opaque attributes are treated by packet device host. This allows different coherent pluggables to be used in various multi-vendor hosts in plug-and-play fashion.
-
-It is important to note that "opaque attributes" are not simply attributes that can be addressed through augmentation of the YANG data model. The reason for this is that the coherent pluggable is exposed to external systems via the host packet device northbound interface as shown in {{figure-details-packet-optical-device}}. If the host packet device does not recognize any of these "opaque attributes". it may prevent the discovery of the coherent pluggable.
-
-When such opaque attributes exist, although the host packet device may not comprehend the semantics of these opaque attributes, it should function as a proxy and mediator between the coherent pluggable and the northbound SDN controller. Specifically, the host packet device should understand the syntax of the opaque attributes and facilitate communication between the coherent pluggable and the northbound SDN controller. To achieve plug-and-play functionality in a multi-vendor environment, the host packet device should be capable of supporting these opaque attributes. The rest of this section will provide details on how to achieve this.
-
-Another consideration is the privacy of opaque attributes, i.e., there are situations where these attributes may be commercially sensitive. In these cases, it would be reasonable to assume that the opaque attributes are in encrypted format allowing them to be passed from coherent pluggable to northbound of the host without being observed or interpreted in any way by host. 
-
-To achieve this, the coherent pluggable YANG data model (the work done as part of this draft -  Google Sheet) should first be augmented with vendor proprietary capability, configuration or PM attributes. As noted above, it might be also necessary to define how these new attributes are mapped to the internal protocol between the host and the pluggable via CMIS protocol. A key consideration is that the host does not need to understand the semantics of these new attributes and may not even need to know their syntax.
-
-There are multiple solutions to this problem which will be discussed below. To demonstrate these solutions, consider the host Vendor-X and pluggable Vendor-Y in {{figure-details-packet-optical-device}}. Let's assume: 
-
-* Vendor-Y has a new read-write proprietary configuration attributes "AA" which should be configured in pluggable (in addition to well-known attributes such as central-frequency, power and operational-mode). The value of attribute AA is 100 and its memory map in coherent pluggable is 0x1100. 
-* In addition, consider a new read-only proprietary capability attributes "CC" supported on pluggable in range of {CC-min, CC-max}={1.1,3.3}.
-
-### Support of Opaque Capability Attributes
-
-The coherent pluggable YANG data model is augmented with a list of new capability attributes. As demonstrated in {{solution-vs-cap-attributes}}, the YANG data model is augmented with the following information:
-
-* ID of new capability proprietary attribute
-* Name of new capability proprietary attribute
-* Minimum value of new attribute
-* Maximum value of new attribute
-
-The {{solution-vs-cap-attributes}} shows an example of new capability attribute "CC" whose min and max values are 1.1 and 3.3, respectively.
-
-~~~~ 
- +--ro opaque-capability-attribute-list* [cap-attribute-id]
-     +--ro cap-attribute-id              uint32
-     +--ro cap-attribute-name            string
-     +--ro cap-min-value                 decimal64
-     +--ro cap-max-value                 decimal64
-
-<opaque-capability-attribute-list xmlns="urn:example:cc">
-  <cap-attribute-id> 1 </cap-attribute-id >
-  <cap-attribute-name> CC </cap-attribute-name>
-  <cap-min-value> 1.1 </cap-min-value>
-  <cap-max-value> 3.3 </cap-max-value>
-</opaque-capability-attribute-list>
-~~~~
-{: #solution-vs-cap-attributes title="Support of Opaque Capability Attributes"}
-
-### Support of Opaque Secret Capability Attributes
-
-to be added
-
-{: #opaque-config-solution-1}
-
-### Support of Opaque Configuration Attributes (Solution-1)
-
-To support the opaque configuration attributes, there are a few potential solutions which are discussed below. This approach is the simplest solution, as it requires no interpretation by the host platform. The coherent pluggable YANG data model is augmented with a list that directly maps the values of new configuration attributes to the corresponding memory-map locations on the pluggable device. In this solution, the memory-map locations must be known to the operator, potentially provided in the Coherent Pluggable Repository. The {{solution-1}} illustrates the coherent pluggable YANG data model, which has been augmented with the following information:
-
-* ID of new proprietary configuration attribute
-* Name of new proprietary configuration attribute
-* Value of new proprietary attribute
-* The memory map of new proprietary attribute (which is used in CMIS communication between host and pluggable)
-
-For instance, consider a scenario where the operator intends to configure a new proprietary attribute, "AA," with a value of 100, and a memory-map location on the pluggable set to 0x1100. In this process, the host platform receives the attribute "AA" as defined in {{solution-1}}. The host platform then relays this information to the coherent pluggable via the CMIS protocol, without performing any interpretation. In other words, the host platform is not required to understand the syntax or semantics of these attributes; it functions merely as a conduit, transmitting the values from the NBI to the designated memory-map locations on the pluggable.
-
-~~~~ 
- +--rw opaque-config-attribute-list* [conf-attribute-id]
-     +--rw conf-attribute-id             uint32
-     +--rw conf-attribute-name           string
-     +--rw value                         decimal64
-     +--rw memory-map                    decimal64
-
-<opaque-config-attribute-list xmlns="urn:example:cc">
-  <config-attribute-id> 1 </config-attribute-id >
-  <config-attribute-name> AA </config-attribute-name>
-  <value> 100 </value>
-  <memory-map> 1100 </memory-map>
-</opaque-config-attribute-list>
-~~~~
-{: #solution-1 title="Solution-1 for support of opaque config attributes"}
-
-### Support of Opaque Configuration Attributes (Solution-2)
-
-This approach is similar to {{solution-1}} but requires the host platform to implement lookup logic to determine the memory-map location on the pluggables. In this solution, the coherent pluggable YANG data model is augmented with the following new attributes, as shown in {{solution-2}}:
-
-* ID of new proprietary configuration attribute
-* Name of new proprietary configuration attribute
-* Value of new proprietary attribute
-
-The operator does not have visibility into the specific memory-map locations for these attributes on the coherent pluggable device. Instead, the memory-map for each new attribute is provided in the Coherent Pluggable Repository. In this scenario, the host platform must search the pluggable Repository to locate the corresponding memory-map location for each new attribute. These values are then communicated to the pluggable via the CMIS protocol for configuration. As in {{solution-1}}, the host platform does not need to understand the syntax or semantics of the new attributes; it only needs to search the pluggable Repository to identify the memory-map locations for the new attributes.
-
-As illustrated in {{solution-2}}, the host platform receives the new attribute "AA" via its Northbound Interface (NBI), with a configuration value of 0x1100. The host then searches the coherent pluggable Repository to determine the memory-map location associated with this attribute and identifies it as 0x1100. Without interpreting the attribute's syntax or semantics, the host platform communicates this information to the coherent pluggable via the CMIS protocol. Essentially, the host platform functions as a proxy, transmitting the values from the NBI to the appropriate memory-map locations on the pluggable without needing to understand the meaning of the attributes.
-
-~~~~ 
- +--rw opaque-config-attribute-list* [conf-attribute-id]
-     +--rw conf-attribute-id             uint32
-     +--rw conf-attribute-name           string
-     +--rw value                         decimal64
-     Note: The memory-map for each new attribute is provided in
-           pluggable Repository.
-
-<opaque-config-attribute-list xmlns="urn:example:cc">
-  <config-attribute-id> 1 </config-attribute-id >
-  <config-attribute-name> AA </config-attribute-name>
-  <value> 100 </value>
-</opaque-config-attribute-list>
-
-~~~~
-{: #solution-2 title="Solution-2 for support of opaque config attributes"}
-
-### Support of Opaque Configuration Attributes (Solution-3)
-
-This solution represents an advanced approach when a new opaque configuration attribute is mapped to multiple memory-map locations on a pluggable device, or when multiple such attributes are mapped to a single memory-map location on pluggable. Similar to {{solution-2}}, the mapping between these new attributes and their corresponding memory-map locations should be detailed in the pluggable Repository. For each new opaque attribute, the host platform is required to perform a lookup in the pluggable Repository to identify the relevant memory-map locations. The platform then assembles the corresponding values, which are communicated to the pluggable device via the CMIS protocol.
-
-Although this solution is included for completeness, it is not practical or desirable due to its complexity and the need for interpretation by the host software
-
-### Support of Opaque Secret Configuration Attributes
-
-There are situations where opaque configuration attributes are confidential, and the vendor wishes to conceal their meanings and values. When considering the interface from the pluggable device to the host via CMIS, it is crucial that the pluggable does not expose the meaning or value of these confidential attributes. Ideally, the pluggable device would encrypt the data. Within the context of CMIS, it may be sufficient to allocate an array of register locations to convey the property values. These registers would store an encrypted data blob for read-only properties and accept an encrypted blob for writable registers. The specific value might be set or read through different register positions on each read/write, depending on the encryption technique used.
-
-It is important to note that since the pluggable device encrypts the data, mapping the data offers no additional benefit. The YANG model would simply convey the register values as requested. The properties are applied to the memory map in a manner that may appear disordered. The location values must always be read together and written as specified, potentially requiring multiple reads to retrieve all properties. This approach could be incorporated into the basic register-based option discussed in {{opaque-config-solution-1}}.
-
-As an example, let's assume a vendor defines secret attribute "DD" for its coherent pluggable. Vendor first needs to augment IETF data model with a list of encrypted values and memory-maps shown in {{solution-4}}. This very similar to {{solution-1}} where essentially the host functions as a proxy, transmitting the values from the NBI to the appropriate memory-map locations on the pluggable without needing to understand the meaning and semantics of these attributes.
-
-~~~~ 
- +--rw opaque-config-attribute-list* [conf-attribute-id]
-     +--rw conf-attribute-id             uint32
-     +--rw encrypted-attribute-name      string
-     +--rw encrypted-attribute-value     string
-     +--rw memory-map                    decimal64
-~~~~
-{: #solution-4 title="Solution-4 for support of opaque secret configuration attributes"}
-
-
-{: #support-plug-vendor-pm}
-### Support of Opaque Performance Monitoring Data
-
-The host packet device is informed of the properties via YANG augments and appropriate mapping definitions. The mapping definitions tell the host that the related properties are related to performance monitoring data such that the host will periodically read the appropriate parts of the pluggable interface as for any other performance monitoring data. AS for all other performance monitoring data, the host does not need to understand the data. The client controller can carry out analysis or can propagate the measures transparently to some other controller etc.
-
 {: #yang-model}
 # Addressing Coherent Pluggables Attributes From Google Sheet
 
@@ -761,6 +619,13 @@ Examples:
 
 {: #plug-lcm}
 # Optical Pluggables Lifecycle Management
+
+[Editorial Note: it is under review.
+It was agreed that this section is important. Having said that, there are aa few potential solution to address this topic:
+
+ * Keep it is this draft
+* Talk to author of use-case draft to be included in that draft https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-pluggable-usecases-gaps/
+* Move it to other IETF draft]
 
 This section discusses the complete lifecycle of an optical pluggable as shown in {{figure-overview-lifecycle-pluggable}}. It includes discussion on the pre-purchase evaluation of pluggables through installation to the operation of a pluggable in a live network. 
 
@@ -1048,14 +913,155 @@ The following steps outline the details of how this network is planned, provisio
 - The SDN controller can collect all alarm notifications from the network (including pluggables).
 - The SDN controller can further change, modify, optimize the network (if needed).
 
+{: #plug-vendor-specific-attributes}
+# Appendix B - Support of Opaque Attributes
 
-# Appendix B - Coherent Pluggable Repository
+[Editorial Note: This section in under review. The GihHub issue #14 addresses this].
 
-[Editor's note: Formerly Manifest ]
+In certain cases, a coherent pluggable may support attributes that are specific to a particular vendor. This draft refers to such attributes as "Opaque Attributes". Given that coherent pluggables encompass capability, configuration, and performance monitoring (PM)/state attributes, each category may contain opaque attributes. Consequently, the opaque attributes could include the following:
+
+* Read-only opaque capability attributes
+* Read-write opaque configuration attributes
+* Read-only opaque PM/state attributes
+
+As part of coherent pluggable work, we need to address this situation where a coherent pluggable contains some proprietary capability, configuration and PM/states attributes which are needed to be configured or accessed from coherent pluggables. In this situation we need to address how opaque attributes are treated by packet device host. This allows different coherent pluggables to be used in various multi-vendor hosts in plug-and-play fashion.
+
+It is important to note that "opaque attributes" are not simply attributes that can be addressed through augmentation of the YANG data model. The reason for this is that the coherent pluggable is exposed to external systems via the host packet device northbound interface as shown in {{figure-details-packet-optical-device}}. If the host packet device does not recognize any of these "opaque attributes". it may prevent the discovery of the coherent pluggable.
+
+When such opaque attributes exist, although the host packet device may not comprehend the semantics of these opaque attributes, it should function as a proxy and mediator between the coherent pluggable and the northbound SDN controller. Specifically, the host packet device should understand the syntax of the opaque attributes and facilitate communication between the coherent pluggable and the northbound SDN controller. To achieve plug-and-play functionality in a multi-vendor environment, the host packet device should be capable of supporting these opaque attributes. The rest of this section will provide details on how to achieve this.
+
+Another consideration is the privacy of opaque attributes, i.e., there are situations where these attributes may be commercially sensitive. In these cases, it would be reasonable to assume that the opaque attributes are in encrypted format allowing them to be passed from coherent pluggable to northbound of the host without being observed or interpreted in any way by host. 
+
+To achieve this, the coherent pluggable YANG data model (the work done as part of this draft -  Google Sheet) should first be augmented with vendor proprietary capability, configuration or PM attributes. As noted above, it might be also necessary to define how these new attributes are mapped to the internal protocol between the host and the pluggable via CMIS protocol. A key consideration is that the host does not need to understand the semantics of these new attributes and may not even need to know their syntax.
+
+There are multiple solutions to this problem which will be discussed below. To demonstrate these solutions, consider the host Vendor-X and pluggable Vendor-Y in {{figure-details-packet-optical-device}}. Let's assume: 
+
+* Vendor-Y has a new read-write proprietary configuration attributes "AA" which should be configured in pluggable (in addition to well-known attributes such as central-frequency, power and operational-mode). The value of attribute AA is 100 and its memory map in coherent pluggable is 0x1100. 
+* In addition, consider a new read-only proprietary capability attributes "CC" supported on pluggable in range of {CC-min, CC-max}={1.1,3.3}.
+
+### Support of Opaque Capability Attributes
+
+The coherent pluggable YANG data model is augmented with a list of new capability attributes. As demonstrated in {{solution-vs-cap-attributes}}, the YANG data model is augmented with the following information:
+
+* ID of new capability proprietary attribute
+* Name of new capability proprietary attribute
+* Minimum value of new attribute
+* Maximum value of new attribute
+
+The {{solution-vs-cap-attributes}} shows an example of new capability attribute "CC" whose min and max values are 1.1 and 3.3, respectively.
+
+~~~~ 
+ +--ro opaque-capability-attribute-list* [cap-attribute-id]
+     +--ro cap-attribute-id              uint32
+     +--ro cap-attribute-name            string
+     +--ro cap-min-value                 decimal64
+     +--ro cap-max-value                 decimal64
+
+<opaque-capability-attribute-list xmlns="urn:example:cc">
+  <cap-attribute-id> 1 </cap-attribute-id >
+  <cap-attribute-name> CC </cap-attribute-name>
+  <cap-min-value> 1.1 </cap-min-value>
+  <cap-max-value> 3.3 </cap-max-value>
+</opaque-capability-attribute-list>
+~~~~
+{: #solution-vs-cap-attributes title="Support of Opaque Capability Attributes"}
+
+### Support of Opaque Secret Capability Attributes
+
+to be added
+
+{: #opaque-config-solution-1}
+
+### Support of Opaque Configuration Attributes (Solution-1)
+
+To support the opaque configuration attributes, there are a few potential solutions which are discussed below. This approach is the simplest solution, as it requires no interpretation by the host platform. The coherent pluggable YANG data model is augmented with a list that directly maps the values of new configuration attributes to the corresponding memory-map locations on the pluggable device. In this solution, the memory-map locations must be known to the operator, potentially provided in the Coherent Pluggable Repository. The {{solution-1}} illustrates the coherent pluggable YANG data model, which has been augmented with the following information:
+
+* ID of new proprietary configuration attribute
+* Name of new proprietary configuration attribute
+* Value of new proprietary attribute
+* The memory map of new proprietary attribute (which is used in CMIS communication between host and pluggable)
+
+For instance, consider a scenario where the operator intends to configure a new proprietary attribute, "AA," with a value of 100, and a memory-map location on the pluggable set to 0x1100. In this process, the host platform receives the attribute "AA" as defined in {{solution-1}}. The host platform then relays this information to the coherent pluggable via the CMIS protocol, without performing any interpretation. In other words, the host platform is not required to understand the syntax or semantics of these attributes; it functions merely as a conduit, transmitting the values from the NBI to the designated memory-map locations on the pluggable.
+
+~~~~ 
+ +--rw opaque-config-attribute-list* [conf-attribute-id]
+     +--rw conf-attribute-id             uint32
+     +--rw conf-attribute-name           string
+     +--rw value                         decimal64
+     +--rw memory-map                    decimal64
+
+<opaque-config-attribute-list xmlns="urn:example:cc">
+  <config-attribute-id> 1 </config-attribute-id >
+  <config-attribute-name> AA </config-attribute-name>
+  <value> 100 </value>
+  <memory-map> 1100 </memory-map>
+</opaque-config-attribute-list>
+~~~~
+{: #solution-1 title="Solution-1 for support of opaque config attributes"}
+
+### Support of Opaque Configuration Attributes (Solution-2)
+
+This approach is similar to {{solution-1}} but requires the host platform to implement lookup logic to determine the memory-map location on the pluggables. In this solution, the coherent pluggable YANG data model is augmented with the following new attributes, as shown in {{solution-2}}:
+
+* ID of new proprietary configuration attribute
+* Name of new proprietary configuration attribute
+* Value of new proprietary attribute
+
+The operator does not have visibility into the specific memory-map locations for these attributes on the coherent pluggable device. Instead, the memory-map for each new attribute is provided in the Coherent Pluggable Repository. In this scenario, the host platform must search the pluggable Repository to locate the corresponding memory-map location for each new attribute. These values are then communicated to the pluggable via the CMIS protocol for configuration. As in {{solution-1}}, the host platform does not need to understand the syntax or semantics of the new attributes; it only needs to search the pluggable Repository to identify the memory-map locations for the new attributes.
+
+As illustrated in {{solution-2}}, the host platform receives the new attribute "AA" via its Northbound Interface (NBI), with a configuration value of 0x1100. The host then searches the coherent pluggable Repository to determine the memory-map location associated with this attribute and identifies it as 0x1100. Without interpreting the attribute's syntax or semantics, the host platform communicates this information to the coherent pluggable via the CMIS protocol. Essentially, the host platform functions as a proxy, transmitting the values from the NBI to the appropriate memory-map locations on the pluggable without needing to understand the meaning of the attributes.
+
+~~~~ 
+ +--rw opaque-config-attribute-list* [conf-attribute-id]
+     +--rw conf-attribute-id             uint32
+     +--rw conf-attribute-name           string
+     +--rw value                         decimal64
+     Note: The memory-map for each new attribute is provided in
+           pluggable Repository.
+
+<opaque-config-attribute-list xmlns="urn:example:cc">
+  <config-attribute-id> 1 </config-attribute-id >
+  <config-attribute-name> AA </config-attribute-name>
+  <value> 100 </value>
+</opaque-config-attribute-list>
+
+~~~~
+{: #solution-2 title="Solution-2 for support of opaque config attributes"}
+
+### Support of Opaque Configuration Attributes (Solution-3)
+
+This solution represents an advanced approach when a new opaque configuration attribute is mapped to multiple memory-map locations on a pluggable device, or when multiple such attributes are mapped to a single memory-map location on pluggable. Similar to {{solution-2}}, the mapping between these new attributes and their corresponding memory-map locations should be detailed in the pluggable Repository. For each new opaque attribute, the host platform is required to perform a lookup in the pluggable Repository to identify the relevant memory-map locations. The platform then assembles the corresponding values, which are communicated to the pluggable device via the CMIS protocol.
+
+Although this solution is included for completeness, it is not practical or desirable due to its complexity and the need for interpretation by the host software
+
+### Support of Opaque Secret Configuration Attributes
+
+There are situations where opaque configuration attributes are confidential, and the vendor wishes to conceal their meanings and values. When considering the interface from the pluggable device to the host via CMIS, it is crucial that the pluggable does not expose the meaning or value of these confidential attributes. Ideally, the pluggable device would encrypt the data. Within the context of CMIS, it may be sufficient to allocate an array of register locations to convey the property values. These registers would store an encrypted data blob for read-only properties and accept an encrypted blob for writable registers. The specific value might be set or read through different register positions on each read/write, depending on the encryption technique used.
+
+It is important to note that since the pluggable device encrypts the data, mapping the data offers no additional benefit. The YANG model would simply convey the register values as requested. The properties are applied to the memory map in a manner that may appear disordered. The location values must always be read together and written as specified, potentially requiring multiple reads to retrieve all properties. This approach could be incorporated into the basic register-based option discussed in {{opaque-config-solution-1}}.
+
+As an example, let's assume a vendor defines secret attribute "DD" for its coherent pluggable. Vendor first needs to augment IETF data model with a list of encrypted values and memory-maps shown in {{solution-4}}. This very similar to {{solution-1}} where essentially the host functions as a proxy, transmitting the values from the NBI to the appropriate memory-map locations on the pluggable without needing to understand the meaning and semantics of these attributes.
+
+~~~~ 
+ +--rw opaque-config-attribute-list* [conf-attribute-id]
+     +--rw conf-attribute-id             uint32
+     +--rw encrypted-attribute-name      string
+     +--rw encrypted-attribute-value     string
+     +--rw memory-map                    decimal64
+~~~~
+{: #solution-4 title="Solution-4 for support of opaque secret configuration attributes"}
+
+
+{: #support-plug-vendor-pm}
+### Support of Opaque Performance Monitoring Data
+
+The host packet device is informed of the properties via YANG augments and appropriate mapping definitions. The mapping definitions tell the host that the related properties are related to performance monitoring data such that the host will periodically read the appropriate parts of the pluggable interface as for any other performance monitoring data. AS for all other performance monitoring data, the host does not need to understand the data. The client controller can carry out analysis or can propagate the measures transparently to some other controller etc.
+
+# Appendix C - Coherent Pluggable Repository
+
+[Editor's note: Formerly Manifest. GitHub issue #15 covers this].
 
 [Editor's note: Based on CCAMP WG's suggestion, this section is moved to Appendix for now. It might be moved from this draft to an existing IETF draft or to a new draft. We need to align with draft https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-pluggable-usecases-gaps/ as well]
-
-[Editor's note: Any suggestion for a better term?? ]
 
 Referring to {{plug-capabilities-attributes}}, the coherent pluggable capability attributes (i.e., supported-modes) are crucial aspects of coherent pluggables and should be easily accessible for various reasons and activities. Those might include:
 
