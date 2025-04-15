@@ -96,7 +96,7 @@ contributor:
     fullname: Gabriele Galimberti
     org: Individual
     email: ggalimbe56@gmail.com
- 
+
   -
     ins: H. Venkatraman
     fullname: Harish Venkatraman
@@ -108,7 +108,7 @@ contributor:
     fullname: Gyan Mishra
     org: Verizon
     email: gyan.s.mishra@verizon.com
-  
+
   -
     ins: S. Melin
     fullname: Stefan Melin
@@ -125,13 +125,13 @@ contributor:
     ins: D. Demeter
     fullname: Dacian Demeter
     org: Telus
-    email: dacian.demeter@telus.com 
+    email: dacian.demeter@telus.com
 
 normative:
   CMIS:
     title: "OIF Implementation Agreement (IA) Common Management Interface Specification (CMIS))"
     author:
-    org: OIF Forum
+      org: OIF Forum
     date: 4 September 2024
     seriesinfo: OIF CMIS IA
     target: https://www.oiforum.com/wp-content/uploads/OIF-CMIS-05.3.pdf
@@ -139,7 +139,7 @@ normative:
   OIF-400ZR:
     title: "Implementation Agreement 400ZR"
     author:
-    org: OIF Forum
+      org: OIF Forum
     date: 3 November 2022
     seriesinfo:
     target: https://www.oiforum.com/wp-content/uploads/OIF-400ZR-02.0.pdf
@@ -147,37 +147,37 @@ normative:
   G.698.2:
     title: "Amplified multichannel dense wavelength division multiplexing applications with single channel optical interfaces"
     author:
-    org: ITU-T Recommendation G.698.2
+      org: ITU-T Recommendation G.698.2
     date: November 2018
-    seriesinfo: 
+    seriesinfo:
     target: https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.698.2-201811-I!!PDF-E&type=items
 
   SFF8024:
     title: "SFF Module Management Reference Code Tables"
     author:
-    org: SNIA SFF Technology Affiliate (TA) Technical Work Group (TWG), Small Form Factor Technology Affiliate
+      org: SNIA SFF Technology Affiliate (TA) Technical Work Group (TWG), Small Form Factor Technology Affiliate
     date: November 27, 2023
-    seriesinfo: 
+    seriesinfo:
     target: https://members.snia.org/document/dl/26423
 
 informative:
 
-   ietf-impairment-yang:
-     title: "A YANG Data Model for Optical Impairment-aware Topology"
-     date: 2025-01-06 
-     target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-optical-impairment-topology-yang/
+  ietf-impairment-yang:
+    title: "A YANG Data Model for Optical Impairment-aware Topology"
+    date: 2025-01-06
+    target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-optical-impairment-topology-yang/
 
-   ietf-layer0-yang:
-     title: "Common YANG Data Types for Layer 0 Networks"
-     date: 2025-01-26 
-     target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-rfc9093-bis/
+  ietf-layer0-yang:
+    title: "Common YANG Data Types for Layer 0 Networks"
+    date: 2025-01-26
+    target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-rfc9093-bis/
 
-   ietf-optical-interface-yang:
-     title: "A YANG model to manage the optical interface parameters for an external transponder in a WDM network"
-     date: 2025-01-06 
-     target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-dwdm-if-param-yang/
+  ietf-optical-interface-yang:
+    title: "A YANG model to manage the optical interface parameters for an external transponder in a WDM network"
+    date: 2025-01-06
+    target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-dwdm-if-param-yang/
 
-  
+
 
 --- abstract
 
@@ -211,7 +211,7 @@ two-wire interface. This IA is targeted for systems manufacturers, system integr
 
 - optical pluggable host side:
 
-- Monitored attributes: The Coherent Pluggable attributes which can be measured, monitored, estimated, or otherwise observed. The monitored attributes are the inputs to performance monitors which in turn provide real time samples, threshold crossing supervision, and sometimes sample statistics. 
+- Monitored attributes: The Coherent Pluggable attributes which can be measured, monitored, estimated, or otherwise observed. The monitored attributes are the inputs to performance monitors which in turn provide real time samples, threshold crossing supervision, and sometimes sample statistics.
 
 
 # Introduction
@@ -254,7 +254,7 @@ The document is divided into the following sections:
 
 - {{yang-model}}: Coherent Pluggables Yang Model
 
-- {{pluggable-gap-analysis}}: Coherent pluggable Gap Analysis 
+- {{pluggable-gap-analysis}}: Coherent pluggable Gap Analysis
 
 - {{plug-lcm}}: Optical Pluggables Lifecycle Management
 
@@ -274,7 +274,7 @@ D. Optical fiber connecting the optical devices to optical pluggables. This carr
 
 The model presented in {{data-model}} consolidates properties of coherent pluggable on interfaces (D) and (C) in {{figure-details-packet-optical-device}} where interface (D) provides the photonic/optical attributes and interface (C) provides the host/electrical attributes.
 
-~~~~         
+~~~~
                   |---------------|
                   |   P-PNC(s),   |
                   |   O-PNC(s),   |
@@ -311,11 +311,11 @@ The model presented in {{data-model}} consolidates properties of coherent plugga
       +---------------------------------------+
 
   Legend
-    (A) Packet device management interfaces 
+    (A) Packet device management interfaces
               (e.g., YANG, NETCONF, gNMI, etc.)
     (B) CMIS interface between Optical pluggable and Host
     (C) Host side of coherent pluggable (towards the Host)
-    (D) Media side of coherent pluggable 
+    (D) Media side of coherent pluggable
               (towards Optical/Photonic network)
 
 ~~~~
@@ -325,7 +325,7 @@ The model presented in {{data-model}} consolidates properties of coherent plugga
 
 {: #building-blocks}
 
-# Coherent Pluggable Functional Building Blocks 
+# Coherent Pluggable Functional Building Blocks
 
 The functional building blocks of the coherent pluggables of {{figure-details-packet-optical-device}} are shown in {{figure-optical-pluggable-building-blocks}} and has three major functions:
 
@@ -408,9 +408,9 @@ Note that the purpose of this section is to clarify the role of electrical chann
 
 * Provides information for configuration and monitoring characteristics of the signal for a service in the electrical domain, e.g., Interface-format, FEC, alarming thresholds, etc.
 
-* Provides monitoring capabilities in the Tx (toward fiber) and Rx (from the fiber). 
- 
-## Equipment 
+* Provides monitoring capabilities in the Tx (toward fiber) and Rx (from the fiber).
+
+## Equipment
 
 The "Equipment functional block" in {{figure-optical-pluggable-building-blocks}} represents the coherent pluggable itself and has the following characteristics:
 
@@ -461,7 +461,7 @@ For more detailed information, please refer to draft {{ietf-impairment-yang}}.
 
 Referring to {{figure-plug-config}}, the coherent pluggables support a set of read-write attributes which are configurable. Example of such configuration attributes are output power, central frequency and operational-mode. Note that as discussed in {{plug-capabilities-attributes}}, since a coherent pluggable may support multiple operational-modes, as part of these configuration attributes, operator should configure which of these operational-mode is desired and should be functional.
 
-~~~~ 
+~~~~
 
  |-----------------------------------------------------------------|
  |  optical-channel  // OTSi channels                              |
@@ -473,6 +473,7 @@ Referring to {{figure-plug-config}}, the coherent pluggables support a set of re
  |-----------------------------------------------------------------|
 
 ~~~~
+
 {: #figure-plug-config title="Data structure for Coherent pluggable Configuration Attributes"}
 
 {: #plug-pm-definition}
@@ -480,7 +481,7 @@ Referring to {{figure-plug-config}}, the coherent pluggables support a set of re
 
 {{figure-plug-pm}} shows the list of pluggable Performance Monitoring (PM) and state data, which are critical components in optical networks, enabling network engineers to ensure optimal performance, identify issues, and maintain network reliability. Operators monitor a range of attributes on both the optical/photonic and electrical sides of coherent pluggables, including channel input power, channel output power, central frequency, current Optical Signal-to-Noise Ratio (OSNR), Bit Error Rate (BER), chromatic dispersion, laser temperature, link status, and more. These parameters directly impact the quality and integrity of the transmitted data across both optical and electrical domains.
 
-~~~~ 
+~~~~
 
  |-----------------------------------------------------------------|
  |  optical-channel  // OTSi channels                              |
@@ -506,7 +507,7 @@ Performance Monitoring (PM) data is generated for various "monitored attributes"
 
 * Basic Monitoring PM data: The analogue values which provide the "current values" of a "monitored attributes" such as laser temperature, eSNR (Effective Signal-to-Noise Ratio) at media input, eSNR at host input, laser frequency error, and more.
 * Advanced Monitoring PM data: The analogue values which provide the "current, average, minimum, and maximum values" of "monitored attributes" such as transmit signal power, Bit Error Rate (BER), chromatic dispersion, etc.
-* Up Counters: The discrete counter values of "monitored attributes" that only increment, such as Bit Error Count, FEC (Forward Error Correction) Uncorrected Errors, Loss of Signal (LOS) count, Loss of Frame (LOF) count, and others. 
+* Up Counters: The discrete counter values of "monitored attributes" that only increment, such as Bit Error Count, FEC (Forward Error Correction) Uncorrected Errors, Loss of Signal (LOS) count, Loss of Frame (LOF) count, and others.
 * Up/Down Counters: The discrete counter values of "monitored attributes" that can both incremented and decremented.
 * Operational/Admin States: Represents the states of "monitored attributes" such as link up/down state, alarm state, laser on/off state, Automatic Power Control (APC) status, and more.
 
@@ -519,7 +520,7 @@ For "advanced monitoring performance management (PM) data", where current, avera
 
 A variety of performance monitoring metrics, including minimum, maximum, average, and instantaneous values, can be collected. These metrics offer a comprehensive view of performance fluctuations, allowing for precise monitoring and quicker response times to anomalies. Minimum and maximum values help identify the extremes of performance, while average values give a sense of typical performance levels. Instantaneous values, on the other hand, provide real-time insights, which are crucial for immediate issue detection and resolution. This multi-faceted approach ensures that network performance is consistently monitored and maintained at high standards.
 
-{{plug-threshold-definition}} will discuss the collection type and how they are related to the above-mentioned PM data. It also covers the coherent pluggables support for threshold crossing alerts (TCA) for all or a subset of monitored attributes. 
+{{plug-threshold-definition}} will discuss the collection type and how they are related to the above-mentioned PM data. It also covers the coherent pluggables support for threshold crossing alerts (TCA) for all or a subset of monitored attributes.
 
 {: #plug-threshold-definition}
 ## Coherent Pluggable Threshold Definition
@@ -547,7 +548,7 @@ For example, consider the coherent pluggable PM attribute "channel-input-power."
  |     Collection: current, average, min, max                     |
  |   ...                                                          |
  |   SCTG-Type-n:                                                 |
- |------------------------------------------------G---------------|
+ |----------------------------------------------------------------|
     // Note: 
     // These are just a few examples. More SCTG can be defined
 ~~~~
@@ -560,7 +561,7 @@ Note that sometimes these thresholds are configurable and sometime they are hard
 {: #plug-alarm-definition}
 ## Coherent Pluggable Alarm Notifications
 
-[Editor's note: To be added in a later release.]
+\[Editor's note: To be added in a later release.]
 
 The coherent pluggables might generate various alarm notifications due to the various reasons.
 
@@ -615,7 +616,6 @@ Examples:
 * Semantic gaps: As part of gap analysis and for a complete solution for coherent pluggable, there should be some alignment between the capabilities, configuration, PM attributes and PM thresholds supported by IETF coherent pluggable and OIF supported by {{CMIS}}. This needs further investigation.
 
 * [Editor's note: More to be added after Gap Analysis.]
-
 
 {: #plug-lcm}
 # Optical Pluggables Lifecycle Management
@@ -1073,7 +1073,7 @@ To facilitate the utilization of coherent pluggable attributes, this draft intro
 
 It should be noted that any equipment could have a repository describing its capabilities and it may be broken down into units that can be referenced and reused, i.e., the definition can be modular. To facilitate the stages, each vendor would be expected to provide this information for each pluggable type & version.
 
-A pluggable type & version may offer a subset of standard capabilities. The subset is described by simply omitting definitions. 
+A pluggable type & version may offer a subset of standard capabilities. The subset is described by simply omitting definitions.
 
 A pluggable type & version may offer a super-set. The super-set is detailed by adding definitions via "augmentation" to the set of standard definitions available for use in the Coherent Pluggable Repository. These capability augmentations relate to augmentations to the YANG model used at the interface to the host. Note that host has no need to understand the semantics of the augmented properties, but does need to know the mapping to the pluggable interface. This is discussed in more detail elsewhere in this document.
 
@@ -1089,7 +1089,7 @@ The Coherent Pluggable Repository contains four sections:
 
 
 * Configuration attributes: This section contains all read-writer attributes which can be configured on coherent pluggable. It also allow augmentation of this section for vendor-specific configuration attributes.
-* PM Collection style for monitored attributes: List of all read-only monitored attributes where the coherent pluggable can collect PM data. This section identifies if the collection of current, average, min and max values are possible. 
+* PM Collection style for monitored attributes: List of all read-only monitored attributes where the coherent pluggable can collect PM data. This section identifies if the collection of current, average, min and max values are possible.
 * PM Threshold values: For all or a subset of read-only monitored attributes, this section contains the threshold settings for threshold crossing alerts (TCA) if applicable.
 
 {{figure-optical-pluggable-repository}} illustrates the overall structure of the "Coherent Pluggable Repository". It contains several operational-mode records where each record includes all the capability attributes for tuple [organization-identifier, operational-mode]. As discussed in {{plug-capabilities-attributes}}, "organization-identifier" refers to any authority that defines these attributes.
@@ -1110,7 +1110,7 @@ Using "Coherent Pluggable Repository", the format of all operational-modes are i
   |  version:                                              | | |
   |                                                        | | |
   |  Photonic/Optical capabilities attributes              | | |
-  |  -----------------------------------------             | | | 
+  |  -----------------------------------------             | | |
   |  (i.e., Read-only attributes defined in                | | |
   |   operational-mode of this draft. For each attribute,  | | |
   |   min, max, default values might be available)         | | |
@@ -1122,17 +1122,17 @@ Using "Coherent Pluggable Repository", the format of all operational-modes are i
   |      (augmented yang model)                            | | |
   |                                                        | | |
   |  Configuration attributes                              | | |
-  |  --------------------------                            | | | 
+  |  --------------------------                            | | |
   |  ( The list of all read-write attributes where         | | |
   |   can be configured on coherent pluggables )           | | |
-  |   are possible )                                       | | | 
+  |   are possible )                                       | | |
   |    - attribute C1                                      | | |
   |    - attribute C2                                      | | |
   |    ...                                                 | | |
-  |    - attributeCWm                                      | | | 
+  |    - attributeCWm                                      | | |
   |    - some vendor specific config attributes            | | |
   |      (augmented yang model)                            | | |
-  |                                                        | | | 
+  |                                                        | | |
   |  Monitored attributes PM collection                    | | |
   |  ------------------------------------                  | | |
   |  (i.e., list of monitored attributes where             | | |
@@ -1144,7 +1144,7 @@ Using "Coherent Pluggable Repository", the format of all operational-modes are i
   |    - attribute Mp                                      | | |
   |                                                        | | |
   |  Monitored attributes Threshold setting                | | |
-  |  ---------------------------------------               | | |            
+  |  ---------------------------------------               | | |
   |  For all or some attribute M1,... Mp, define           | | |
   |    - threshold-for-warning-alert   (if applicable)     | | |
   |    - threshold-for-minor-alert     (if applicable)     | | |
@@ -1174,9 +1174,9 @@ list of attributes
       bit-rate: 478.75 Gbps
       baud-rate: 59.84375 Gbd
       more attributes ...
-// Configuration attributes  
-// Monitored attributes PM collection   
-// Monitored attributes Threshold setting  
+// Configuration attributes
+// Monitored attributes PM collection
+// Monitored attributes Threshold setting
 ~~~~
 {: #figure-optical-pluggable-repository-example_1 title="Coherent Pluggable repository Defined by OIF"}
 
@@ -1191,9 +1191,9 @@ list of attributes
       bit-rate: 400 Gbps
       baud-rate: 56 GBd
       more attributes ...
-// Configuration attributes  
-// Monitored attributes PM collection   
-// Monitored attributes Threshold setting 
+// Configuration attributes
+// Monitored attributes PM collection
+// Monitored attributes Threshold setting
 ~~~~
 {: #figure-optical-pluggable-repository-example_2 title="Coherent Pluggable repository Example-2"}
 
@@ -1211,9 +1211,9 @@ list of attributes
       bit-rate: 800 Gbps
       baud-rate: 96 GBd
       more attributes ...
-// Configuration attributes  
-// Monitored attributes PM collection   
-// Monitored attributes Threshold setting       
+// Configuration attributes
+// Monitored attributes PM collection
+// Monitored attributes Threshold setting
 ~~~~
 {: #figure-optical-pluggable-repository-example_3 title="Coherent Pluggable repository Example-3"}
 

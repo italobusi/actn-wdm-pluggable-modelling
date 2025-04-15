@@ -12,11 +12,13 @@
 /.venv/
 /.vscode/
 /lib
+/lib
 /node_modules/
 /versioned/
 Gemfile.lock
 archive.json
 draft-poidt-ccamp-actn-wdm-pluggable-modelling.xml
+draft-rokui-ccamp-actn-wdm-pluggable-modelling.xml
 package-lock.json
 report.xml
 !requirements.txt
