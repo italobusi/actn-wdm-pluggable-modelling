@@ -187,7 +187,7 @@ A gap analysis is included to compare optical pluggable attributes with current 
 
 The lifecycle of an optical pluggable, from operator approval and viability assessment to deployment and monitoring, is also addressed.
 
-[Editor’s note: This may be covered in a separate document, currently under investigation.]
+\[Editor's note: This may be covered in a separate document, currently under investigation.]
 Additionally, this draft introduces the concept of a "Coherent Pluggable Repository", which maintains a repository of pluggable capabilities. It also includes a gap analysis of coherent pluggable attributes in existing IETF drafts and other SDOs, providing a comprehensive view of the lifecycle of a coherent pluggable, from operator approval through to deployment.
 
 --- middle
@@ -266,7 +266,7 @@ The document is divided into the following sections:
 
 A. This interface provides the control of host packet functions and optical functions. It provides these functions which can be decoupled such that there is no overlap between the optical and packet control functions. Note that the YANG data model for the pluggable will be provided at interface (A), i.e., the management interface of the device.
 
-B. The CMIS communication interface between host packet devices) and optical pluggables.
+B. The CMIS {{CMIS}} defines the communication interface between host devices and optical pluggable modules. Looking ahead, an enhanced version of CMIS may emerge, potentially leveraging I3C or alternative protocols based on Ethernet communication within the pluggable. This draft will be designed to accommodate any future host-to-pluggable communication mechanisms.
 
 C. The data flow between the coherent pluggable and the packet data function through this interface. This is electrical interface between coherent pluggable and the host. {{building-blocks}} will discuss this in more details.
 
@@ -348,8 +348,8 @@ The functional building blocks of the coherent pluggables of {{figure-details-pa
  | |---------------------------|  |---------------------------| |
  | |                           |  |                           | |
  | | |---------|  |---------|  |  | |---------|  |---------|  | |(Tx)
------| Elec.   |  | Host    |  |  | | Media   |  | Optical | -----> 
------| Channels|--| Logical |-------| Logical |--| Channel | <----- 
+-----| Elec.   |  | Host    |  |  | | Media   |  | Optical | ----->
+-----| Channels|--| Logical |-------| Logical |--| Channel | <-----
 -----|         |  | Channels|  |  | | Channels|  | (OTSi)  |  | |(Rx)
  | | |---------|  |---------|  |  | |---------|  |---------|  | |
  | |                           |  |                           | |
@@ -428,7 +428,7 @@ The "Equipment functional block" in {{figure-optical-pluggable-building-blocks}}
 {: #data-model}
 # Optical Pluggables Data Modeling
 
-[Editor's notes: As part of Gap analysis, YANG reference/YANG code might be added to the data modeling section/subsections and that the current content shall be considered as placeholder for the model.]
+\[Editor's notes: As part of Gap analysis, YANG reference/YANG code might be added to the data modeling section/subsections and that the current content shall be considered as placeholder for the model.]
 
 The attributes of all functional building block of a coherent pluggable in {{figure-optical-pluggable-building-blocks}} will be exposed to external packet and optical controllers via host interface (A) shown in {{figure-details-packet-optical-device}}. To this end, we need to model the coherent pluggable building blocks described in {{building-blocks}}.
 
@@ -473,11 +473,10 @@ Referring to {{figure-plug-config}}, the coherent pluggables support a set of re
  |-----------------------------------------------------------------|
 
 ~~~~
-
 {: #figure-plug-config title="Data structure for Coherent pluggable Configuration Attributes"}
 
 {: #plug-pm-definition}
-## Coherent Pluggable Performance Monitoring Data 
+## Coherent Pluggable Performance Monitoring Data
 
 {{figure-plug-pm}} shows the list of pluggable Performance Monitoring (PM) and state data, which are critical components in optical networks, enabling network engineers to ensure optimal performance, identify issues, and maintain network reliability. Operators monitor a range of attributes on both the optical/photonic and electrical sides of coherent pluggables, including channel input power, channel output power, central frequency, current Optical Signal-to-Noise Ratio (OSNR), Bit Error Rate (BER), chromatic dispersion, laser temperature, link status, and more. These parameters directly impact the quality and integrity of the transmitted data across both optical and electrical domains.
 
@@ -527,7 +526,7 @@ A variety of performance monitoring metrics, including minimum, maximum, average
 
 As indicated in {{plug-pm-definition}}, coherent pluggables are capable of providing the threshold crossing alert (TCA) for all or subset of "monitored attributes". In this situation, the coherent pluggable raises an alert which informs the host about operationally undesired situations or about critical threshold crossings of monitored attributes. The coherent pluggable raises an alert by setting an associated Flag on pluggable memory-map that represents the alert.
 
-As mentioned previously, the TCA might be supported for a subset of coherent pluggable monitored attributes. Since it is possible that the coherent pluggable has different capabilities to raise threshold for different monitored attributes, to provide a general solution for threshold definition on coherent pluggable monitored attributes, this draft introduces the concept of "Supported Collection and Threshold Group (SCTG)" shown in {{figure-plug-threshold-definition}} which defines the configurable threshold values and collection types (i.e., the collection of current value, average value, min/max value are supported). 
+As mentioned previously, the TCA might be supported for a subset of coherent pluggable monitored attributes. Since it is possible that the coherent pluggable has different capabilities to raise threshold for different monitored attributes, to provide a general solution for threshold definition on coherent pluggable monitored attributes, this draft introduces the concept of "Supported Collection and Threshold Group (SCTG)" shown in {{figure-plug-threshold-definition}} which defines the configurable threshold values and collection types (i.e., the collection of current value, average value, min/max value are supported).
 
 In summary, as outlined in {{plug-pm-definition}} and {{plug-threshold-definition}}, each optical pluggable PM/State attribute can have multiple Performance Monitoring (PM) values, such as current, average, minimum, and maximum, as well as multiple threshold levels, including warning, minor, major, and critical. To streamline this representation in a Google Sheet, each optical pluggable PM/State attribute will be associated with a corresponding SCTG-Type reference.
 
@@ -549,14 +548,14 @@ For example, consider the coherent pluggable PM attribute "channel-input-power."
  |   ...                                                          |
  |   SCTG-Type-n:                                                 |
  |----------------------------------------------------------------|
-    // Note: 
+    // Note:
     // These are just a few examples. More SCTG can be defined
 ~~~~
 {: #figure-plug-threshold-definition title="Coherent pluggable Collection and Threshold Group Definition"}
 
 To define the warning, minor, major, critical threshold values for a coherent pluggable monitored attribute, operator should set upper and lower limits that delineate acceptable performance ranges. This ensures that any deviations can be quickly identified and addressed. A rolling window between min-time and max-time should be employed to dynamically adjust these thresholds based on recent data trends, providing a more accurate reflection of current network conditions. By continuously updating the thresholds, network performance can be maintained within optimal parameters, reducing the risk of undetected issues.
 
-Note that sometimes these thresholds are configurable and sometime they are hard-coded. It is also possible that a vendor can support a sub-set and super-set of monitored attributes (for super-set they need to augment the yang model). 
+Note that sometimes these thresholds are configurable and sometime they are hard-coded. It is also possible that a vendor can support a sub-set and super-set of monitored attributes (for super-set they need to augment the yang model).
 
 {: #plug-alarm-definition}
 ## Coherent Pluggable Alarm Notifications
@@ -568,22 +567,22 @@ The coherent pluggables might generate various alarm notifications due to the va
 {: #yang-model}
 # Addressing Coherent Pluggables Attributes From Google Sheet
 
-[Editorial Note: This section in under review. It depends on the Gap Analysis as well]
+\[Editorial Note: This section in under review. It depends on the Gap Analysis as well]
 
-As discussed in the sections on capabilities, configuration, and performance monitoring in {{plug-capabilities-attributes}}, {{plug-config-attribute}}, and {{plug-pm-definition}}, the coherent pluggable module includes various read-only capability attributes, read-write configuration attributes, and read-only performance monitoring attributes. For a comprehensive list of these attributes, refer to the accompanying coherent pluggable Google Sheet 
+As discussed in the sections on capabilities, configuration, and performance monitoring in {{plug-capabilities-attributes}}, {{plug-config-attribute}}, and {{plug-pm-definition}}, the coherent pluggable module includes various read-only capability attributes, read-write configuration attributes, and read-only performance monitoring attributes. For a comprehensive list of these attributes, refer to the accompanying coherent pluggable Google Sheet
 (Q: how can we incorporate the Google Sheet?).
 
-Based on outcome of Gap analysis, we need to address the pluggable attributes using approaches such as: 
+Based on outcome of Gap analysis, we need to address the pluggable attributes using approaches such as:
 
 * Augmentation of existing IETF YANG data model (e.g. augmentation of draft {{ietf-impairment-yang}})
-* Extend the content of an existing IETF YANG model via "bis/update" 
+* Extend the content of an existing IETF YANG model via "bis/update"
 
 The detail of this provided after gap analysis on coherent pluggable attributes on Google Sheet.
 
 {: #pluggable-gap-analysis}
-# Coherent Pluggable Data Modeling Gap Analysis 
+# Coherent Pluggable Data Modeling Gap Analysis
 
-[Editorial Note: This section in under review. Will start after finishing the Google Sheet]
+\[Editorial Note: This section in under review. Will start after finishing the Google Sheet]
 
 This draft on "coherent pluggable data model and gap analysis" was initiated to examine existing IETF models related to pluggables for "completeness" to assess existing IETF properties/structures which are relevant to coherent pluggables and also to look for missing properties/structures. The goal of current work is to achieve best positioning of the IETF work with respect to the other related activities in the industry.
 
@@ -591,7 +590,7 @@ To carry out this ongoing examination, properties/structures from relevant exter
 
 The following items are identified as initial gap related to coherent pluggables. Note that the complete list will be provided after finishing the Google Sheet.
 
-* Syntax gaps: Naming inconsistency on existing IETF drafts {{ietf-impairment-yang}}, {{ietf-layer0-yang}} and {{ietf-optical-interface-yang}}. As an example, the capability attribute "max-channel-input-power" is also referred to as "rx-channel-power-max". We need to fix this. This draft proposes the following structure (note that there will be multiple valid proposals). 
+* Syntax gaps: Naming inconsistency on existing IETF drafts {{ietf-impairment-yang}}, {{ietf-layer0-yang}} and {{ietf-optical-interface-yang}}. As an example, the capability attribute "max-channel-input-power" is also referred to as "rx-channel-power-max". We need to fix this. This draft proposes the following structure (note that there will be multiple valid proposals).
 
 ~~~~
 Naming convention:
@@ -600,14 +599,14 @@ Naming convention:
   value [min / max / current / none]
 
 Examples:
-    for IETF attribute rx-channel-power-max, use 
+    for IETF attribute rx-channel-power-max, use
       rx-channel-power-max (no change)
-    
+
     for ITU-T attribute "Minimum (residual) chromatic dispersion", use
-       residual-chromatic-dispersion-min 
+       residual-chromatic-dispersion-min
 
     for IETF attribute "max-central-frequency", use
-      central-frequency-max 
+      central-frequency-max
 
     for IETF attribute "channel-output-power", use
        tx-channel-power
@@ -615,23 +614,23 @@ Examples:
 
 * Semantic gaps: As part of gap analysis and for a complete solution for coherent pluggable, there should be some alignment between the capabilities, configuration, PM attributes and PM thresholds supported by IETF coherent pluggable and OIF supported by {{CMIS}}. This needs further investigation.
 
-* [Editor's note: More to be added after Gap Analysis.]
+* \[Editor's note: More to be added after Gap Analysis.]
 
 {: #plug-lcm}
 # Optical Pluggables Lifecycle Management
 
-[Editorial Note: it is under review.
+\[Editorial Note: it is under review.
 It was agreed that this section is important. Having said that, there are aa few potential solution to address this topic:
 
  * Keep it is this draft
 * Talk to author of use-case draft to be included in that draft https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-pluggable-usecases-gaps/
 * Move it to other IETF draft]
 
-This section discusses the complete lifecycle of an optical pluggable as shown in {{figure-overview-lifecycle-pluggable}}. It includes discussion on the pre-purchase evaluation of pluggables through installation to the operation of a pluggable in a live network. 
+This section discusses the complete lifecycle of an optical pluggable as shown in {{figure-overview-lifecycle-pluggable}}. It includes discussion on the pre-purchase evaluation of pluggables through installation to the operation of a pluggable in a live network.
 
 Most of this lifecycle discussion applies to a majority of equipment types. Where the pluggable is special, this is highlighted.
 
-The figure below provides a high level flow. In a real environment, all stages will be running in parallel for various plug versions etc. and there may be feedback from any stage to a previous stage. For example, the research, evaluation and planning exercises are ongoing activities that continue as the network grows and changes and as new pluggable type & versions are introduced by vendors and insight from deployment may feed back to the evaluation stage. 
+The figure below provides a high level flow. In a real environment, all stages will be running in parallel for various plug versions etc. and there may be feedback from any stage to a previous stage. For example, the research, evaluation and planning exercises are ongoing activities that continue as the network grows and changes and as new pluggable type & versions are introduced by vendors and insight from deployment may feed back to the evaluation stage.
 
 Throughout the lifecycle specific use cases and scenarios will be considered and applied. These will be developed during the early stages and applied in service design.
 
@@ -649,8 +648,8 @@ Note: The stages and the terminology used are not intended to reflect any specif
        v                            |
   Approve pluggable type            /
        |                   ---------
-       v                            \ 
-  Service demand Analysis           | 
+       v                            \
+  Service demand Analysis           |
        |                            |
        v                            | Refer to
   Network planning                  | Section 9.2
@@ -661,7 +660,7 @@ Note: The stages and the terminology used are not intended to reflect any specif
        v                            |
   Purchase pluggables               /
        |                   ---------
-       v                            \  
+       v                            \
   Optical infrastructure creation   |
        |                            |
        v                            |
@@ -673,7 +672,7 @@ Note: The stages and the terminology used are not intended to reflect any specif
        v                            |
   Validate optical design           /
        |                   ---------
-       v                            \ 
+       v                            \
   Work Order (physical)             |
        |                            |
        v                            |
@@ -705,7 +704,7 @@ It is expected that these applications, use cases and scenarios will be develope
 
 The operator will acquire samples of each type & version of pluggable of interest and probably test and then trial them. They will also probably carry out "type approval" considering each type&version of pluggable for a particular set of applications (where those applications may be defined by the operator themselves or may be standardized definitions) etc. The full detail of the capability of each type & version of pluggable is relevant at all of these stages (see {{express-capabilities}}). The capabilities are expected to be expressed in a Repository.
 
-The market analysis will lead to Service type design (some of which will be innovative) and will lead to an understanding of potential revenue. This revenue prediction will be considered when evaluating price and compatibility such that initial sketches of use can be constructed. 
+The market analysis will lead to Service type design (some of which will be innovative) and will lead to an understanding of potential revenue. This revenue prediction will be considered when evaluating price and compatibility such that initial sketches of use can be constructed.
 
 {: #planning-network}
 ## Planning the network
@@ -721,7 +720,7 @@ As a result of the planning exercise, numbers of each pluggable type&version req
 {: #service-demand}
 ## Dealing with service demand
 
-The planning exercise leads to optical infrastructure requirements with some timetable for deployment. The "Optical infrastructure" is designed (using the patterns/templates designed in {{planning-network}}. The infrastructure will be deployed as appropriate based upon predicted and actual service demand etc. 
+The planning exercise leads to optical infrastructure requirements with some timetable for deployment. The "Optical infrastructure" is designed (using the patterns/templates designed in {{planning-network}}. The infrastructure will be deployed as appropriate based upon predicted and actual service demand etc.
 
 When optical "services demand" is received, perhaps to provide underlay for the packet network or driven by a specific service contract, optical network analysis is carried out to evaluate how to efficiently and effectively achieve the specific service demanded. This analysis will consider the whole optical network including the plugs and ROADMs etc. In most cases this "Service design" will use patterns/templates constructed in {{planning-network}} in conjunction with relevant capability information for the pluggable type&version.
 
@@ -736,11 +735,11 @@ The optical design will be "validated" in terms of "viability" and compatibility
 {: #install-operate}
 ## Installing and operationalizing the pluggable
 
-Once the design is available, any necessary physical installation exercise (pluggable installation, cabling etc.) is carried out, driven by "Work orders" that identify the type&version of pluggable to instal etc. 
+Once the design is available, any necessary physical installation exercise (pluggable installation, cabling etc.) is carried out, driven by "Work orders" that identify the type&version of pluggable to instal etc.
 
 On detection of the pluggable instance, the control system will validate that the work order has been carried out correctly. To do this, the full type&version of the pluggable is read and compared with the intent. Where there are discrepancies, either a work order is constructed to correct the installation error after the detected pluggable type&version is evaluated for compatibility with the specific design. This evaluation is done using the Repository for that type&version. It is possible that the type&version may be acceptable although perhaps a little more expensive than the optimum choice etc.
 
-Once the type&version of pluggable has been confirmed, the cabling to the pluggable will be validated and the service set up and validated. Depending upon the operator practices, there may be an extensive service test phase prior to handing over the service. The service may not be enabled immediately, but will be at some point after which the service will become operational. 
+Once the type&version of pluggable has been confirmed, the cabling to the pluggable will be validated and the service set up and validated. Depending upon the operator practices, there may be an extensive service test phase prior to handing over the service. The service may not be enabled immediately, but will be at some point after which the service will become operational.
 From this point on, normal live service/equipment management/control will be active.
 
 Beyond this point normal operational activities such as engineering works, restoration, upgrade, fault location etc. will be carried out. Clearly, there is also the reverse sequence which includes deactivating a service and removing the plug and there are also various edits and refinements that result from changes in demand and changes in understanding of the service needs etc. These steps have not been covered at this stage as the initial list above is sufficient to the develop a deep understanding of the control of the plugs. Further stages will be added in a future version of this document.
@@ -750,9 +749,9 @@ In addition, during transition towards a more automated future, there are proces
 {: #express-capabilities}
 ## Expressing capabilities
 
-As highlighted above, prior to installation of an optical pluggable in a device (with packet functions etc.), various research, approval, planning and design activities must be carried out (as they would be for any hardware). All of these activities will require information on the capabilities of the pluggable. 
+As highlighted above, prior to installation of an optical pluggable in a device (with packet functions etc.), various research, approval, planning and design activities must be carried out (as they would be for any hardware). All of these activities will require information on the capabilities of the pluggable.
 
-Detailed information on the capability of the pluggable is required long before it is installed and operating. This points to the need for a model of capability (of a type of pluggable) that is independent of the model of a running instance (and hence points to decoupling of the model of capability from the model of the operation of the pluggable). This also suggest that discovery of capability detail from the pluggable is not sufficient/appropriate for deployment (although it may be useful in a lab context). 
+Detailed information on the capability of the pluggable is required long before it is installed and operating. This points to the need for a model of capability (of a type of pluggable) that is independent of the model of a running instance (and hence points to decoupling of the model of capability from the model of the operation of the pluggable). This also suggest that discovery of capability detail from the pluggable is not sufficient/appropriate for deployment (although it may be useful in a lab context).
 
 A machine interpretable definition/specification for the pluggable should be available (independent of the pluggable instance) for each pluggable type&version where the statement of type&version (complete type&version) used is to the degree sufficient to precisely identify the relevant (unique) definition/specification. The complete type&version may include hardware type&version, firmware type&version and software type&version details (where the firmware/software influences the operation/control of the pluggable). This is essentially the type&version used when considering spares holding and like-for-like replacement in the field.
 
@@ -770,7 +769,7 @@ Considering a pluggable (as for many other equipments), this would include speci
 
 A capability statement may be a precise single value with no uncertainty, a range, a collection of related ranges and thresholds etc. Where some aspect has variability or is controllable, this is also required to be specified.
 
-For an equipment to be understood and used by a control system, the detailed information on capabilities must be available in machine interpretable form (to the degree necessary for any particular function to be carried out). The machine interpretable statements may be in the form of software, but preferably should be in the form of data (information) that can be readily ingested by tooling and ideally in a standardized language. 
+For an equipment to be understood and used by a control system, the detailed information on capabilities must be available in machine interpretable form (to the degree necessary for any particular function to be carried out). The machine interpretable statements may be in the form of software, but preferably should be in the form of data (information) that can be readily ingested by tooling and ideally in a standardized language.
 
 Traditionally, the published statements of capability have been in somewhat ambiguous text that require interpretation and conversion into a machine interpretable form through a manual intermediate step (normally performed, with errors and performed many times for any particular device type etc.). It is suggested here that the best source of the machine interpretable data is the specifying authority (e.g., ITU-T for standard applications, the vendor for plug capabilities, an operator for non-standard applications).
 
@@ -779,17 +778,17 @@ Traditionally, the published statements of capability have been in somewhat ambi
 Within this section, we present a few use-cases showcasing the practical application of the coherent pluggable repository.
 In this section, we present several use cases that demonstrate the practical application of coherent pluggable life cycle management.
 
-## Example-1: Coherent Pluggables Already Provisioned 
+## Example-1: Coherent Pluggables Already Provisioned
 
-The first example is illustrated in {{figure-optical-pluggable-repository-usage-1}}. This is a simple example where the packet over optical network has been already provisioned with both optical underlay and packet overlay services. The role of SDN controller is just to discover and manage the network. In other words, the SDN controller was not involved in various aspects of service provisioning and viability. The second example will come all these aspects in more detail. 
+The first example is illustrated in {{figure-optical-pluggable-repository-usage-1}}. This is a simple example where the packet over optical network has been already provisioned with both optical underlay and packet overlay services. The role of SDN controller is just to discover and manage the network. In other words, the SDN controller was not involved in various aspects of service provisioning and viability. The second example will come all these aspects in more detail.
 
 ~~~~
 
       <------------------ L3 service-1 ------------------->
        <------------------ TE-Tunnel-1 ------------------>
          <----------------- IP link-1 ----------------->
-           <------------- L0 service-1 -------------> 
- 
+           <------------- L0 service-1 ------------->
+
    |------------|        |------------------|
    | Coherent   |        |                  |
    | Pluggable  |  <-->  |  SDN Controller  |
@@ -807,14 +806,14 @@ The first example is illustrated in {{figure-optical-pluggable-repository-usage-
                  \  |------|          |------|     |------|
                   \-|  m2  |             |
                     |------|             |
-                      |                  | 
+                      |                  |
                       |------------------|
 
   Legend:
     ----        Optical fibers
     ++ p1,p2    Coherent pluggables
     R1, R2      Packet device (i.e., Router)
-    m1, m2, m3  Photonic node (ROADM) 
+    m1, m2, m3  Photonic node (ROADM)
 
 ~~~~
 {: #figure-optical-pluggable-repository-usage-1 title="Coherent Pluggable Repository Example-1"}
@@ -823,12 +822,12 @@ In this example, all optical and IP/MPLS services had been already provisioned a
 
 Within packet devices R1 and R2, coherent pluggables p1 and p2, are installed, interfacing through ports port_a and port_b, respectively. Both coherent pluggables are provisioned for the following operational-mode (see section 3 YANG Model of {{ietf-impairment-yang}}):
 
-- [organization-identifier, operational-mode] = [OIF, 0x3E]
+- \[organization-identifier, operational-mode] = \[OIF, 0x3E]
 
 A single photonic service is established between these pluggables and an IP link is mapped to this L0 photonic service. The overlay TE-Tunnel-1 and L3 service-1 had been also provisioned. The following steps outline the details of how this network is discovered and managed by SDN controllers (note that the SDN controller was not involved in provisioning):
 
 - Packet devices (R1, R2), pluggables (p1, p2), and photonic devices (m1, m2, m3) are all discovered by SDN controllers.
-- The SDN controller also discovers all underlay and overlay services, i.e., L0 service-1, IP link-1, TE-Tunnel-1 and L3 service-1. 
+- The SDN controller also discovers all underlay and overlay services, i.e., L0 service-1, IP link-1, TE-Tunnel-1 and L3 service-1.
 - The SDN controller has the network inventory, including coherent pluggables p1 and p2. In particular for coherent pluggables, basic information such as pluggable type, vendor, manufacturer, serial number and software version will be provided by pluggables to SDN controller.
 - The inventory of packet devices R1 and R2 contains the  configurations of pluggable attributes such as "configured operational-mode," "configured central frequency," and "configured output power".
 - Specifically, using the basic information of pluggables p1 and p2 such as pluggable type, vendor, manufacturer, serial number and software version collected earlier from packet devices R1 and R2, the SDN controller can use the "Coherent Pluggable Repository," to access the entire information of both pluggables p1 and p2. This includes all supported operational-modes along with all attributes related to each supported operational-mode.
@@ -838,7 +837,7 @@ A single photonic service is established between these pluggables and an IP link
 
 ## Example-2: Coherent Pluggables Planning
 
-The example in {{figure-optical-pluggable-repository-usage-2}} demonstrates the usage of the "Coherent Pluggable Repository" for entire lifecycle of photonic service from including service planning, viability, provisioning, collection of PM telemetry, collection of alarm notifications and optimization. 
+The example in {{figure-optical-pluggable-repository-usage-2}} demonstrates the usage of the "Coherent Pluggable Repository" for entire lifecycle of photonic service from including service planning, viability, provisioning, collection of PM telemetry, collection of alarm notifications and optimization.
 
 Note that the packet over optical network in {{figure-optical-pluggable-repository-usage-2}} is not created yet. The ports port_a and port_b of packet device R1 and R2 are empty and can accept coherent pluggables. In addition, ports port_a and port_b are not connected to the optical network yet, i.e., there is no connection between packet devices R1, R2 and optical network. The port_a and port_b of packet device R1 and R2 can be potentially connected to any photonic nodes m1, m2 or m3.
 
@@ -849,8 +848,8 @@ Operator's goal is to use the SDN controller to plan, provision and monitor an o
       <------------------ L3 service-2 ------------------->
        <------------------ TE-Tunnel-2 ------------------>
          <----------------- IP link-2 ----------------->
-           <------------- L0 service-2 -------------> 
-           
+           <------------- L0 service-2 ------------->
+
    |------------|        |------------------|
    | Coherent   |        |                  |
    | Pluggable  |  <-->  |  SDN Controller  |
@@ -868,17 +867,17 @@ Operator's goal is to use the SDN controller to plan, provision and monitor an o
                  .  |------|          |------|     |------|
                   ..|  m2  |             |
                     |------|             |
-                      |                  | 
+                      |                  |
                       |------------------|
 
   Legend:
-    .....       Packet device can be potentially 
+    .....       Packet device can be potentially
                 connected to photonic nodes m1, m2, m3
     R1, R2:     Packet device (i.e., Router)
-    m1, m2, m3  Photonic node (ROADM) 
-    port_a      Router R1 port which is empty and can 
+    m1, m2, m3  Photonic node (ROADM)
+    port_a      Router R1 port which is empty and can
                 potentially populated by coherent pluggables
-    port_b      Router R2 port which is empty and can 
+    port_b      Router R2 port which is empty and can
                 potentially populated by coherent pluggables
 
 ~~~~
@@ -886,17 +885,17 @@ Operator's goal is to use the SDN controller to plan, provision and monitor an o
 
 Let's assume that the operator of this network has already purchased coherent pluggables from Vendor-X, which can support the following two operational-modes. Note that the detail information of these operational-modes including all optical and photonic attributes are already uploaded to "Coherent Pluggable Repository" by Vendor-X and OIF (see section 3 YANG Model of {{ietf-impairment-yang}}):
 
-- [organization-identifier, operational-mode] = [OIF, 0x3E]
-- [organization-identifier, operational-mode] = [Vendor-X, 0x22]
+- \[organization-identifier, operational-mode] = \[OIF, 0x3E]
+- \[organization-identifier, operational-mode] = \[Vendor-X, 0x22]
 
 The following steps outline the details of how this network is planned, provisioned, discovered and managed by SDN controllers:
 
 - At first, there are no coherent pluggables installed in the packet devices yet. There are also no connection between packet devices and optical network.
 - All packet devices (R1, R2) and photonic devices (m1, m2, m3) are managed by the SDN controller.
 - As a result, the SDN controller maintains an inventory of packet and photonic devices within the network (i.e., nodes R1, R2, m1, m2, m3).
-- To create the IP link-2, the SDN controller should plan and then provision the optical service-2 between port_a and port_b. 
-- To this end, the SDN controller should first design an optical service and then performs the viability check to make sure the optical service is viable in this network. 
-- So, the SDN controller calculates the best optical path from port_a to port_b. 
+- To create the IP link-2, the SDN controller should plan and then provision the optical service-2 between port_a and port_b.
+- To this end, the SDN controller should first design an optical service and then performs the viability check to make sure the optical service is viable in this network.
+- So, the SDN controller calculates the best optical path from port_a to port_b.
 - Next, the SDN controller performs the viability on optical route to make sure the optical path is viable in the network.
 - To do viability, the SDN controller checks all attributes of all operational-modes to find the most optimal operational-mode. To do this, the SDN controller connects to the "Coherent Pluggable Repository" and access all optical and photonic attributes of all operational-modes (such as chromatic dispersion, FEC, modulation, polarization mode dispersion etc.) and performs the viability.
 - After performing the optical path calculation and optical viability, the SDN controller selects the best coherent pluggable to be installed on port_a and port_b and the best optical route from port_a to port_b.
@@ -916,7 +915,7 @@ The following steps outline the details of how this network is planned, provisio
 {: #plug-vendor-specific-attributes}
 # Appendix B - Support of Opaque Attributes
 
-[Editorial Note: This section in under review. The GihHub issue #14 addresses this].
+\[Editorial Note: This section in under review. The GihHub issue #14 addresses this].
 
 In certain cases, a coherent pluggable may support attributes that are specific to a particular vendor. This draft refers to such attributes as "Opaque Attributes". Given that coherent pluggables encompass capability, configuration, and performance monitoring (PM)/state attributes, each category may contain opaque attributes. Consequently, the opaque attributes could include the following:
 
@@ -930,16 +929,16 @@ It is important to note that "opaque attributes" are not simply attributes that 
 
 When such opaque attributes exist, although the host packet device may not comprehend the semantics of these opaque attributes, it should function as a proxy and mediator between the coherent pluggable and the northbound SDN controller. Specifically, the host packet device should understand the syntax of the opaque attributes and facilitate communication between the coherent pluggable and the northbound SDN controller. To achieve plug-and-play functionality in a multi-vendor environment, the host packet device should be capable of supporting these opaque attributes. The rest of this section will provide details on how to achieve this.
 
-Another consideration is the privacy of opaque attributes, i.e., there are situations where these attributes may be commercially sensitive. In these cases, it would be reasonable to assume that the opaque attributes are in encrypted format allowing them to be passed from coherent pluggable to northbound of the host without being observed or interpreted in any way by host. 
+Another consideration is the privacy of opaque attributes, i.e., there are situations where these attributes may be commercially sensitive. In these cases, it would be reasonable to assume that the opaque attributes are in encrypted format allowing them to be passed from coherent pluggable to northbound of the host without being observed or interpreted in any way by host.
 
 To achieve this, the coherent pluggable YANG data model (the work done as part of this draft -  Google Sheet) should first be augmented with vendor proprietary capability, configuration or PM attributes. As noted above, it might be also necessary to define how these new attributes are mapped to the internal protocol between the host and the pluggable via CMIS protocol. A key consideration is that the host does not need to understand the semantics of these new attributes and may not even need to know their syntax.
 
-There are multiple solutions to this problem which will be discussed below. To demonstrate these solutions, consider the host Vendor-X and pluggable Vendor-Y in {{figure-details-packet-optical-device}}. Let's assume: 
+There are multiple solutions to this problem which will be discussed below. To demonstrate these solutions, consider the host Vendor-X and pluggable Vendor-Y in {{figure-details-packet-optical-device}}. Let's assume:
 
-* Vendor-Y has a new read-write proprietary configuration attributes "AA" which should be configured in pluggable (in addition to well-known attributes such as central-frequency, power and operational-mode). The value of attribute AA is 100 and its memory map in coherent pluggable is 0x1100. 
+* Vendor-Y has a new read-write proprietary configuration attributes "AA" which should be configured in pluggable (in addition to well-known attributes such as central-frequency, power and operational-mode). The value of attribute AA is 100 and its memory map in coherent pluggable is 0x1100.
 * In addition, consider a new read-only proprietary capability attributes "CC" supported on pluggable in range of {CC-min, CC-max}={1.1,3.3}.
 
-### Support of Opaque Capability Attributes
+## Support of Opaque Capability Attributes
 
 The coherent pluggable YANG data model is augmented with a list of new capability attributes. As demonstrated in {{solution-vs-cap-attributes}}, the YANG data model is augmented with the following information:
 
@@ -950,7 +949,7 @@ The coherent pluggable YANG data model is augmented with a list of new capabilit
 
 The {{solution-vs-cap-attributes}} shows an example of new capability attribute "CC" whose min and max values are 1.1 and 3.3, respectively.
 
-~~~~ 
+~~~~
  +--ro opaque-capability-attribute-list* [cap-attribute-id]
      +--ro cap-attribute-id              uint32
      +--ro cap-attribute-name            string
@@ -966,13 +965,13 @@ The {{solution-vs-cap-attributes}} shows an example of new capability attribute 
 ~~~~
 {: #solution-vs-cap-attributes title="Support of Opaque Capability Attributes"}
 
-### Support of Opaque Secret Capability Attributes
+## Support of Opaque Secret Capability Attributes
 
 to be added
 
 {: #opaque-config-solution-1}
 
-### Support of Opaque Configuration Attributes (Solution-1)
+## Support of Opaque Configuration Attributes (Solution-1)
 
 To support the opaque configuration attributes, there are a few potential solutions which are discussed below. This approach is the simplest solution, as it requires no interpretation by the host platform. The coherent pluggable YANG data model is augmented with a list that directly maps the values of new configuration attributes to the corresponding memory-map locations on the pluggable device. In this solution, the memory-map locations must be known to the operator, potentially provided in the Coherent Pluggable Repository. The {{solution-1}} illustrates the coherent pluggable YANG data model, which has been augmented with the following information:
 
@@ -983,7 +982,7 @@ To support the opaque configuration attributes, there are a few potential soluti
 
 For instance, consider a scenario where the operator intends to configure a new proprietary attribute, "AA," with a value of 100, and a memory-map location on the pluggable set to 0x1100. In this process, the host platform receives the attribute "AA" as defined in {{solution-1}}. The host platform then relays this information to the coherent pluggable via the CMIS protocol, without performing any interpretation. In other words, the host platform is not required to understand the syntax or semantics of these attributes; it functions merely as a conduit, transmitting the values from the NBI to the designated memory-map locations on the pluggable.
 
-~~~~ 
+~~~~
  +--rw opaque-config-attribute-list* [conf-attribute-id]
      +--rw conf-attribute-id             uint32
      +--rw conf-attribute-name           string
@@ -999,7 +998,7 @@ For instance, consider a scenario where the operator intends to configure a new 
 ~~~~
 {: #solution-1 title="Solution-1 for support of opaque config attributes"}
 
-### Support of Opaque Configuration Attributes (Solution-2)
+## Support of Opaque Configuration Attributes (Solution-2)
 
 This approach is similar to {{solution-1}} but requires the host platform to implement lookup logic to determine the memory-map location on the pluggables. In this solution, the coherent pluggable YANG data model is augmented with the following new attributes, as shown in {{solution-2}}:
 
@@ -1011,7 +1010,7 @@ The operator does not have visibility into the specific memory-map locations for
 
 As illustrated in {{solution-2}}, the host platform receives the new attribute "AA" via its Northbound Interface (NBI), with a configuration value of 0x1100. The host then searches the coherent pluggable Repository to determine the memory-map location associated with this attribute and identifies it as 0x1100. Without interpreting the attribute's syntax or semantics, the host platform communicates this information to the coherent pluggable via the CMIS protocol. Essentially, the host platform functions as a proxy, transmitting the values from the NBI to the appropriate memory-map locations on the pluggable without needing to understand the meaning of the attributes.
 
-~~~~ 
+~~~~
  +--rw opaque-config-attribute-list* [conf-attribute-id]
      +--rw conf-attribute-id             uint32
      +--rw conf-attribute-name           string
@@ -1028,13 +1027,13 @@ As illustrated in {{solution-2}}, the host platform receives the new attribute "
 ~~~~
 {: #solution-2 title="Solution-2 for support of opaque config attributes"}
 
-### Support of Opaque Configuration Attributes (Solution-3)
+## Support of Opaque Configuration Attributes (Solution-3)
 
 This solution represents an advanced approach when a new opaque configuration attribute is mapped to multiple memory-map locations on a pluggable device, or when multiple such attributes are mapped to a single memory-map location on pluggable. Similar to {{solution-2}}, the mapping between these new attributes and their corresponding memory-map locations should be detailed in the pluggable Repository. For each new opaque attribute, the host platform is required to perform a lookup in the pluggable Repository to identify the relevant memory-map locations. The platform then assembles the corresponding values, which are communicated to the pluggable device via the CMIS protocol.
 
 Although this solution is included for completeness, it is not practical or desirable due to its complexity and the need for interpretation by the host software
 
-### Support of Opaque Secret Configuration Attributes
+## Support of Opaque Secret Configuration Attributes
 
 There are situations where opaque configuration attributes are confidential, and the vendor wishes to conceal their meanings and values. When considering the interface from the pluggable device to the host via CMIS, it is crucial that the pluggable does not expose the meaning or value of these confidential attributes. Ideally, the pluggable device would encrypt the data. Within the context of CMIS, it may be sufficient to allocate an array of register locations to convey the property values. These registers would store an encrypted data blob for read-only properties and accept an encrypted blob for writable registers. The specific value might be set or read through different register positions on each read/write, depending on the encryption technique used.
 
@@ -1042,7 +1041,7 @@ It is important to note that since the pluggable device encrypts the data, mappi
 
 As an example, let's assume a vendor defines secret attribute "DD" for its coherent pluggable. Vendor first needs to augment IETF data model with a list of encrypted values and memory-maps shown in {{solution-4}}. This very similar to {{solution-1}} where essentially the host functions as a proxy, transmitting the values from the NBI to the appropriate memory-map locations on the pluggable without needing to understand the meaning and semantics of these attributes.
 
-~~~~ 
+~~~~
  +--rw opaque-config-attribute-list* [conf-attribute-id]
      +--rw conf-attribute-id             uint32
      +--rw encrypted-attribute-name      string
@@ -1053,15 +1052,15 @@ As an example, let's assume a vendor defines secret attribute "DD" for its coher
 
 
 {: #support-plug-vendor-pm}
-### Support of Opaque Performance Monitoring Data
+## Support of Opaque Performance Monitoring Data
 
 The host packet device is informed of the properties via YANG augments and appropriate mapping definitions. The mapping definitions tell the host that the related properties are related to performance monitoring data such that the host will periodically read the appropriate parts of the pluggable interface as for any other performance monitoring data. AS for all other performance monitoring data, the host does not need to understand the data. The client controller can carry out analysis or can propagate the measures transparently to some other controller etc.
 
 # Appendix C - Coherent Pluggable Repository
 
-[Editor's note: Formerly Manifest. GitHub issue #15 covers this].
+\[Editor's note: Formerly Manifest. GitHub issue #15 covers this].
 
-[Editor's note: Based on CCAMP WG's suggestion, this section is moved to Appendix for now. It might be moved from this draft to an existing IETF draft or to a new draft. We need to align with draft https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-pluggable-usecases-gaps/ as well]
+\[Editor's note: Based on CCAMP WG's suggestion, this section is moved to Appendix for now. It might be moved from this draft to an existing IETF draft or to a new draft. We need to align with draft https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-pluggable-usecases-gaps/ as well]
 
 Referring to {{plug-capabilities-attributes}}, the coherent pluggable capability attributes (i.e., supported-modes) are crucial aspects of coherent pluggables and should be easily accessible for various reasons and activities. Those might include:
 
@@ -1081,7 +1080,7 @@ We should also consider the fact that some proprietary attributes and capabiliti
 
 Considering the above, it appears reasonable that all pluggable capabilities whether they be proprietary or standard should be fully described in the Repository (considering that some portions of the Repository might have restrictions as previously described). This may be achieved by a reference to a standard that is itself fully defined in machine interpretable form. This approach would allow for a far more flexible and future-proofed control solution.
 
-In summary, to facilitate easy access to coherent pluggable attributes, the details of coherent pluggable operational-modes are collected in a repository (access restriction might be applicable to some portions of this document), such as GitHub and SharePoint, called "Coherent Pluggable Repository". The Repository must be both human and machine-readable repository and can be read and interpreted easily by any SDN controller, operators, or other devices in the network. A Repository contains multiple records which are uniquely identified by tuple [organization-identifier, operational-mode].
+In summary, to facilitate easy access to coherent pluggable attributes, the details of coherent pluggable operational-modes are collected in a repository (access restriction might be applicable to some portions of this document), such as GitHub and SharePoint, called "Coherent Pluggable Repository". The Repository must be both human and machine-readable repository and can be read and interpreted easily by any SDN controller, operators, or other devices in the network. A Repository contains multiple records which are uniquely identified by tuple \[organization-identifier, operational-mode].
 
 The Coherent Pluggable Repository contains four sections:
 
@@ -1092,17 +1091,17 @@ The Coherent Pluggable Repository contains four sections:
 * PM Collection style for monitored attributes: List of all read-only monitored attributes where the coherent pluggable can collect PM data. This section identifies if the collection of current, average, min and max values are possible.
 * PM Threshold values: For all or a subset of read-only monitored attributes, this section contains the threshold settings for threshold crossing alerts (TCA) if applicable.
 
-{{figure-optical-pluggable-repository}} illustrates the overall structure of the "Coherent Pluggable Repository". It contains several operational-mode records where each record includes all the capability attributes for tuple [organization-identifier, operational-mode]. As discussed in {{plug-capabilities-attributes}}, "organization-identifier" refers to any authority that defines these attributes.
+{{figure-optical-pluggable-repository}} illustrates the overall structure of the "Coherent Pluggable Repository". It contains several operational-mode records where each record includes all the capability attributes for tuple \[organization-identifier, operational-mode]. As discussed in {{plug-capabilities-attributes}}, "organization-identifier" refers to any authority that defines these attributes.
 
-Each record in the coherent pluggable Repository is machine readable/interpretable and is uniquely identified by a tuple [organization-identifier, operational-mode].
+Each record in the coherent pluggable Repository is machine readable/interpretable and is uniquely identified by a tuple \[organization-identifier, operational-mode].
 
 Using "Coherent Pluggable Repository", the format of all operational-modes are identical whether it is defined by for example ITU-T, OIF, OpenConfig, or defined by a vendor.
 
 ~~~~
- 
-   A record identified by 
+
+   A record identified by
    tuple [organization-identifier, operational-mode]
-   
+
   |--------------------------------------------------------|
   |                                                        |-|
   |  organization-identifier                               | |-|
@@ -1156,7 +1155,7 @@ Using "Coherent Pluggable Repository", the format of all operational-modes are i
       |--------------------------------------------------------|
 
  Coherent Pluggable Repository
-   - Contains one or more operational-mode records 
+   - Contains one or more operational-mode records
    - Each record for tuple [organization-identifier, operational-mode]
    - It is machine-readable/interpretable
 
@@ -1166,7 +1165,7 @@ Using "Coherent Pluggable Repository", the format of all operational-modes are i
 Below are several examples that demonstrate the concept of the "Coherent Pluggable Repository." {{figure-optical-pluggable-repository-example_1}} illustrates the content of a Repository record for operational mode 0x3E, as defined by the OIF forum. This operational mode is widely recognized and supported by nearly all coherent pluggable devices. Detailed information regarding this operational mode can be found in {{SFF8024}}, Table 4-7.
 
 ~~~~
-organization-identifier:  OIF 
+organization-identifier:  OIF
 operational-mode: 0x3E
 // Photonic/Optical capabilities attributes
 list of attributes
@@ -1199,7 +1198,7 @@ list of attributes
 
 "{{figure-optical-pluggable-repository-example_3}}" presents an example where the Vendor-Y defined an operational-mode 0x22 as well. In this scenario, the organization associated with the pluggable module is Vendor-Y, which defined the same operational-mode 0x22 as "Vendor-X"
 
-It is important to note that while the operational-modes in both {{figure-optical-pluggable-repository-example_2}} and {{figure-optical-pluggable-repository-example_3}} share the same values, they are defined by different vendors. Consequently, these operational-modes are not related and may differ significantly in their attributes. In other words, although the semantics of these modes are identical, their actual content might vary significantly. This is one of the reasons that any record in Coherent Pluggable Repository is uniquely identified by tuple [organization-identifier, operational-mode].
+It is important to note that while the operational-modes in both {{figure-optical-pluggable-repository-example_2}} and {{figure-optical-pluggable-repository-example_3}} share the same values, they are defined by different vendors. Consequently, these operational-modes are not related and may differ significantly in their attributes. In other words, although the semantics of these modes are identical, their actual content might vary significantly. This is one of the reasons that any record in Coherent Pluggable Repository is uniquely identified by tuple \[organization-identifier, operational-mode].
 
 ~~~~
 organization-identifier: Vendor-Y
