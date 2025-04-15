@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-10T01:27:26.431948+00:00",
+  "timestamp": "2025-04-15T01:38:38.682023+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -1117,13 +1117,13 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2025-04-09T13:49:02Z",
+      "updatedAt": "2025-04-14T20:53:38Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "bb388041c3b96babe101c1d66641a2d8d060fa31",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "main",
-      "headRefOid": "e33814bcd8f19b830873154342a8b28be1e48de7",
+      "headRefOid": "0ca4bcecad6980b064ad8c36b34cb0cf10e3e72e",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -1991,6 +1991,378 @@
               "body": "Agree. also because very often a Yang parameter or a YANG provisioning session can cover a definite CMIS sequence and order register writing that can not be replicated with Yang.",
               "createdAt": "2025-04-09T13:49:02Z",
               "updatedAt": "2025-04-09T13:49:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6kuIYa",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "dieterbeller",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-14T08:32:52Z",
+          "updatedAt": "2025-04-14T12:45:55Z",
+          "comments": [
+            {
+              "originalPosition": 56,
+              "body": "IETF terminology shall be given precedence wherever possible. In case there is a duplication of an attribute, this draft may describe how the attribute is named in the related document. Only if no attribute exists in IETF RFCs or IETF WG drafts, new attributes shall be introduced if they are needed.",
+              "createdAt": "2025-04-14T08:32:52Z",
+              "updatedAt": "2025-04-14T12:45:55Z"
+            },
+            {
+              "originalPosition": 235,
+              "body": "Reference \"OIF [CMIS]\" TBA",
+              "createdAt": "2025-04-14T08:43:53Z",
+              "updatedAt": "2025-04-14T12:45:55Z"
+            },
+            {
+              "originalPosition": 287,
+              "body": "It shall be emphasized that the YANG data model for the pluggable will be provided at interface (A), i.e., the management interface of the device.",
+              "createdAt": "2025-04-14T08:59:37Z",
+              "updatedAt": "2025-04-14T12:45:55Z"
+            },
+            {
+              "originalPosition": 330,
+              "body": "See comment on Abstract:\r\n\r\nIETF terminology shall be given precedence wherever possible. In case there is a duplication of an attribute, this draft may describe how the attribute is named in the related document. Only if no attribute exists in IETF RFCs or IETF WG drafts, new attributes shall be introduced if they are needed.",
+              "createdAt": "2025-04-14T09:02:43Z",
+              "updatedAt": "2025-04-14T12:45:55Z"
+            },
+            {
+              "originalPosition": 381,
+              "body": "For the terms optical channel (OCh) and OTSi a reference to the ITU-T Recommendation defining the terms shall be added.\r\n\r\nEditorial: OTSi (lower case \"i\")",
+              "createdAt": "2025-04-14T09:07:14Z",
+              "updatedAt": "2025-04-14T12:45:55Z"
+            },
+            {
+              "originalPosition": 442,
+              "body": "Section 5 \"Optical Pluggables Data Modeling\" and all subsections do not provide references to existing IETF YANG modules or a YANG module augmenting the existing IETF YANG modules. Editor's notes shall be added saying that YANG reference/YANG code will be added to the data modeling section/subsections and that the current content shall be considered as placeholder for the model.",
+              "createdAt": "2025-04-14T12:39:51Z",
+              "updatedAt": "2025-04-14T12:45:55Z"
+            },
+            {
+              "originalPosition": 168,
+              "body": "I doubt that opaque attributes are needed! Each vendor can augment the model with vendor-specific attributes.",
+              "createdAt": "2025-04-14T12:45:27Z",
+              "updatedAt": "2025-04-14T12:45:55Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6kxdGa",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-14T13:52:29Z",
+          "updatedAt": "2025-04-14T13:52:30Z",
+          "comments": [
+            {
+              "originalPosition": 381,
+              "body": "OCh is defined in G.709 (clause 3.2.11 if we reference G.709 Amd3 approved in March 2025)\r\n\r\nOTSi is defined in clause 3.2.4 of G.959.1 (07/2018)\r\n\r\nMy suggestion is to reference the old version of G.959.1 for the OTSi definition\r\n",
+              "createdAt": "2025-04-14T13:52:30Z",
+              "updatedAt": "2025-04-14T13:52:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6VNIpg",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-13T21:07:36Z",
+          "updatedAt": "2025-04-14T13:54:00Z",
+          "comments": [
+            {
+              "originalPosition": 34,
+              "body": "Gret, \r\nBased on IETF 121 discussion and your comment, I revised the entire abstract section. This is the new proposed text.\r\n\r\n\r\n---------------\r\nThis draft outlines the optical pluggable attributes within a host packet device, focusing on their role in a packet-over-optical network. It includes representations of coherent pluggable capabilities, configuration, states, and telemetry data. These attributes draws from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI, to ensure uniform structuring and consistent naming conventions.\r\n\r\nA gap analysis is included to compare optical pluggable attributes with current IETF drafts, identifying any modeling gaps. Based on the identified gaps, the draft proposes solutions to address missing attributes, such as augmenting or updating existing IETF YANG models.\r\n\r\nThe lifecycle of an optical pluggable, from operator approval and viability assessment to deployment and monitoring, is also addressed.\r\n\r\n[Editor\u2019s note: This may be covered in a separate document, currently under investigation.] Additionally, this draft introduces the concept of a \"Coherent Pluggable Repository\", which maintains a repository of pluggable capabilities. It also includes a gap analysis of coherent pluggable attributes in existing IETF drafts and other SDOs, providing a comprehensive view of the lifecycle of a coherent pluggable, from operator approval through to deployment",
+              "createdAt": "2024-12-13T21:07:36Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 38,
+              "body": "Gert,\r\nThe comment is correct.\r\nHaving said that since this draft is related to \"coherent pluggable\", we will cover \"Coherent Pluggable Repository\"",
+              "createdAt": "2024-12-13T21:12:43Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 41,
+              "body": "Gret,\r\nYour statement is correct. \r\nIf you want to add these to the abstract, please suggest some text which can be added to abstract. I am fine.",
+              "createdAt": "2024-12-15T12:26:02Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 41,
+              "body": "Gret,\r\nTypo on RFC845. Which RFC?\r\nBecause of the reasons you mentioned, this draft defines O-PNC and P-PNC. \r\nTo augment these definitions, please suggest a text and I will add it to the draft \r\n\r\n\r\n",
+              "createdAt": "2024-12-15T12:30:26Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 90,
+              "body": "Gert,\r\nValid point. I revised the text to following to reflect your point:\r\n\r\n- Media side: This functional block represents all Photonic/Optical attributes of the coherent pluggables (interface (5) in {{figure-details-packet-optical-device}}). These attributes define the characteristics of the optical and photonic properties such as spectrum, polarization, dispersion etc., which do not directly affect the behavior of the host packet device. Note that the goal of this draft is to identify coherent pluggable capabilities, configuration, states, and telemetry data attributes from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI and then perform the gap analysis to compare optical pluggable attributes with current IETF drafts, identifying any modeling gaps. Eventually based on the identified gaps, the draft proposes solutions to address missing attributes, such as augmenting or updating existing IETF YANG models.",
+              "createdAt": "2024-12-15T12:37:06Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 93,
+              "body": "Gert,\r\nPlease provide the text and revised picture. I will add it to the text.\r\nWhat is FFS?",
+              "createdAt": "2024-12-15T12:39:14Z",
+              "updatedAt": "2025-04-14T20:42:49Z"
+            },
+            {
+              "originalPosition": 120,
+              "body": "Gret,\r\nWould you suggest a text for this as per your suggestion.",
+              "createdAt": "2024-12-15T12:42:20Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 121,
+              "body": "Gert,\r\nCorrect. If you feel we need to add/revise a text on this, please suggest the text to be added. I am fine.",
+              "createdAt": "2024-12-15T12:44:43Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 138,
+              "body": "Gert,\r\nIt is correct that they define the term \"application code\", but at the end regardless of what it is called, that term is representation of the plug capabilities. For this reason, I feel we should not remove ITU-T from here.\r\nI would like to hear from others.\r\n",
+              "createdAt": "2024-12-15T12:47:34Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 267,
+              "body": "Italo,\r\nI am fine with your suggestion. The paragraph is moved before table. \r\nYour other comment is valid as well. I've added the following text to clarify the idea.\r\n\r\n\r\n   In summary, as outlined in Section 5.3 and Section 5.4, each optical\r\n   pluggable PM/State attribute can have multiple Performance Monitoring\r\n   (PM) values, such as current, average, minimum, and maximum, as well\r\n   as multiple threshold levels, including warning, minor, major, and\r\n   critical.  To streamline this representation in a Google Sheet, each\r\n   optical pluggable PM/State attribute will be associated with a\r\n   corresponding SCTG-Type reference.\r\n\r\n   For example, consider the coherent pluggable PM attribute \"channel-\r\n   input-power.\"  Tthe optical pluggable collects PM values for current,\r\n   average, minimum, and maximum, while also supporting the\r\n   configuration of threshold values for warning, minor, major, and\r\n   critical levels.  As illustrated in Figure 5, the PM attribute\r\n   \"channel-input-power\" is linked to \"SCTG-Type-1\" to simplify its\r\n   representation in Google Sheet.\r\n",
+              "createdAt": "2024-12-15T13:14:51Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 267,
+              "body": "Gert,\r\nCorrect. One part of gap analysis is related to PM/State date including threshold.\r\nYou can see the text which I proposed to Italo's suggestion and propose a new paragraph to address your suggestion. I am fine.",
+              "createdAt": "2024-12-15T13:18:00Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 272,
+              "body": "Gert,\r\nagreed. Please suggest any text you want to be added/revised. ",
+              "createdAt": "2024-12-15T13:19:20Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 296,
+              "body": "Gert,\r\nAs mentioned in text, we want to address attributes/capabilities/states which are specific to a vendor. \r\nThis needs more discussion. The following issue is created to address this.\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/14#issue-2740643907\r\n\r\n",
+              "createdAt": "2024-12-15T13:26:49Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 299,
+              "body": "Gert,\r\nIMO this is part of discussion for the following issue:\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/14#issue-2740643907",
+              "createdAt": "2024-12-15T13:32:23Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 304,
+              "body": "Gert,\r\nThis is part of following issue:\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/14#issue-2740643907",
+              "createdAt": "2024-12-15T13:32:54Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 312,
+              "body": "Gert,\r\nThis is part of following issue:\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/14#issue-2740643907",
+              "createdAt": "2024-12-15T13:33:17Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 316,
+              "body": "Gert,\r\nThis is part of following issue:\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/14#issue-2740643907",
+              "createdAt": "2024-12-15T13:33:30Z",
+              "updatedAt": "2025-04-14T13:54:01Z"
+            },
+            {
+              "originalPosition": 353,
+              "body": "Gert,\r\nThe following is created to address the need for coherent pluggable opaque attributes\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/14#issue-2740643907",
+              "createdAt": "2024-12-15T13:34:47Z",
+              "updatedAt": "2025-04-14T13:54:01Z"
+            },
+            {
+              "originalPosition": 390,
+              "body": " Gert,\r\nThe following is created to address the need for coherent pluggable opaque attributes\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/14#issue-2740643907",
+              "createdAt": "2024-12-15T13:35:46Z",
+              "updatedAt": "2025-04-14T13:54:01Z"
+            },
+            {
+              "originalPosition": 393,
+              "body": "Gert and all,\r\nTo address all aspects of \"Coherent Pluggable Repository\", the following Issue has been created:\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/14#issue-2740643907\r\n",
+              "createdAt": "2024-12-15T13:39:55Z",
+              "updatedAt": "2025-04-14T13:54:01Z"
+            },
+            {
+              "originalPosition": 421,
+              "body": "Gert and all,\r\nTo address all aspects of \"Coherent Pluggable Repository\", the following Issue has been created:\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/15#issue-2740647621",
+              "createdAt": "2024-12-15T13:40:05Z",
+              "updatedAt": "2025-04-14T13:54:01Z"
+            },
+            {
+              "originalPosition": 433,
+              "body": "Gert and all,\r\nTo address all aspects of \"Coherent Pluggable Repository\", the following Issue has been created:\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/15#issue-2740647621",
+              "createdAt": "2024-12-15T13:40:29Z",
+              "updatedAt": "2025-04-14T13:54:01Z"
+            },
+            {
+              "originalPosition": 436,
+              "body": "Gert and all,\r\nTo address all aspects of \"Coherent Pluggable Repository\", the following Issue has been created:\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/15#issue-2740647621",
+              "createdAt": "2024-12-15T13:40:41Z",
+              "updatedAt": "2025-04-14T13:54:01Z"
+            },
+            {
+              "originalPosition": 439,
+              "body": "Gert and all,\r\nTo address all aspects of \"Coherent Pluggable Repository\", the following Issue has been created:\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/15#issue-2740647621",
+              "createdAt": "2024-12-15T13:40:55Z",
+              "updatedAt": "2025-04-14T13:54:00Z"
+            },
+            {
+              "originalPosition": 458,
+              "body": "Gert and all,\r\nTo address the need for coherent pluggable opaque attributes the following Issue has been created:\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/14#issue-2740643907",
+              "createdAt": "2024-12-15T13:51:57Z",
+              "updatedAt": "2025-04-14T13:54:01Z"
+            },
+            {
+              "originalPosition": 466,
+              "body": "Gert,\r\nWould you edit and provide the revised text to be added to the draft",
+              "createdAt": "2024-12-15T13:53:02Z",
+              "updatedAt": "2025-04-14T13:54:01Z"
+            },
+            {
+              "originalPosition": 720,
+              "body": "Gert,\r\nThis will be part of following issue for \"Coherent Pluggable Repository \":\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/15#issue-2740647621",
+              "createdAt": "2024-12-15T13:54:08Z",
+              "updatedAt": "2025-04-14T13:54:01Z"
+            },
+            {
+              "originalPosition": 729,
+              "body": "Gert,\r\nThis will be part of following issue for \"Coherent Pluggable Repository \":\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/15#issue-2740647621",
+              "createdAt": "2024-12-15T13:55:01Z",
+              "updatedAt": "2025-04-14T13:54:01Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6kymrO",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-14T15:17:45Z",
+          "updatedAt": "2025-04-14T17:40:06Z",
+          "comments": [
+            {
+              "originalPosition": 168,
+              "body": "GitHub issue https://github.com/italobusi/actn-wdm-pluggable-modelling/issues/14 will address this issue",
+              "createdAt": "2025-04-14T15:17:45Z",
+              "updatedAt": "2025-04-14T17:40:06Z"
+            },
+            {
+              "originalPosition": 56,
+              "body": "Valid point. The following is added.\r\n\r\nIETF terminology shall be given precedence wherever possible. In case there is a duplication of an attribute, this draft may describe how the attribute is named in the related document. Only if no attribute exists in IETF RFCs or IETF WG drafts, new attributes shall be introduced if they are needed",
+              "createdAt": "2025-04-14T15:18:16Z",
+              "updatedAt": "2025-04-14T17:40:06Z"
+            },
+            {
+              "originalPosition": 235,
+              "body": "The OIF CMIS reference is added.\r\n\"OIF Implementation Agreement (IA) Common Management Interface Specification (CMIS))\", OIF CMIS IA , September 2024, <https://www.oiforum.com/wp-content/uploads/OIF-CMIS-05.3.pdf>.",
+              "createdAt": "2025-04-14T16:35:30Z",
+              "updatedAt": "2025-04-14T17:40:06Z"
+            },
+            {
+              "originalPosition": 287,
+              "body": "It is added. This is the new text:\r\n\r\nA. This interface provides the control of host packet functions and optical functions. It provides these functions which can be decoupled such that there is no overlap between the optical and packet control functions. Note that the YANG data model for the pluggable will be provided at interface (A), i.e., the management interface of the device.",
+              "createdAt": "2025-04-14T16:37:08Z",
+              "updatedAt": "2025-04-14T17:40:06Z"
+            },
+            {
+              "originalPosition": 459,
+              "body": "Fixed.",
+              "createdAt": "2025-04-14T16:37:56Z",
+              "updatedAt": "2025-04-14T17:40:06Z"
+            },
+            {
+              "originalPosition": 468,
+              "body": "Fixed",
+              "createdAt": "2025-04-14T16:38:18Z",
+              "updatedAt": "2025-04-14T17:40:06Z"
+            },
+            {
+              "originalPosition": 381,
+              "body": "Since ITU-T document if referenced in impairment draft, the folowing is added to pluyggable draft:\r\n\r\n(See section 2.3.1 of {{ietf-impairment-yang}}).",
+              "createdAt": "2025-04-14T16:57:31Z",
+              "updatedAt": "2025-04-14T17:40:06Z"
+            },
+            {
+              "originalPosition": 442,
+              "body": "The following is added to beginning of section 5:\r\n\r\n[Editor's notes: As part of Gap analysis, YANG reference/YANG code might be added to the data modeling section/subsections and that the current content shall be considered as placeholder for the model.]\r\n",
+              "createdAt": "2025-04-14T17:36:32Z",
+              "updatedAt": "2025-04-14T17:40:06Z"
+            },
+            {
+              "originalPosition": 628,
+              "body": "Fixed",
+              "createdAt": "2025-04-14T17:37:23Z",
+              "updatedAt": "2025-04-14T17:40:06Z"
+            },
+            {
+              "originalPosition": 664,
+              "body": "Would you re-word your suggestions?",
+              "createdAt": "2025-04-14T17:39:43Z",
+              "updatedAt": "2025-04-14T17:40:06Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6k0Okw",
+          "commit": {
+            "abbreviatedOid": "0ca4bce"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-14T18:00:18Z",
+          "updatedAt": "2025-04-14T20:33:34Z",
+          "comments": [
+            {
+              "originalPosition": 139,
+              "body": "Please specify which item is duplicate of which item?\r\n",
+              "createdAt": "2025-04-14T18:00:18Z",
+              "updatedAt": "2025-04-14T20:43:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6k18Uq",
+          "commit": {
+            "abbreviatedOid": "0ca4bce"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-14T20:41:11Z",
+          "updatedAt": "2025-04-14T20:46:12Z",
+          "comments": [
+            {
+              "originalPosition": 99,
+              "body": "Gret,\r\nThe text is revised to the following. please confirm.\r\n\r\nB. The CMIS {{CMIS}} defines the communication interface between host devices and optical pluggable modules. Looking ahead, an enhanced version of CMIS may emerge, potentially leveraging I3C or alternative protocols based on Ethernet communication within the pluggable. This draft will be designed to accommodate any future host-to-pluggable communication mechanisms.",
+              "createdAt": "2025-04-14T20:41:11Z",
+              "updatedAt": "2025-04-14T20:46:12Z"
             }
           ]
         }
