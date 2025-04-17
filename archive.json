@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-15T01:38:38.682023+00:00",
+  "timestamp": "2025-04-17T01:36:51.996994+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -1117,13 +1117,13 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2025-04-14T20:53:38Z",
+      "updatedAt": "2025-04-16T15:38:33Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
-      "baseRefOid": "bb388041c3b96babe101c1d66641a2d8d060fa31",
+      "baseRefOid": "92b268e474eec27d62a6b222158cb95cda285078",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "main",
-      "headRefOid": "0ca4bcecad6980b064ad8c36b34cb0cf10e3e72e",
+      "headRefOid": "66df9d11b29b73c8281e25cef990b286368ed1ce",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -2363,6 +2363,182 @@
               "body": "Gret,\r\nThe text is revised to the following. please confirm.\r\n\r\nB. The CMIS {{CMIS}} defines the communication interface between host devices and optical pluggable modules. Looking ahead, an enhanced version of CMIS may emerge, potentially leveraging I3C or alternative protocols based on Ethernet communication within the pluggable. This draft will be designed to accommodate any future host-to-pluggable communication mechanisms.",
               "createdAt": "2025-04-14T20:41:11Z",
               "updatedAt": "2025-04-14T20:46:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6k_XTX",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "dieterbeller",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-15T12:31:18Z",
+          "updatedAt": "2025-04-15T12:31:18Z",
+          "comments": [
+            {
+              "originalPosition": 56,
+              "body": "Commit 0ca4bcecad6980b064ad8c36b34cb0cf10e3e72e is looking good!",
+              "createdAt": "2025-04-15T12:31:18Z",
+              "updatedAt": "2025-04-15T12:31:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6k_cHG",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "dieterbeller",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-15T12:37:26Z",
+          "updatedAt": "2025-04-15T12:37:27Z",
+          "comments": [
+            {
+              "originalPosition": 287,
+              "body": "Commit https://github.com/italobusi/actn-wdm-pluggable-modelling/commit/0ca4bcecad6980b064ad8c36b34cb0cf10e3e72e is looking good!",
+              "createdAt": "2025-04-15T12:37:27Z",
+              "updatedAt": "2025-04-15T12:37:27Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6TW1SB",
+          "commit": {
+            "abbreviatedOid": "66df9d1"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-02T09:54:28Z",
+          "updatedAt": "2025-04-16T14:00:14Z",
+          "comments": [
+            {
+              "originalPosition": 40,
+              "body": "This text has to be deleted since it is a repetition of the text above.",
+              "createdAt": "2024-12-02T09:54:28Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 81,
+              "body": "Agree on Italo's suggestion",
+              "createdAt": "2024-12-02T10:17:18Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 90,
+              "body": "In the figure mentioned {{figure-details-packet-optical-device}}), the interfaces are represented by capital leeter no more by numbers. So, what is the interface (5) ?",
+              "createdAt": "2024-12-02T10:26:48Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 115,
+              "body": "Opaque attributes have still to be discussed and agreed. I've open a specific issue for that.\r\nThe related section in the proposed version of the draft should be deleted here, and copied/pasted into the newly  issue#13\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/13",
+              "createdAt": "2024-12-02T11:20:45Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 267,
+              "body": "Yes, I agree on Italo's comment",
+              "createdAt": "2024-12-02T15:52:10Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 280,
+              "body": "A specific issue has been open to track the discussion on Opaque Attributes. All this part of text should be moved to the issue, to clean up the draft with only real agreed text.",
+              "createdAt": "2024-12-02T16:29:17Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 390,
+              "body": "Fully agreed with Gert's comment. ",
+              "createdAt": "2024-12-11T14:34:11Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 466,
+              "body": "I agree on Gert's comment",
+              "createdAt": "2024-12-16T11:21:04Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 149,
+              "body": "While, taking into account the requirements coming from the companion document on use cases by operators, the presence of a Lifecycle Management section could be probably an important added value, I'm not convinced that this section should be in a gap analysis document. ",
+              "createdAt": "2025-03-31T14:26:52Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 1195,
+              "body": "the configuration value should be 100 not 0x1100",
+              "createdAt": "2025-03-31T15:54:25Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 980,
+              "body": "Should this part be considered as material for a separate draft? The focus here should be to understand if the actual IETF models can support pluggable , this \"opaque attrubutes\" seems more an optional feature that can be added or not.",
+              "createdAt": "2025-03-31T16:00:41Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 135,
+              "body": "This section 5.6 is too long and detailed to be there without specific discussion and clarification about real need. We do not reach an agreement about this topic and for this version I would delete the entire section, leave it apart , we can introduce this section if and when an agreement on that is reached.",
+              "createdAt": "2025-04-09T13:29:15Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 1335,
+              "body": "The scope of all WDM (L0) IETF data models (i.e. Optical impairment topology, optical interface models, wdm-tunnel etc) are larger that just pluggable. So I would reword a bit the text :\r\n\".....```\r\nto examine existing L0 (WDM) IETF models related for \"completeness\" to assess existing IETF YANG attributes  relevant to coherent pluggables and also to look for missing attributes.  The goal of current work is to identifies gaps related to existing work in IETF  and to achieve best positioning of the IETF work with respect to the other related activities in the industry.\r\n```",
+              "createdAt": "2025-04-09T13:43:53Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 1364,
+              "body": "This is not more valid, the inconsistency has been already fixed. The scope of the usage and import of RFC9093-bis in the IETF L0 drafts is exactly with the scope to avoid inconsistency .\r\nPlease delete this text \"As an example, the capability\r\n      attribute \"max-channel-input-power\" is also referred to as \"rx-\r\n      channel-power-max\".  We need to fix this.\"",
+              "createdAt": "2025-04-09T13:52:18Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 705,
+              "body": "I would suggest to delete \"supported mode\" and the text become:\r\n\".....three distinct approaches for describing supported capabilities: \"",
+              "createdAt": "2025-04-14T13:50:47Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 666,
+              "body": "This definition of \"Supported mode\" is not correct: what described here is in fact the concept of operational mode that really represent a combination of several transceiver properties preset , that are hidden by a single identifier , i.e. operational-mode. \r\n\r\n```suggestion\r\n```",
+              "createdAt": "2025-04-16T09:12:08Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            },
+            {
+              "originalPosition": 45,
+              "body": "The gap analysis has to be \"of current IETF drafts\" not also of the other SDOs. As said before in the previous part of the paragraph , the other SDOs can \"potentially complementing that\r\n   with input from other standard or industrial forum models (ITU-T,\r\n   OpenConfig , ONF TAPI etc.)\". I suggest to delete \"and other SDOs\"",
+              "createdAt": "2025-04-16T13:55:06Z",
+              "updatedAt": "2025-04-16T14:00:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6lSHaB",
+          "commit": {
+            "abbreviatedOid": "66df9d1"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-16T15:38:20Z",
+          "updatedAt": "2025-04-16T15:38:33Z",
+          "comments": [
+            {
+              "originalPosition": 115,
+              "body": "Agreed",
+              "createdAt": "2025-04-16T15:38:21Z",
+              "updatedAt": "2025-04-16T15:38:33Z"
             }
           ]
         }
