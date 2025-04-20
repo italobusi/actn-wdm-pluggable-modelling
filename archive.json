@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-17T01:36:51.996994+00:00",
+  "timestamp": "2025-04-20T01:42:24.467378+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -263,6 +263,24 @@
       "body": "This issue is raised to provide discussions on various aspects of the \"coherent pluggable Repository\".\r\nWe need to bring operators to this discussion as well.",
       "createdAt": "2024-12-15T13:38:23Z",
       "updatedAt": "2024-12-15T13:38:23Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 16,
+      "id": "I_kwDOLJuPKM6zFHKh",
+      "title": "Clean-up kramdown syntax",
+      "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/issues/16",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "OWNER",
+      "assignees": [
+        "italobusi"
+      ],
+      "labels": [],
+      "body": "To be done either before WG LC (right after PR #11 is merged) or after WG LC\n",
+      "createdAt": "2025-04-18T08:57:12Z",
+      "updatedAt": "2025-04-18T08:57:12Z",
       "closedAt": null,
       "comments": []
     }
@@ -1117,7 +1135,7 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2025-04-16T15:38:33Z",
+      "updatedAt": "2025-04-19T13:08:48Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "92b268e474eec27d62a6b222158cb95cda285078",
@@ -2539,6 +2557,122 @@
               "body": "Agreed",
               "createdAt": "2025-04-16T15:38:21Z",
               "updatedAt": "2025-04-16T15:38:33Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6llVmp",
+          "commit": {
+            "abbreviatedOid": "66df9d1"
+          },
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-04-18T08:10:23Z",
+          "updatedAt": "2025-04-18T08:55:34Z",
+          "comments": [
+            {
+              "originalPosition": 41,
+              "body": "I think Gert is referring to [RFC8453](https://datatracker.ietf.org/doc/html/rfc8453) which defines only PNC since the ACTN is quite generic and not specific to Packet Optical Integration (POI) scenarios.\r\n\r\nO-PNC and P-PNC are defined in [draft-ietf-teas-actn-poi-applicability](https://datatracker.ietf.org/doc/html/draft-ietf-teas-actn-poi-applicability) in the context of Packet Optical Integration (POI)\r\n\r\nLet us review the text of this draft and double check whether in the context of this draft it is really needed to differentiate between O-PNC and P-PNC or it is sufficient to use the generic PNC term, as defined in [RFC8453](https://datatracker.ietf.org/doc/html/rfc8453)\r\n",
+              "createdAt": "2025-04-18T08:10:23Z",
+              "updatedAt": "2025-04-18T08:55:34Z"
+            },
+            {
+              "originalPosition": 664,
+              "body": "What about: \"Some of these properties are expressed as value ranges (e.g., minimum and maximum central frequency): in this case the actual value is either configured (e.g., tx-channel-power) or measured (e.g., rx-channel-power).\"\r\n\r\nPlease note that my comment can be superseded by Sergio's comment below (no strong opinion from me on whether to keep this text or not)\r\n\r\nPlease consider referring to section 2.6 of the optical impairments draft for more details",
+              "createdAt": "2025-04-18T08:33:34Z",
+              "updatedAt": "2025-04-18T08:55:34Z"
+            },
+            {
+              "originalPosition": 47,
+              "body": "@reza-github I think you have already addressed my comment with issue #15 ",
+              "createdAt": "2025-04-18T08:46:13Z",
+              "updatedAt": "2025-04-18T08:55:34Z"
+            },
+            {
+              "originalPosition": 115,
+              "body": "typo:\r\n\r\n```suggestion\r\n- Host side: This functional block represents all Host/Electrical attributes of the coherent pluggables (interface (C) in {{figure-details-packet-optical-device}}). These attributes defines the characteristics of interconnect between the host and the optical pluggable, such as lane count, FEC etc., which both the optical pluggable and the packet host should understand and act upon.\r\n```",
+              "createdAt": "2025-04-18T08:51:53Z",
+              "updatedAt": "2025-04-18T08:55:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6lowt2",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "dieterbeller",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-18T16:16:21Z",
+          "updatedAt": "2025-04-18T16:16:21Z",
+          "comments": [
+            {
+              "originalPosition": 168,
+              "body": "OK - let's discuss this when we address Open Issue #14 .",
+              "createdAt": "2025-04-18T16:16:21Z",
+              "updatedAt": "2025-04-18T16:16:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6lo7MZ",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "dieterbeller",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-18T16:33:38Z",
+          "updatedAt": "2025-04-18T16:33:39Z",
+          "comments": [
+            {
+              "originalPosition": 442,
+              "body": "Commit https://github.com/italobusi/actn-wdm-pluggable-modelling/commit/0ca4bcecad6980b064ad8c36b34cb0cf10e3e72e is looking good!",
+              "createdAt": "2025-04-18T16:33:38Z",
+              "updatedAt": "2025-04-18T16:33:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6lsskr",
+          "commit": {
+            "abbreviatedOid": "66df9d1"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-19T12:58:05Z",
+          "updatedAt": "2025-04-19T13:08:14Z",
+          "comments": [
+            {
+              "originalPosition": 330,
+              "body": "Agreed.\r\nThe suggested text is added to document",
+              "createdAt": "2025-04-19T12:58:05Z",
+              "updatedAt": "2025-04-19T13:08:14Z"
+            },
+            {
+              "originalPosition": 664,
+              "body": "Itali agreed. I used your wording. This is the new text:\r\n\r\nSome of these properties are expressed as value ranges (e.g., minimum and maximum central frequency): in this case the actual value is either configured (e.g., tx-channel-power) or measured (e.g., rx-channel-power). \r\n\r\nThis current draft adheres to the definitions provided in draft {{ietf-impairment-yang}}. Specifically, Section 2.6 of draft {{ietf-impairment-yang}} outlines three distinct approaches for describing \"supported mode\" capabilities:",
+              "createdAt": "2025-04-19T13:03:18Z",
+              "updatedAt": "2025-04-19T13:08:14Z"
+            },
+            {
+              "originalPosition": 666,
+              "body": "Agreed. \r\nReworded  \"Supported Mode\" to \"Operational Mode\"",
+              "createdAt": "2025-04-19T13:05:16Z",
+              "updatedAt": "2025-04-19T13:08:14Z"
+            },
+            {
+              "originalPosition": 705,
+              "body": "Done. this is the replacement:\r\n\r\nThis current draft adheres to the definitions provided in draft {{ietf-impairment-yang}}. See Section 2.6 of draft {{ietf-impairment-yang}}.",
+              "createdAt": "2025-04-19T13:07:46Z",
+              "updatedAt": "2025-04-19T13:08:14Z"
             }
           ]
         }
