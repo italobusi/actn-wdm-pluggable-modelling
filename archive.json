@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-20T01:42:24.467378+00:00",
+  "timestamp": "2025-04-24T01:38:07.708113+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -1135,7 +1135,7 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2025-04-19T13:08:48Z",
+      "updatedAt": "2025-04-22T12:45:57Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "92b268e474eec27d62a6b222158cb95cda285078",
@@ -2102,9 +2102,9 @@
           "comments": [
             {
               "originalPosition": 34,
-              "body": "Gret, \r\nBased on IETF 121 discussion and your comment, I revised the entire abstract section. This is the new proposed text.\r\n\r\n\r\n---------------\r\nThis draft outlines the optical pluggable attributes within a host packet device, focusing on their role in a packet-over-optical network. It includes representations of coherent pluggable capabilities, configuration, states, and telemetry data. These attributes draws from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI, to ensure uniform structuring and consistent naming conventions.\r\n\r\nA gap analysis is included to compare optical pluggable attributes with current IETF drafts, identifying any modeling gaps. Based on the identified gaps, the draft proposes solutions to address missing attributes, such as augmenting or updating existing IETF YANG models.\r\n\r\nThe lifecycle of an optical pluggable, from operator approval and viability assessment to deployment and monitoring, is also addressed.\r\n\r\n[Editor\u2019s note: This may be covered in a separate document, currently under investigation.] Additionally, this draft introduces the concept of a \"Coherent Pluggable Repository\", which maintains a repository of pluggable capabilities. It also includes a gap analysis of coherent pluggable attributes in existing IETF drafts and other SDOs, providing a comprehensive view of the lifecycle of a coherent pluggable, from operator approval through to deployment",
+              "body": "Gret, \r\nBased on IETF 121 discussion and your comment, I revised the entire abstract section. This is the new proposed text.\r\n\r\n\r\n---------------\r\nThis draft outlines the optical pluggable attributes within a host packet device, focusing on their role in a packet-over-optical network. It includes representations of coherent pluggable capabilities, configuration, states, and telemetry data. These attributes draws from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI, to ensure uniform structuring and consistent naming conventions. Note that the IETF terminology shall be given precedence wherever possible. In case there is a duplication of an attribute, this draft may describe how the attribute is named in the related document. Only if no attribute exists in IETF RFCs or IETF WG drafts, new attributes shall be introduced if they are needed.\r\n\r\nA gap analysis is included to compare optical pluggable attributes with current IETF drafts, identifying any modeling gaps. Based on the identified gaps, the draft proposes solutions to address missing attributes, such as augmenting or updating existing IETF YANG models.\r\n\r\nThe lifecycle of an optical pluggable, from operator approval and viability assessment to deployment and monitoring, is also addressed.\r\n\r\n[Editor's note: This may be covered in a separate document, currently under investigation.] Additionally, this draft introduces the concept of a \"Coherent Pluggable Repository\", which maintains a repository of pluggable capabilities. It also includes a gap analysis of coherent pluggable attributes in existing IETF drafts and other SDOs, providing a comprehensive view of the lifecycle of a coherent pluggable, from operator approval through to deployment",
               "createdAt": "2024-12-13T21:07:36Z",
-              "updatedAt": "2025-04-14T13:54:00Z"
+              "updatedAt": "2025-04-21T12:47:49Z"
             },
             {
               "originalPosition": 38,
@@ -2673,6 +2673,152 @@
               "body": "Done. this is the replacement:\r\n\r\nThis current draft adheres to the definitions provided in draft {{ietf-impairment-yang}}. See Section 2.6 of draft {{ietf-impairment-yang}}.",
               "createdAt": "2025-04-19T13:07:46Z",
               "updatedAt": "2025-04-19T13:08:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6l6HFn",
+          "commit": {
+            "abbreviatedOid": "66df9d1"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "Reviewed up to line 772 \"Appendix A\"\r\n\r\n1) we generally need to be specific with terminology. I.e. the optical description is not dependent whether a module is pluggable or not. I suggested a terminology definition.\r\n2) a gap analysis is supposed to identify gaps between what there is (i.e. existing IETF work) and some other reference (i.e. OIF). FOr optical parameters, it is clear that the gap is in between IETF-topology/ietf-DWDM-if and other standards (as identified in our google doc). In much of the rest it is unclear between which documents the gap appears to exist. i.e. is there a gap between remote inventory drafts and what is desired for pluggable modules?\r\n3) The text delves into specific controller architectures, but the scope of the draft is about (pluggable) modules themselves. It would be better to keep these aspects in different drafts.",
+          "createdAt": "2025-04-22T09:27:27Z",
+          "updatedAt": "2025-04-22T12:45:57Z",
+          "comments": [
+            {
+              "originalPosition": 34,
+              "body": "Suggest to focus on the gap analysis aspect and shorten the intro to:\r\n\r\nThis draft provides a gap analysis with respect to existing IETF work in the following areas:\r\n1) it provides an analysis of optical attributes provided by other organizations and identifying modeling gaps in current IETF drafts. \r\n2) it identifies modeling needs addressing the specific aspect of pluggability of transceiver modules. The authors recognize the fact that that not all pluggable modules are coherent, not all coherent pluggable modules are DWDM capable and not all DWDM capable interfaces are implemented as pluggable modules. This analysis identifies gaps to manage the lifecycle of an optical pluggable module, from operator approval and viability assessment, to deployment, monitoring and phase-out.\r\n\r\n> [Editor's note: Solutions for the pluggable aspect may be covered in a separate document, currently under investigation.] \r\n> [Editor's note: The lifecycle of pluggable modules may be covered in a separate document, currently under investigation.] \r\n",
+              "createdAt": "2025-04-22T09:27:27Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 41,
+              "body": "A gap analysis should not introduce new things but rather identify gaps. A new draft should describe how those gaps van be addressed.\r\nSo I suggest to drop line 191 from the gap analysis and start discussing it in a \"gap resolution\" draft.",
+              "createdAt": "2025-04-22T09:30:56Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 41,
+              "body": "I worked above into the comments related to https://github.com/italobusi/actn-wdm-pluggable-modelling/pull/11/files#r1880178445. If accepted there, we can close this ",
+              "createdAt": "2025-04-22T10:13:30Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 41,
+              "body": "Thanks @italobusi for correcting the reference. \r\nPerhaps more basic: Why do we need O/P-PNC in a gap analysis?\r\nour focus is on optical parameters and aspects of pluggability. We should neither pre-suppose nor exclude specific controller architectures in an analysis document of this kind.",
+              "createdAt": "2025-04-22T10:21:00Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 60,
+              "body": "we better use the term \"host\" for the device hosting the pluggable. Note that OIF-CMIS does not require the host to be \"with packet functions\", it works equally well in OTN crossconnect type of hosts:\r\n\r\nThese trends, coupled with the desire to utilize the best components available, have given rise to open optical pluggables. Communication between coherent pluggables and the host occurs through the CMIS standard developed by OIF {{CMIS}}.\r\n",
+              "createdAt": "2025-04-22T10:27:38Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 88,
+              "body": "suggest to replace line 263:\r\nOptical Pluggable in a Host Device",
+              "createdAt": "2025-04-22T10:32:47Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 93,
+              "body": "this is a little misleading description of interface A. Suggest  to re-phrase:\r\n\r\nA. This interface provides the control the host and all it's components.  Note that the YANG data model addressing pluggable modules will be provided at interface (A), i.e., the management interface of the device.",
+              "createdAt": "2025-04-22T10:37:46Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 96,
+              "body": "why is the physical communication between pluggables and host an issue? Furthermore \"addressing ... any future ... communication mechanisms\" is a bit bold. CMIS provides the logical framework and the physical aspect shouldn't play a role in this gap analysis.\r\nline 269:\r\nB. The CMIS {{CMIS}} defines the communication interface between host devices and optical pluggable modules. ",
+              "createdAt": "2025-04-22T10:41:31Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 93,
+              "body": "The Mapper (Map) maps logical host channels into (logical?) media channels. To be clarified if media channels are considered \"logical\".\r\n\r\n```\r\n | | |---------|  |---------|  |  |        |---------|  |---------|  | |(Tx)\r\n-----| Elec.   |  | Host    |  |  | |---|  | Media   |  | Optical | ----->\r\n-----| Channels|--| Logical |-------|Map|--| Logical |--| Channel | <-----\r\n-----|         |  | Channels|  |  | |---|  | Channels|  | (OTSI)  |  | |(Rx)\r\n-----|         |  | Channels|  |  |        | Channels|  | (OTSi)  |  | |(Rx)\r\n | | |---------|  |---------|  |  |        |---------|  |---------|  | |\r\n | |                           |  |                                  | |\r\n | |---------------------------|  |----------------------------------| |\r\n |                                                                     |\r\n |---------------------------------------------------------------------|\r\n```",
+              "createdAt": "2025-04-22T11:40:08Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 154,
+              "body": "Suggest to remove line 433 as he controller architecture is not a gap but a possibility. Furthermore, interface A \".. provides the control the host and all it's components\" which includes pluggables, including but not exclusively coherent pluggables. ",
+              "createdAt": "2025-04-22T11:47:53Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 121,
+              "body": "line 449:\r\nFrom a data modeling perspective, a set of attributes is grouped together and represented by a single identifier known as the \"Supported Mode.\" In essence, each supported mode encapsulates a combination of properties, limitations and capabilities, such as modulation type, bit rate, baud rate, chromatic dispersion, polarization, FEC, and more. Some of these attributes limit value ranges (e.g., minimum and maximum). A coherent module can support multiple supported modes, each of which can be defined by one of the following methods:\r\n",
+              "createdAt": "2025-04-22T11:56:23Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 34,
+              "body": "I propose to talk about \"optical modules\" throughout the text and refer to \"pluggable optical modules\" where the specific aspect of being pluggable actually makes a difference. A big part of the text related to coherent media interfaces which is indifferent to pluggables. \r\n\r\n```\r\nDefinitions:\r\n------------\r\noptical modules: short term for optical transceiver modules. Such module can be of fixed or pluggable nature and provides the optical interface for communication.\r\n\r\npluggable modules: short term for pluggable optical transceiver module. Pluggable modules are a specific form of optical modules that are field replaceable. They pro\r\n\r\nCoherent module: short term for optical transceiver module providing coherent optical modulation capabilities.\r\n\r\nDWDM module: short term for coherent module supporting the use of a DWDM line system.\r\n```\r\n\r\nIn my further comments I try to remove terms that are not related to the subject discussed. I.e. application identifiers are unrelated to whether a module is pluggable or not. \r\n",
+              "createdAt": "2025-04-22T12:00:37Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 194,
+              "body": "line 462:\r\nReferring to {{figure-plug-config}}, optical modules support a set of read-write attributes which are configurable. Example of such configuration attributes are output power, central frequency and operational-mode. Note that as discussed in {{plug-capabilities-attributes}}, since optical modules may support multiple operational-modes, as part of these configuration attributes, operator should configure which of these operational-mode is desired and should be functional.",
+              "createdAt": "2025-04-22T12:03:12Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 229,
+              "body": "{: #figure-plug-config title=\"Data structure for optical module Configuration Attributes\"}",
+              "createdAt": "2025-04-22T12:03:44Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 232,
+              "body": "line 479:\r\n## Coherent optical module Performance Monitoring Data",
+              "createdAt": "2025-04-22T12:04:16Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 239,
+              "body": "line 481\r\n{{figure-plug-pm}} shows the list of optical module Performance Monitoring (PM) and state data, which are critical components in optical networks, enabling network engineers to ensure optimal performance, identify issues, and maintain network reliability. Operators monitor a range of attributes on both the optical/photonic and electrical sides of coherent modules, including channel input power, channel output power, central frequency, current Optical Signal-to-Noise Ratio (OSNR), Bit Error Rate (BER), chromatic dispersion, laser temperature, link status, and more. These parameters directly impact the quality and integrity of the transmitted data across both optical and electrical domains.",
+              "createdAt": "2025-04-22T12:05:33Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 269,
+              "body": "line 499:\r\n\r\n{: #figure-plug-pm title=\"Data structure for Coherent module PM Attributes\"}",
+              "createdAt": "2025-04-22T12:06:25Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 120,
+              "body": "\r\n\r\nTransceiver capability attributes identify a broad range of capabilities. The following gaps have been identified:\r\n(to be added)\r\n\r\nPluggable attributes are related to the characteristics of pluggable modules. The following gaps compared to fixed transceiver types have been identified:\r\n(to be added) ",
+              "createdAt": "2025-04-22T12:21:52Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 720,
+              "body": "I understand the gap identified is the fact that pluggable modules have a lifecycle that is different of the lifecycle of the host itself. The suggestion here is to identify the gap in the main section and (depending on the discussion in the team) move the lifecycle definition/use case to an annex or separate draft.",
+              "createdAt": "2025-04-22T12:24:31Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 555,
+              "body": "IETF is not about revenues. suggest to remove.",
+              "createdAt": "2025-04-22T12:25:18Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 729,
+              "body": "see discussion above. The text here is not what one expects to read in a gap analysis. It reads more like a requirements and framework document which is different.",
+              "createdAt": "2025-04-22T12:27:18Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
+            },
+            {
+              "originalPosition": 641,
+              "body": "```\r\nRegardless of the deployment approach, the module capability will be accounted for in the optical network analysis activity. Where modules are present, the range of installed modules constrain the possible realizations, where pluggable modules have not been deployed all approved pluggable modules (type&version) could be considered during the analysis, although capability of the relevant packet devices to support specific pluggable modules will also need to be considered, and this may eliminate some pluggable modules. In addition, if there is some urgency, the availability of the type of pluggable modules to the installation engineer and/or in the local spares holding inventory may also be considered.\r\n```",
+              "createdAt": "2025-04-22T12:31:40Z",
+              "updatedAt": "2025-04-22T12:45:57Z"
             }
           ]
         }
