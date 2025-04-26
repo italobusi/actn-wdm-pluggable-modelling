@@ -183,12 +183,12 @@ informative:
 
 This draft outlines the optical pluggable attributes within a host packet device, focusing on their role in a packet-over-optical network. It includes representations of coherent pluggable capabilities, configuration, states, and telemetry data. These attributes draws from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI, to ensure uniform structuring and consistent naming conventions. Note that the IETF terminology shall be given precedence wherever possible. In case there is a duplication of an attribute, this draft may describe how the attribute is named in the related document. Only if no attribute exists in IETF RFCs or IETF WG drafts, new attributes shall be introduced if they are needed.
 
-A gap analysis is included to compare optical pluggable attributes with current IETF drafts, identifying any modeling gaps. Based on the identified gaps, the draft proposes solutions to address missing attributes, such as augmenting or updating existing IETF YANG models.
+This draft provides a gap analysis with respect to existing IETF work in the following areas:
+
+* It provides an analysis of optical attributes provided by other organizations and identifying modeling gaps in current IETF drafts.
+* It identifies modeling needs addressing the specific aspect of pluggability of transceiver modules. The authors recognize the fact that that not all pluggable modules are coherent, not all coherent pluggable modules are DWDM capable and not all DWDM capable interfaces are implemented as pluggable modules. This analysis identifies gaps to manage the lifecycle of an optical pluggable module, from operator approval and viability assessment, to deployment, monitoring and phase-out.
 
 The lifecycle of an optical pluggable, from operator approval and viability assessment to deployment and monitoring, is also addressed.
-
-\[Editor's note: This may be covered in a separate document, currently under investigation.]
-Additionally, this draft introduces the concept of a "Coherent Pluggable Repository", which maintains a repository of pluggable capabilities. It also includes a gap analysis of coherent pluggable attributes in existing IETF drafts and other SDOs, providing a comprehensive view of the lifecycle of a coherent pluggable, from operator approval through to deployment.
 
 --- middle
 
@@ -213,6 +213,13 @@ two-wire interface. This IA is targeted for systems manufacturers, system integr
 
 - Monitored attributes: The Coherent Pluggable attributes which can be measured, monitored, estimated, or otherwise observed. The monitored attributes are the inputs to performance monitors which in turn provide real time samples, threshold crossing supervision, and sometimes sample statistics.
 
+- Optical modules: short term for optical transceiver modules. Such module can be of fixed or pluggable nature and provides the optical interface for communication.
+
+- Pluggable modules: short term for pluggable optical transceiver module. Pluggable modules are a specific form of optical modules that are field replaceable. They pro
+
+- Coherent module: short term for optical transceiver module providing coherent optical modulation capabilities.
+
+- DWDM module: short term for coherent module supporting the use of a DWDM line system.
 
 # Introduction
 
@@ -222,7 +229,7 @@ In numerous network setups, packet and optical networks have been engineered, op
 
 Advancements in optical component design have led to increased density, enabling entire coherent optical terminal systems that previously required multiple circuit packs to now fit into a single small form factor "coherent pluggable." Integrating coherent pluggables into devices with packet functions can result in reduced network costs, power consumption, and footprint, while also enhancing data transfer rates, reducing latency, and expanding capacity, although in some cases, separate packet and optical solutions may still be preferred due to other engineering and deployment considerations.
 
-These trends, coupled with the desire to utilize the best components available, have given rise to open optical pluggables. These pluggables allow a plug from one vendor to be installed in a device from another vendor with packet functions. Communication between coherent pluggables and the packet device host occurs through the CMIS standard developed by OIF {{CMIS}}.
+These trends, coupled with the desire to utilize the best components available, have given rise to open optical pluggables. Communication between coherent pluggables and the host occurs through the CMIS standard developed by OIF {{CMIS}}.
 
 While standardized transmission modes like ZR can handle basic applications, proprietary modes from vendors are often necessary to achieve optimal performance.
 
@@ -329,9 +336,9 @@ The model presented in {{data-model}} consolidates properties of coherent plugga
 
 The functional building blocks of the coherent pluggables of {{figure-details-packet-optical-device}} are shown in {{figure-optical-pluggable-building-blocks}} and has three major functions:
 
-- Media side: This functional block represents all Photonic/Optical attributes of the coherent pluggables (interface (D) in {{figure-details-packet-optical-device}}). These attributes define the characteristics of the optical and photonic properties such as spectrum, polarization, dispersion etc., which do not directly affect the behavior of the host packet device. Note that the goal of this draft is to identify coherent pluggable capabilities, configuration, states, and telemetry data attributes from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI and then perform the gap analysis to compare optical pluggable attributes with current IETF drafts, identifying any modeling gaps. Eventually based on the identified gaps, the draft proposes solutions to address missing attributes, such as augmenting or updating existing IETF YANG models.
+- Media side: This functional block represents all Photonic/Optical attributes of the coherent pluggables (interface (D) in {{figure-details-packet-optical-device}}). These attributes define the characteristics of the optical and photonic properties such as spectrum, polarization, dispersion etc., which do not directly affect the behavior of the host packet device. Note that the goal of this draft is to identify coherent pluggable capabilities, configuration, states, and telemetry data attributes from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI and then perform the gap analysis to compare optical pluggable attributes with current IETF drafts, identifying any modeling gaps. Eventually based on the identified gaps, the draft proposes solutions to address missing attributes, such as augmenting or updating existing IETF YANG models. Note that IETF terminology are given precedence wherever possible. In case there is a duplication of an attribute, this draft may describe how the attribute is named in the related document. Only if no attribute exists in IETF RFCs or IETF WG drafts, new attributes shall be introduced if they are needed.
 
-- Host side: This functional block represents all Host/Electrical attributes of the coherent pluggables (interface (Cx) in {{figure-details-packet-optical-device}}). These attributes defines the characteristics of interconnect between the host and the optical pluggable, such as lane count, FEC etc., which both the optical pluggable and the packet host should understand and act upon.
+- Host side: This functional block represents all Host/Electrical attributes of the coherent pluggables (interface (C) in {{figure-details-packet-optical-device}}). These attributes defines the characteristics of interconnect between the host and the optical pluggable, such as lane count, FEC etc., which both the optical pluggable and the packet host should understand and act upon
 
 - Equipment attributes: These attributes represent all physical and functional aspects of the coherent pluggable such as plug type, software version, thermal characteristics, power consumption etc.
 
@@ -430,8 +437,6 @@ The "Equipment functional block" in {{figure-optical-pluggable-building-blocks}}
 
 \[Editor's notes: As part of Gap analysis, YANG reference/YANG code might be added to the data modeling section/subsections and that the current content shall be considered as placeholder for the model.]
 
-The attributes of all functional building block of a coherent pluggable in {{figure-optical-pluggable-building-blocks}} will be exposed to external packet and optical controllers via host interface (A) shown in {{figure-details-packet-optical-device}}. To this end, we need to model the coherent pluggable building blocks described in {{building-blocks}}.
-
 The data modeling of each functional blocks provides attributes in following areas:
 
 * {{plug-capabilities-attributes}}: Coherent pluggable capability attributes (i.e., supported-modes)
@@ -446,9 +451,9 @@ The data modeling of each functional blocks provides attributes in following are
 
 Coherent pluggable have revolutionized optical networking by offering a powerful combination of high performance, flexibility, and ease of deployment. These modules support a broad range of capabilities, making them both efficient and versatile. Their extensive functional capabilities further enhance their effectiveness in diverse networking environments.
 
-From a coherent pluggable data modeling perspective, a set of attributes is grouped together and represented by a single identifier known as the "Supported Mode." In essence, each supported mode encapsulates a combination of functional capabilities for coherent pluggables, such as modulation type, bit rate, baud rate, chromatic dispersion, polarization, FEC, and more. Some of these attributes may also include value ranges (e.g., minimum and maximum). A coherent pluggable can support multiple supported modes, each of which can be defined by one of the following methods:
+From a data modeling perspective, a set of attributes is grouped together and represented by a single identifier known as the "Operational Mode." In essence, each operational mode encapsulates a combination of properties, limitations and capabilities, such as modulation type, bit rate, baud rate, chromatic dispersion, polarization, FEC, and more. Some of these attributes limit value ranges (e.g., minimum and maximum). A coherent module can support multiple operational modes, each of which can be defined by one of the following methods.
 
-This current draft adheres to the definitions provided in draft {{ietf-impairment-yang}}. Specifically, Section 2.6 of draft {{ietf-impairment-yang}} outlines three distinct approaches for describing "supported mode" capabilities:
+Note that this current draft adheres to the definitions provided in draft {{ietf-impairment-yang}}. See Section 2.6 of draft {{ietf-impairment-yang}} for:
 
 * Standard Mode: This mode pertains to optical specifications developed by standards development organizations (SDOs), such as the ITU-T recommendation {{G.698.2}}.
 * Organizational Mode: In this mode, optical interface specifications are defined by operators, industry forums (e.g., Optical Internetworking Forum (OIF) or OpenConfig), or equipment vendors. This allows for the utilization of optical pluggable capabilities that extend beyond existing standards.
@@ -459,7 +464,7 @@ For more detailed information, please refer to draft {{ietf-impairment-yang}}.
 {: #plug-config-attribute}
 ## Coherent Pluggable Configurations Attributes
 
-Referring to {{figure-plug-config}}, the coherent pluggables support a set of read-write attributes which are configurable. Example of such configuration attributes are output power, central frequency and operational-mode. Note that as discussed in {{plug-capabilities-attributes}}, since a coherent pluggable may support multiple operational-modes, as part of these configuration attributes, operator should configure which of these operational-mode is desired and should be functional.
+Referring to {{figure-plug-config}}, optical modules support a set of read-write attributes which are configurable. Example of such configuration attributes are output power, central frequency and operational-mode. Note that as discussed in {{plug-capabilities-attributes}}, since optical modules may support multiple operational-modes, as part of these configuration attributes, operator should configure which of these operational-mode is desired and should be functional.
 
 ~~~~
 
@@ -473,12 +478,12 @@ Referring to {{figure-plug-config}}, the coherent pluggables support a set of re
  |-----------------------------------------------------------------|
 
 ~~~~
-{: #figure-plug-config title="Data structure for Coherent pluggable Configuration Attributes"}
+{: #figure-plug-config title="Data structure for optical module Configuration Attributes"}
 
 {: #plug-pm-definition}
-## Coherent Pluggable Performance Monitoring Data
+## Coherent optical module Performance Monitoring Data
 
-{{figure-plug-pm}} shows the list of pluggable Performance Monitoring (PM) and state data, which are critical components in optical networks, enabling network engineers to ensure optimal performance, identify issues, and maintain network reliability. Operators monitor a range of attributes on both the optical/photonic and electrical sides of coherent pluggables, including channel input power, channel output power, central frequency, current Optical Signal-to-Noise Ratio (OSNR), Bit Error Rate (BER), chromatic dispersion, laser temperature, link status, and more. These parameters directly impact the quality and integrity of the transmitted data across both optical and electrical domains.
+{{figure-plug-pm}} shows the list of optical module Performance Monitoring (PM) and state data, which are critical components in optical networks, enabling network engineers to ensure optimal performance, identify issues, and maintain network reliability. Operators monitor a range of attributes on both the optical/photonic and electrical sides of coherent modules, including channel input power, channel output power, central frequency, current Optical Signal-to-Noise Ratio (OSNR), Bit Error Rate (BER), chromatic dispersion, laser temperature, link status, and more. These parameters directly impact the quality and integrity of the transmitted data across both optical and electrical domains.
 
 ~~~~
 
@@ -496,7 +501,7 @@ Referring to {{figure-plug-config}}, the coherent pluggables support a set of re
  |-----------------------------------------------------------------|
 
 ~~~~
-{: #figure-plug-pm title="Data structure for Coherent pluggable PM Attributes"}
+{: #figure-plug-pm title="Data structure for Coherent module PM Attributes"}
 
 As coherent optical technology continues to gain traction, PM has evolved to include more advanced techniques, such as monitoring the quality of modulated signals and detecting impairments that could degrade performance over long distances. By leveraging these PM capabilities, engineers can ensure that the optical layer operates effectively, optimize the utilization of optical resources, and maintain high levels of service continuity and performance throughout the network.
 
@@ -704,14 +709,12 @@ It is expected that these applications, use cases and scenarios will be develope
 
 The operator will acquire samples of each type & version of pluggable of interest and probably test and then trial them. They will also probably carry out "type approval" considering each type&version of pluggable for a particular set of applications (where those applications may be defined by the operator themselves or may be standardized definitions) etc. The full detail of the capability of each type & version of pluggable is relevant at all of these stages (see {{express-capabilities}}). The capabilities are expected to be expressed in a Repository.
 
-The market analysis will lead to Service type design (some of which will be innovative) and will lead to an understanding of potential revenue. This revenue prediction will be considered when evaluating price and compatibility such that initial sketches of use can be constructed.
+\[Editorial Note: As the main goal of this draft is to identify, we might want to move a portion of this section to an annex or separate draft].
 
 {: #planning-network}
 ## Planning the network
 
 Specific pluggables (type&version) will be purchased only after detailed planning of the network. To carry out this planning, full knowledge of each type&version of pluggable will be required. The planning process will account for key pluggable properties to explore viability and compatibility. The planning will use predictions of "service demand" (e.g., using a demand matrix) and hence infrastructure need to determine purchase volumes, phasing etc.
-
-The exercise may result in identification of several type & versions of pluggable that can be interchanged for a particular specific purpose. Clearly, pluggable pricing will also be accounted for in this phase. Again, during this stage of the lifecycle the full detail of the Repository for each type & version of pluggable is relevant.
 
 During the "Network planning" process different types of service relevant for the applications, use cases and scenarios (identified in {{approve-plug}}) will be explores and specific approaches to realizing each resulting type of service will be determined. This will result in design of specific "service realization" patterns and templates that will be used in later stages of the process. The approach to deploying each service type is defined for each operational context (application etc.)
 
@@ -728,7 +731,7 @@ Prior to progressing further it is important to note that pluggables are highly 
 
 In some cases, at one extreme end of the range of policy choices, an operator may decide to fully populate a packet device with a selection of pluggables and may cable them to adjacent ROADMS. However, it is more likely that pluggable deployment will be on a just-in-time basis, at the other end of the range of policy choices, so a pluggable is not deployed (and hence is not cabled) until the solution to realization of the optical service has been determined.
 
-Regardless of the pluggable deployment approach, the pluggable capability will be accounted for in the optical network analysis activity. Where pluggables are present, the range of installed pluggables constrain the possible realizations, where the pluggables have not been deployed all approved pluggables (type&version) could be considered during the analysis, although capability of the relevant packet devices to support specific pluggables will also need to be considered, and this may eliminate some pluggables. In addition, if there is some urgency, the availability of the type of pluggable to the installation engineer and/or in the local spares holding inventory may also be considered.
+Regardless of the deployment approach, the module capability will be accounted for in the optical network analysis activity. Where modules are present, the range of installed modules constrain the possible realizations, where pluggable modules have not been deployed all approved pluggable modules (type&version) could be considered during the analysis, although capability of the relevant packet devices to support specific pluggable modules will also need to be considered, and this may eliminate some pluggable modules. In addition, if there is some urgency, the availability of the type of pluggable modules to the installation engineer and/or in the local spares holding inventory may also be considered.
 
 The optical design will be "validated" in terms of "viability" and compatibility prior to proceeding. This analysis takes into account the full definitions of the pluggable type&versions of interest, where each is defined in a corresponding and referenced Repository.
 
