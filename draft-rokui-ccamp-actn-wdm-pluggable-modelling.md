@@ -1063,8 +1063,13 @@ The host packet device is informed of the properties via YANG augments and appro
 
 \[Editor's note: Formerly Manifest. GitHub issue #15 covers this].
 
+<<<<<<< Updated upstream
 \[Editor's note: Based on CCAMP WG's suggestion, this section is moved to Appendix for now. It might be moved from this draft to an existing IETF draft or to a new draft. We need to align with draft https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-pluggable-usecases-gaps/ as well]
 
+=======
+[Editor's note: Based on CCAMP WG's suggestion, this section is moved to Appendix for now. It might be moved from this draft to an existing IETF draft or to a new draft. We need to align with draft https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-pluggable-usecases-gaps/ as well]
+x
+>>>>>>> Stashed changes
 Referring to {{plug-capabilities-attributes}}, the coherent pluggable capability attributes (i.e., supported-modes) are crucial aspects of coherent pluggables and should be easily accessible for various reasons and activities. Those might include:
 
 - Network Engineers: Network engineers needs to know the capabilities and characteristics of any coherent pluggable whether the coherent pluggable is already deployed or will potentially be installed and deployed in their network
