@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-24T01:38:07.708113+00:00",
+  "timestamp": "2025-04-27T01:42:43.537955+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -1135,13 +1135,13 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2025-04-22T12:45:57Z",
+      "updatedAt": "2025-04-26T20:27:59Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "92b268e474eec27d62a6b222158cb95cda285078",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "main",
-      "headRefOid": "66df9d11b29b73c8281e25cef990b286368ed1ce",
+      "headRefOid": "6bc6ace3d126589ab2a1025892eea17902958403",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -2554,9 +2554,9 @@
           "comments": [
             {
               "originalPosition": 115,
-              "body": "Agreed",
+              "body": "Agreed\r\nWe should mark this as RESOLVED",
               "createdAt": "2025-04-16T15:38:21Z",
-              "updatedAt": "2025-04-16T15:38:33Z"
+              "updatedAt": "2025-04-25T05:14:07Z"
             }
           ]
         },
@@ -2819,6 +2819,152 @@
               "body": "```\r\nRegardless of the deployment approach, the module capability will be accounted for in the optical network analysis activity. Where modules are present, the range of installed modules constrain the possible realizations, where pluggable modules have not been deployed all approved pluggable modules (type&version) could be considered during the analysis, although capability of the relevant packet devices to support specific pluggable modules will also need to be considered, and this may eliminate some pluggable modules. In addition, if there is some urgency, the availability of the type of pluggable modules to the installation engineer and/or in the local spares holding inventory may also be considered.\r\n```",
               "createdAt": "2025-04-22T12:31:40Z",
               "updatedAt": "2025-04-22T12:45:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6meJ0B",
+          "commit": {
+            "abbreviatedOid": "66df9d1"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-25T03:37:20Z",
+          "updatedAt": "2025-04-25T06:03:05Z",
+          "comments": [
+            {
+              "originalPosition": 34,
+              "body": "Two changes to the text as per your comment:\r\n1- I've replaced the text in Abstract with your proposed text.\r\n2- As per your comment, new terms optical modules, pluggable modules, Coherent module, DWDM module are added to terminology.\r\nWe should mark this as RESOLVED.",
+              "createdAt": "2025-04-25T03:37:20Z",
+              "updatedAt": "2025-04-25T06:03:05Z"
+            },
+            {
+              "originalPosition": 41,
+              "body": "Line 191 is removed.\r\nWe should mark this as RESOLVED.",
+              "createdAt": "2025-04-25T03:40:43Z",
+              "updatedAt": "2025-04-25T06:03:05Z"
+            },
+            {
+              "originalPosition": 41,
+              "body": "Yes they are acceptable. I have already added your previous comments in  https://github.com/italobusi/actn-wdm-pluggable-modelling/pull/11/files#r1880178445\r\nSo, I mark this comment as RESOLVED.",
+              "createdAt": "2025-04-25T03:43:15Z",
+              "updatedAt": "2025-04-25T06:03:05Z"
+            },
+            {
+              "originalPosition": 41,
+              "body": "I am fine with Gert's comment. Since the major focus is Gap Analysis, if you of both are OK, this is my suggestion:\r\n- Referring to Figure-1 of draft, I will replace the block with O-PNC, P-PNC, MDSC with term \"Controller Layer\" (you can suggest another).",
+              "createdAt": "2025-04-25T03:49:09Z",
+              "updatedAt": "2025-04-25T06:03:05Z"
+            },
+            {
+              "originalPosition": 60,
+              "body": "Fine. Your proposed text is added to the draft.\r\nWe should mark this as RESOLVED.",
+              "createdAt": "2025-04-25T04:52:59Z",
+              "updatedAt": "2025-04-25T06:03:05Z"
+            },
+            {
+              "originalPosition": 88,
+              "body": "Gert, which attributes?",
+              "createdAt": "2025-04-25T04:55:38Z",
+              "updatedAt": "2025-04-25T06:03:06Z"
+            },
+            {
+              "originalPosition": 93,
+              "body": "Let's talk about this. \r\nIn general I agree with you that the HOST can be any devices (packet, OTN etc.) But in specific this draft addresses this when the Host is a packet device. ",
+              "createdAt": "2025-04-25T05:03:18Z",
+              "updatedAt": "2025-04-25T06:03:06Z"
+            },
+            {
+              "originalPosition": 96,
+              "body": "Let's discuss as I think the existing text is draft is clear.",
+              "createdAt": "2025-04-25T05:04:20Z",
+              "updatedAt": "2025-04-25T06:03:06Z"
+            },
+            {
+              "originalPosition": 115,
+              "body": "Typo is fixed.\r\nWe should mark this as RESOLVED.",
+              "createdAt": "2025-04-25T05:07:31Z",
+              "updatedAt": "2025-04-25T06:03:05Z"
+            },
+            {
+              "originalPosition": 93,
+              "body": "if everyone is OK with picture, it will be added. Let's talk",
+              "createdAt": "2025-04-25T05:09:52Z",
+              "updatedAt": "2025-04-25T06:03:05Z"
+            },
+            {
+              "originalPosition": 154,
+              "body": "Agreed. I remove them.\r\n\r\nWe should mark this as RESOLVED\r\n",
+              "createdAt": "2025-04-25T05:13:49Z",
+              "updatedAt": "2025-04-25T06:03:06Z"
+            },
+            {
+              "originalPosition": 120,
+              "body": "Which part of draft are you referring? Please clarify as  it is not clear",
+              "createdAt": "2025-04-25T05:17:05Z",
+              "updatedAt": "2025-04-25T06:03:05Z"
+            },
+            {
+              "originalPosition": 121,
+              "body": "I've replaced the text with your suggestion.\r\nWe should mark this as RESOLVED\r\n",
+              "createdAt": "2025-04-25T05:21:51Z",
+              "updatedAt": "2025-04-25T06:03:05Z"
+            },
+            {
+              "originalPosition": 194,
+              "body": "Replaced text with your suggestion.\r\nWe should mark this as RESOLVED",
+              "createdAt": "2025-04-25T05:24:25Z",
+              "updatedAt": "2025-04-25T06:03:06Z"
+            },
+            {
+              "originalPosition": 229,
+              "body": "Replaced text with your suggestion.\r\nWe should mark this as RESOLVED",
+              "createdAt": "2025-04-25T05:25:42Z",
+              "updatedAt": "2025-04-25T06:03:06Z"
+            },
+            {
+              "originalPosition": 232,
+              "body": "Replaced text with your suggestion.\r\nWe should mark this as RESOLVED",
+              "createdAt": "2025-04-25T05:27:28Z",
+              "updatedAt": "2025-04-25T06:03:06Z"
+            },
+            {
+              "originalPosition": 239,
+              "body": "Replaced text with your suggestion.\r\nWe should mark this as RESOLVED",
+              "createdAt": "2025-04-25T05:35:48Z",
+              "updatedAt": "2025-04-25T06:03:06Z"
+            },
+            {
+              "originalPosition": 269,
+              "body": "Replaced text with your suggestion.\r\nWe should mark this as RESOLVED",
+              "createdAt": "2025-04-25T05:37:05Z",
+              "updatedAt": "2025-04-25T06:03:06Z"
+            },
+            {
+              "originalPosition": 720,
+              "body": "I am fine with the overall statement. To this end, I have added the following Editorial note:\r\n\r\n[Editorial Note: As the main goal of this draft is to identify, we might want to move a portion of this section to an annex or separate draft].\r\n\r\nWe should be able to mark this as RESOLVED\r\n",
+              "createdAt": "2025-04-25T05:43:26Z",
+              "updatedAt": "2025-04-25T06:03:05Z"
+            },
+            {
+              "originalPosition": 555,
+              "body": "The entire sentence is removed.\r\n\r\nWe should be able to mark this as RESOLVED\r\n",
+              "createdAt": "2025-04-25T05:45:08Z",
+              "updatedAt": "2025-04-25T06:03:06Z"
+            },
+            {
+              "originalPosition": 729,
+              "body": "I removed the sentence.\r\n\r\nWe should be able to mark this as RESOLVED\r\n",
+              "createdAt": "2025-04-25T05:47:30Z",
+              "updatedAt": "2025-04-25T06:03:05Z"
+            },
+            {
+              "originalPosition": 641,
+              "body": "Replaced the text with your suggestion.\r\n\r\nWe should be able to mark this as RESOLVE",
+              "createdAt": "2025-04-25T06:02:32Z",
+              "updatedAt": "2025-04-25T06:03:06Z"
             }
           ]
         }
