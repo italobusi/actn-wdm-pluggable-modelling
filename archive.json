@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-27T01:42:43.537955+00:00",
+  "timestamp": "2025-04-29T01:39:29.820694+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -1135,13 +1135,13 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2025-04-26T20:27:59Z",
+      "updatedAt": "2025-04-29T00:34:06Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "92b268e474eec27d62a6b222158cb95cda285078",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "main",
-      "headRefOid": "6bc6ace3d126589ab2a1025892eea17902958403",
+      "headRefOid": "0e152bb62553fca10e23215ab2cd68ac29dc3a05",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -2378,9 +2378,9 @@
           "comments": [
             {
               "originalPosition": 99,
-              "body": "Gret,\r\nThe text is revised to the following. please confirm.\r\n\r\nB. The CMIS {{CMIS}} defines the communication interface between host devices and optical pluggable modules. Looking ahead, an enhanced version of CMIS may emerge, potentially leveraging I3C or alternative protocols based on Ethernet communication within the pluggable. This draft will be designed to accommodate any future host-to-pluggable communication mechanisms.",
+              "body": "You are correct.\r\nSince we removed the interface between plug and host in previous comment provided by Gert, we can close this.\r\n\r\nGabriele, if you feels that we need to chage the text, please provide a text to be included.\r\nWaiting for Gabriele's response",
               "createdAt": "2025-04-14T20:41:11Z",
-              "updatedAt": "2025-04-14T20:46:12Z"
+              "updatedAt": "2025-04-28T13:33:33Z"
             }
           ]
         },
@@ -2878,9 +2878,9 @@
             },
             {
               "originalPosition": 96,
-              "body": "Let's discuss as I think the existing text is draft is clear.",
+              "body": "We agreed that Gert's comment is enough. This is the new text from Gert which will be added:\r\n\r\nB. The CMIS {{CMIS}} defines the communication interface between host devices and optical pluggable modules.",
               "createdAt": "2025-04-25T05:04:20Z",
-              "updatedAt": "2025-04-25T06:03:06Z"
+              "updatedAt": "2025-04-28T13:27:41Z"
             },
             {
               "originalPosition": 115,
@@ -2965,6 +2965,82 @@
               "body": "Replaced the text with your suggestion.\r\n\r\nWe should be able to mark this as RESOLVE",
               "createdAt": "2025-04-25T06:02:32Z",
               "updatedAt": "2025-04-25T06:03:06Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6m2QND",
+          "commit": {
+            "abbreviatedOid": "6bc6ace"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-28T13:08:51Z",
+          "updatedAt": "2025-04-28T13:51:04Z",
+          "comments": [
+            {
+              "originalPosition": 381,
+              "body": "Reza will add the ITU references as well.",
+              "createdAt": "2025-04-28T13:08:51Z",
+              "updatedAt": "2025-04-28T13:51:04Z"
+            },
+            {
+              "originalPosition": 41,
+              "body": "Italo is OK with my last suggestions (i.e., use term \"Controller Layer\").",
+              "createdAt": "2025-04-28T13:13:42Z",
+              "updatedAt": "2025-04-28T13:51:04Z"
+            },
+            {
+              "originalPosition": 93,
+              "body": "Julian's comment: the combination of Gert and Reza's comment is enough.\r\n\r\nThis is NEW text proposed by Julian, Nigel and Aihua:\r\n\r\nThis interface provides the control the host and all it's components. Note that the YANG data model addressing pluggable modules will be provided at interface (A), i.e., the management interface of the device. In general the HOST can be any devices (packet, OTN etc.) But in specific this draft addresses this when the Host is a packet device.",
+              "createdAt": "2025-04-28T13:23:39Z",
+              "updatedAt": "2025-04-28T13:51:04Z"
+            },
+            {
+              "originalPosition": 93,
+              "body": "Julien will review the text in draft. If the text if clear enough, there might no need to change the picture. \r\nSo, in summary we are fine with changing both picture and text. \r\n\r\n ",
+              "createdAt": "2025-04-28T13:39:52Z",
+              "updatedAt": "2025-04-28T13:51:04Z"
+            },
+            {
+              "originalPosition": 138,
+              "body": "Sergio agrees with my view. This draft refers to impairment draft for any related topics/discussions on operational-mode. This draft is totally aligned with  impairment draft",
+              "createdAt": "2025-04-28T13:45:43Z",
+              "updatedAt": "2025-04-28T13:51:04Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6m-tXL",
+          "commit": {
+            "abbreviatedOid": "6bc6ace"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T00:27:30Z",
+          "updatedAt": "2025-04-29T00:31:28Z",
+          "comments": [
+            {
+              "originalPosition": 381,
+              "body": "As per above comments, the following is added to draft:\r\n\r\n(See section 2.3.1 of {{ietf-impairment-yang}} and also section 3.2.4 {{G.959.1}}).\r\n\r\nThe comment can be RESOLVED.",
+              "createdAt": "2025-04-29T00:27:30Z",
+              "updatedAt": "2025-04-29T00:31:28Z"
+            },
+            {
+              "originalPosition": 93,
+              "body": "The comment can be RESOLVED",
+              "createdAt": "2025-04-29T00:30:02Z",
+              "updatedAt": "2025-04-29T00:31:28Z"
+            },
+            {
+              "originalPosition": 96,
+              "body": "The comment can be RESOLVED.",
+              "createdAt": "2025-04-29T00:31:10Z",
+              "updatedAt": "2025-04-29T00:31:28Z"
             }
           ]
         }
