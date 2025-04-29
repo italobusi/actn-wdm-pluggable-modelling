@@ -177,7 +177,10 @@ informative:
     date: 2025-01-06
     target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-dwdm-if-param-yang/
 
-
+  G.959.1:
+    title: "Optical transport network physical layer interfaces"
+    date: 2012-02
+    target: ITU-T Recommendation G.959.1
 
 --- abstract
 
@@ -271,9 +274,9 @@ The document is divided into the following sections:
 
 {{figure-details-packet-optical-device}} shows a host packet device from vendor X, which is connected to optical device, equipped with optical pluggables from vendor X and Y. This figure exposes the following internal and external interfaces:
 
-A. This interface provides the control of host packet functions and optical functions. It provides these functions which can be decoupled such that there is no overlap between the optical and packet control functions. Note that the YANG data model for the pluggable will be provided at interface (A), i.e., the management interface of the device.
+A. This interface provides the control the host and all it's components. Note that the YANG data model addressing pluggable modules will be provided at interface (A), i.e., the management interface of the device. In general the HOST can be any devices (packet, OTN etc.) But in specific this draft addresses this when the Host is a packet device.
 
-B. The CMIS {{CMIS}} defines the communication interface between host devices and optical pluggable modules. Looking ahead, an enhanced version of CMIS may emerge, potentially leveraging I3C or alternative protocols based on Ethernet communication within the pluggable. This draft will be designed to accommodate any future host-to-pluggable communication mechanisms.
+B. The CMIS {{CMIS}} defines the communication interface between host devices and optical pluggable modules.
 
 C. The data flow between the coherent pluggable and the packet data function through this interface. This is electrical interface between coherent pluggable and the host. {{building-blocks}} will discuss this in more details.
 
@@ -371,7 +374,7 @@ The following sections are describing the details of coherent pluggable function
 
 ## Optical Channel/OTSi
 
-The media side of the coherent pluggable is further divided into two functional blocks; Optical Channel/OTSi and Media Logical Channels. The characteristics of the Optical channel/OTSi are (See section 2.3.1 of {{ietf-impairment-yang}}).
+The media side of the coherent pluggable is further divided into two functional blocks; Optical Channel/OTSi and Media Logical Channels. The characteristics of the Optical channel/OTSi are (See section 2.3.1 of {{ietf-impairment-yang}} and also section 3.2.4 {{G.959.1}}).
 
 * This is the pluggable interfaces facing the optical network.
 
