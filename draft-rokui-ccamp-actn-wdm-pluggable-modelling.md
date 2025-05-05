@@ -251,23 +251,22 @@ The document is divided into the following sections:
 
 - {{optical-pluggable-in-device-packet-function}}: Optical pluggable module in a Device with Packet Functions
 
-- {{building-blocks}}: optical Pluggables Building Blocks
+- {{building-blocks}}: Optical Module Functional Building Block
 
-- {{data-model}}: optical Pluggables Data Modeling
+- {{data-model}}: Optical Modules Data Modeling
 
-- {{yang-model}}: optical Pluggables Yang Model
+- {{yang-model}}: Addressing Optical Modules Attributes From Google Sheet
 
-- {{pluggable-gap-analysis}}: optical pluggable Gap Analysis
+- {{gap-analysis}}: Optical Module Data Modeling Gap Analysis
 
 - {{plug-lcm}}: Optical Pluggables Lifecycle Management
 
 {: #optical-pluggable-in-device-packet-function}
-
 # Optical pluggable module in a Device with Packet Functions
 
 {{figure-details-packet-optical-device}} shows a host packet device from vendor X, which is connected to optical device, equipped with optical pluggable modules from vendor X and Y. This figure exposes the following internal and external interfaces:
 
-A. This interface provides the control the host and all it's components. Note that the YANG data model addressing pluggable modules will be provided at interface (A), i.e., the management interface of the device. In general the HOST can be any devices (packet, OTN etc.) But in specific this draft addresses this when the Host is a packet device.
+A. This interface provides the control of the host and all it's components. Note that the YANG data model addressing pluggable modules will be provided at interface (A), i.e., the management interface of the device. In general the HOST can be any devices (packet, OTN etc.) But in specific this draft addresses this when the Host is a packet device.
 
 B. The CMIS {{CMIS}} defines the communication interface between host devices and optical modules.
 
@@ -324,17 +323,14 @@ The model presented in {{data-model}} consolidates properties of optical pluggab
 ~~~~
 {: #figure-details-packet-optical-device title="Packet device with optical pluggable modules"}
 
-
-
 {: #building-blocks}
-
-# optical module Functional Building Blocks
+# Optical Module Functional Building Blocks
 
 The functional building blocks of the optical modules of {{figure-details-packet-optical-device}} are shown in {{figure-optical-pluggable-building-blocks}} and has three major functions:
 
 - Media side: This functional block represents all Photonic/Optical attributes of the optical modules (interface (D) in {{figure-details-packet-optical-device}}). These attributes define the characteristics of the optical and photonic properties such as spectrum, polarization, dispersion etc., which do not directly affect the behavior of the host packet device. Note that the goal of this draft is to identify optical module capabilities, configuration, states, and telemetry data attributes from existing IETF standards and incorporates input from other industry forums and standards, such as ITU-T, OpenConfig, OIF and ONF TAPI and then perform the gap analysis to compare optical module attributes with current IETF drafts, identifying any modeling gaps. Eventually based on the identified gaps, the draft proposes solutions to address missing attributes, such as augmenting or updating existing IETF YANG models. Note that IETF terminology are given precedence wherever possible. In case there is a duplication of an attribute, this draft may describe how the attribute is named in the related document. Only if no attribute exists in IETF RFCs or IETF WG drafts, new attributes shall be introduced if they are needed.
 
-- Host side: This functional block represents all Host/Electrical attributes of the optical modules (interface (C) in {{figure-details-packet-optical-device}}). These attributes defines the characteristics of interconnect between the host and the optical module, such as lane count, FEC etc., which both the optical module and the packet host should understand and act upon
+- Host side: This functional block represents all Host/Electrical attributes of the coherent pluggables (interface (C) in {{figure-details-packet-optical-device}}). These attributes defines the characteristics of interconnect between the host and the optical pluggable, such as lane count, FEC etc., which both the optical pluggable and the packet host should understand and act upon. Note that the mapping between host and media might be one to many, i.e., a host logical channel might map to one or more media logical channel.
 
 - Equipment attributes: These attributes represent all physical and functional aspects of the optical pluggable module such as plug type, software version, thermal characteristics, power consumption etc.
 
@@ -580,8 +576,8 @@ Based on outcome of Gap analysis, we need to address the module attributes using
 
 The detail of this provided after gap analysis on optical module attributes on Google Sheet.
 
-{: #module-gap-analysis}
-# optical module Data Modeling Gap Analysis
+{: #gap-analysis}
+# Optical Module Data Modeling Gap Analysis
 
 \[Editorial Note: This section in under review. Will start after finishing the Google Sheet]
 
@@ -1236,3 +1232,4 @@ This document has no IANA actions.
 
 TODO acknowledge.
 
+module
