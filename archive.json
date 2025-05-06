@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-29T01:39:29.820694+00:00",
+  "timestamp": "2025-05-06T01:40:14.796838+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -283,6 +283,30 @@
       "updatedAt": "2025-04-18T08:57:12Z",
       "closedAt": null,
       "comments": []
+    },
+    {
+      "number": 17,
+      "id": "I_kwDOLJuPKM61LSoY",
+      "title": "Clean up Terminology",
+      "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/issues/17",
+      "state": "OPEN",
+      "author": "ggrammel",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Unify terminology across the text:\n- If the context is about pluggability and/or physical form factor, call it -> pluggable module\n- if the context is about optics, call it ->  optical module\n- If the context is strictly about coherent, call it -> coherent optical module\n\nThe draft is about gap analysis for pluggable vs. non-pluggable and gaps in optical modeling.",
+      "createdAt": "2025-05-05T13:11:49Z",
+      "updatedAt": "2025-05-05T15:27:20Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@ggrammel also added: I would make the sentence more general:\nThe CMIS {{CMIS}} defines the most common communication interface between host devices and optical modules. Other kind of interfaces may be developed and standardized in the future.",
+          "createdAt": "2025-05-05T15:27:18Z",
+          "updatedAt": "2025-05-05T15:27:18Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -1135,13 +1159,13 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2025-04-29T00:34:06Z",
+      "updatedAt": "2025-05-05T15:06:26Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "92b268e474eec27d62a6b222158cb95cda285078",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "main",
-      "headRefOid": "0e152bb62553fca10e23215ab2cd68ac29dc3a05",
+      "headRefOid": "102ca2519dd5a573f06f3ecd7046ae0b3d951624",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -2378,9 +2402,9 @@
           "comments": [
             {
               "originalPosition": 99,
-              "body": "You are correct.\r\nSince we removed the interface between plug and host in previous comment provided by Gert, we can close this.\r\n\r\nGabriele, if you feels that we need to chage the text, please provide a text to be included.\r\nWaiting for Gabriele's response",
+              "body": "You are correct.\r\nSince we removed the interface between plug and host in previous comment provided by Gert, we can close this.\r\n\r\n@ggalimba56  if you feels that we need to chage the text, please provide a text to be included.\r\nWaiting for Gabriele's response\r\n\r\nA new Issue #17 is opened which addresses this topic.\r\n\r\nThis now can be RESOLVED.",
               "createdAt": "2025-04-14T20:41:11Z",
-              "updatedAt": "2025-04-28T13:33:33Z"
+              "updatedAt": "2025-05-05T13:14:24Z"
             }
           ]
         },
@@ -3041,6 +3065,116 @@
               "body": "The comment can be RESOLVED.",
               "createdAt": "2025-04-29T00:31:10Z",
               "updatedAt": "2025-04-29T00:31:28Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6nwqMe",
+          "commit": {
+            "abbreviatedOid": "0e152bb"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-05T11:48:23Z",
+          "updatedAt": "2025-05-05T11:48:23Z",
+          "comments": [
+            {
+              "originalPosition": 95,
+              "body": "... control of the host ...",
+              "createdAt": "2025-05-05T11:48:23Z",
+              "updatedAt": "2025-05-05T11:48:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6nxIdd",
+          "commit": {
+            "abbreviatedOid": "0f6d0a5"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-05T12:42:46Z",
+          "updatedAt": "2025-05-05T13:37:04Z",
+          "comments": [
+            {
+              "originalPosition": 95,
+              "body": "Agreed. Correct.\r\nThis can now be mark as RESOLVED",
+              "createdAt": "2025-05-05T12:42:46Z",
+              "updatedAt": "2025-05-05T13:37:04Z"
+            },
+            {
+              "originalPosition": 93,
+              "body": "@ggrammel  is OK to just add the text and keep the original diagram.\r\nThe follow text is added:\r\n\"Note that the mapping between host and media might be one to many, i.e., a host logical channel might map to one or more media logical channel. \"\r\n\r\nThis now can be RESOLVED",
+              "createdAt": "2025-05-05T13:16:56Z",
+              "updatedAt": "2025-05-05T13:44:06Z"
+            },
+            {
+              "originalPosition": 139,
+              "body": "@ggalimba56 This is just a shortcut in MD and does not show in final text",
+              "createdAt": "2025-05-05T13:21:52Z",
+              "updatedAt": "2025-05-05T13:37:04Z"
+            },
+            {
+              "originalPosition": 120,
+              "body": "As per discussion today, @ggrammel will check again.",
+              "createdAt": "2025-05-05T13:28:11Z",
+              "updatedAt": "2025-05-05T13:37:04Z"
+            },
+            {
+              "originalPosition": 138,
+              "body": "@ggrammel is fine as well.\r\nThis now can be RESOLVED.",
+              "createdAt": "2025-05-05T13:29:13Z",
+              "updatedAt": "2025-05-05T13:37:04Z"
+            },
+            {
+              "originalPosition": 272,
+              "body": "@ggrammel agreed that the Gap analysis is important and will be added after finishing the Google Sheet.\r\nThis can be RESOLVED.",
+              "createdAt": "2025-05-05T13:32:30Z",
+              "updatedAt": "2025-05-05T13:37:04Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6ny1f3",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "ggalimba56",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-05T14:57:23Z",
+          "updatedAt": "2025-05-05T14:57:23Z",
+          "comments": [
+            {
+              "originalPosition": 139,
+              "body": "OK we can close it",
+              "createdAt": "2025-05-05T14:57:23Z",
+              "updatedAt": "2025-05-05T14:57:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6ny8Of",
+          "commit": {
+            "abbreviatedOid": "0f6d0a5"
+          },
+          "author": "ggalimba56",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-05T15:06:26Z",
+          "updatedAt": "2025-05-05T15:06:26Z",
+          "comments": [
+            {
+              "originalPosition": 99,
+              "body": "I would make the sentence more general: \r\n The CMIS {{CMIS}} defines the most common communication interface between host devices and optical modules.  Other kind of interfaces may be developed and standardized in the future.",
+              "createdAt": "2025-05-05T15:06:26Z",
+              "updatedAt": "2025-05-05T15:06:26Z"
             }
           ]
         }
