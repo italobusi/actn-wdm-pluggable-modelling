@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-06T01:40:14.796838+00:00",
+  "timestamp": "2025-05-08T01:40:55.360153+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -1159,7 +1159,7 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2025-05-05T15:06:26Z",
+      "updatedAt": "2025-05-06T08:01:11Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "92b268e474eec27d62a6b222158cb95cda285078",
@@ -3175,6 +3175,26 @@
               "body": "I would make the sentence more general: \r\n The CMIS {{CMIS}} defines the most common communication interface between host devices and optical modules.  Other kind of interfaces may be developed and standardized in the future.",
               "createdAt": "2025-05-05T15:06:26Z",
               "updatedAt": "2025-05-05T15:06:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6n7CC8",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "dieterbeller",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-06T08:01:11Z",
+          "updatedAt": "2025-05-06T08:01:11Z",
+          "comments": [
+            {
+              "originalPosition": 235,
+              "body": "Here is a proposal how this paragraph should be updated:\r\n\r\noriginal md-text:\r\n\r\nCMIS: The Common Management Interface Specification is an OIF Implementation Agreement (IA) which provides a well-defined mechanism to initialize and manage optical (and copper) modules in a standard way, while still providing the capability to provide custom functionality. This commonality makes integration into different host platforms easier for both the host and module vendors. This Implementation Agreement (IA) defines the Common Management Interface. Note that CMIS targets any module, not only Coherent ones. Specification (CMIS), which may be used by pluggable module or on-board modules, such as QSFP Double Density (QSFP-DD), OSFP, COBO, QSFP, as well as by existing or future module developments with host to module management communication based on a two-wire interface. This IA is targeted for systems manufacturers, system integrators, and suppliers of CMIS compliant modules {{CMIS}}.\r\n\r\nproposed update:\r\n\r\nCommon Management Interface Specification (CMIS): The Common Management Interface Specification is an Implementation Agreement (IA) developed by the Optical Internet Forum (OIF) {{CMIS}}. This specification defines an interface for managing optical (and copper) modules in a standardized way while still permitting vendor-specific functionality. It eases the integration of modules supporting the CMIS interface into host platforms from different system vendors. It shall be noted that CMIS targets any module, not only coherent optical modules, which is the scope of this document. The CMIS interface is applicable to on-board module types (fixed optics) as well as pluggable modules types such as QSFP Double-Density (QSFP-DD), OSFP, COBO, QSFP and other module types.",
+              "createdAt": "2025-05-06T08:01:11Z",
+              "updatedAt": "2025-05-06T08:01:11Z"
             }
           ]
         }
