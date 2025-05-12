@@ -141,13 +141,13 @@ Table of Contents
    7.  Optical Module Data Modeling Gap Analysis . . . . . . . . . .  19
    8.  Optical pluggable modules Lifecycle Management  . . . . . . .  20
      8.1.  Approving the pluggable module type and version . . . . .  22
-     8.2.  Planning the network  . . . . . . . . . . . . . . . . . .  23
+     8.2.  Planning the network  . . . . . . . . . . . . . . . . . .  22
      8.3.  Dealing with service demand . . . . . . . . . . . . . . .  23
-     8.4.  Installing and operationalizing the pluggable module  . .  25
-     8.5.  Expressing capabilities . . . . . . . . . . . . . . . . .  26
+     8.4.  Installing and operationalizing the pluggable module  . .  24
+     8.5.  Expressing capabilities . . . . . . . . . . . . . . . . .  25
    9.  Appendix A - Coherent pluggable module Examples . . . . . . .  27
-     9.1.  Example-1: Coherent Pluggables Already Provisioned  . . .  28
-     9.2.  Example-2: Coherent Pluggables Planning . . . . . . . . .  30
+     9.1.  Example-1: Coherent Pluggables Already Provisioned  . . .  27
+     9.2.  Example-2: Coherent Pluggables Planning . . . . . . . . .  29
    10. Appendix B - Support of Opaque Attributes . . . . . . . . . .  33
      10.1.  Support of Opaque Capability Attributes  . . . . . . . .  35
      10.2.  Support of Opaque Secret Capability Attributes . . . . .  35
@@ -1036,35 +1036,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
    *  Syntax gaps: Naming inconsistency on existing IETF drafts
       [ietf-impairment-yang], [ietf-layer0-yang] and
-      [ietf-optical-interface-yang].  As an example, the capability
-      attribute "max-channel-input-power" is also referred to as "rx-
-      channel-power-max".  We need to fix this.  This draft proposes the
-      following structure (note that there will be multiple valid
-      proposals).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Rokui, et al.           Expires 13 November 2025               [Page 19]
-
-Internet-Draft        Modelling Optical Pluggables              May 2025
-
+      [ietf-optical-interface-yang] if any.
 
   Naming convention:
     direction [tx/rx/both/none]-
@@ -1084,6 +1056,16 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
       for IETF attribute "channel-output-power", use
          tx-channel-power
 
+
+
+
+
+
+Rokui, et al.           Expires 13 November 2025               [Page 19]
+
+Internet-Draft        Modelling Optical Pluggables              May 2025
+
+
    *  Semantic gaps: As part of gap analysis and for a complete solution
       for optical module, there should be some alignment between the
       capabilities, configuration, PM attributes and PM thresholds
@@ -1095,7 +1077,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 8.  Optical pluggable modules Lifecycle Management
 
    [Editorial Note: it is under review.  It was agreed that this section
-   is important.  Having said that, there are aa few potential solution
+   is important.  Having said that, there are a few potential solution
    to address this topic:
 
    *  Keep it is this draft
@@ -1114,14 +1096,6 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    Most of this lifecycle discussion applies to a majority of equipment
    types.  Where the pluggable module is special, this is highlighted.
 
-
-
-
-Rokui, et al.           Expires 13 November 2025               [Page 20]
-
-Internet-Draft        Modelling Optical Pluggables              May 2025
-
-
    The figure below provides a high level flow.  In a real environment,
    all stages will be running in parallel for various plug versions etc.
    and there may be feedback from any stage to a previous stage.  For
@@ -1138,6 +1112,15 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    any specific operational practice.  They are intended to be neutral
    with respect to any existing operator's processes, aligning with the
    essence of the processes.
+
+
+
+
+
+Rokui, et al.           Expires 13 November 2025               [Page 20]
+
+Internet-Draft        Modelling Optical Pluggables              May 2025
+
 
      Market research                   \
           |                            |
@@ -1170,14 +1153,6 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
           |                            | Section 9.3
           v                            |
      Design service                    |
-
-
-
-Rokui, et al.           Expires 13 November 2025               [Page 21]
-
-Internet-Draft        Modelling Optical Pluggables              May 2025
-
-
           |                            |
           v                            |
      Validate optical design           /
@@ -1195,6 +1170,14 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
      Service validation & test         |
           |                            |
           v                            |
+
+
+
+Rokui, et al.           Expires 13 November 2025               [Page 21]
+
+Internet-Draft        Modelling Optical Pluggables              May 2025
+
+
      Enable Service                    |
           |                            |
           v                            |
@@ -1226,14 +1209,6 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    of pluggable module for a particular set of applications (where those
    applications may be defined by the operator themselves or may be
    standardized definitions) etc.  The full detail of the capability of
-
-
-
-Rokui, et al.           Expires 13 November 2025               [Page 22]
-
-Internet-Draft        Modelling Optical Pluggables              May 2025
-
-
    each type & version of pluggable module is relevant at all of these
    stages (see Section 8.5).  The capabilities are expected to be
    expressed in a Repository.
@@ -1251,6 +1226,13 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    properties to explore viability and compatibility.  The planning will
    use predictions of "service demand" (e.g., using a demand matrix) and
    hence infrastructure need to determine purchase volumes, phasing etc.
+
+
+
+Rokui, et al.           Expires 13 November 2025               [Page 22]
+
+Internet-Draft        Modelling Optical Pluggables              May 2025
+
 
    During the "Network planning" process different types of service
    relevant for the applications, use cases and scenarios (identified in
@@ -1273,22 +1255,6 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    designed (using the patterns/templates designed in Section 8.2.  The
    infrastructure will be deployed as appropriate based upon predicted
    and actual service demand etc.
-
-
-
-
-
-
-
-
-
-
-
-
-Rokui, et al.           Expires 13 November 2025               [Page 23]
-
-Internet-Draft        Modelling Optical Pluggables              May 2025
-
 
    When optical "services demand" is received, perhaps to provide
    underlay for the packet network or driven by a specific service
@@ -1314,6 +1280,16 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    cabled) until the solution to realization of the optical service has
    been determined.
 
+
+
+
+
+
+Rokui, et al.           Expires 13 November 2025               [Page 23]
+
+Internet-Draft        Modelling Optical Pluggables              May 2025
+
+
    Regardless of the deployment approach, the module capability will be
    accounted for in the optical network analysis activity.  Where
    modules are present, the range of installed modules constrain the
@@ -1332,19 +1308,6 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    the full definitions of the pluggable module type&versions of
    interest, where each is defined in a corresponding and referenced
    Repository.
-
-
-
-
-
-
-
-
-
-Rokui, et al.           Expires 13 November 2025               [Page 24]
-
-Internet-Draft        Modelling Optical Pluggables              May 2025
-
 
 8.4.  Installing and operationalizing the pluggable module
 
@@ -1375,6 +1338,14 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    Beyond this point normal operational activities such as engineering
    works, restoration, upgrade, fault location etc. will be carried out.
    Clearly, there is also the reverse sequence which includes
+
+
+
+Rokui, et al.           Expires 13 November 2025               [Page 24]
+
+Internet-Draft        Modelling Optical Pluggables              May 2025
+
+
    deactivating a service and removing the plug and there are also
    various edits and refinements that result from changes in demand and
    changes in understanding of the service needs etc.  These steps have
@@ -1389,18 +1360,6 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    including the type&version of each pluggable module.  Some degree of
    understanding of capability of pluggable modules (and any other
    equipment) is relevant.
-
-
-
-
-
-
-
-
-Rokui, et al.           Expires 13 November 2025               [Page 25]
-
-Internet-Draft        Modelling Optical Pluggables              May 2025
-
 
 8.5.  Expressing capabilities
 
@@ -1432,6 +1391,17 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    considering spares holding and like-for-like replacement in the
    field.
 
+
+
+
+
+
+
+Rokui, et al.           Expires 13 November 2025               [Page 25]
+
+Internet-Draft        Modelling Optical Pluggables              May 2025
+
+
    From this perspective, all that is required from a running pluggable
    module is to report the complete type&version detail so that this can
    be confirmed as the right type&version.  The type&version can be used
@@ -1448,15 +1418,6 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
    *  physical size, form factor and shape (the capability to fit in a
       particular type of location)
-
-
-
-
-
-Rokui, et al.           Expires 13 November 2025               [Page 26]
-
-Internet-Draft        Modelling Optical Pluggables              May 2025
-
 
    *  connector type (the capability to physically interconnect with a
       compatible connector)
@@ -1489,6 +1450,14 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    into a machine interpretable form through a manual intermediate step
    (normally performed, with errors and performed many times for any
    particular device type etc.).  It is suggested here that the best
+
+
+
+Rokui, et al.           Expires 13 November 2025               [Page 26]
+
+Internet-Draft        Modelling Optical Pluggables              May 2025
+
+
    source of the machine interpretable data is the specifying authority
    (e.g., ITU-T for standard applications, the vendor for plug
    capabilities, an operator for non-standard applications).
@@ -1499,6 +1468,37 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    practical application of the coherent pluggable repository.  In this
    section, we present several use cases that demonstrate the practical
    application of coherent pluggable life cycle management.
+
+9.1.  Example-1: Coherent Pluggables Already Provisioned
+
+   The first example is illustrated in Figure 7.  This is a simple
+   example where the packet over optical network has been already
+   provisioned with both optical underlay and packet overlay services.
+   The role of SDN controller is just to discover and manage the
+   network.  In other words, the SDN controller was not involved in
+   various aspects of service provisioning and viability.  The second
+   example will come all these aspects in more detail.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1513,16 +1513,6 @@ Rokui, et al.           Expires 13 November 2025               [Page 27]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
-
-9.1.  Example-1: Coherent Pluggables Already Provisioned
-
-   The first example is illustrated in Figure 7.  This is a simple
-   example where the packet over optical network has been already
-   provisioned with both optical underlay and packet overlay services.
-   The role of SDN controller is just to discover and manage the
-   network.  In other words, the SDN controller was not involved in
-   various aspects of service provisioning and viability.  The second
-   example will come all these aspects in more detail.
 
          <------------------ L3 service-1 ------------------->
           <------------------ TE-Tunnel-1 ------------------>
@@ -1561,15 +1551,6 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    provisioned and deployed and the packet over optical network is fully
    functional.
 
-
-
-
-
-Rokui, et al.           Expires 13 November 2025               [Page 28]
-
-Internet-Draft        Modelling Optical Pluggables              May 2025
-
-
    Within packet devices R1 and R2, coherent pluggables p1 and p2, are
    installed, interfacing through ports port_a and port_b, respectively.
    Both coherent pluggables are provisioned for the following
@@ -1581,6 +1562,14 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    A single photonic service is established between these pluggables and
    an IP link is mapped to this L0 photonic service.  The overlay TE-
    Tunnel-1 and L3 service-1 had been also provisioned.  The following
+
+
+
+Rokui, et al.           Expires 13 November 2025               [Page 28]
+
+Internet-Draft        Modelling Optical Pluggables              May 2025
+
+
    steps outline the details of how this network is discovered and
    managed by SDN controllers (note that the SDN controller was not
    involved in provisioning):
@@ -1617,15 +1606,6 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    *  The SDN controller can collect all alarm notifications from the
       network (including pluggables).
 
-
-
-
-
-Rokui, et al.           Expires 13 November 2025               [Page 29]
-
-Internet-Draft        Modelling Optical Pluggables              May 2025
-
-
    *  The SDN controller can further change, modify, optimize the
       network (if needed).
 
@@ -1635,6 +1615,16 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    Pluggable Repository" for entire lifecycle of photonic service from
    including service planning, viability, provisioning, collection of PM
    telemetry, collection of alarm notifications and optimization.
+
+
+
+
+
+
+Rokui, et al.           Expires 13 November 2025               [Page 29]
+
+Internet-Draft        Modelling Optical Pluggables              May 2025
+
 
    Note that the packet over optical network in Figure 8 is not created
    yet.  The ports port_a and port_b of packet device R1 and R2 are
@@ -1650,6 +1640,16 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    service-2.  To achieve this, the SDN controller should first plan an
    optical service-2, perform the viability to make sure this photonic
    service is feasible, provision it and then map it to an IP link-2.
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2084,7 +2084,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    <opaque-config-attribute-list xmlns="urn:example:cc">
      <config-attribute-id> 1 </config-attribute-id >
      <config-attribute-name> AA </config-attribute-name>
-     <value> 100 </value>
+     <value> 1100 </value>
    </opaque-config-attribute-list>
 
        Figure 11: Solution-2 for support of opaque config attributes
@@ -2172,11 +2172,11 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
    [Editor's note: Formerly Manifest.  GitHub issue #15 covers this].
 
-   <<<<<<< Updated upstream [Editor's note: Based on CCAMP WG's
-   suggestion, this section is moved to Appendix for now.  It might be
-   moved from this draft to an existing IETF draft or to a new draft.
-   We need to align with draft https://datatracker.ietf.org/doc/draft-
-   ietf-ccamp-actn-poi-pluggable-usecases-gaps/ as well]
+   [Editor's note: Based on CCAMP WG's suggestion, this section is moved
+   to Appendix for now.  It might be moved from this draft to an
+   existing IETF draft or to a new draft.  We need to align with draft
+   https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-pluggable-
+   usecases-gaps/ as well]
 
 
 
@@ -2186,15 +2186,10 @@ Rokui, et al.           Expires 13 November 2025               [Page 39]
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
-   ======= [Editor's note: Based on CCAMP WG's suggestion, this section
-   is moved to Appendix for now.  It might be moved from this draft to
-   an existing IETF draft or to a new draft.  We need to align with
-   draft https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-
-   pluggable-usecases-gaps/ as well] x >>>>>>> Stashed changes Referring
-   to Section 5.1, the coherent pluggable capability attributes (i.e.,
-   supported-modes) are crucial aspects of coherent pluggables and
-   should be easily accessible for various reasons and activities.
-   Those might include:
+   Referring to Section 5.1, the coherent pluggable capability
+   attributes (i.e., supported-modes) are crucial aspects of coherent
+   pluggables and should be easily accessible for various reasons and
+   activities.  Those might include:
 
    *  Network Engineers: Network engineers needs to know the
       capabilities and characteristics of any coherent pluggable whether
@@ -2232,6 +2227,11 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    A pluggable type & version may offer a subset of standard
    capabilities.  The subset is described by simply omitting
    definitions.
+
+
+
+
+
 
 
 

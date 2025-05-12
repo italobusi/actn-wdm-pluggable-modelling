@@ -293,7 +293,7 @@ The model presented in {{data-model}} consolidates properties of optical pluggab
       |        |---------------------|        |  (i.e, Host)
       |        v                     v        |
       |  |-----------|          |----------|  |
-      |  | Packet    |          | optical |  |
+      |  | Packet    |          | optical  |  |
       |  | Function  |..........| Plug     |  |
       |  | Data      |          | Data     |  |
       |  |-----------|          |----------|  |
@@ -301,12 +301,12 @@ The model presented in {{data-model}} consolidates properties of optical pluggab
       |        .                      . (B)   |
       |        .                      .       |
       |  |--------------|   (C)   |------------------|  (D)
-      |  |Packet Device |<------->| optical Plug #1 |=======
+      |  |Packet Device |<------->| optical Plug #1  |=======
       |  |Function      |<---|    | Vendor X         |
       |  |--------------|    |    |------------------|
       |                      |                |
       |                      |    |------------------|
-      |                      |--->| optical Plug #2 |=======
+      |                      |--->| optical Plug #2  |=======
       |                           | Vendor Y         |
       |                           |------------------|
       |                                       |
@@ -587,7 +587,7 @@ To carry out this ongoing examination, properties/structures from relevant exter
 
 The following items are identified as initial gap related to optical modules. Note that the complete list will be provided after finishing the Google Sheet.
 
-* Syntax gaps: Naming inconsistency on existing IETF drafts {{ietf-impairment-yang}}, {{ietf-layer0-yang}} and {{ietf-optical-interface-yang}}. As an example, the capability attribute "max-channel-input-power" is also referred to as "rx-channel-power-max". We need to fix this. This draft proposes the following structure (note that there will be multiple valid proposals).
+* Syntax gaps: Naming inconsistency on existing IETF drafts {{ietf-impairment-yang}}, {{ietf-layer0-yang}} and {{ietf-optical-interface-yang}} if any.
 
 ~~~~
 Naming convention:
@@ -617,7 +617,7 @@ Examples:
 # Optical pluggable modules Lifecycle Management
 
 \[Editorial Note: it is under review.
-It was agreed that this section is important. Having said that, there are aa few potential solution to address this topic:
+It was agreed that this section is important. Having said that, there are a few potential solution to address this topic:
 
  * Keep it is this draft
 * Talk to author of use-case draft to be included in that draft https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-pluggable-usecases-gaps/
@@ -643,7 +643,7 @@ Note: The stages and the terminology used are not intended to reflect any specif
   Trials & PoCs                     |
        |                            |
        v                            |
-  Approve pluggable module type            /
+  Approve pluggable module type     /
        |                   ---------
        v                            \
   Service demand Analysis           |
@@ -655,7 +655,7 @@ Note: The stages and the terminology used are not intended to reflect any specif
   Service type realization analysis |
        |                            |
        v                            |
-  Purchase pluggable modules               /
+  Purchase pluggable modules        /
        |                   ---------
        v                            \
   Optical infrastructure creation   |
@@ -1016,7 +1016,7 @@ As illustrated in {{solution-2}}, the host platform receives the new attribute "
 <opaque-config-attribute-list xmlns="urn:example:cc">
   <config-attribute-id> 1 </config-attribute-id >
   <config-attribute-name> AA </config-attribute-name>
-  <value> 100 </value>
+  <value> 1100 </value>
 </opaque-config-attribute-list>
 
 ~~~~
@@ -1055,13 +1055,8 @@ The host packet device is informed of the properties via YANG augments and appro
 
 \[Editor's note: Formerly Manifest. GitHub issue #15 covers this].
 
-<<<<<<< Updated upstream
 \[Editor's note: Based on CCAMP WG's suggestion, this section is moved to Appendix for now. It might be moved from this draft to an existing IETF draft or to a new draft. We need to align with draft https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-pluggable-usecases-gaps/ as well]
 
-=======
-[Editor's note: Based on CCAMP WG's suggestion, this section is moved to Appendix for now. It might be moved from this draft to an existing IETF draft or to a new draft. We need to align with draft https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-pluggable-usecases-gaps/ as well]
-x
->>>>>>> Stashed changes
 Referring to {{plug-capabilities-attributes}}, the coherent pluggable capability attributes (i.e., supported-modes) are crucial aspects of coherent pluggables and should be easily accessible for various reasons and activities. Those might include:
 
 - Network Engineers: Network engineers needs to know the capabilities and characteristics of any coherent pluggable whether the coherent pluggable is already deployed or will potentially be installed and deployed in their network
