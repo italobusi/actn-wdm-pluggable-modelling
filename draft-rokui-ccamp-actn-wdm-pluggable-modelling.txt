@@ -5,14 +5,14 @@
 Common Control and Measurement Plane                            R. Rokui
 Internet-Draft                                                     Ciena
 Intended status: Informational                                    A. Guo
-Expires: 6 November 2025                          Futurewei Technologies
+Expires: 13 November 2025                         Futurewei Technologies
                                                                P. Bedard
                                                                    Cisco
                                                           B. Swamynathan
                                                                    Nokia
                                                               G. Grammel
                                                                  Juniper
-                                                              5 May 2025
+                                                             12 May 2025
 
 
   Data Modelling and Gap Analysis of Optical Pluggables in Packet Over
@@ -53,7 +53,7 @@ Abstract
 
 
 
-Rokui, et al.            Expires 6 November 2025                [Page 1]
+Rokui, et al.           Expires 13 November 2025                [Page 1]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -95,7 +95,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 November 2025.
+   This Internet-Draft will expire on 13 November 2025.
 
 Copyright Notice
 
@@ -109,7 +109,7 @@ Copyright Notice
 
 
 
-Rokui, et al.            Expires 6 November 2025                [Page 2]
+Rokui, et al.           Expires 13 November 2025                [Page 2]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -165,7 +165,7 @@ Table of Contents
 
 
 
-Rokui, et al.            Expires 6 November 2025                [Page 3]
+Rokui, et al.           Expires 13 November 2025                [Page 3]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -201,32 +201,30 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
    *  DWDM module: short term for coherent module supporting the use of
       a DWDM line system.
 
-   *  CMIS: The Common Management Interface Specification is an OIF
-      Implementation Agreement (IA) which provides a well-defined
-      mechanism to initialize and manage optical (and copper) modules in
-      a standard way, while still providing the capability to provide
-      custom functionality.  This commonality makes integration into
-      different host platforms easier for both the host and module
-      vendors.  This Implementation Agreement (IA) defines the Common
-      Management Interface.  Note that CMIS targets any module, not only
-      Coherent ones.  Specification (CMIS), which may be used by
-      pluggable module or on-board modules, such as QSFP Double Density
-      (QSFP-DD), OSFP, COBO, QSFP, as well as by existing or future
-      module developments with host to module management communication
-      based on a two-wire interface.  This IA is targeted for systems
-      manufacturers, system integrators, and suppliers of CMIS compliant
-      modules [CMIS].
+   *  Common Management Interface Specification (CMIS): The Common
+      Management Interface Specification is an Implementation Agreement
+      (IA) developed by the Optical Internet Forum (OIF) [CMIS].  This
+      specification defines an interface for managing optical (and
+      copper) modules in a standardized way while still permitting
+      vendor-specific functionality.  It eases the integration of
+      modules supporting the CMIS interface into host platforms from
+      different system vendors.  It shall be noted that CMIS targets any
+      module, not only coherent optical modules, which is the scope of
+      this document.  The CMIS interface is applicable to on-board
+      module types (fixed optics) as well as pluggable modules types
+      such as QSFP Double-Density (QSFP-DD), OSFP, COBO, QSFP and other
+      module types.
 
    *  optical module media side:
 
+   *  optical module host side:
 
 
-Rokui, et al.            Expires 6 November 2025                [Page 4]
+
+Rokui, et al.           Expires 13 November 2025                [Page 4]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
-
-   *  optical module host side:
 
    *  Monitored attributes: The optical module attributes which can be
       measured, monitored, estimated, or otherwise observed.  The
@@ -277,7 +275,9 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025                [Page 5]
+
+
+Rokui, et al.           Expires 13 November 2025                [Page 5]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -333,7 +333,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025                [Page 6]
+Rokui, et al.           Expires 13 November 2025                [Page 6]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -389,7 +389,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025                [Page 7]
+Rokui, et al.           Expires 13 November 2025                [Page 7]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -445,7 +445,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025                [Page 8]
+Rokui, et al.           Expires 13 November 2025                [Page 8]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -501,7 +501,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025                [Page 9]
+Rokui, et al.           Expires 13 November 2025                [Page 9]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -557,7 +557,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 10]
+Rokui, et al.           Expires 13 November 2025               [Page 10]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -613,7 +613,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 11]
+Rokui, et al.           Expires 13 November 2025               [Page 11]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -669,7 +669,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 12]
+Rokui, et al.           Expires 13 November 2025               [Page 12]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -725,7 +725,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 13]
+Rokui, et al.           Expires 13 November 2025               [Page 13]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -781,7 +781,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 14]
+Rokui, et al.           Expires 13 November 2025               [Page 14]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -837,7 +837,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 15]
+Rokui, et al.           Expires 13 November 2025               [Page 15]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -893,7 +893,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 16]
+Rokui, et al.           Expires 13 November 2025               [Page 16]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -949,7 +949,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 17]
+Rokui, et al.           Expires 13 November 2025               [Page 17]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1005,7 +1005,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 18]
+Rokui, et al.           Expires 13 November 2025               [Page 18]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1061,7 +1061,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 19]
+Rokui, et al.           Expires 13 November 2025               [Page 19]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1117,7 +1117,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 20]
+Rokui, et al.           Expires 13 November 2025               [Page 20]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1173,7 +1173,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 21]
+Rokui, et al.           Expires 13 November 2025               [Page 21]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1229,7 +1229,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 22]
+Rokui, et al.           Expires 13 November 2025               [Page 22]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1285,7 +1285,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 23]
+Rokui, et al.           Expires 13 November 2025               [Page 23]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1341,7 +1341,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 24]
+Rokui, et al.           Expires 13 November 2025               [Page 24]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1397,7 +1397,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 25]
+Rokui, et al.           Expires 13 November 2025               [Page 25]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1453,7 +1453,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 26]
+Rokui, et al.           Expires 13 November 2025               [Page 26]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1509,7 +1509,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 27]
+Rokui, et al.           Expires 13 November 2025               [Page 27]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1565,7 +1565,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 28]
+Rokui, et al.           Expires 13 November 2025               [Page 28]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1621,7 +1621,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 29]
+Rokui, et al.           Expires 13 November 2025               [Page 29]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1677,7 +1677,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 30]
+Rokui, et al.           Expires 13 November 2025               [Page 30]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1733,7 +1733,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 31]
+Rokui, et al.           Expires 13 November 2025               [Page 31]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1789,7 +1789,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 32]
+Rokui, et al.           Expires 13 November 2025               [Page 32]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1845,7 +1845,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 33]
+Rokui, et al.           Expires 13 November 2025               [Page 33]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1901,7 +1901,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 34]
+Rokui, et al.           Expires 13 November 2025               [Page 34]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -1957,7 +1957,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 35]
+Rokui, et al.           Expires 13 November 2025               [Page 35]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -2013,7 +2013,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 36]
+Rokui, et al.           Expires 13 November 2025               [Page 36]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -2069,7 +2069,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 37]
+Rokui, et al.           Expires 13 November 2025               [Page 37]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -2125,7 +2125,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 38]
+Rokui, et al.           Expires 13 November 2025               [Page 38]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -2181,7 +2181,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 39]
+Rokui, et al.           Expires 13 November 2025               [Page 39]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -2237,7 +2237,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 40]
+Rokui, et al.           Expires 13 November 2025               [Page 40]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -2293,7 +2293,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 41]
+Rokui, et al.           Expires 13 November 2025               [Page 41]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -2349,7 +2349,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 42]
+Rokui, et al.           Expires 13 November 2025               [Page 42]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -2405,7 +2405,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 43]
+Rokui, et al.           Expires 13 November 2025               [Page 43]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -2461,7 +2461,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 44]
+Rokui, et al.           Expires 13 November 2025               [Page 44]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -2517,7 +2517,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 45]
+Rokui, et al.           Expires 13 November 2025               [Page 45]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -2573,7 +2573,7 @@ Contributors
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 46]
+Rokui, et al.           Expires 13 November 2025               [Page 46]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -2629,7 +2629,7 @@ Internet-Draft        Modelling Optical Pluggables              May 2025
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 47]
+Rokui, et al.           Expires 13 November 2025               [Page 47]
 
 Internet-Draft        Modelling Optical Pluggables              May 2025
 
@@ -2685,4 +2685,4 @@ Authors' Addresses
 
 
 
-Rokui, et al.            Expires 6 November 2025               [Page 48]
+Rokui, et al.           Expires 13 November 2025               [Page 48]

@@ -208,8 +208,8 @@ The following terms abbreviations are used in this document:
 - Coherent module: short term for optical transceiver module providing coherent optical modulation capabilities.
 
 - DWDM module: short term for coherent module supporting the use of a DWDM line system.
-- CMIS: The Common Management Interface Specification is an OIF Implementation Agreement (IA) which provides a well-defined mechanism to initialize and manage optical (and copper) modules in a standard way, while still providing the capability to provide custom functionality. This commonality makes integration into different host platforms easier for both the host and module vendors. This Implementation Agreement (IA) defines the Common Management Interface. Note that CMIS targets any module, not only Coherent ones. Specification (CMIS), which may be used by pluggable module or on-board modules, such as QSFP Double Density (QSFP-DD), OSFP, COBO, QSFP, as well as by existing or future module developments with host to module management communication based on a
-two-wire interface. This IA is targeted for systems manufacturers, system integrators, and suppliers of CMIS compliant modules {{CMIS}}.
+
+- Common Management Interface Specification (CMIS): The Common Management Interface Specification is an Implementation Agreement (IA) developed by the Optical Internet Forum (OIF) {{CMIS}}. This specification defines an interface for managing optical (and copper) modules in a standardized way while still permitting vendor-specific functionality. It eases the integration of modules supporting the CMIS interface into host platforms from different system vendors. It shall be noted that CMIS targets any module, not only coherent optical modules, which is the scope of this document. The CMIS interface is applicable to on-board module types (fixed optics) as well as pluggable modules types such as QSFP Double-Density (QSFP-DD), OSFP, COBO, QSFP and other module types.
 
 - optical module media side:
 
