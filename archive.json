@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-08T01:40:55.360153+00:00",
+  "timestamp": "2025-05-13T01:41:45.585264+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -1159,13 +1159,13 @@
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2025-05-06T08:01:11Z",
+      "updatedAt": "2025-05-12T23:25:08Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "92b268e474eec27d62a6b222158cb95cda285078",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "main",
-      "headRefOid": "102ca2519dd5a573f06f3ecd7046ae0b3d951624",
+      "headRefOid": "7f121432f98c227574edfce4f4fec933b0605868",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -2264,9 +2264,9 @@
             },
             {
               "originalPosition": 439,
-              "body": "Gert and all,\r\nTo address all aspects of \"Coherent Pluggable Repository\", the following Issue has been created:\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/15#issue-2740647621",
+              "body": "Gert and all,\r\nTo address all aspects of \"Coherent Pluggable Repository\", the following Issue has been created:\r\n\r\nhttps://github.com/italobusi/actn-wdm-pluggable-modelling/issues/15#issue-2740647621\r\n\r\nThis can be RESOLVED",
               "createdAt": "2024-12-15T13:40:55Z",
-              "updatedAt": "2025-04-14T13:54:00Z"
+              "updatedAt": "2025-05-12T13:13:41Z"
             },
             {
               "originalPosition": 458,
@@ -2688,15 +2688,15 @@
             },
             {
               "originalPosition": 666,
-              "body": "Agreed. \r\nReworded  \"Supported Mode\" to \"Operational Mode\"",
+              "body": "Agreed. \r\nReworded  \"Supported Mode\" to \"Operational Mode\"\r\n\r\nThis can be RESOLVED",
               "createdAt": "2025-04-19T13:05:16Z",
-              "updatedAt": "2025-04-19T13:08:14Z"
+              "updatedAt": "2025-05-12T13:21:08Z"
             },
             {
               "originalPosition": 705,
-              "body": "Done. this is the replacement:\r\n\r\nThis current draft adheres to the definitions provided in draft {{ietf-impairment-yang}}. See Section 2.6 of draft {{ietf-impairment-yang}}.",
+              "body": "Done. this is the replacement:\r\n\r\nThis current draft adheres to the definitions provided in draft {{ietf-impairment-yang}}. See Section 2.6 of draft {{ietf-impairment-yang}}.\r\n\r\nThis can be RESOLVED",
               "createdAt": "2025-04-19T13:07:46Z",
-              "updatedAt": "2025-04-19T13:08:14Z"
+              "updatedAt": "2025-05-12T13:20:41Z"
             }
           ]
         },
@@ -3195,6 +3195,280 @@
               "body": "Here is a proposal how this paragraph should be updated:\r\n\r\noriginal md-text:\r\n\r\nCMIS: The Common Management Interface Specification is an OIF Implementation Agreement (IA) which provides a well-defined mechanism to initialize and manage optical (and copper) modules in a standard way, while still providing the capability to provide custom functionality. This commonality makes integration into different host platforms easier for both the host and module vendors. This Implementation Agreement (IA) defines the Common Management Interface. Note that CMIS targets any module, not only Coherent ones. Specification (CMIS), which may be used by pluggable module or on-board modules, such as QSFP Double Density (QSFP-DD), OSFP, COBO, QSFP, as well as by existing or future module developments with host to module management communication based on a two-wire interface. This IA is targeted for systems manufacturers, system integrators, and suppliers of CMIS compliant modules {{CMIS}}.\r\n\r\nproposed update:\r\n\r\nCommon Management Interface Specification (CMIS): The Common Management Interface Specification is an Implementation Agreement (IA) developed by the Optical Internet Forum (OIF) {{CMIS}}. This specification defines an interface for managing optical (and copper) modules in a standardized way while still permitting vendor-specific functionality. It eases the integration of modules supporting the CMIS interface into host platforms from different system vendors. It shall be noted that CMIS targets any module, not only coherent optical modules, which is the scope of this document. The CMIS interface is applicable to on-board module types (fixed optics) as well as pluggable modules types such as QSFP Double-Density (QSFP-DD), OSFP, COBO, QSFP and other module types.",
               "createdAt": "2025-05-06T08:01:11Z",
               "updatedAt": "2025-05-06T08:01:11Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6o3gkS",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "dieterbeller",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-12T12:56:50Z",
+          "updatedAt": "2025-05-12T12:56:50Z",
+          "comments": [
+            {
+              "originalPosition": 330,
+              "body": "Commit https://github.com/italobusi/actn-wdm-pluggable-modelling/commit/102ca2519dd5a573f06f3ecd7046ae0b3d951624 resolves my comment.",
+              "createdAt": "2025-05-12T12:56:50Z",
+              "updatedAt": "2025-05-12T12:56:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6nzK2d",
+          "commit": {
+            "abbreviatedOid": "102ca25"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-05T15:28:37Z",
+          "updatedAt": "2025-05-12T13:35:41Z",
+          "comments": [
+            {
+              "originalPosition": 99,
+              "body": "@ggalimba56 your above comment is also added to issue #17.\r\nYou can now RESOLVE the issue",
+              "createdAt": "2025-05-05T15:28:37Z",
+              "updatedAt": "2025-05-12T13:35:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6o4V3Z",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-12T13:58:58Z",
+          "updatedAt": "2025-05-12T13:58:59Z",
+          "comments": [
+            {
+              "originalPosition": 40,
+              "body": "It outdated comment, the text is changed and it is fine.",
+              "createdAt": "2025-05-12T13:58:58Z",
+              "updatedAt": "2025-05-12T13:58:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6o4b0b",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-12T14:05:33Z",
+          "updatedAt": "2025-05-12T14:05:34Z",
+          "comments": [
+            {
+              "originalPosition": 90,
+              "body": "ok, updated.",
+              "createdAt": "2025-05-12T14:05:34Z",
+              "updatedAt": "2025-05-12T14:05:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6o4mNK",
+          "commit": {
+            "abbreviatedOid": "aa2e62e"
+          },
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-12T14:17:13Z",
+          "updatedAt": "2025-05-12T14:17:13Z",
+          "comments": [
+            {
+              "originalPosition": 381,
+              "body": "> As per above comments, the following is added to draft:\r\n> \r\n> (See section 2.3.1 of {{ietf-impairment-yang}} and also section 3.2.4 {{G.959.1}}).\r\n> \r\n> The comment can be RESOLVED.\r\n\r\nI am fine with this proposed resolution (I have thumbed up the comment) but I would let Dieter (who is the original commenter) to resolve the conversation if he is fine with the proposed resolution",
+              "createdAt": "2025-05-12T14:17:13Z",
+              "updatedAt": "2025-05-12T14:17:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6o4vyq",
+          "commit": {
+            "abbreviatedOid": "b25297c"
+          },
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-12T14:26:47Z",
+          "updatedAt": "2025-05-12T14:26:47Z",
+          "comments": [
+            {
+              "originalPosition": 439,
+              "body": "I am fine with this proposed resolution (I have thumbed up the comment) but I would prefer to hear feedbacks also from Gert before resolving the conversation",
+              "createdAt": "2025-05-12T14:26:47Z",
+              "updatedAt": "2025-05-12T14:26:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6o48rC",
+          "commit": {
+            "abbreviatedOid": "9e0f263"
+          },
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-12T14:42:11Z",
+          "updatedAt": "2025-05-12T14:42:12Z",
+          "comments": [
+            {
+              "originalPosition": 664,
+              "body": "It seems that the proposed resolution above has been superseded by the resolution proposed by @ggrammel in comment https://github.com/italobusi/actn-wdm-pluggable-modelling/pull/11#discussion_r2053959941\r\n\r\nI am fine with the current text\r\n\r\n",
+              "createdAt": "2025-05-12T14:42:12Z",
+              "updatedAt": "2025-05-12T14:42:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6o5EVw",
+          "commit": {
+            "abbreviatedOid": "aa2e62e"
+          },
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-05-12T14:50:00Z",
+          "updatedAt": "2025-05-12T14:50:00Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6o5-Ct",
+          "commit": {
+            "abbreviatedOid": "aa2e62e"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-05-12T16:03:24Z",
+          "updatedAt": "2025-05-12T16:03:24Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6nwuHu",
+          "commit": {
+            "abbreviatedOid": "aa2e62e"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "terminology alignment",
+          "createdAt": "2025-05-05T11:56:12Z",
+          "updatedAt": "2025-05-12T16:20:58Z",
+          "comments": [
+            {
+              "originalPosition": 36,
+              "body": "line 232 using terminology agreed before. ... between optical pluggables ...\r\nonce we have a new version we probably need to re-scan for such ocurrences and adjust.",
+              "createdAt": "2025-05-05T11:56:12Z",
+              "updatedAt": "2025-05-12T16:20:59Z"
+            },
+            {
+              "originalPosition": 45,
+              "body": "line 339: ... attributes of pluggable modules ...\r\n\r\nusing defined terminology",
+              "createdAt": "2025-05-05T11:59:05Z",
+              "updatedAt": "2025-05-12T16:20:59Z"
+            },
+            {
+              "originalPosition": 48,
+              "body": "line 341: which both the pluggable module and the host should ....\r\n\r\nterminology ",
+              "createdAt": "2025-05-05T12:00:59Z",
+              "updatedAt": "2025-05-12T16:20:59Z"
+            },
+            {
+              "originalPosition": 120,
+              "body": "I was suggesting to focus on the identified gaps, rather than the areas in the text; IOW a suggested text could be:\r\n\r\n\r\nTransceiver capability attributes identify a broad range of capabilities. The following gaps have been identified:\r\n- < list here the areas >\r\n\r\nPluggable attributes are related to the characteristics of pluggable modules. The following gaps compared to fixed transceiver types have been identified:\r\n- < list here the areas >\r\n\r\n",
+              "createdAt": "2025-05-05T12:05:19Z",
+              "updatedAt": "2025-05-12T16:20:59Z"
+            },
+            {
+              "originalPosition": 286,
+              "body": "resolved by edit: RFC3224 introduces the Vendor Opaque Extension. This Extension makes it possible for a vendor to extend SLP independently, once the vendor has registered\r\nitself with IANA and obtained an Enterprise Number. This is useful for vendor-specific applications. ",
+              "createdAt": "2025-05-12T13:29:00Z",
+              "updatedAt": "2025-05-12T16:20:59Z"
+            },
+            {
+              "originalPosition": 38,
+              "body": "edited the text considering the repository to cover optical modules in general.",
+              "createdAt": "2025-05-12T15:30:31Z",
+              "updatedAt": "2025-05-12T16:20:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6o94xs",
+          "commit": {
+            "abbreviatedOid": "e33814b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-12T22:56:42Z",
+          "updatedAt": "2025-05-12T22:56:42Z",
+          "comments": [
+            {
+              "originalPosition": 235,
+              "body": "Done. Your proposed text is used.\r\n\r\nThis can be now mark as RESOLVED",
+              "createdAt": "2025-05-12T22:56:42Z",
+              "updatedAt": "2025-05-12T23:08:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6o97Vr",
+          "commit": {
+            "abbreviatedOid": "7f12143"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-12T23:07:42Z",
+          "updatedAt": "2025-05-12T23:25:08Z",
+          "comments": [
+            {
+              "originalPosition": 149,
+              "body": "Sergio. That is correct. this is the reason we put the Editor's note with the following text.\r\n\r\n[Editorial Note: it is under review. It was agreed that this section is important. Having said that, there are aa few potential solution to address this topic:\r\n- Keep it is this draft\r\n- Talk to author of use-case draft to be included in that draft https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-pluggable-usecases-gaps\r\n- Move it to other IETF draft]\r\n\r\nthis now can be marked as RESOLVED",
+              "createdAt": "2025-05-12T23:07:42Z",
+              "updatedAt": "2025-05-12T23:25:08Z"
+            },
+            {
+              "originalPosition": 1195,
+              "body": "I've changed the value in Figure to 0x1100 as shown below.\r\n\r\n<value> 1100 </value>",
+              "createdAt": "2025-05-12T23:11:00Z",
+              "updatedAt": "2025-05-12T23:25:08Z"
+            },
+            {
+              "originalPosition": 1364,
+              "body": "Text deleted.\r\n\r\nThis can be now mark as RESOLVED",
+              "createdAt": "2025-05-12T23:12:42Z",
+              "updatedAt": "2025-05-12T23:25:08Z"
+            },
+            {
+              "originalPosition": 45,
+              "body": "The paragraph had been removed as per others comment.\r\n\r\nThis now can be mark as RESOLVED",
+              "createdAt": "2025-05-12T23:19:06Z",
+              "updatedAt": "2025-05-12T23:25:08Z"
             }
           ]
         }
