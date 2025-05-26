@@ -161,22 +161,6 @@ normative:
     target: https://members.snia.org/document/dl/26423
 
 informative:
-
-  ietf-impairment-yang:
-    title: "A YANG Data Model for Optical Impairment-aware Topology"
-    date: 2025-01-06
-    target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-optical-impairment-topology-yang/
-
-  ietf-layer0-yang:
-    title: "Common YANG Data Types for Layer 0 Networks"
-    date: 2025-01-26
-    target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-rfc9093-bis/
-
-  ietf-optical-interface-yang:
-    title: "A YANG model to manage the optical interface parameters for an external transponder in a WDM network"
-    date: 2025-01-06
-    target: https://datatracker.ietf.org/doc/draft-ietf-ccamp-dwdm-if-param-yang/
-
   G.959.1:
     title: "Optical transport network physical layer interfaces"
     date: 2012-02
@@ -316,7 +300,7 @@ The model presented in {{data-model}} consolidates properties of optical pluggab
     (A) Packet device management interfaces
               (e.g., YANG, NETCONF, gNMI, etc.)
     (B) CMIS interface between Optical pluggable module and Host
-    (C) Host side of coherent optical pluggable module (towards the Host)
+    (C) Host side of coherent optical pluggable module (towards Host)
     (D) Media side of coherent optical pluggable module
               (towards Optical/Photonic network)
 
@@ -363,7 +347,7 @@ The following sections are describing the details of optical pluggable module fu
 
 ## Optical Channel/OTSi
 
-The media side of the optical module is further divided into two functional blocks; Optical Channel/OTSi and Media Logical Channels. The characteristics of the Optical channel/OTSi are (See section 2.3.1 of {{ietf-impairment-yang}} and also section 3.2.4 {{G.959.1}}).
+The media side of the optical module is further divided into two functional blocks; Optical Channel/OTSi and Media Logical Channels. The characteristics of the Optical channel/OTSi are (See section 2.3.1 of {{?I-D.ietf-ccamp-optical-impairment-topology-yang}} and also section 3.2.4 {{G.959.1}}).
 
 * This is the module interfaces facing the optical network.
 
@@ -383,7 +367,7 @@ The characteristics of the Media Logical Channels are:
 
 * Logical representation of the hierarchical view of the digital framing layers used for transport of services over the wavelength
 
-* Provides access to information for configuration and monitoring characteristics. For example, for 400ZR/OpenZR+, it represents the 400ZR frame structure in which Ethernet services are mapped and for an OTN encapsulated signal, it represents the OTU, ODU, OPU frame structures, perhaps with a multi-layer multiplex structure, in which Ethernet and other types of services are mapped
+* Provides access to information for configuration and monitoring characteristics. For example, for 400ZR/OpenZR+ {{OIF-400ZR}}, it represents the 400ZR frame structure in which Ethernet services are mapped and for an OTN encapsulated signal, it represents the OTU, ODU, OPU frame structures, perhaps with a multi-layer multiplex structure, in which Ethernet and other types of services are mapped
 
 ## Host Logical Channels
 
@@ -445,13 +429,13 @@ Coherent optical modules have revolutionized optical networking by offering a po
 
 From a data modeling perspective, a set of attributes is grouped together and represented by a single identifier known as the "Operational Mode." In essence, each operational mode encapsulates a combination of properties, limitations and capabilities, such as modulation type, bit rate, baud rate, chromatic dispersion, polarization, FEC, and more. Some of these attributes limit value ranges (e.g., minimum and maximum). A optical module can support multiple operational modes, each of which can be defined by one of the following methods.
 
-Note that this current draft adheres to the definitions provided in draft {{ietf-impairment-yang}}. See Section 2.6 of draft {{ietf-impairment-yang}} for:
+Note that this current draft adheres to the definitions provided in draft {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}. See Section 2.6 of draft {{?I-D.ietf-ccamp-optical-impairment-topology-yang}} for:
 
 * Standard Mode: This mode pertains to optical specifications developed by standards development organizations (SDOs), such as the ITU-T recommendation {{G.698.2}}.
 * Organizational Mode: In this mode, optical interface specifications are defined by operators, industry forums (e.g., Optical Internetworking Forum (OIF) or OpenConfig), or equipment vendors. This allows for the utilization of optical module capabilities that extend beyond existing standards.
 * Explicit Mode: This mode enables the explicit encoding of any subset of parameters (e.g., FEC type, modulation type) to facilitate interoperability checks by a controller entity through means not covered within this draft.
 
-For more detailed information, please refer to draft {{ietf-impairment-yang}}.
+For more detailed information, please refer to draft {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}.
 
 {: #plug-config-attribute}
 ## optical module Configurations Attributes
@@ -571,7 +555,7 @@ As discussed in the sections on capabilities, configuration, and performance mon
 
 Based on outcome of Gap analysis, we need to address the module attributes using approaches such as:
 
-* Augmentation of existing IETF YANG data model (e.g. augmentation of draft {{ietf-impairment-yang}})
+* Augmentation of existing IETF YANG data model (e.g. augmentation of draft {{?I-D.ietf-ccamp-optical-impairment-topology-yang}})
 * Extend the content of an existing IETF YANG model via "bis/update"
 
 The detail of this provided after gap analysis on optical module attributes on Google Sheet.
@@ -587,7 +571,7 @@ To carry out this ongoing examination, properties/structures from relevant exter
 
 The following items are identified as initial gap related to optical modules. Note that the complete list will be provided after finishing the Google Sheet.
 
-* Syntax gaps: Naming inconsistency on existing IETF drafts {{ietf-impairment-yang}}, {{ietf-layer0-yang}} and {{ietf-optical-interface-yang}} if any.
+* Syntax gaps: Naming inconsistency on existing IETF drafts {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}, {{?I-D.ietf-ccamp-rfc9093-bis}} and {{?I-D.ietf-ccamp-dwdm-if-param-yang}} if any.
 
 ~~~~
 Naming convention:
@@ -599,7 +583,7 @@ Examples:
     for IETF attribute rx-channel-power-max, use
       rx-channel-power-max (no change)
 
-    for ITU-T attribute "Minimum (residual) chromatic dispersion", use
+    for ITU-T attribute "Min (residual) chromatic dispersion", use
        residual-chromatic-dispersion-min
 
     for IETF attribute "max-central-frequency", use
@@ -815,7 +799,7 @@ The first example is illustrated in {{figure-optical-pluggable-repository-usage-
 
 In this example, all optical and IP/MPLS services had been already provisioned and deployed and the packet over optical network is fully functional.
 
-Within packet devices R1 and R2, coherent pluggables p1 and p2, are installed, interfacing through ports port_a and port_b, respectively. Both coherent pluggables are provisioned for the following operational-mode (see section 3 YANG Model of {{ietf-impairment-yang}}):
+Within packet devices R1 and R2, coherent pluggables p1 and p2, are installed, interfacing through ports port_a and port_b, respectively. Both coherent pluggables are provisioned for the following operational-mode (see section 3 YANG Model of {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}):
 
 - \[organization-identifier, operational-mode] = \[OIF, 0x3E]
 
@@ -878,7 +862,7 @@ Operator's goal is to use the SDN controller to plan, provision and monitor an o
 ~~~~
 {: #figure-optical-pluggable-repository-usage-2 title="Coherent Pluggable Repository Usage 2"}
 
-Let's assume that the operator of this network has already purchased coherent pluggables from Vendor-X, which can support the following two operational-modes. Note that the detail information of these operational-modes including all optical and photonic attributes are already uploaded to "Coherent Pluggable Repository" by Vendor-X and OIF (see section 3 YANG Model of {{ietf-impairment-yang}}):
+Let's assume that the operator of this network has already purchased coherent pluggables from Vendor-X, which can support the following two operational-modes. Note that the detail information of these operational-modes including all optical and photonic attributes are already uploaded to "Coherent Pluggable Repository" by Vendor-X and OIF (see section 3 YANG Model of {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}):
 
 - \[organization-identifier, operational-mode] = \[OIF, 0x3E]
 - \[organization-identifier, operational-mode] = \[Vendor-X, 0x22]
@@ -1151,7 +1135,7 @@ Using "Coherent Pluggable Repository", the format of all operational-modes are i
 
  Coherent Pluggable Repository
    - Contains one or more operational-mode records
-   - Each record for tuple [organization-identifier, operational-mode]
+   - Each record for tuple [organization-identifier,operational-mode]
    - It is machine-readable/interpretable
 
 ~~~~
