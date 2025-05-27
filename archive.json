@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-13T01:41:45.585264+00:00",
+  "timestamp": "2025-05-27T01:40:57.474077+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -1152,24 +1152,26 @@
       "id": "PR_kwDOLJuPKM6C8VnK",
       "title": "Based on IETF 121, pull request for v02",
       "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/pull/11",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "reza-github",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "The pull request is ready for all to review.\r\nAs per our agreement at IETF 121, I've updated draft -01 and created this pull request. \r\nAfter review/update/comments for this pull request, this version will be version-02.\r\n\r\nLet's review it now. ",
       "createdAt": "2024-11-24T16:18:27Z",
-      "updatedAt": "2025-05-12T23:25:08Z",
+      "updatedAt": "2025-05-26T14:11:01Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "92b268e474eec27d62a6b222158cb95cda285078",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "main",
       "headRefOid": "7f121432f98c227574edfce4f4fec933b0605868",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-05-26T14:11:00Z",
+      "mergedAt": "2025-05-26T14:11:00Z",
+      "mergedBy": "reza-github",
+      "mergeCommit": {
+        "oid": "bef0c45131bdb05db0656d4a1c2d160ef9ec4ce5"
+      },
       "comments": [],
       "reviews": [
         {
@@ -3471,6 +3473,71 @@
               "updatedAt": "2025-05-12T23:25:08Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6q-Ows",
+          "commit": {
+            "abbreviatedOid": "7f12143"
+          },
+          "author": "dieterbeller",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-05-26T13:20:49Z",
+          "updatedAt": "2025-05-26T13:20:49Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6q-QGv",
+          "commit": {
+            "abbreviatedOid": "7f12143"
+          },
+          "author": "ggalimba56",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-05-26T13:22:50Z",
+          "updatedAt": "2025-05-26T13:22:50Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6q-q2F",
+          "commit": {
+            "abbreviatedOid": "7f12143"
+          },
+          "author": "swamy-b",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-05-26T14:01:56Z",
+          "updatedAt": "2025-05-26T14:01:56Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6q-rRc",
+          "commit": {
+            "abbreviatedOid": "7f12143"
+          },
+          "author": "swamy-b",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-05-26T14:02:39Z",
+          "updatedAt": "2025-05-26T14:02:39Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6q-rl1",
+          "commit": {
+            "abbreviatedOid": "7f12143"
+          },
+          "author": "swamy-b",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-05-26T14:03:09Z",
+          "updatedAt": "2025-05-26T14:03:09Z",
+          "comments": []
         }
       ]
     }
