@@ -37,8 +37,8 @@ Abstract
    in the following areas:
 
    *  It provides an analysis of optical attributes provided by other
-      organizations and identifying modeling gaps in current IETF
-      drafts.
+      organizations and identifying modeling gaps in a few IETF
+      documents.
 
    *  It identifies modeling needs addressing the specific aspect of
       pluggability of transceiver modules.  The authors recognize the

@@ -144,6 +144,14 @@ normative:
     seriesinfo:
     target: https://www.oiforum.com/wp-content/uploads/OIF-400ZR-02.0.pdf
 
+  G.698.1:
+    title: "Multichannel DWDM applications with single-channel optical interfaces"
+    author:
+      org: ITU-T Recommendation G.698.1
+    date: June 2005
+    seriesinfo:
+    target: https://www.itu.int/rec/dologin_pub.asp?lang=f&id=T-REC-G.698.1-200506-S!!PDF-E&type=items
+
   G.698.2:
     title: "Amplified multichannel dense wavelength division multiplexing applications with single channel optical interfaces"
     author:
@@ -151,6 +159,42 @@ normative:
     date: November 2018
     seriesinfo:
     target: https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.698.2-201811-I!!PDF-E&type=items
+
+  G.695:
+    title: "Optical interfaces for coarse wavelength division multiplexing applications"
+    author:
+      org: ITU-T Recommendation G.695
+    date: May 2025
+    seriesinfo:
+    target: https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.695-200402-S!!PDF-E&type=items
+
+  G.959.1:
+    title: "Optical transport network physical layer interfaces"
+    date: 2012-02
+    target: ITU-T Recommendation G.959.1
+    seriesinfo:
+    target: https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.959.1-202401-I!!PDF-E&type=items
+
+  OC-device:
+    title: "Module to extend OpenConfig terminal device operational modes data"
+    date: Version 0.2.0
+    target: OpenConfig
+    seriesinfo:
+    target: https://openconfig.net/projects/models/schemadocs/yangdoc/openconfig-terminal-device-properties.html
+
+  OC-platform:
+    title: "Data model for representing a system component inventory"
+    date: Version 0.31.0
+    target: OpenConfig
+    seriesinfo:
+    target: https://openconfig.net/projects/models/schemadocs/yangdoc/openconfig-platform.html
+
+  TAPI-2.5.0:
+    title: "Linux Foundation Project Transport API (TAPI)"
+    date: Version 2.5.0
+    target: T-API
+    seriesinfo:
+    target: https://github.com/Open-Network-Models-and-Interfaces-ONMI/TAPI/tree/v2.5.0
 
   SFF8024:
     title: "SFF Module Management Reference Code Tables"
@@ -161,10 +205,6 @@ normative:
     target: https://members.snia.org/document/dl/26423
 
 informative:
-  G.959.1:
-    title: "Optical transport network physical layer interfaces"
-    date: 2012-02
-    target: ITU-T Recommendation G.959.1
 
 --- abstract
 
@@ -172,7 +212,7 @@ This draft outlines the pluggable module attributes within a host device. It inc
 
 This draft provides a gap analysis with respect to existing IETF work in the following areas:
 
-* It provides an analysis of optical attributes provided by other organizations and identifying modeling gaps in current IETF drafts.
+* It provides an analysis of optical attributes provided by other organizations and identifying modeling gaps in a few IETF documents.
 * It identifies modeling needs addressing the specific aspect of pluggability of transceiver modules. The authors recognize the fact that that not all pluggable modules are coherent, not all coherent pluggable modules are DWDM capable and not all DWDM capable interfaces are implemented as pluggable modules. This analysis identifies gaps to manage the lifecycle of an optical pluggable module, from operator approval and viability assessment, to deployment, monitoring and phase-out.
 
 The lifecycle of an optical pluggable module, from operator approval and viability assessment to deployment and monitoring, is also addressed.
@@ -548,7 +588,21 @@ The optical modules might generate various alarm notifications due to the variou
 {: #google-sheet}
 # Complete list of optical modules Attributes From Google Sheet
 
-This draft was initiated to evaluate the completeness of existing IETF models related to optical modules by incorporating data models and insights from other industry forums and standards bodies, including ITU-T, OpenConfig, OIF, and ONF TAPI. The primary objective is to assess the properties and structures within these models that are relevant to coherent optical modules and to identify any missing elements or gaps. The ultimate aim of this effort is to ensure that the IETF's work is strategically aligned and optimally positioned in relation to broader industry activities and standards.
+This draft was initiated to evaluate the completeness of existing IETF models related to optical modules by incorporating data models and insights from other industry forums and standards bodies, including ITU-T, OpenConfig, OIF, and ONF TAPI. In particular, the following documents are examined:
+
+* IETF YANG  data model to manage configurable DWDM optical interfaces {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}
+* IETF YANG Data Model for Optical Impairment-aware Topology {{?I-D.ietf-ccamp-rfc9093-bis}}
+* IETF Common YANG Data Types for Layer 0 Networks {{?I-D.ietf-ccamp-dwdm-if-param-yang}}
+* Implementation Agreement 400ZR {{OIF-400ZR}}
+* OpenConfig system component inventory{{OC-platform}}
+* OpenConfig terminal device {{OC-device}}
+* ITU-T Multichannel DWDM applications {{G.698.1}}
+* ITU-T Amplified multichannel dense wavelength division multiplexing {{G.698.2}}
+* ITU-T Optical interfaces for coarse wavelength division multiplexing {{G.695}}
+* ITU-T Optical transport network physical layer interfaces {{G.959.1}}
+* Linux Foundation Transport API project {{TAPI-2.5.0}}
+
+The primary objective is to assess the properties and structures within these models that are relevant to coherent optical modules and to identify any missing elements or gaps. The ultimate aim of this effort is to ensure that the IETF's work is strategically aligned and optimally positioned in relation to broader industry activities and standards.
 
 To support this ongoing analysis, relevant properties and structures from both IETF models and external organizations or standards bodies are being collected in Google Sheet. In {{gap-analysis}}, these properties will serve as the foundation for conducting a comprehensive gap analysis.
 
