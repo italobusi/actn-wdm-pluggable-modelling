@@ -625,243 +625,219 @@ To support gap analysis of optical pluggables in packet-over-optical networks, t
 
 {{figure-gap-analysis-capabilities}} provides the missing capabilities attributes highlights important optical pluggable parameters and features that are defined by other standards development organizations (SDOs) and industry forums, but are currently absent from IETF YANG models. 
 
+Note that the "Attribute Number" refers to numbering in Google Sheet.
+
 Incorporating these missing capabilities into IETF YANG models would significantly enhance the modeling of optical pluggable modules by bridging the gap between protocol-level management and physical layer specifications. It would facilitate unified management across heterogeneous network elements supporting diverse optical standards and proprietary extensions, thereby improving automation, operational efficiency, and vendor-neutral interoperability in packet-optical networks. Ultimately, harmonizing these attributes from SDOs and forums into IETF models supports the broader goal of open, programmable, and interoperable optical networks.
 
 ~~~~
 
-| ---------------- | ---------------------------------- | ---------- |
-| Attribute Number | Missing Capability Attributes      | Source     |
-| ---------------- | ---------------------------------- | ---------- |
-| 1                | tag-id                             | IETF       |
-| 2                | Post FEC BER                       | oif        |
-| 3                | pre-fec-ber                        |            |
-| 4                | Target reach                       | oif/itu-t  |
-| 5                | Ripple                             | oif/itu-t  |
-| 6                | max-bit-error-ratio                | itu-t      |
-| 7                | min-chromatic-dispersion           | oif        |
-| 8                | Polarization Rotation Speed        | oif/itu-t  |
-| 9                | min-tx-osnr                        | OpenConfg  |
-| 10               | pulse-shaping-type                 | OpenConfig |
-| 11               | fec-coding                         | OpenConfg  |
-| 12               | Minimum mean input power           | itu-t      |
-| 13               | Maximum mean total input power     | itu-t      |
-| 14               | Maximum mean total output power    | itu-t      |
-| 15               | Maximum channel power difference   | itu-t      |
-| 16               | Minimum equivalent sensitivity     | itu-t      |
-| 17               | Maximum reflectance of receiver    | itu-t      |
-| 18               | max-laser-temperature              | ietf       |
-| 19               | grid-type                          | OpenConfg/ |
-|                  |                                    | tapi       |
-| 20               | adjustment-granularity             | OpenConfg/ |
-|                  |                                    | tapi       |
-| 21               | noise-figure                       | IETF/tapi  |
-| 22               | Maximum spectral excursion         | itu-t      |
-| 23               | Minimum side mode suppression      | itu-t      |
-|                  | ratio                              |            |
-| 24               | max-transmitter-residual-          | itu-t      |
-|                  | dispersion-osnr-penalty            |            |
-| 25               | line-coding                        | itu-t      |
-| 26               | max-central-wavelength-deviation   | itu-t      |
-| 27               | max-duty-cycle                     | itu-t      |
-| 28               | max-laser-linewidth                | itu-t      |
-| 29               | Maximum offset between the         | itu-t      |
-|                  | carrier and the nominal central    |            |
-|                  | frequency                          |            |
-| 30               | Maximum skew between the two       | itu-t      |
-|                  | polarizations                      |            |
-| 31               | Maximum spectral power density     | itu-t      |
-| 32               | Maximum TDECQ                      | itu-t      |
-| 33               | Maximum I-Q offset                 | itu-t      |
-| 34               | Laser frequency accuracy           | oif        |
-| 35               | Laser frequency noise              | oif        |
-| 36               | TX spectral Upper Mask & TX        | oif        |
-|                  | spectral Lower Mask                |            |
-| 37               | Laser RIN                          | oif        |
-| 38               | Tx clock phase noise (PN):         | oif        |
-|                  | Maximum PN mask for low frequency  |            |
-|                  | PN                                 |            |
-| 39               | Tx clock phase noise (PN);         | oif        |
-|                  | Maximum total integrated RMS       |            |
-|                  | phase jitter between 10kHz and     |            |
-|                  | 10MHz                              |            |
-| 40               | Tx clock phase noise (PN)          | oif        |
-| 41               | Minimum Excess Bandwidth           | oif        |
-| 42               | Total output power with Tx         | oif        |
-|                  | disabled                           |            |
-| 43               | Total output power during          | oif        |
-|                  | wavelength switching               |            |
-| 44               | Transmit output power stability    | oif        |
-| 45               | Transmit output power control      | oif        |
-|                  | absolute accuracy                  |            |
-| 46               | Transmitter reflectance            | oif        |
-| 47               | Transmitter back reflection        | oif        |
-|                  | tolerance                          |            |
-| 48               | Transmitter polarization           | oif        |
-|                  | dependent power                    |            |
-| 49               | X-Y Skew                           | oif        |
-| 50               | DC I-Q offset (mean per            | oif        |
-|                  | polarization)                      |            |
-| 51               | I-Q instantaneous offset           | oif        |
-| 52               | Mean I-Q amplitude imbalance       | oif        |
-| 53               | I-Q phase error                    | oif        |
-| 54               | I-Q Skew                           | oif        |
-| 55               | Frequency offset between           | oif        |
-|                  | received carrier and LO            |            |
-| 56               | Optical return loss                | oif        |
-| 57               | Tolerance to change in SOP         | oif        |
-| 58               | Optical input power transient      | oif        |
-|                  | tolerance                          |            |
-| 59               | Adjacent Channel Crosstalk OSNR    | oif        |
-|                  | Tolerance penalty                  |            |
-| 60               | Intra-Channel filtering penalty    | oif        |
-| ---------------- | ---------------------------------- | ---------- |
+| --------- | ------------------------------------------ | --------- |
+| Attribute | Missing Capability Attributes              | source    |
+| Number    |                                            |           |
+| --------- | ------------------------------------------ | --------- |
+| 4         | tag-id                                     | IETF      |
+| 16        | Post FEC BER                               | oif       |
+| 17        | pre-fec-ber                                |           |
+| 18        | Target reach                               | oif/itu-t |
+| 19        | Ripple                                     | oif/itu-t |
+| 20        | max-bit-error-ratio                        | itu-t     |
+| 22        | min-chromatic-dispersion                   | oif       |
+| 36        | Polarization Rotation Speed                | oif/itu-t |
+| 39        | min-tx-osnr                                | OpenConfg |
+| 46        | pulse-shaping-type                         | OpenConfg |
+| 53        | fec-coding                                 | OpenConfg |
+| 68        | Minimum mean input power                   | itu-t     |
+| 70        | Maximum mean total input power             | itu-t     |
+| 71        | Maximum mean total output power            | itu-t     |
+| 73        | Maximum channel power difference           | itu-t     |
+| 79        | Minimum equivalent sensitivity             | itu-t     |
+| 80        | Maximum reflectance of receiver            | itu-t     |
+| 86        | max-laser-temperature                      | ietf      |
+| 87        | grid-type                                  | OpenConfg |
+|           |                                            | /tapi     |
+| 88        | adjustment-granularity                     | OpenConfg |
+|           |                                            | /tapi     |
+| 91        | noise-figure                               | IETF/tapi |
+| 92        | Maximum spectral excursion                 | itu-t     |
+| 93        | Minimum side mode suppression ratio        | itu-t     |
+| 95        | max-transmitter-residual-dispersion-osnr-  | itu-t     |
+|           | penalty                                    |           |
+| 107       | line-coding                                | itu-t     |
+| 112       | max-central-wavelength-deviation           | itu-t     |
+| 116       | max-duty-cycle                             | itu-t     |
+| 117       | max-laser-linewidth                        | itu-t     |
+| 121       | Maximum offset between the carrier and the | itu-t     |
+|           | nominal central frequency                  |           |
+| 123       | Maximum skew between the two polarizations | itu-t     |
+| 125       | Maximum spectral power density             | itu-t     |
+| 126       | Maximum TDECQ                              | itu-t     |
+| 127       | Maximum I-Q offset                         | itu-t     |
+| 157       | Laser frequency accuracy                   | oif       |
+| 158       | Laser frequency noise                      | oif       |
+| 159       | TX spectral Upper Mask & TX spectral Lower | oif       |
+|           | Mask                                       |           |
+| 160       | Laser RIN                                  | oif       |
+| 161       | Tx clock phase noise (PN): Maximum PN mask | oif       |
+|           | for low frequency PN                       |           |
+| 162       | Tx clock phase noise (PN); Maximum total   | oif       |
+|           | integrated RMS phase jitter between 10kHz  |           |
+|           | and 10MHz                                  |           |
+| 163       | Tx clock phase noise (PN)                  | oif       |
+| 164       | Minimum Excess Bandwidth                   | oif       |
+| 168       | Total output power with Tx disabled        | oif       |
+| 169       | Total output power during wavelength       | oif       |
+|           | switching                                  |           |
+| 170       | Transmit output power stability            | oif       |
+| 171       | Transmit output power control absolute     | oif       |
+|           | accuracy                                   |           |
+| 174       | Transmitter reflectance                    | oif       |
+| 175       | Transmitter back reflection tolerance      | oif       |
+| 176       | Transmitter polarization dependent power   | oif       |
+| 177       | X-Y Skew                                   | oif       |
+| 178       | DC I-Q offset (mean per polarization)      | oif       |
+| 179       | I-Q instantaneous offset                   | oif       |
+| 180       | Mean I-Q amplitude imbalance               | oif       |
+| 181       | I-Q phase error                            | oif       |
+| 182       | I-Q Skew                                   | oif       |
+| 184       | Frequency offset between received carrier  | oif       |
+|           | and LO                                     |           |
+| 188       | Optical return loss                        | oif       |
+| 195       | Tolerance to change in SOP                 | oif       |
+| 196       | Optical input power transient tolerance    | oif       |
+| 197       | Adjacent Channel Crosstalk OSNR Tolerance  | oif       |
+|           | penalty                                    |           |
+| 198       | Intra-Channel filtering penalty            | oif       |
+| --------- | ------------------------------------------ | --------- |
 
-| ---------------- | ----------------------------------------------- |
-| Attribute Number | Summary Description of Missing Attributes       |
-| ---------------- | ----------------------------------------------- |
-| 1                | List of {tag-type, tag-value}                   |
-| 2                | Refers to error rate measured after applying    |
-|                  | FEC                                             |
-| 3                | Bit error rate measured before forward error    |
-|                  | correction decoding                             |
-| 4                | Max optical transmission distance that a        |
-|                  | coherent pluggable module can support           |
-| 5                | Peak-to-peak insertion loss difference within   |
-|                  | filter clear bandwidth of the Mux or Demux      |
-| 6                | Max acceptable bit error rate for a pluggable   |
-|                  | optical module                                  |
-| 7                | Min value of chromatic dispersion (CD)          |
-|                  | compensation range supported by an optical      |
-|                  | pluggable                                       |
-| 8                | Max rate a coherent optical receiver can track  |
-|                  | and compensate for changes in polarization      |
-|                  | state of incoming optical signal                |
-| 9                | Min OSNR that the pluggable module's transmitter|
-|                  | is capable of generating                        |
-| 10               | Digital filtering technique applied to          |
-|                  | electrical signal before it modulates optical   |
-|                  | carrier                                         |
-| 11               | Forward error correction coding schema used in  |
-|                  | the transmission mode                           |
-| 12               | Min values of the average received power at     |
-|                  | point RS                                        |
-| 13               | Highest allowable average power level that can  |
-|                  | be input into a system or component at a        |
-|                  | specified point                                 |
-| 14               | Analogous to "Maximum mean total input power,"  |
-|                  | but for output direction                        |
-| 15               | Max allowable difference in power levels        |
-|                  | between channels in a multi-channel optical     |
-|                  | transmission                                    |
-| 16               | Min optical power level that a receiver         |
-|                  | requires to decode incoming signals accurately  |
-| 17               | Highest allowable level of optical reflectance  |
-|                  | from the receiver within those components       |
-| 18               | Highest laser temperature recorded or allowed   |
-|                  | for a laser                                     |
-| 19               | Attribute that defines frequency grid used for  |
-|                  | optical channels                                |
-| 20               | Min spectrum separation between the central     |
-|                  | frequencies of two adjacent optical channels    |
-| 21               | Expressed as ratio of input SNR to output SNR.  |
-|                  | Quantifies how much noise a component adds to   |
-|                  | signal                                          |
-| 22               | Max acceptable difference between the nominal   |
-|                  | central frequency and signal power drops        |
-| 23               | A measure of how much the power of the main     |
-|                  | mode in a laser exceeds that of its side modes  |
-| 24               | An aditional SNR penalty at lowest power with   |
-|                  | worst-case dispersion                           |
-| 25               | List of methods of encoding digital data into   |
-|                  | signal waveforms, ensuring proper timing and    |
-|                  | synchronization                                 |
-| 26               | Difference between the nominal central          |
-|                  | wavelength and the actual central wavelength    |
-| 27               | Max percentage of time that a signal is in an   |
-|                  | active or "ON" state within a given period      |
-| 28               | Max allowable width of laser optical signal     |
-| 29               | Max allowed deviation between actual carrier    |
-|                  | frequency of an optical signal and its nominal  |
-|                  | central frequency                               |
-| 30               | Max difference in timing or phase between       |
-|                  | signals transmitted on different polarizations  |
-| 31               | Max allowable optical power per unit frequency  |
-|                  | or wavelength interval in a system              |
-| 32               | Transmitter Dispersion and Eye Closure          |
-|                  | Quaternary, a metric to evaluate performance of |
-|                  | optical transmitters                            |
-| 33               | Max I-Q offset difference between in-phase (I)  |
-|                  | and quadrature (Q) of a modulated signal        |
-| 34               | Max deviation of a laser's actual output        |
-|                  | frequency from its nominal channel frequency    |
-| 35               | Describes the random fluctuations in the        |
-|                  | laser's output frequency over time.             |
-| 36               | Max allowable optical power limits at specific  |
-|                  | frequency offsets from the carrier wavelength   |
-| 37               | Laser Relative Intensity Noise quantifies       |
-|                  | random fluctuations in laser’s optical power    |
-|                  | output                                          |
-| 38               | Refers to random fluctuations in the timing of  |
-|                  | the transmitted signal's clock                  |
-| 39               | Refers to the random fluctuations in timing of  |
-|                  | the transmitted signal's clock                  |
-| 40               | Refers to the random fluctuations in the timing |
-|                  | of the transmitted signal's clock               |
-| 41               | Min spectral width beyond theoretical minimum   |
-|                  | required by the signal's data rate              |
-| 42               | Amount of optical power emitted by pluggable    |
-|                  | when transmitter is intentionally turned off    |
-| 43               | Optical power level of pluggable transmitter    |
-|                  | during brief period when it is changing its     |
-|                  | output wavelength                               |
-| 44               | Ability of a transmitter to maintain a          |
-|                  | consistent optical output power level over time |
-| 45               | How closely actual output power matches the     |
-|                  | desired or configured output power level        |
-| 46               | Amount of optical power reflected back from the |
-|                  | transmitter into the optical fiber              |
-| 47               | Max amount of optical power reflected back      |
-|                  | towards transmitter without performance         |
-|                  | degradation                                     |
-| 48               | Variation in optical power emitted by a         |
-|                  | transmitter depending on the polarization state |
-|                  | of the light                                    |
-| 49               | Timing skew between the X and Y polarization    |
-|                  | components of an optical signal in a coherent   |
-|                  | system                                          |
-| 50               | Average DC offset In-phase (I) and Quadrature   |
-|                  | (Q) components of received signal for each      |
-|                  | polarization                                    |
-| 51               | Time-varying or dynamic offset between In-phase |
-|                  | (I) and Quadrature (Q) components of received   |
-|                  | signal                                          |
-| 52               | Average difference in amplitude between         |
-|                  | In-phase (I) and Quadrature (Q) components of   |
-|                  | the received signal                             |
-| 53               | Deviation from 90-degree phase relationship     |
-|                  | between In-phase (I) and Quadrature (Q) of      |
-|                  | received signal                                 |
-| 54               | Time delay or misalignment between In-phase (I) |
-|                  | and Quadrature (Q) components of a signal       |
-| 55               | Difference between frequency of incoming        |
-|                  | optical signal and the local oscillator (LO)    |
-|                  | frequency                                       |
-| 56               | Total reflected light caused by discontinuities |
-|                  | in an optical path, expressed as ratio of       |
-|                  | incident to reflected power                     |
-| 57               | Ability of an optical receiver to maintain      |
-|                  | acceptable performance despite variations in    |
-|                  | State of Polarization (SOP)                     |
-| 58               | Ability of an optical receiver to maintain      |
-|                  | acceptable performance when subjected to sudden |
-|                  | changes in received optical power level         |
-| 59               | Increase in required OSNR to maintain a         |
-|                  | specific BER due to interference caused by      |
-|                  | neighboring optical channels                    |
-| 60               | Degradation in signal quality, measured as an   |
-|                  | increase in required OSNR to achieve a target   |
-|                  | BER                                             |
-| ---------------- | ----------------------------------------------- |
+
+| --------- | ------------------------------------------------------ |
+| Attribute | Summary Description of                                 |
+| Number    | Missing Capability Attributes                          |
+| --------- | ------------------------------------------------------ |
+| 4         | list of {tag-type, tag-value}                          |
+| 16        | Refers to error rate measured after applying FEC       |
+| 17        | Bit error rate measured before forward error           |
+|           | correction decoding                                    |
+| 18        | Max optical transmission distance that a coherent      |
+|           | pluggable module can support                           |
+| 19        | Peak-to-peak insertion loss difference within filter   |
+|           | clear bandwidth of the Mux or Demux                    |
+| 20        | Max acceptable bit error rate for a pluggable optical  |
+|           | module                                                 |
+| 22        | Min value of chromatic dispersion (CD) compensation    |
+|           | range supported by an optical pluggable                |
+| 36        | Max rate a coherent optical receiver can track and     |
+|           | compensate for changes in polarization state of        |
+|           | incoming optical signal                                |
+| 39        | Min OSNR that the pluggable module's transmitter is    |
+|           | capable of generating                                  |
+| 46        | Digital filtering technique applied to electrical      |
+|           | signal before it modulates optical carrier             |
+| 53        | Forward error correction coding schema used in the     |
+|           | transmission mode                                      |
+| 68        | Min values of the average received power at point RS   |
+| 70        | Highest allowable average power level that can be      |
+|           | input into a system or component at a specified point  |
+| 71        | Analogous to "Maximum mean total input power," but for |
+|           | output direction                                       |
+| 73        | max allowable difference in power levels between       |
+|           | channels in a multi-channel optical transmission       |
+| 79        | min optical power level that a receiver requires to    |
+|           | decode incoming signals accurately                     |
+| 80        | highest allowable level of optical reflectance from the|
+|           | receiver within those components                       |
+| 86        | highest laser temperature recorded or allowed for a    |
+|           | laser                                                  |
+| 87        | attribute that defines frequency grid used for optical |
+|           | channels                                               |
+| 88        | min spectrum separation between the central frequencies|
+|           | of two adjacent optical channels                       |
+| 91        | expressed as ratio of input SNR to output SNR.         |
+|           | Quantifies how much noise a component adds to signal   |
+| 92        | max acceptable difference between the nominal central  |
+|           | frequency  and  signal power drops                     |
+| 93        | A measure of how much the power of the main mode in a  |
+|           | laser exceeds that of its side modes                   |
+| 95        | An additional SNR penalty at lowest power with         |
+|           | worst-case dispersion                                  |
+| 107       | List of methods of encoding digital data into signal   |
+|           | waveforms, ensuring proper timing and synchronization  |
+| 112       | difference between the nominal central wavelength and  |
+|           | the actual central wavelength                          |
+| 116       | max percentage of time that a signal is in an active or|
+|           | "ON" state within a given period                       |
+| 117       | max allowable width of laser optical signal            |
+| 121       | max allowed deviation between actual carrier frequency |
+|           | of an optical signal and its nominal central frequency |
+| 123       | max difference in timing or phase between signals      |
+|           | transmitted on different polarizations                 |
+| 125       | max allowable optical power per unit frequency or      |
+|           | wavelength interval in a system                        |
+| 126       | Transmitter Dispersion and Eye Closure Quaternary, a   |
+|           | metric to evaluate performance of optical transmitters |
+| 127       | max I-Q offset difference between in-phase (I) and     |
+|           | quadrature (Q) of a modulated signal                   |
+| 157       | max deviation of a laser's actual output frequency from|
+|           | its nominal channel frequency                          |
+| 158       | Describes the random fluctuations in the laser's output|
+|           | frequency over time                                    |
+| 159       | max allowable optical power limits at specific         |
+|           | frequency offsets from the carrier wavelength          |
+| 160       | Laser Relative Intensity Noise quantifies random       |
+|           | fluctuations in laser’s optical power output           |
+| 161       | refers to random fluctuations in the timing of the     |
+|           | transmitted signal's clock                             |
+| 162       | refers to the random fluctuations in timing of the     |
+|           | transmitted signal's clock                             |
+| 163       | refers to the random fluctuations in the timing of the |
+|           | transmitted signal's clock                             |
+| 164       | min spectral width beyond theoretical minimum required |
+|           | by the signal's data rate                              |
+| 168       | amount of optical power emitted by pluggable when      |
+|           | transmitter is intentionally turned off                |
+| 169       | optical power level of  pluggable transmitter during   |
+|           | brief period when it is changing its output wavelength |
+| 170       | ability of a transmitter to maintain a consistent      |
+|           | optical output power level over time                   |
+| 171       | how closely actual output power matches the desired or |
+|           | configured output power level                          |
+| 174       | amount of optical power reflected back from the        |
+|           | transmitter into the optical fiber                     |
+| 175       | Max amount of optical power reflected back towards     |
+|           | transmitter without performance degradation            |
+| 176       | variation in optical power emitted by a transmitter    |
+|           | depending on the polarization state of the light       |
+| 177       | timing skew between the X and Y polarization components|
+|           | of an optical signal in a coherent system              |
+| 178       | average DC offset In-phase (I) and Quadrature (Q)      |
+|           | components of received signal for each polarization    |
+| 179       | time-varying or dynamic offset between In-phase (I)    |
+|           | and Quadrature (Q) components of received signal       |
+| 180       | average difference in amplitude between In-phase (I)   |
+|           | and Quadrature (Q) components of the received signal   |
+| 181       | deviation from 90-degree phase relationship between    |
+|           | In-phase (I) and Quadrature (Q) of received signal     |
+| 182       | time delay or misalignment between In-phase (I) and    |
+|           | Quadrature (Q) components of a signal                  |
+| 184       | difference between frequency of incoming optical signal|
+|           | and the local oscillator (LO) frequency                |
+| 188       | total reflected light caused by discontinuities in an  |
+|           | optical path, expressed as ratio of incident to        |
+|           | reflected power                                        |
+| 195       | ability of an optical receiver to maintain acceptable  |
+|           | performance despite variations in State of Polarization|
+|           | (SOP)                                                  |
+| 196       | ability of an optical receiver to maintain acceptable  |
+|           | performance when subjected to sudden changes in        |
+|           | received optical power level                           |
+| 197       | increase in required OSNR to maintain a specific BER   |
+|           | due to interference caused by neighboring optical      |
+|           | channels                                               |
+| 198       | degradation in signal quality, measured as an increase |
+|           | in required OSNR to achieve a target BER               |
+| --------- | ------------------------------------------------------ |
+
+Note: The "Attribute Number" refers to numbering in Google Sheet
 
 ~~~~
 {: #figure-gap-analysis-capabilities title="List of Optical Pluggable Capability Attributes Based on Gap Analysis"}
@@ -873,22 +849,28 @@ Incorporating these missing capabilities into IETF YANG models would significant
 
 {{figure-gap-analysis-Configuration}} highlights missing configuration attributes for optical pluggables. These parameters and features, essential for proper operation and performance, are often defined by other standards development organizations (SDOs) and industry forums but may not be fully represented in IETF YANG models. Integrating these missing configuration attributes into IETF YANG models is vital for comprehensive modeling of optical pluggable modules. 
 
+Note that the "Attribute Number" refers to numbering in Google Sheet.
+
 ~~~~
 
-| ---------------- | ---------------------------------- | ---------- |
-| Attribute Number | Missing Configuration Attributes   | Source     |
-| ---------------- | ---------------------------------- | ---------- |
-| 1                | admin-state                        |            |
-| 2                | line-coding-bit-rate               | tapi       |
-| ---------------- | ---------------------------------- | ---------- |
+| --------- | ------------------------------------------ | --------- |
+| Attribute | Missing Configuration Attributes           | source    |
+| Number    |                                            |           |
+| --------- | ------------------------------------------ | --------- |
+| 206       | admin-state                                |           |
+| 210       | line-coding-bit-rate                       | tapi      |
+| --------- | ------------------------------------------ | --------- |
 
-| ---------------- | ----------------------------------------------- |
-| Attribute Number | Summary Description of Missing Attributes       |
-| ---------------- | ----------------------------------------------- |
-| 1                | This is pluggable admin state.                  |
-| 2                | Identifies the line coding e.g. NRZ-10G and is  |
-|                  | drawn from G.698.2                              |
-| ---------------- | ----------------------------------------------- |
+| --------- | ------------------------------------------------------ |
+| Attribute | Summary Description of                                 |
+| Number    | Missing Configuration Attributes                       |
+| --------- | ------------------------------------------------------ |
+| 206       | This is pluggable admin state.                         |
+| 210       | Identifies the line coding e.g. NRZ-10G and is drawn   |
+|           | from G.698.2.                                          |
+| --------- | ------------------------------------------------------ |
+
+Note: The "Attribute Number" refers to numbering in Google Sheet
 
 ~~~~
 {: #figure-gap-analysis-Configuration title="List of Optical Pluggable Configuration Attributes Based on Gap Analysis"}
@@ -897,177 +879,165 @@ Incorporating these missing capabilities into IETF YANG models would significant
 {: #gap-analysis-pm}
 ## List of Missing Optical Pluggable PM/States Attributes Based on Gap Analysis
 
-{{figure-gap-analysis-pm}} highlights missing Performace monitoring and Stateas attributes for optical pluggables.
+{{figure-gap-analysis-pm}} highlights missing Performance monitoring and States attributes for optical pluggables. Note that the "Attribute Number" refers to numbering in Google Sheet.
 
 ~~~~
 
-| ---------------- | ---------------------------------- | ---------- |
-| Attribute Number | Missing PM/States Attributes       | Source     |
-| ---------------- | ---------------------------------- | ---------- |
-| 1                | operational-state                  |            |
-| 2                | central-frequency-offset           | OpenConfg/ |
-|                  |                                    | oif/t-api  |
-| 3                | chromatic-dispersion               | OpenConfg/ |
-|                  |                                    | oif/tapi   |
-| 4                | supply-voltage                     | OpenConfig |
-| 5                | laser-bias-current                 | OpenConfg  |
-| 6                | max-polarization-dependent-loss    | OpenConfg  |
-| 7                | modulation-error-ratio             | OpenConfg  |
-| 8                | fec-uncorrectable-blocks           | OpenConfg  |
-| 9                | q-value                            | OpenConfg  |
-| 10               | EVMmax                             | oif        |
-| 11               | EVMrms                             | oif        |
-| 12               | MER                                | oif        |
-| 13               | eSNR                               | OpenConfg/ |
-|                  |                                    | oif        |
-| 14               | SNR Margin                         | oif        |
-| 15               | CD-high granularity, short link    | oif        |
-| 16               | CD-low granularity, long link      | oif        |
-| 17               | DGD                                | oif        |
-| 18               | SOPMD                              | OpenConfg/ |
-|                  |                                    | oif        |
-| 19               | PDL                                | oif        |
-| 20               | SOP ROC                            | OpenConfg/ |
-|                  |                                    | oif        |
-| 21               | Tx Total Power                     | oif        |
-| 22               | CFO                                | oif        |
-| 23               | Modulator Bias X/I                 | OpenConfg/ |
-|                  |                                    | oif        |
-| 24               | Modulator Bias X/Q                 | OpenConfg/ |
-|                  |                                    | oif        |
-| 25               | Modulator Bias Y/I                 | OpenConfg/ |
-|                  |                                    | oif        |
-| 26               | Modulator Bias Y/Q                 | OpenConfg/ |
-|                  |                                    | oif        |
-| 27               | Modulator Bias X Phase             | OpenConfg/ |
-|                  |                                    | oif        |
-| 28               | Modulator Bias Y Phase             | OpenConfg/ |
-|                  |                                    | oif        |
-| 29               | self-phase-modulation (SPM)        | itu-t      |
-| 30               | cross-phase-modulation (XPM)       | itu-t      |
-| 31               | Frequency offset between received  | oif        |
-|                  | carrier and LO                     |            |
-| 32               | total-channel-output-power         | IETF       |
-| ---------------- | -----------------------------------| ---------- |
+| --------- | ------------------------------------------ | --------- |
+| Attribute | Missing PM/States Attributes               | Source    |
+| Number    |                                            |           |
+| --------- | ------------------------------------------ | --------- |
+| 216       | operational-state                          |           |
+| 218       | central-frequency-offset                   | OpenConfg/|
+|           |                                            | oif/t-api |
+| 222       | chromatic-dispersion                       | OpenConfg/|
+|           |                                            | oif/tapi  |
+| 233       | supply-voltage                             | OpenConfg |
+| 234       | laser-bias-current                         | OpenConfg |
+| 235       | max-polarization-dependent-loss            | OpenConfg |
+| 237       | modulation-error-ratio                     | OpenConfg |
+| 238       | fec-uncorrectable-blocks                   | OpenConfg |
+| 239       | q-value                                    | OpenConfg |
+| 250       | EVMmax                                     | oif       |
+| 251       | EVMrms                                     | oif       |
+| 252       | MER                                        | oif       |
+| 253       | eSNR                                       | OpenConfg/|
+|           |                                            | oif       |
+| 254       | SNR Margin                                 | oif       |
+| 255       | CD-high granularity, short link            | oif       |
+| 256       | CD-low granularity, long link              | oif       |
+| 257       | DGD                                        | oif       |
+| 258       | SOPMD                                      | OpenConfg/|
+|           |                                            | oif       |
+| 259       | PDL                                        | oif       |
+| 260       | SOP ROC                                    | OpenConfg/|
+|           |                                            | oif       |
+| 261       | Tx Total Power                             | oif       |
+| 264       | CFO                                        | oif       |
+| 265       | Modulator Bias X/I                         | OpenConfg/|
+|           |                                            | oif       |
+| 266       | Modulator Bias X/Q                         | OpenConfg/|
+|           |                                            | oif       |
+| 267       | Modulator Bias Y/I                         | OpenConfg/|
+|           |                                            | oif       |
+| 268       | Modulator Bias Y/Q                         | OpenConfg/|
+|           |                                            | oif       |
+| 269       | Modulator Bias X Phase                     | OpenConfg/|
+|           |                                            | oif       |
+| 270       | Modulator Bias Y Phase                     | OpenConfg/|
+|           |                                            | oif       |
+| 271       | self-phase-modulation (SPM)                | itu-t     |
+| 272       | cross-phase-modulation (XPM)               | itu-t     |
+| 273       | Frequency offset between received carrier  | oif       |
+|           | and LO                                     |           |
+| 274       | total-channel-output-power                 | IETF      |
+| --------- | ------------------------------------------ | --------- |
 
-| ---------------- | ----------------------------------------------- |
-| Attribute Number | Summary Description of Missing Attributes       |
-| ---------------- | ----------------------------------------------- |
-| 1                | This is pluggable admin state.                  |
-| 2                | Frequency difference between nominal and actual |
-|                  | optical carrier frequencies, causing phase      |
-|                  | rotation and requiring DSP compensation in      |
-|                  | coherent systems. It is a key parameter in OIF  |
-|                  | and T-API for channel alignment and             |
-|                  | interoperability in DWDM networks.              |
-| 3                | Wavelength-dependent variation in light speed   |
-|                  | within an optical fiber causing pulse           |
-|                  | broadening, expressed in ps/nm/km, and is a key |
-|                  | factor limiting optical transmission            |
-|                  | performance as defined in ITU-T fiber standards |
-| 4                | Supply voltage to the transceiver in volts      |
-| 5                | Current applied by the system to the transmit   |
-|                  | laser to achieve the output power.              |
-| 6                | Maximum polarization-dependent-loss             |
-|                  | accumulated value, supported by the optical     |
-|                  | channel associated to the associated            |
-|                  | transmission mode expressed in dB               |
-| 7                | Modulation error ratio in dB with two decimal   |
-|                  | precision.                                      |
-| 8                | Number of blocks or frames that were            |
-|                  | uncorrectable by the FEC                        |
-| 9                | Quality value (factor) in dB of a channel with  |
-|                  | two decimal precision.                          |
-| 10               | EVMmax (Error Vector Magnitude Mx) is a metric  |
-|                  | for evaluating maximum error vector magnitude   |
-|                  | in coherent optics, used for quality and        |
-|                  | impairment measurement in optical transceivers. |
-| 11               | Error Vector Magnitude normalized by RMS value  |
-|                  | of reference constellation points; used to      |
-|                  | evaluate coherent optical signal quality.       |
-| 12               | Modulation Error Ratio (MER) is a measure of    |
-|                  | how far received symbols deviate from thier     |
-|                  | ideal constellation position.                   |
-| 13               | Effective Signal-to-Noise Ratio, reflecting     |
-|                  | combined optical and electrical impairments.    |
-| 14               | The difference between the measured SNGR and    |
-|                  | the tolerable SNR that still allows acceptable  |
-|                  | BER and/or Q-factor.                            |
-| 15               | High-granularity chromatic dispersion           |
-|                  | measurement for short spans (media-side fiber   |
-|                  | estimate). DSP estimates chromatic dispersion   |
-|                  | based on signal shape and compensation          |
-|                  | requirements.                                   |
-| 16               | Low-granularity chromatic dispersion            |
-|                  | measurement for longer spans (media-side fiber  |
-|                  | estimate). DSP estimates chromatic dispersion   |
-|                  | based on signal shape and compensation          |
-|                  | requirements.                                   |
-| 17               | Differential Group Delay - max delay between    |
-|                  | polarization modes. Transponder DSP measures    |
-|                  | Differential Group Delay as part of PMD         |
-|                  | compensation.                                   |
-| 18               | Second Order Polarization Mode Dispersion       |
-|                  | measured with fine granularity.                 |
-| 19               | Polarization Dependent Loss (affects coherent   |
-|                  | detection). DSP can estimate it dynamically.    |
-| 20               | Rate of change of polarization state. Measured  |
-|                  | in real-time by tracking the speed of           |
-|                  | polarization state rotation at the Rx.          |
-| 21               | Total optical power emitted by the transmitter  |
-|                  | module, critical for link budget and            |
-|                  | interoperability.                               |
-| 22               | Central Frequency Offset is frequency mismatch  |
-|                  | between transmitter and receiver oscillators    |
-|                  | causing phase errors and interference in        |
-|                  | coherent optical systems.                       |
-| 23               | Bias on the in-phase (I) path of polarization X |
-|                  | in a coherent optical modulator, expressed as   |
-|                  | a percentage with 2 decimal places, including   |
-|                  | statistical values (instant, avg, min, max).    |
-| 24               | Bias on the quadrature (Q) path of polarization |
-|                  | X in a coherent optical modulator, similarly    |
-|                  | expressed as a percentage with 2 decimal        |
-|                  | places, including the same set of statistical   |
-|                  | values (instant, avg, min, max)                 |
-| 25               | Bias on the in-phase (I) path of polarization Y |
-|                  | in a coherent optical modulator, expressed as   |
-|                  | a percentage with 2 decimal places, including   |
-|                  | statistical values (instantaneous, average,     |
-|                  | min, max)                                       |
-| 26               | Bias on the quadrature (Q) path of polarization |
-|                  | Y in a coherent optical modulator, expressed    |
-|                  | as a percentage with 2 decimal places,          |
-|                  | including statistical values (instantaneous,    |
-|                  | average, min, max).                             |
-| 27               | Bias on phase path of polarization X in a       |
-|                  | coherent optical modulator, expressed as a      |
-|                  | percentage with 2 decimal places, including     |
-|                  | statistical values (instantaneous, average,     |
-|                  | min, max)                                       |
-| 28               | Bias on phase path of polarization Y in a       |
-|                  | coherent optical modulator, expressed as a      |
-|                  | percentage with 2 decimal places, including     |
-|                  | statistical values (instantaneous, average,     |
-|                  | min, max)                                       |
-| 29               | A nonlinear optical effect where the phase of a |
-|                  | light pulse is modulated by its own intensity   |
-|                  | due to the Kerr effect, leading to a            |
-|                  | time-dependent phase shift and spectral         |
-|                  | broadening of the pulse as it propagates        |
-|                  | through an optical medium like a fiber.         |
-| 30               | A nonlinear optical effect where the intensity  |
-|                  | of one light signal modulates the phase of      |
-|                  | another signal traveling through the same       |
-|                  | fiber, leading to inter-channel crosstalk and   |
-|                  | signal degradation in wavelength division       |
-|                  | multiplexing (WDM) system.                      |
-| 31               | Estimated frequency offset is a key performance |
-|                  | indicator that can be monitored to assess the   |
-|                  | health and stability of the link                |
-| 32               | The total output power of this interface        |
-| ---------------- | ----------------------------------------------- |
+| --------- | ------------------------------------------------------ |
+| Attribute | Summary Description of                                 |
+| Number    | Missing PM/States Attributes                           |
+| --------- | ------------------------------------------------------ |
+| 216       | This is pluggable admin state.                         |
+| 218       | Frequency difference between nominal and actual optical|
+|           | carrier frequencies, causing phase rotation and        |
+|           | requiring DSP compensation in coherent systems. It is  |
+|           | a key parameter in OIF and T-API for channel alignment |
+|           | and interoperability in DWDM networks.                 |
+| 222       | Wavelength-dependent variation in light speed within an|
+|           | optical fiber causing pulse broadening, expressed in   |
+|           | ps/nm/km, and is a key factor limiting optical         |
+|           | transmission performance as defined in ITU-T fiber     |
+|           | standards                                              |
+| 233       | Supply voltage to the transceiver in volts             |
+| 234       | Current applied by the system to the transmit laser to |
+|           | achieve the output power.                              |
+| 235       | Maximum polarization-dependent-loss accumulated value, |
+|           | supported by the optical channel associated to the     |
+|           | associated transmission mode expressed in dB           |
+| 237       | Modulation error ratio in dB with two decimal precision|
+| 238       | Number of blocks or frames that were uncorrectable by  |
+|           | the FEC                                                |
+| 239       | Quality value (factor) in dB of a channel with two     |
+|           | decimal precision.                                     |
+| 250       | EVMmax (Error Vector Magnitude Mx) is a metric for     |
+|           | evaluating maximum error vector magnitude in coherent  |
+|           | optics, used for quality and impairment measurement in |
+|           | coherent optical transceivers                          |
+| 251       | Error Vector Magnitude normalized by RMS value of      |
+|           | reference constellation points used to evaluate        |
+|           | coherent optical signal quality                        |
+| 252       | Modulation Error Ratio (MER) is a measure of how far   |
+|           | received symbols deviate from their ideal constellation|
+|           | position.                                              |
+| 253       | Effective Signal-to-Noise Ratio, reflecting combined   |
+|           | optical and electrical impairments.                    |
+| 254       | The difference between the measured SNGR and the       |
+|           | tolerable SNR that still allows acceptable BER and/or  |
+|           | Q-factor.                                              |
+| 255       | High-granularity chromatic dispersion measurement for  |
+|           | short spans (media-side fiber estimate). DSP estimates |
+|           | chromatic dispersion based on signal shape and         |
+|           | compensation requirements.                             |
+| 256       | Low-granularity chromatic dispersion measurement for   |
+|           | longer spans (media-side fiber estimate). DSP estimates|
+|           | chromatic dispersion based on signal shape and         |
+|           | compensation requirements                              |
+| 257       | Differential Group Delay - max delay between           |
+|           | polarization modes. Transponder DSP measures           |
+|           | Differential Group Delay as part of PMD compensation   |
+| 258       | Second Order Polarization Mode Dispersion measured with|
+|           | fine granularity                                       |
+| 259       | Polarization Dependent Loss (affects coherent detection|
+|           | DSP can estimate it dynamically                        |
+| 260       | Rate of change of polarization state. Measured in      |
+|           | real-time by tracking the speed of polarization state  |
+|           | rotation at the Rx                                     |
+| 261       | Total optical power emitted by the transmitter module, |
+|           | critical for link budget and interoperability          |
+| 264       | Central Frequency Offset is frequency mismatch between |
+|           | transmitter and receiver oscillators causing phase     |
+|           | errors and interference in coherent optical systems    |
+| 265       | Bias on the in-phase (I) path of polarization X in a   |
+|           | coherent optical modulator, expressed as a percentage  |
+|           | with 2 decimal places, including statistical values    |
+|           | (instant, avg, min, max)                               |
+| 266       | Bias on the quadrature (Q) path of polarization X in a |
+|           | coherent optical modulator, similarly expressed as a   |
+|           | percentage with 2 decimal places, including the same   |
+|           | set of statistical values (instant, avg, min, max)     |
+| 267       | Bias on the in-phase (I) path of polarization Y in a   |
+|           | coherent optical modulator, expressed as a percentage  |
+|           | with 2 decimal places, including statistical values    |
+|           | (instantaneous, average, min, max)                     |
+| 268       | Bias on the quadrature (Q) path of polarization Y in a |
+|           | coherent optical modulator, expressed as a percentage  |
+|           | with 2 decimal places, including statistical values    |
+|           | (instantaneous, average, min, max)                     |
+| 269       | Bias on phase path of polarization X in a coherent     |
+|           | optical modulator, expressed as a percentage with 2    |
+|           | decimal places, including statistical values           |
+|           | (instantaneous, average, min, max)                     |
+| 270       | Bias on phase path of polarization Y in a coherent     |
+|           | optical modulator, expressed as a percentage with 2    |
+|           | decimal places, including statistical values           |
+|           | (instantaneous, average, min, max)                     |
+| 271       | A nonlinear optical effect where the phase of a light  |
+|           | pulse is modulated by its own intensity due to the Kerr|
+|           | effect, leading to a time-dependent phase shift and    |
+|           | spectral broadening of the pulse as it propagates      |
+|           | through an optical medium like a fiber                 |
+| 272       | A nonlinear optical effect where the intensity of one  |
+|           | light signal modulates the phase of another signal     |
+|           | traveling through the same fiber, leading to inter-    |
+|           | channel crosstalk and signal degradation in wavelength |
+|           | division multiplexing (WDM) system                     |
+| 273       | Estimated frequency offset is a key performance        |
+|           | indicator that can be monitored to assess the health   |
+|           | and stability of the link                              |
+| 274       | The total output power of this interface               |
+| --------- | ------------------------------------------------------ |
 
+Note: The "Attribute Number" refers to numbering in Google Sheet
 
 ~~~~
 {: #figure-gap-analysis-pm title="List of Optical Pluggable PM State Attributes Based on Gap Analysis"}
