@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-27T01:40:57.474077+00:00",
+  "timestamp": "2025-07-15T01:54:09.247281+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -3540,6 +3540,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 18,
+      "id": "PR_kwDOLJuPKM6erq2q",
+      "title": "Added Gap analysis from Google Sheet. This is the v03 for CCAMP WG adoption",
+      "url": "https://github.com/italobusi/actn-wdm-pluggable-modelling/pull/18",
+      "state": "OPEN",
+      "author": "reza-github",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Added Gap analysis from Google Sheet. This is the v03 for CCAMP WG adoption",
+      "createdAt": "2025-07-13T12:11:33Z",
+      "updatedAt": "2025-07-14T15:37:20Z",
+      "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
+      "baseRefName": "main",
+      "baseRefOid": "c5715118e68384e9f791d682e108f33cef099e7e",
+      "headRepository": "reza-github/actn-wdm-pluggable-modelling",
+      "headRefName": "pluggable_v03",
+      "headRefOid": "912513fb3a804d262171b15356c74b6c0f55c284",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
