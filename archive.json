@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-15T01:54:09.247281+00:00",
+  "timestamp": "2025-07-17T01:51:26.893097+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -3553,19 +3553,166 @@
       "labels": [],
       "body": "Added Gap analysis from Google Sheet. This is the v03 for CCAMP WG adoption",
       "createdAt": "2025-07-13T12:11:33Z",
-      "updatedAt": "2025-07-14T15:37:20Z",
+      "updatedAt": "2025-07-16T22:22:51Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "c5715118e68384e9f791d682e108f33cef099e7e",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "pluggable_v03",
-      "headRefOid": "912513fb3a804d262171b15356c74b6c0f55c284",
+      "headRefOid": "1124b6b18e12605a8a4c809e8d7ff9ed8e312663",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOLJuPKM60KtBT",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "aguoietf",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-07-16T00:33:07Z",
+          "updatedAt": "2025-07-16T00:33:07Z",
+          "comments": [
+            {
+              "originalPosition": 101,
+              "body": "Also add reference to draft-ietf-ccamp-wdm-tunnel-yang and draft-ietf-ccamp-optical-path-computation-yang which should be part of the gap analysis for controller NBI",
+              "createdAt": "2025-07-16T00:33:07Z",
+              "updatedAt": "2025-07-16T00:33:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM60KtUu",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "aguoietf",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "Also add reference to draft-ietf-ccamp-wdm-tunnel-yang and draft-ietf-ccamp-optical-path-computation-yang which should be part of the gap analysis for controller NBI",
+          "createdAt": "2025-07-16T00:34:19Z",
+          "updatedAt": "2025-07-16T00:34:19Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLJuPKM60P9XY",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "manzoro",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "I've not reviewed for the moment the list and description of attribute gaps taken from google sheet, we have discussed for some time around them and I agree we can pull them in the current status for -03 revision and adoption.\r\nWe may probably need a second round of review and re-organization of the same  as a next step.",
+          "createdAt": "2025-07-16T09:58:56Z",
+          "updatedAt": "2025-07-16T12:35:34Z",
+          "comments": [
+            {
+              "originalPosition": 103,
+              "body": "Reference to the drafts are a bit mixed up: I also suggest to place 9093-bis as first. Suggested change with Correct title<->reference info is:\r\n```\r\n* IETF Common YANG Data Types for Layer 0 Networks {{?I-D.ietf-ccamp-rfc9093-bis}}\r\n* IETF YANG  data model to manage configurable DWDM optical interfaces {{?I-D.ietf-ccamp-dwdm-if-param-yang}}\r\n* IETF YANG Data Model for Optical Impairment-aware Topology  {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}\r\n```",
+              "createdAt": "2025-07-16T09:58:56Z",
+              "updatedAt": "2025-07-16T12:35:34Z"
+            },
+            {
+              "originalPosition": 124,
+              "body": "I think we may keep the link to Google Sheet while working in finalizing the document and until we have not fully incorporated the Sheet info, but the reference shall be removed before pubblication.\r\nI suggest to add an Editorial note as a reminder for this:\r\n```\r\n\\[Editorial Note: The referecne to the external Google Sheet is used to finalize the gap content, \r\nonce all the info are incorporated in the draft, and in any case before publication, this link shall be removed]\r\n```",
+              "createdAt": "2025-07-16T10:07:29Z",
+              "updatedAt": "2025-07-16T12:35:34Z"
+            },
+            {
+              "originalPosition": 356,
+              "body": "I have the impression that splitting the info in 2 tables is not easy to read, but at the same time I understand fitting everything in the char per line restriction of the RFC may be challenging. I would like to propose to change from the table approach to an unordered list, something like the following example for the first 4 line:\r\n```\r\n- [4]  tag-id  (IETF)\r\nlist of {tag-type, tag-value} \r\n- [16] Post FEC BER (oif)\r\nRefers to error rate measured after applying FEC \r\n- [17] pre-fec-ber\r\nBit error rate measured before forward error correction decoding\r\n- [18] Target reach (oif/itu-t )\r\nMax optical transmission distance that a coherent pluggable module can support\r\n```\r\nThat should render in the following way:\r\n- [4]  tag-id  (IETF)\r\nlist of {tag-type, tag-value} \r\n- [16] Post FEC BER (oif)\r\nRefers to error rate measured after applying FEC \r\n- [17] pre-fec-ber\r\nBit error rate measured before forward error correction decoding\r\n- [18] Target reach (oif/itu-t )\r\nMax optical transmission distance that a coherent pluggable module can support",
+              "createdAt": "2025-07-16T10:37:14Z",
+              "updatedAt": "2025-07-16T12:35:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM60UOit",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Comments mostly of editorial nature and softening a few rough edges.",
+          "createdAt": "2025-07-16T14:02:44Z",
+          "updatedAt": "2025-07-16T14:41:13Z",
+          "comments": [
+            {
+              "originalPosition": 74,
+              "body": "```suggestion\r\n* It provides an analysis of optical attributes in a set of IETF documents with specifications of other organizations to identify modeling gaps.\r\n```",
+              "createdAt": "2025-07-16T14:02:44Z",
+              "updatedAt": "2025-07-16T14:41:13Z"
+            },
+            {
+              "originalPosition": 114,
+              "body": "I find the second sentence a bit pathetic and suggest to remove it, as it doesn't really add anything to the content.\r\n```suggestion\r\nThe primary objective is to assess the properties and structures within these models that are relevant to coherent optical modules and to identify any misalignment and gaps.\r\n```",
+              "createdAt": "2025-07-16T14:05:29Z",
+              "updatedAt": "2025-07-16T14:41:13Z"
+            },
+            {
+              "originalPosition": 124,
+              "body": "agree with Roberto's suggestion",
+              "createdAt": "2025-07-16T14:06:57Z",
+              "updatedAt": "2025-07-16T14:41:13Z"
+            },
+            {
+              "originalPosition": 140,
+              "body": "In many cases these parameters are not really absent but are used in a different context or expressed differently. Suggest to write simply: \r\n```suggestion\r\n{{figure-gap-analysis-capabilities}} provides a list of potentially misaligned capabilities attributes that are defined by other standards development organizations (SDOs) and industry forums, compared to IETF YANG models. \r\n```",
+              "createdAt": "2025-07-16T14:11:16Z",
+              "updatedAt": "2025-07-16T14:41:13Z"
+            },
+            {
+              "originalPosition": 146,
+              "body": "Sounds a little pathetic as well suggest to shorten it a little:\r\n```suggestion\r\nHarmonizing these attributes between SDOs, and IETF models would suport the evolution of open, programmable, and interoperable optical networks.\r\n```",
+              "createdAt": "2025-07-16T14:14:55Z",
+              "updatedAt": "2025-07-16T14:41:13Z"
+            },
+            {
+              "originalPosition": 367,
+              "body": "Again a little pathetic as it is doubtful the line-coding-bit-rate is \"vital\".\r\n```suggestion\r\n{{figure-gap-analysis-Configuration}} identifies configuration attributes for optical pluggables defined by other standards development organizations (SDOs) and industry forums which may not be fully represented in IETF YANG models. \r\n```",
+              "createdAt": "2025-07-16T14:23:43Z",
+              "updatedAt": "2025-07-16T14:41:13Z"
+            },
+            {
+              "originalPosition": 122,
+              "body": "```suggestion\r\n\r\n```",
+              "createdAt": "2025-07-16T14:26:26Z",
+              "updatedAt": "2025-07-16T14:41:13Z"
+            },
+            {
+              "originalPosition": 566,
+              "body": "AFAIK there are no naming inconsistencies between the drafts mentioned.\r\n```suggestion\r\nAddressing syntax gaps in coherent pluggable attributes and establishing a consistent naming convention is instrumental for achieving consistent and interoperable management. \r\n```",
+              "createdAt": "2025-07-16T14:32:03Z",
+              "updatedAt": "2025-07-16T14:41:13Z"
+            },
+            {
+              "originalPosition": 568,
+              "body": "This is a draft that is suggesting improvements after a long history of work already be done.\r\n```suggestion\r\n{{figure-gap-syntax}} shows a proposal for naming conventiion of optical pluggacle attributes.  The current proposal, while illustrative, may need further refinement to ensure clarity and avoid ambiguity. Specifically, the prefixing of attributes with directions like \"tx\" or \"rx\" should be consistently applied to all relevant parameters to clearly identify the directionality of the signal. The example also shows the need to clearly define the value type associated with the attribute, such as min, max, current, or none, for a cohesive and standardized approach. Furthermore, the examples for attribute naming should be universally adopted to establish an attribute mapping that is aligned with IETF, improving the overall clarity and usability of the YANG models for managing coherent pluggables\r\n```",
+              "createdAt": "2025-07-16T14:36:49Z",
+              "updatedAt": "2025-07-16T14:41:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM60bXeR",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "swamy-b",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-07-16T22:22:51Z",
+          "updatedAt": "2025-07-16T22:22:51Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
