@@ -94,14 +94,14 @@ contributor:
   -
     ins: G. Galimberti
     fullname: Gabriele Galimberti
-    org: Individual
+    org: Nokia
     email: ggalimbe56@gmail.com
 
   -
     ins: H. Venkatraman
     fullname: Harish Venkatraman
-    org: Infinera
-    email: hvenkatraman@infinera.com
+    org: Nokia
+    email: harish.venkatraman@nokia.com
 
   -
     ins: G. Mishra
@@ -590,9 +590,12 @@ The optical modules might generate various alarm notifications due to the variou
 
 This draft was initiated to evaluate the completeness of existing IETF models related to optical modules by incorporating data models and insights from other industry forums and standards bodies, including ITU-T, OpenConfig, OIF, and ONF TAPI. In particular, the following documents are examined:
 
-* IETF YANG  data model to manage configurable DWDM optical interfaces {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}
-* IETF YANG Data Model for Optical Impairment-aware Topology {{?I-D.ietf-ccamp-rfc9093-bis}}
-* IETF Common YANG Data Types for Layer 0 Networks {{?I-D.ietf-ccamp-dwdm-if-param-yang}}
+* IETF Common YANG Data Types for Layer 0 Networks {{?I-D.ietf-ccamp-rfc9093-bis}}
+* IETF YANG  data model to manage configurable DWDM optical interfaces {{?I-D.ietf-ccamp-dwdm-if-param-yang}}
+* IETF YANG Data Model for Optical Impairment-aware Topology  {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}
+* IETF YANG Data Model for Optical Impairment-aware Topology  {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}
+* IETF YANG Data Model for WDM Tunnels {{?I-D.ietf-ccamp-wdm-tunnel-yang}}
+* IETF YANG Data Models for requesting Path Computation in WDM Optical Networks {{?I-D.ietf-ccamp-optical-path-computation-yang}}
 * Implementation Agreement 400ZR {{OIF-400ZR}}
 * OpenConfig system component inventory{{OC-platform}}
 * OpenConfig terminal device {{OC-device}}
