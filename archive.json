@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-29T02:04:14.393773+00:00",
+  "timestamp": "2025-08-05T01:57:00.716257+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -3553,7 +3553,7 @@
       "labels": [],
       "body": "Added Gap analysis from Google Sheet. This is the v03 for CCAMP WG adoption",
       "createdAt": "2025-07-13T12:11:33Z",
-      "updatedAt": "2025-07-28T14:17:32Z",
+      "updatedAt": "2025-08-04T10:27:50Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "c5715118e68384e9f791d682e108f33cef099e7e",
@@ -3711,6 +3711,188 @@
           "createdAt": "2025-07-16T22:22:51Z",
           "updatedAt": "2025-07-16T22:22:51Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOLJuPKM60Pdvp",
+          "commit": {
+            "abbreviatedOid": "78c56da"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-07-16T09:22:03Z",
+          "updatedAt": "2025-08-04T10:27:50Z",
+          "comments": [
+            {
+              "originalPosition": 157,
+              "body": "there is Esther's comment in the Google sheet highlighting the fact this is mandatory for monitoring. So it is not a capability. The data node is already present in draft-ietf-ccamp-dwdm-if-param-yang si in my view it is NOT a gap.\r\n",
+              "createdAt": "2025-07-16T09:22:03Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 158,
+              "body": "Why this attribute is present as gap ? Please consider Esther's comment.\r\n\"Esther's comment:  this is not a meaningful parameter\"",
+              "createdAt": "2025-07-16T09:27:35Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 159,
+              "body": "This is not a pluggable parameter. See Esther's comment in the Google sheet \"this is not a pluggable parameter]\"",
+              "createdAt": "2025-07-16T09:30:18Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 162,
+              "body": "There is a comment in the Google sheet for what this parameter appear as not a modeling parameter and so not needed. No agreement on the fact to judge this parameter as needed.",
+              "createdAt": "2025-07-16T13:41:00Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 165,
+              "body": "It seems a duplication of the data node \"available-fec-type\" in the explicit-mode grouping in RFC9093-bis. What is the difference?",
+              "createdAt": "2025-07-16T13:54:09Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 187,
+              "body": "Not sure we need this parameter , See also the comment form Esther \" Probably not needed: instantaneous received power and min max are P0, average can be deduced from instantaneous. without any info on the sampling and averaging window the parameter is not useful\"",
+              "createdAt": "2025-07-28T14:26:25Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 188,
+              "body": "same comment as above",
+              "createdAt": "2025-07-28T14:27:17Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 189,
+              "body": "same comment . Are we sure we need this parameter?\r\n",
+              "createdAt": "2025-07-28T14:29:02Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 190,
+              "body": "Also here there is a comment in Google sheet that it seems not in agreement for this parameter . See \"Esther: this is not a pluggable attribute , it refers to multiple carriers emitted by several pluggables: so a system attribute\"",
+              "createdAt": "2025-07-28T14:32:45Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 191,
+              "body": "Are we sure we want this parameter? What about Esther's comment in Google sheet \"Esther this is a less accurate duplicate of rx-channel-power-penalty\" ? ",
+              "createdAt": "2025-07-28T14:37:23Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 192,
+              "body": "Also here there is still a comment that appears not solved \"Esther: I think this is more a spec requirement for transceiver. Not for modelling or for PM purpose\"",
+              "createdAt": "2025-07-28T14:40:24Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 193,
+              "body": "It appears as not pluggable specific . ",
+              "createdAt": "2025-07-28T14:41:53Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 196,
+              "body": "NOT NEEDED : Duplication. We have already the same attribute named \"flexi-ncfg\" , defined in RFC9093-bis , in grouping  flexi-grid-label-step.\r\n",
+              "createdAt": "2025-07-28T14:49:41Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 194,
+              "body": "Duplication , grid-type with the same name is already defined in IETF in RFC9093-bis. No gap at all.",
+              "createdAt": "2025-07-28T14:54:08Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 198,
+              "body": "Please check the comment in Google sheet  \"Reza, based on responses above, this attribute NOT NEEDED]\"",
+              "createdAt": "2025-07-28T14:57:01Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 199,
+              "body": "There is an extensive comment in Google sheet about this parameter  for which it seems not clear if the attribute is needed or not. I can report for simplicity:\r\n\"7.2.3 Maximum spectral excursion\r\nThis is the maximum acceptable difference between the nominal central frequency of the channel and\r\nthe \u201315 dB points of the transmitter spectrum furthest from the nominal central frequency measured\r\nat point SS for NRZ type signals or the \u20132.5 dB points of the transmitter spectrum furthest from the\r\nnominal central frequency measured at point SS for DP-DQPSK type signals. This is illustrated in\r\nFigure 7-1 for NRZ-type signals and in Figure 7-2 for DP-DQPSK type signals.\r\nNOTE \u2013 The measurement of the \u201315 dB points of the transmitter spectrum for the NRZ-type signals\r\nand -2.5 dB points for the DP-DQPSK type signals should be performed with a nominal resolution bandwidth\r\nof 0.01 nm.\r\n\r\n[Roberto] Spectral excursion is defined also by OIF: is the 3dB spectral badwidth of the signal.\r\nIn the list of attribute we have already the signal Baud rate and roll-off that are commonly used to estimate the signal spectral width. This additional value can be added but in my opinion is redundant and not strictly requiered. \r\nGGR: Agree\r\n[Dieter: It might be needed]\r\n\r\n[Reza, based on responses above, this attribute is related to baud rate and roll-off but not exactly as Robertyo mentioned. So, fo now we keep it and  IS NEEDED]\r\n\r\nDONE\r\n\r\nEsther: what is needed is an information of the possible central frequency drift: not only the curent value but the min-max that has been reached during a given time",
+              "createdAt": "2025-07-28T15:08:19Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 200,
+              "body": "It seems not needed from the comment in Google sheet \"Esther not useful for the scope\"",
+              "createdAt": "2025-07-28T15:11:00Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 201,
+              "body": "dupplicate from lines 25-28]",
+              "createdAt": "2025-07-28T15:14:51Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 203,
+              "body": "We need that but.. already defined  in RFC9093-bis \"line-coding-bitrate\" attribute. Delete this one is duplication.",
+              "createdAt": "2025-07-28T15:18:16Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 205,
+              "body": "NOT NEEDED , check the Google sheet comments.",
+              "createdAt": "2025-07-28T15:26:23Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 206,
+              "body": "It seems NOT NEEDED looking at the Google sheet",
+              "createdAt": "2025-07-28T15:27:53Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 209,
+              "body": "NOT NEEDED",
+              "createdAt": "2025-07-28T15:29:19Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 210,
+              "body": "Is it a real pluggable parameter ? ",
+              "createdAt": "2025-07-28T15:32:14Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 211,
+              "body": "NOT NEEDED",
+              "createdAt": "2025-07-28T15:33:28Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 212,
+              "body": "More a spec parameter but it seems not needed for the model. ",
+              "createdAt": "2025-07-28T21:52:34Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 213,
+              "body": "Is it really needed for the model or it is a spec parameter?\r\nSee Esther comment in Google sheet: \"Esther: out of scope, all of this is either a spec (not useful in the scope, or a duplicate)",
+              "createdAt": "2025-07-28T21:54:03Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 214,
+              "body": "same as above",
+              "createdAt": "2025-07-28T21:55:12Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            },
+            {
+              "originalPosition": 140,
+              "body": "I like Gert's text suggestion. Saying \"gap\" we should specify gap with respect what. In my following comment I underlined that many of the \"potential\" gaps reported in the table, have still comments in the google sheet claiming that the attributes is not \"pluggable\" attribute, or, is already present in IETF model but with different names, etc. ",
+              "createdAt": "2025-08-04T09:06:35Z",
+              "updatedAt": "2025-08-04T10:27:50Z"
+            }
+          ]
         }
       ]
     }
