@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-05T01:57:00.716257+00:00",
+  "timestamp": "2025-08-12T01:44:07.620418+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -3553,7 +3553,7 @@
       "labels": [],
       "body": "Added Gap analysis from Google Sheet. This is the v03 for CCAMP WG adoption",
       "createdAt": "2025-07-13T12:11:33Z",
-      "updatedAt": "2025-08-04T10:27:50Z",
+      "updatedAt": "2025-08-11T18:59:52Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "c5715118e68384e9f791d682e108f33cef099e7e",
@@ -3891,6 +3891,126 @@
               "body": "I like Gert's text suggestion. Saying \"gap\" we should specify gap with respect what. In my following comment I underlined that many of the \"potential\" gaps reported in the table, have still comments in the google sheet claiming that the attributes is not \"pluggable\" attribute, or, is already present in IETF model but with different names, etc. ",
               "createdAt": "2025-08-04T09:06:35Z",
               "updatedAt": "2025-08-04T10:27:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM65HTYT",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-11T12:53:29Z",
+          "updatedAt": "2025-08-11T12:53:29Z",
+          "comments": [
+            {
+              "originalPosition": 101,
+              "body": "There are added. I've adde the following:\r\n\r\n- IETF YANG Data Model for WDM Tunnels [[I-D.ietf-ccamp-wdm-tunnel-yang]\r\n- IETF YANG Data Models for requesting Path Computation in WDM Optical Networks [[I-D.ietf-ccamp-optical-path-computation-yang]\r\n\r\nThis can be CLOSED.\r\n",
+              "createdAt": "2025-08-11T12:53:29Z",
+              "updatedAt": "2025-08-11T12:55:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM65HXxS",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-11T12:57:19Z",
+          "updatedAt": "2025-08-11T12:57:19Z",
+          "comments": [
+            {
+              "originalPosition": 103,
+              "body": "This is the order in version03.\r\n\r\nThis can be CLOSED",
+              "createdAt": "2025-08-11T12:57:19Z",
+              "updatedAt": "2025-08-11T12:57:20Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM65Hcba",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-11T13:01:19Z",
+          "updatedAt": "2025-08-11T13:01:19Z",
+          "comments": [
+            {
+              "originalPosition": 124,
+              "body": "I added the suggested Editorial Note. I also added to the note. This is what is incorporated into draft:\r\n\r\n[Editorial Note: The reference to the external Google Sheet is used to finalize the gap content, once all the info are incorporated in the draft, and in any case before publication, this link shall be removed. Please also note that the content of the google sheet is very important and shall be captured in draft as a table or something else in Appendix section]",
+              "createdAt": "2025-08-11T13:01:19Z",
+              "updatedAt": "2025-08-11T13:27:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM65IUea",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-11T13:42:38Z",
+          "updatedAt": "2025-08-11T13:42:38Z",
+          "comments": [
+            {
+              "originalPosition": 356,
+              "body": "IMO the table format is better option as in your example it is not clear what for example [4] means or what (IETF) means?\r\nRoberto having said thatRoberto, let's keep the existing format for V03 version. For future version of this document we can discuss this topic. \r\n\r\nI have also added the following notes to each table to provide more clarifications:\r\n\r\nFor each Attribute Name, \r\n- First table displays the \"Missing Capability Attributes\" \r\n- Second table displays the \"Summary Description of Missing  Capability Attributes\"\r\n\r\nFor each Attribute Name, \r\n- First table displays the \"Missing Configuration Attributes\" \r\n- Second table displays the \"Summary Description of Missing  ConfigurationAttributes\"\r\n\r\nFor each Attribute Name, \r\n- First table displays the \"Missing PM/States Attributes\" \r\n- Second table displays the \"Summary Description of Missing  PM/States Attributes\"",
+              "createdAt": "2025-08-11T13:42:38Z",
+              "updatedAt": "2025-08-11T13:56:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM65MeUt",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-11T17:57:21Z",
+          "updatedAt": "2025-08-11T17:57:21Z",
+          "comments": [
+            {
+              "originalPosition": 74,
+              "body": "Your suggestion is included.\r\n\r\nThis can be CLOSED.",
+              "createdAt": "2025-08-11T17:57:21Z",
+              "updatedAt": "2025-08-11T17:57:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM65NWwF",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-08-11T18:59:52Z",
+          "updatedAt": "2025-08-11T18:59:52Z",
+          "comments": [
+            {
+              "originalPosition": 140,
+              "body": "Your suggestion is incorporated.\r\n\r\nThis can be CLOSED",
+              "createdAt": "2025-08-11T18:59:52Z",
+              "updatedAt": "2025-08-11T18:59:52Z"
             }
           ]
         }
