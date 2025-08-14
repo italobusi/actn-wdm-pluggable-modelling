@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-12T01:44:07.620418+00:00",
+  "timestamp": "2025-08-14T01:46:33.232878+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -3553,7 +3553,7 @@
       "labels": [],
       "body": "Added Gap analysis from Google Sheet. This is the v03 for CCAMP WG adoption",
       "createdAt": "2025-07-13T12:11:33Z",
-      "updatedAt": "2025-08-11T18:59:52Z",
+      "updatedAt": "2025-08-12T09:33:42Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "c5715118e68384e9f791d682e108f33cef099e7e",
@@ -3645,9 +3645,9 @@
           "comments": [
             {
               "originalPosition": 74,
-              "body": "```suggestion\r\n* It provides an analysis of optical attributes in a set of IETF documents with specifications of other organizations to identify modeling gaps.\r\n```",
+              "body": "```suggestion\r\n* It provides an analysis of optical attributes in a set of IETF documents with specifications of other organizations to identify potential modeling gaps.\r\n```",
               "createdAt": "2025-07-16T14:02:44Z",
-              "updatedAt": "2025-07-16T14:41:13Z"
+              "updatedAt": "2025-08-12T09:32:37Z"
             },
             {
               "originalPosition": 114,
@@ -4013,6 +4013,19 @@
               "updatedAt": "2025-08-11T18:59:52Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM65WCeD",
+          "commit": {
+            "abbreviatedOid": "78c56da"
+          },
+          "author": "ggrammel",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "approved when suggestions included",
+          "createdAt": "2025-08-12T09:33:42Z",
+          "updatedAt": "2025-08-12T09:33:42Z",
+          "comments": []
         }
       ]
     }
