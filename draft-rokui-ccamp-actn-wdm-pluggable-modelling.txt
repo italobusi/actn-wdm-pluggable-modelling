@@ -5,14 +5,14 @@
 Common Control and Measurement Plane                            R. Rokui
 Internet-Draft                                                     Ciena
 Intended status: Informational                                    A. Guo
-Expires: 19 January 2026                          Futurewei Technologies
+Expires: 11 March 2026                            Futurewei Technologies
                                                                P. Bedard
                                                                    Cisco
                                                           B. Swamynathan
                                                                    Nokia
                                                               G. Grammel
                                                                  Juniper
-                                                            18 July 2025
+                                                        7 September 2025
 
 
   Data Modelling and Gap Analysis of Optical Pluggables in Packet Over
@@ -36,9 +36,9 @@ Abstract
    This draft provides a gap analysis with respect to existing IETF work
    in the following areas:
 
-   *  It provides an analysis of optical attributes provided by other
-      organizations and identifying modeling gaps in a few IETF
-      documents.
+   *  It provides an analysis of optical attributes in a set of IETF
+      documents with specifications of other organizations to identify
+      modeling gaps.
 
    *  It identifies modeling needs addressing the specific aspect of
       pluggability of transceiver modules.  The authors recognize the
@@ -53,9 +53,9 @@ Abstract
 
 
 
-Rokui, et al.            Expires 19 January 2026                [Page 1]
+Rokui, et al.             Expires 11 March 2026                 [Page 1]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    The lifecycle of an optical pluggable module, from operator approval
@@ -95,7 +95,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 January 2026.
+   This Internet-Draft will expire on 11 March 2026.
 
 Copyright Notice
 
@@ -109,9 +109,9 @@ Copyright Notice
 
 
 
-Rokui, et al.            Expires 19 January 2026                [Page 2]
+Rokui, et al.             Expires 11 March 2026                 [Page 2]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    and restrictions with respect to this document.  Code Components
@@ -165,9 +165,9 @@ Table of Contents
 
 
 
-Rokui, et al.            Expires 19 January 2026                [Page 3]
+Rokui, et al.             Expires 11 March 2026                 [Page 3]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
      10.3.  Support of Opaque Configuration Attributes
@@ -221,9 +221,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026                [Page 4]
+Rokui, et al.             Expires 11 March 2026                 [Page 4]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
       modules supporting the CMIS interface into host platforms from
@@ -277,9 +277,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026                [Page 5]
+Rokui, et al.             Expires 11 March 2026                 [Page 5]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    While standardized transmission modes like ZR can handle basic
@@ -333,9 +333,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026                [Page 6]
+Rokui, et al.             Expires 11 March 2026                 [Page 6]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    Both vendor-agnostic and vendor-specific attributes are important
@@ -389,9 +389,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026                [Page 7]
+Rokui, et al.             Expires 11 March 2026                 [Page 7]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    The model presented in Section 5 consolidates properties of optical
@@ -445,9 +445,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026                [Page 8]
+Rokui, et al.             Expires 11 March 2026                 [Page 8]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
            Figure 1: Packet device with optical pluggable modules
@@ -501,9 +501,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026                [Page 9]
+Rokui, et al.             Expires 11 March 2026                 [Page 9]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
      optical Pluggable Module
@@ -557,9 +557,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 10]
+Rokui, et al.             Expires 11 March 2026                [Page 10]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    *  Provides monitoring capabilities in the Tx (toward fiber/medium)
@@ -613,9 +613,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 11]
+Rokui, et al.             Expires 11 March 2026                [Page 11]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    *  Lanes grouped to support the type/format and bandwidth of the
@@ -669,9 +669,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 12]
+Rokui, et al.             Expires 11 March 2026                [Page 12]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    *  Section 5.5: optical module alarm notifications
@@ -725,9 +725,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 13]
+Rokui, et al.             Expires 11 March 2026                [Page 13]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
 5.2.  optical module Configurations Attributes
@@ -781,9 +781,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 14]
+Rokui, et al.             Expires 11 March 2026                [Page 14]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
          Figure 4: Data structure for optical module PM Attributes
@@ -837,9 +837,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 15]
+Rokui, et al.             Expires 11 March 2026                [Page 15]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    *  Reset on Read: The counter value resets either on read or based on
@@ -893,9 +893,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 16]
+Rokui, et al.             Expires 11 March 2026                [Page 16]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    As mentioned previously, the TCA might be supported for a subset of
@@ -949,9 +949,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 17]
+Rokui, et al.             Expires 11 March 2026                [Page 17]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    To define the warning, minor, major, critical threshold values for a
@@ -994,23 +994,21 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
    *  IETF YANG Data Model for Optical Impairment-aware Topology
       [I-D.ietf-ccamp-optical-impairment-topology-yang]
 
-   *  IETF YANG Data Model for Optical Impairment-aware Topology
-      [I-D.ietf-ccamp-optical-impairment-topology-yang]
-
    *  IETF YANG Data Model for WDM Tunnels
       [I-D.ietf-ccamp-wdm-tunnel-yang]
 
    *  IETF YANG Data Models for requesting Path Computation in WDM
       Optical Networks [I-D.ietf-ccamp-optical-path-computation-yang]
 
-
-
-Rokui, et al.            Expires 19 January 2026               [Page 18]
-
-Internet-Draft        Modelling Optical Pluggables             July 2025
-
-
    *  Implementation Agreement 400ZR [OIF-400ZR]
+
+
+
+
+Rokui, et al.             Expires 11 March 2026                [Page 18]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    *  OpenConfig system component inventory[OC-platform]
 
@@ -1031,10 +1029,7 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
    The primary objective is to assess the properties and structures
    within these models that are relevant to coherent optical modules and
-   to identify any missing elements or gaps.  The ultimate aim of this
-   effort is to ensure that the IETF's work is strategically aligned and
-   optimally positioned in relation to broader industry activities and
-   standards.
+   to identify any missing elements or gaps.
 
    To support this ongoing analysis, relevant properties and structures
    from both IETF models and external organizations or standards bodies
@@ -1050,7 +1045,12 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
    attributes.  For a comprehensive list of these attributes, refer to
    the accompanying optical module Google Sheet.
 
-   (Q: how can we incorporate the Google Sheet?  Can we use download?
+   [Editorial Note: The reference to the external Google Sheet is used
+   to finalize the gap content, once all the info are incorporated in
+   the draft, and in any case before publication, this link shall be
+   removed.  Please also note that the content of the google sheet is
+   very important and shall be captured in draft as a table or something
+   else in Appendix section]
 
    You can download the Google sheet (/Users/rrokui/Desktop/optical-
    pluggable-attributes-v00-GAP.xslx) to see all the details.
@@ -1061,9 +1061,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 19]
+Rokui, et al.             Expires 11 March 2026                [Page 19]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
 7.  Optical Module Data Modeling Gap Analysis
@@ -1090,16 +1090,14 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
    Note that the "Attribute Number" refers to numbering in Google Sheet.
 
-   Incorporating these missing capabilities into IETF YANG models would
-   significantly enhance the modeling of optical pluggable modules by
-   bridging the gap between protocol-level management and physical layer
-   specifications.  It would facilitate unified management across
-   heterogeneous network elements supporting diverse optical standards
-   and proprietary extensions, thereby improving automation, operational
-   efficiency, and vendor-neutral interoperability in packet-optical
-   networks.  Ultimately, harmonizing these attributes from SDOs and
-   forums into IETF models supports the broader goal of open,
-   programmable, and interoperable optical networks.
+   Harmonizing these attributes between SDOs, and IETF models would
+   support the evolution of open, programmable, and interoperable
+   optical networks.
+
+  For each Attribute Name,
+  - First table displays the "Missing Capability Attributes"
+  - Second table displays the "Summary Description of Missing
+    Capability Attributes"
 
   | --------- | ------------------------------------------ | --------- |
   | Attribute | Missing Capability Attributes              | source    |
@@ -1114,16 +1112,16 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
   | 22        | min-chromatic-dispersion                   | oif       |
   | 36        | Polarization Rotation Speed                | oif/itu-t |
   | 39        | min-tx-osnr                                | OpenConfg |
-
-
-
-Rokui, et al.            Expires 19 January 2026               [Page 20]
-
-Internet-Draft        Modelling Optical Pluggables             July 2025
-
-
   | 46        | pulse-shaping-type                         | OpenConfg |
   | 53        | fec-coding                                 | OpenConfg |
+
+
+
+Rokui, et al.             Expires 11 March 2026                [Page 20]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
   | 68        | Minimum mean input power                   | itu-t     |
   | 70        | Maximum mean total input power             | itu-t     |
   | 71        | Maximum mean total output power            | itu-t     |
@@ -1170,16 +1168,16 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
   |           | accuracy                                   |           |
   | 174       | Transmitter reflectance                    | oif       |
   | 175       | Transmitter back reflection tolerance      | oif       |
-
-
-
-Rokui, et al.            Expires 19 January 2026               [Page 21]
-
-Internet-Draft        Modelling Optical Pluggables             July 2025
-
-
   | 176       | Transmitter polarization dependent power   | oif       |
   | 177       | X-Y Skew                                   | oif       |
+
+
+
+Rokui, et al.             Expires 11 March 2026                [Page 21]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
   | 178       | DC I-Q offset (mean per polarization)      | oif       |
   | 179       | I-Q instantaneous offset                   | oif       |
   | 180       | Mean I-Q amplitude imbalance               | oif       |
@@ -1226,16 +1224,16 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
   |           | input into a system or component at a specified point  |
   | 71        | Analogous to "Maximum mean total input power," but for |
   |           | output direction                                       |
-
-
-
-Rokui, et al.            Expires 19 January 2026               [Page 22]
-
-Internet-Draft        Modelling Optical Pluggables             July 2025
-
-
   | 73        | max allowable difference in power levels between       |
   |           | channels in a multi-channel optical transmission       |
+
+
+
+Rokui, et al.             Expires 11 March 2026                [Page 22]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
   | 79        | min optical power level that a receiver requires to    |
   |           | decode incoming signals accurately                     |
   | 80        | highest allowable level of optical reflectance from the|
@@ -1282,16 +1280,16 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
   | 161       | refers to random fluctuations in the timing of the     |
   |           | transmitted signal's clock                             |
   | 162       | refers to the random fluctuations in timing of the     |
-
-
-
-Rokui, et al.            Expires 19 January 2026               [Page 23]
-
-Internet-Draft        Modelling Optical Pluggables             July 2025
-
-
   |           | transmitted signal's clock                             |
   | 163       | refers to the random fluctuations in the timing of the |
+
+
+
+Rokui, et al.             Expires 11 March 2026                [Page 23]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
   |           | transmitted signal's clock                             |
   | 164       | min spectral width beyond theoretical minimum required |
   |           | by the signal's data rate                              |
@@ -1339,14 +1337,14 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
   |           | in required OSNR to achieve a target BER               |
   | --------- | ------------------------------------------------------ |
 
-
-
-Rokui, et al.            Expires 19 January 2026               [Page 24]
-
-Internet-Draft        Modelling Optical Pluggables             July 2025
-
-
   Note: The "Attribute Number" refers to numbering in Google Sheet
+
+
+
+Rokui, et al.             Expires 11 March 2026                [Page 24]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
      Figure 6: List of Optical Pluggable Capability Attributes Based
                              on Gap Analysis
@@ -1354,15 +1352,17 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 7.2.  List of Missing Optical Pluggable Configuration Attributes Based
       on Gap Analysis
 
-   Figure 7 highlights missing configuration attributes for optical
-   pluggables.  These parameters and features, essential for proper
-   operation and performance, are often defined by other standards
-   development organizations (SDOs) and industry forums but may not be
-   fully represented in IETF YANG models.  Integrating these missing
-   configuration attributes into IETF YANG models is vital for
-   comprehensive modeling of optical pluggable modules.
+   Figure 7 identifies configuration attributes for optical pluggables
+   defined by other standards development organizations (SDOs) and
+   industry forums which may not be fully represented in IETF YANG
+   models.
 
    Note that the "Attribute Number" refers to numbering in Google Sheet.
+
+  For each Attribute Name,
+  - First table displays the "Missing Configuration Attributes"
+  - Second table displays the "Summary Description of Missing
+    Configuration Attributes"
 
   | --------- | ------------------------------------------ | --------- |
   | Attribute | Missing Configuration Attributes           | source    |
@@ -1397,10 +1397,15 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 25]
+Rokui, et al.             Expires 11 March 2026                [Page 25]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
+
+  For each Attribute Name,
+  - First table displays the "Missing PM/States Attributes"
+  - Second table displays the "Summary Description of Missing
+    PM/States Attributes"
 
   | --------- | ------------------------------------------ | --------- |
   | Attribute | Missing PM/States Attributes               | Source    |
@@ -1445,19 +1450,19 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
   |           |                                            | oif       |
   | 270       | Modulator Bias Y Phase                     | OpenConfg/|
   |           |                                            | oif       |
+
+
+
+Rokui, et al.             Expires 11 March 2026                [Page 26]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
   | 271       | self-phase-modulation (SPM)                | itu-t     |
   | 272       | cross-phase-modulation (XPM)               | itu-t     |
   | 273       | Frequency offset between received carrier  | oif       |
   |           | and LO                                     |           |
   | 274       | total-channel-output-power                 | IETF      |
-
-
-
-Rokui, et al.            Expires 19 January 2026               [Page 26]
-
-Internet-Draft        Modelling Optical Pluggables             July 2025
-
-
   | --------- | ------------------------------------------ | --------- |
 
   | --------- | ------------------------------------------------------ |
@@ -1501,19 +1506,19 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
   | 254       | The difference between the measured SNGR and the       |
   |           | tolerable SNR that still allows acceptable BER and/or  |
   |           | Q-factor.                                              |
+
+
+
+Rokui, et al.             Expires 11 March 2026                [Page 27]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
   | 255       | High-granularity chromatic dispersion measurement for  |
   |           | short spans (media-side fiber estimate). DSP estimates |
   |           | chromatic dispersion based on signal shape and         |
   |           | compensation requirements.                             |
   | 256       | Low-granularity chromatic dispersion measurement for   |
-
-
-
-Rokui, et al.            Expires 19 January 2026               [Page 27]
-
-Internet-Draft        Modelling Optical Pluggables             July 2025
-
-
   |           | longer spans (media-side fiber estimate). DSP estimates|
   |           | chromatic dispersion based on signal shape and         |
   |           | compensation requirements                              |
@@ -1557,19 +1562,19 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
   |           | decimal places, including statistical values           |
   |           | (instantaneous, average, min, max)                     |
   | 271       | A nonlinear optical effect where the phase of a light  |
+
+
+
+Rokui, et al.             Expires 11 March 2026                [Page 28]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
   |           | pulse is modulated by its own intensity due to the Kerr|
   |           | effect, leading to a time-dependent phase shift and    |
   |           | spectral broadening of the pulse as it propagates      |
   |           | through an optical medium like a fiber                 |
   | 272       | A nonlinear optical effect where the intensity of one  |
-
-
-
-Rokui, et al.            Expires 19 January 2026               [Page 28]
-
-Internet-Draft        Modelling Optical Pluggables             July 2025
-
-
   |           | light signal modulates the phase of another signal     |
   |           | traveling through the same fiber, leading to inter-    |
   |           | channel crosstalk and signal degradation in wavelength |
@@ -1595,7 +1600,7 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
    [I-D.ietf-ccamp-optical-impairment-topology-yang],
    [I-D.ietf-ccamp-rfc9093-bis] and [I-D.ietf-ccamp-dwdm-if-param-yang].
 
-   Figure 9 shows a proposal for naming conventiion of optical pluggacle
+   Figure 9 shows a proposal for naming convention of optical pluggable
    attributes.  The current proposal, while illustrative, may need
    further refinement to ensure clarity and avoid ambiguity.
    Specifically, the prefixing of attributes with directions like "tx"
@@ -1604,9 +1609,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
    shows the need to clearly define the value type associated with the
    attribute, such as min, max, current, or none, for a cohesive and
    standardized approach.  Furthermore, the examples for attribute
-   naming need to be universally adopted to establish an attribute
+   naming should be universally adopted to establish an attribute
    mapping that is aligned with IETF, improving the overall clarity and
-   usability of the YANG models for managing coherent pluggables
+   usability of the YANG models for managing coherent pluggables.
 
 
 
@@ -1616,14 +1621,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-
-
-
-
-
-Rokui, et al.            Expires 19 January 2026               [Page 29]
+Rokui, et al.             Expires 11 March 2026                [Page 29]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    Naming convention:
@@ -1677,9 +1677,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 30]
+Rokui, et al.             Expires 11 March 2026                [Page 30]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    This section discusses the complete lifecycle of an optical pluggable
@@ -1733,9 +1733,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 31]
+Rokui, et al.             Expires 11 March 2026                [Page 31]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
           v                            \
@@ -1789,9 +1789,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 32]
+Rokui, et al.             Expires 11 March 2026                [Page 32]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    It is expected that these applications, use cases and scenarios will
@@ -1845,9 +1845,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 33]
+Rokui, et al.             Expires 11 March 2026                [Page 33]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
 8.3.  Dealing with service demand
@@ -1901,9 +1901,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 34]
+Rokui, et al.             Expires 11 March 2026                [Page 34]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    The optical design will be "validated" in terms of "viability" and
@@ -1957,9 +1957,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 35]
+Rokui, et al.             Expires 11 March 2026                [Page 35]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    In addition, during transition towards a more automated future, there
@@ -2013,9 +2013,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 36]
+Rokui, et al.             Expires 11 March 2026                [Page 36]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    Considering a pluggable module (as for many other equipments), this
@@ -2069,9 +2069,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 37]
+Rokui, et al.             Expires 11 March 2026                [Page 37]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
 9.1.  Example-1: Coherent Pluggables Already Provisioned
@@ -2125,9 +2125,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 38]
+Rokui, et al.             Expires 11 March 2026                [Page 38]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    Within packet devices R1 and R2, coherent pluggables p1 and p2, are
@@ -2181,9 +2181,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 39]
+Rokui, et al.             Expires 11 March 2026                [Page 39]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    *  The SDN controller can further change, modify, optimize the
@@ -2237,9 +2237,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 40]
+Rokui, et al.             Expires 11 March 2026                [Page 40]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
          <------------------ L3 service-2 ------------------->
@@ -2293,9 +2293,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 41]
+Rokui, et al.             Expires 11 March 2026                [Page 41]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    The following steps outline the details of how this network is
@@ -2349,9 +2349,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 42]
+Rokui, et al.             Expires 11 March 2026                [Page 42]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    *  The operator installs the designated pluggables into ports port_a
@@ -2405,9 +2405,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 43]
+Rokui, et al.             Expires 11 March 2026                [Page 43]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    As part of coherent pluggable work, we need to address this situation
@@ -2461,9 +2461,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 44]
+Rokui, et al.             Expires 11 March 2026                [Page 44]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    *  Vendor-Y has a new read-write proprietary configuration attributes
@@ -2517,9 +2517,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 45]
+Rokui, et al.             Expires 11 March 2026                [Page 45]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
 10.3.  Support of Opaque Configuration Attributes (Solution-1)
@@ -2573,9 +2573,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 46]
+Rokui, et al.             Expires 11 March 2026                [Page 46]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
 10.4.  Support of Opaque Configuration Attributes (Solution-2)
@@ -2629,9 +2629,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 47]
+Rokui, et al.             Expires 11 March 2026                [Page 47]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
     +--rw opaque-config-attribute-list* [conf-attribute-id]
@@ -2685,9 +2685,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 48]
+Rokui, et al.             Expires 11 March 2026                [Page 48]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    It is important to note that since the pluggable device encrypts the
@@ -2741,9 +2741,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 49]
+Rokui, et al.             Expires 11 March 2026                [Page 49]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    Referring to Section 5.1, the coherent pluggable capability
@@ -2797,9 +2797,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 50]
+Rokui, et al.             Expires 11 March 2026                [Page 50]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    A pluggable type & version may offer a super-set.  The super-set is
@@ -2853,9 +2853,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 51]
+Rokui, et al.             Expires 11 March 2026                [Page 51]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    *  Photonic/Optical capability section: This section contains all
@@ -2909,9 +2909,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 52]
+Rokui, et al.             Expires 11 March 2026                [Page 52]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
      |    - attribute A1                                      | | |
@@ -2965,9 +2965,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 53]
+Rokui, et al.             Expires 11 March 2026                [Page 53]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    Below are several examples that demonstrate the concept of the
@@ -3021,9 +3021,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 54]
+Rokui, et al.             Expires 11 March 2026                [Page 54]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    related and may differ significantly in their attributes.  In other
@@ -3077,9 +3077,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 55]
+Rokui, et al.             Expires 11 March 2026                [Page 55]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    [G.698.2]  ITU-T Recommendation G.698.2, "Amplified multichannel
@@ -3133,9 +3133,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 56]
+Rokui, et al.             Expires 11 March 2026                [Page 56]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    [I-D.ietf-ccamp-dwdm-if-param-yang]
@@ -3158,16 +3158,17 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
               Busi, I., Guo, A., and S. Belotti, "YANG Data Models for
               requesting Path Computation in WDM Optical Networks", Work
               in Progress, Internet-Draft, draft-ietf-ccamp-optical-
-              path-computation-yang-05, 28 February 2025,
+              path-computation-yang-06, 29 August 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
-              optical-path-computation-yang-05>.
+              optical-path-computation-yang-06>.
 
    [I-D.ietf-ccamp-rfc9093-bis]
               Belotti, S., Busi, I., Beller, D., Le Rouzic, E., and A.
-              Guo, "Common YANG Data Types for Layer 0 Networks", Work
-              in Progress, Internet-Draft, draft-ietf-ccamp-rfc9093-bis-
-              15, 17 June 2025, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-ccamp-rfc9093-bis-15>.
+              Guo, "Common YANG Data Types for Layer 0 Optical
+              Networks", Work in Progress, Internet-Draft, draft-ietf-
+              ccamp-rfc9093-bis-16, 7 August 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
+              rfc9093-bis-16>.
 
    [I-D.ietf-ccamp-wdm-tunnel-yang]
               Guo, A., Belotti, S., Galimberti, G., de Madrid, U. A.,
@@ -3188,10 +3189,9 @@ Contributors
 
 
 
-
-Rokui, et al.            Expires 19 January 2026               [Page 57]
+Rokui, et al.             Expires 11 March 2026                [Page 57]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    Nigel Davis
@@ -3245,9 +3245,9 @@ Internet-Draft        Modelling Optical Pluggables             July 2025
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 58]
+Rokui, et al.             Expires 11 March 2026                [Page 58]
 
-Internet-Draft        Modelling Optical Pluggables             July 2025
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    Majid Hossein Poor
@@ -3301,4 +3301,4 @@ Authors' Addresses
 
 
 
-Rokui, et al.            Expires 19 January 2026               [Page 59]
+Rokui, et al.             Expires 11 March 2026                [Page 59]
