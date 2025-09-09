@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-14T01:46:33.232878+00:00",
+  "timestamp": "2025-09-09T01:27:38.881881+00:00",
   "repo": "italobusi/actn-wdm-pluggable-modelling",
   "labels": [
     {
@@ -3553,13 +3553,13 @@
       "labels": [],
       "body": "Added Gap analysis from Google Sheet. This is the v03 for CCAMP WG adoption",
       "createdAt": "2025-07-13T12:11:33Z",
-      "updatedAt": "2025-08-12T09:33:42Z",
+      "updatedAt": "2025-09-08T15:57:34Z",
       "baseRepository": "italobusi/actn-wdm-pluggable-modelling",
       "baseRefName": "main",
       "baseRefOid": "c5715118e68384e9f791d682e108f33cef099e7e",
       "headRepository": "reza-github/actn-wdm-pluggable-modelling",
       "headRefName": "pluggable_v03",
-      "headRefOid": "78c56da0666b771ae13c10e19b93787a363fac69",
+      "headRefOid": "8190ecc3e640413f29dbfcbed422d20f16e8857a",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -3948,9 +3948,9 @@
           "comments": [
             {
               "originalPosition": 124,
-              "body": "I added the suggested Editorial Note. I also added to the note. This is what is incorporated into draft:\r\n\r\n[Editorial Note: The reference to the external Google Sheet is used to finalize the gap content, once all the info are incorporated in the draft, and in any case before publication, this link shall be removed. Please also note that the content of the google sheet is very important and shall be captured in draft as a table or something else in Appendix section]",
+              "body": "I added the suggested Editorial Note. I also added to the note. This is what is incorporated into draft:\r\n\r\n[Editorial Note: The reference to the external Google Sheet is used to finalize the gap content, once all the info are incorporated in the draft, and in any case before publication, this link shall be removed. Please also note that the content of the google sheet is very important and shall be captured in draft as a table or something else in Appendix section]\r\n\r\nThis can be CLOSED",
               "createdAt": "2025-08-11T13:01:19Z",
-              "updatedAt": "2025-08-11T13:27:25Z"
+              "updatedAt": "2025-09-07T16:11:38Z"
             }
           ]
         },
@@ -3968,9 +3968,9 @@
           "comments": [
             {
               "originalPosition": 356,
-              "body": "IMO the table format is better option as in your example it is not clear what for example [4] means or what (IETF) means?\r\nRoberto having said thatRoberto, let's keep the existing format for V03 version. For future version of this document we can discuss this topic. \r\n\r\nI have also added the following notes to each table to provide more clarifications:\r\n\r\nFor each Attribute Name, \r\n- First table displays the \"Missing Capability Attributes\" \r\n- Second table displays the \"Summary Description of Missing  Capability Attributes\"\r\n\r\nFor each Attribute Name, \r\n- First table displays the \"Missing Configuration Attributes\" \r\n- Second table displays the \"Summary Description of Missing  ConfigurationAttributes\"\r\n\r\nFor each Attribute Name, \r\n- First table displays the \"Missing PM/States Attributes\" \r\n- Second table displays the \"Summary Description of Missing  PM/States Attributes\"",
+              "body": "IMO the table format is better option as in your example it is not clear what for example [4] means or what (IETF) means?\r\nRoberto, having said that, let's keep the existing format for V03 version. For future version of this document we can discuss this topic. \r\n\r\nI have also added the following notes to each table to provide more clarifications:\r\n\r\nFor each Attribute Name, \r\n- First table displays the \"Missing Capability Attributes\" \r\n- Second table displays the \"Summary Description of Missing  Capability Attributes\"\r\n\r\nFor each Attribute Name, \r\n- First table displays the \"Missing Configuration Attributes\" \r\n- Second table displays the \"Summary Description of Missing  ConfigurationAttributes\"\r\n\r\nFor each Attribute Name, \r\n- First table displays the \"Missing PM/States Attributes\" \r\n- Second table displays the \"Summary Description of Missing  PM/States Attributes\"",
               "createdAt": "2025-08-11T13:42:38Z",
-              "updatedAt": "2025-08-11T13:56:32Z"
+              "updatedAt": "2025-09-07T16:12:08Z"
             }
           ]
         },
@@ -4026,6 +4026,494 @@
           "createdAt": "2025-08-12T09:33:42Z",
           "updatedAt": "2025-08-12T09:33:42Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aGBH",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:15:47Z",
+          "updatedAt": "2025-09-07T16:15:47Z",
+          "comments": [
+            {
+              "originalPosition": 114,
+              "body": "suggestion is incorporated.\r\n\r\nThis can be CLOSED.",
+              "createdAt": "2025-09-07T16:15:47Z",
+              "updatedAt": "2025-09-07T16:17:55Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aGQm",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:19:32Z",
+          "updatedAt": "2025-09-07T16:19:32Z",
+          "comments": [
+            {
+              "originalPosition": 146,
+              "body": "Your suggestion is incorporated.\r\n\r\nThis can be CLOSED",
+              "createdAt": "2025-09-07T16:19:32Z",
+              "updatedAt": "2025-09-07T16:19:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aGRh",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:19:41Z",
+          "updatedAt": "2025-09-07T16:19:41Z",
+          "comments": [
+            {
+              "originalPosition": 367,
+              "body": "Your suggestion is incorporated.\r\n\r\nThis can be CLOSED",
+              "createdAt": "2025-09-07T16:19:41Z",
+              "updatedAt": "2025-09-07T16:19:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aGaQ",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:21:50Z",
+          "updatedAt": "2025-09-07T16:21:51Z",
+          "comments": [
+            {
+              "originalPosition": 122,
+              "body": "Does IETF have any GitHub or SharePoints? \r\n\r\nThis can be CLOSED",
+              "createdAt": "2025-09-07T16:21:50Z",
+              "updatedAt": "2025-09-08T13:22:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aGil",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:23:43Z",
+          "updatedAt": "2025-09-07T16:23:43Z",
+          "comments": [
+            {
+              "originalPosition": 566,
+              "body": "Gert, this is the Gap analysis. The final results might be whatever you mentioned (i.e., no inconsistency at IETF). \r\nSo, we need to keep it and report even if there are no inconsistencies at IETF.",
+              "createdAt": "2025-09-07T16:23:43Z",
+              "updatedAt": "2025-09-07T16:23:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aGp0",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:25:29Z",
+          "updatedAt": "2025-09-07T16:25:29Z",
+          "comments": [
+            {
+              "originalPosition": 568,
+              "body": "Corrected and done.\r\n\r\nThis can be CLOSED",
+              "createdAt": "2025-09-07T16:25:29Z",
+              "updatedAt": "2025-09-07T16:25:29Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aGyO",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:27:36Z",
+          "updatedAt": "2025-09-07T16:27:36Z",
+          "comments": [
+            {
+              "originalPosition": 157,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).\r\n\r\nWe agreed on Sep 08, 2025, Sergio and Julian will work together and will provide a paragraph indicating the this work is still in-progress and the attributes in these table in subject to change ",
+              "createdAt": "2025-09-07T16:27:36Z",
+              "updatedAt": "2025-09-08T13:25:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aGyn",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:27:42Z",
+          "updatedAt": "2025-09-07T16:27:42Z",
+          "comments": [
+            {
+              "originalPosition": 158,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:27:42Z",
+              "updatedAt": "2025-09-07T16:27:42Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aGzQ",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:27:50Z",
+          "updatedAt": "2025-09-07T16:27:50Z",
+          "comments": [
+            {
+              "originalPosition": 159,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:27:50Z",
+              "updatedAt": "2025-09-07T16:27:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aGzl",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:27:55Z",
+          "updatedAt": "2025-09-07T16:27:55Z",
+          "comments": [
+            {
+              "originalPosition": 162,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:27:55Z",
+              "updatedAt": "2025-09-07T16:27:55Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aG0C",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:28:01Z",
+          "updatedAt": "2025-09-07T16:28:02Z",
+          "comments": [
+            {
+              "originalPosition": 165,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:28:01Z",
+              "updatedAt": "2025-09-07T16:28:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aG07",
+          "commit": {
+            "abbreviatedOid": "78c56da"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:28:13Z",
+          "updatedAt": "2025-09-07T16:28:13Z",
+          "comments": [
+            {
+              "originalPosition": 211,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:28:13Z",
+              "updatedAt": "2025-09-07T16:28:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aG1T",
+          "commit": {
+            "abbreviatedOid": "78c56da"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:28:18Z",
+          "updatedAt": "2025-09-07T16:28:18Z",
+          "comments": [
+            {
+              "originalPosition": 212,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:28:18Z",
+              "updatedAt": "2025-09-07T16:28:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aG13",
+          "commit": {
+            "abbreviatedOid": "78c56da"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:28:24Z",
+          "updatedAt": "2025-09-07T16:28:24Z",
+          "comments": [
+            {
+              "originalPosition": 213,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:28:24Z",
+              "updatedAt": "2025-09-07T16:28:24Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aG2X",
+          "commit": {
+            "abbreviatedOid": "78c56da"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:28:27Z",
+          "updatedAt": "2025-09-07T16:28:28Z",
+          "comments": [
+            {
+              "originalPosition": 214,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:28:27Z",
+              "updatedAt": "2025-09-07T16:28:28Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-aHGz",
+          "commit": {
+            "abbreviatedOid": "78c56da"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-07T16:32:32Z",
+          "updatedAt": "2025-09-07T16:34:56Z",
+          "comments": [
+            {
+              "originalPosition": 187,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:32:32Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 188,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:32:36Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 189,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:32:41Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 190,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:32:49Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 191,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:32:55Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 192,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:32:58Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 193,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:33:03Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 194,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:33:11Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 196,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:33:19Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 198,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:33:29Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 196,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:33:32Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 199,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:33:41Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 200,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:33:46Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 201,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:33:49Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 203,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:33:53Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 205,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:33:59Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 209,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:34:05Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 206,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:34:09Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            },
+            {
+              "originalPosition": 210,
+              "body": "Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n\r\nThis can be discussed after V03 (for WC adoption).",
+              "createdAt": "2025-09-07T16:34:23Z",
+              "updatedAt": "2025-09-07T16:34:56Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-hax-",
+          "commit": {
+            "abbreviatedOid": "78c56da"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-08T12:58:44Z",
+          "updatedAt": "2025-09-08T12:58:45Z",
+          "comments": [
+            {
+              "originalPosition": 157,
+              "body": "Not sure what you're saying is the correct procedure. Submitting a version containing something that is not approved is incorrect unless all the gap analysis part has to be considered \"not in review for WG LC\". Not sure that can be acceptable by chairs. ",
+              "createdAt": "2025-09-08T12:58:45Z",
+              "updatedAt": "2025-09-08T12:58:45Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-jyUa",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-08T15:28:57Z",
+          "updatedAt": "2025-09-08T15:28:57Z",
+          "comments": [
+            {
+              "originalPosition": 157,
+              "body": "> Sergio any details of the tables will be addressed after issuing the V03. After submitting V03 of document (for WC adoption), we start these tables and Gap analysis right away.\r\n> \r\n> This can be discussed after V03 (for WC adoption).\r\n> \r\n> We agreed on Sep 08, 2025, Sergio and Julian will work together and will provide a paragraph indicating the this work is still in-progress and the attributes in these table in subject to change\r\n\r\nThis is our proposed update: \"The \u201cOptical Module Data Modeling Gap Analysis\u201d section is still work in progress and the attributes listed in the 3 tables below are subject to change since some comments present in the original Google sheet have not been resolved and agreed yet.\"",
+              "createdAt": "2025-09-08T15:28:57Z",
+              "updatedAt": "2025-09-08T15:28:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLJuPKM6-kORX",
+          "commit": {
+            "abbreviatedOid": "1124b6b"
+          },
+          "author": "reza-github",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-09-08T15:57:34Z",
+          "updatedAt": "2025-09-08T15:57:34Z",
+          "comments": [
+            {
+              "originalPosition": 157,
+              "body": "Suggested text is included.\r\n\r\nThis can be CLOSED.",
+              "createdAt": "2025-09-08T15:57:34Z",
+              "updatedAt": "2025-09-08T15:57:34Z"
+            }
+          ]
         }
       ]
     }
