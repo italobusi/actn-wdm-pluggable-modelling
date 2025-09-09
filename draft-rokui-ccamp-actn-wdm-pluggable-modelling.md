@@ -619,7 +619,7 @@ You can [download the Google sheet](/Users/rrokui/Desktop/optical-pluggable-attr
 {: #gap-analysis}
 # Optical Module Data Modeling Gap Analysis
 
-\[Editorial Note: This section is work in-progress]
+\[Editorial Note: The “Optical Module Data Modeling Gap Analysis” section is still work in progress and the attributes listed in the 3 tables below are subject to change since some comments present in the original Google sheet have not been resolved and agreed yet]
 
 To support gap analysis of optical pluggables in packet-over-optical networks, the Google Sheet referenced in {{google-sheet}} is utilized. The attributes listed in the sheet are systematically examined to determine their applicability to optical pluggables. For applicable attributes, a cross-check is performed to verify whether they are included in existing IETF data models. Attributes not present in the IETF models are identified as gaps. Where necessary, proposals for updates or modifications to the IETF models are developed to address these gaps or misalignments.
 
