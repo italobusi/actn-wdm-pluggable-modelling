@@ -5,14 +5,14 @@
 Common Control and Measurement Plane                            R. Rokui
 Internet-Draft                                                     Ciena
 Intended status: Informational                                    A. Guo
-Expires: 27 November 2025                         Futurewei Technologies
+Expires: 12 March 2026                            Futurewei Technologies
                                                                P. Bedard
                                                                    Cisco
                                                           B. Swamynathan
                                                                    Nokia
                                                               G. Grammel
                                                                  Juniper
-                                                             26 May 2025
+                                                        8 September 2025
 
 
   Data Modelling and Gap Analysis of Optical Pluggables in Packet Over
@@ -36,9 +36,9 @@ Abstract
    This draft provides a gap analysis with respect to existing IETF work
    in the following areas:
 
-   *  It provides an analysis of optical attributes provided by other
-      organizations and identifying modeling gaps in current IETF
-      drafts.
+   *  It provides an analysis of optical attributes in a set of IETF
+      documents with specifications of other organizations to identify
+      modeling gaps.
 
    *  It identifies modeling needs addressing the specific aspect of
       pluggability of transceiver modules.  The authors recognize the
@@ -48,6 +48,15 @@ Abstract
       analysis identifies gaps to manage the lifecycle of an optical
       pluggable module, from operator approval and viability assessment,
       to deployment, monitoring and phase-out.
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                 [Page 1]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    The lifecycle of an optical pluggable module, from operator approval
    and viability assessment to deployment and monitoring, is also
@@ -86,7 +95,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 November 2025.
+   This Internet-Draft will expire on 12 March 2026.
 
 Copyright Notice
 
@@ -97,6 +106,14 @@ Copyright Notice
    Provisions Relating to IETF Documents (https://trustee.ietf.org/
    license-info) in effect on the date of publication of this document.
    Please review these documents carefully, as they describe your rights
+
+
+
+Rokui, et al.             Expires 12 March 2026                 [Page 2]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    and restrictions with respect to this document.  Code Components
    extracted from this document must include Revised BSD License text as
    described in Section 4.e of the Trust Legal Provisions and are
@@ -104,49 +121,72 @@ Copyright Notice
 
 Table of Contents
 
-   1.  Terminology
-   2.  Introduction
-   3.  Optical pluggable module in a Device with Packet Functions
-   4.  Optical Module Functional Building Blocks
-     4.1.  Optical Channel/OTSi
-     4.2.  Media Logical Channels
-     4.3.  Host Logical Channels
-     4.4.  Electrical Channels
-     4.5.  Equipment
-   5.  Optical modules Data Modeling
-     5.1.  optical module Capability Attributes (aka, Supported-Modes)
-     5.2.  optical module Configurations Attributes
-     5.3.  optical optical module Performance Monitoring Data
-     5.4.  optical module Threshold Definition
-     5.5.  optical module Alarm Notifications
-   6.  Addressing optical modules Attributes From Google Sheet
-   7.  Optical Module Data Modeling Gap Analysis
-   8.  Optical pluggable modules Lifecycle Management
-     8.1.  Approving the pluggable module type and version
-     8.2.  Planning the network
-     8.3.  Dealing with service demand
-     8.4.  Installing and operationalizing the pluggable module
-     8.5.  Expressing capabilities
-   9.  Appendix A - Coherent pluggable module Examples
-     9.1.  Example-1: Coherent Pluggables Already Provisioned
-     9.2.  Example-2: Coherent Pluggables Planning
-   10. Appendix B - Support of Opaque Attributes
-     10.1.  Support of Opaque Capability Attributes
-     10.2.  Support of Opaque Secret Capability Attributes
-     10.3.  Support of Opaque Configuration Attributes (Solution-1)
-     10.4.  Support of Opaque Configuration Attributes (Solution-2)
-     10.5.  Support of Opaque Configuration Attributes (Solution-3)
-     10.6.  Support of Opaque Secret Configuration Attributes
-     10.7.  Support of Opaque Performance Monitoring Data
-   11. Appendix C - Coherent Pluggable Repository
-   12. Security Considerations
-   13. IANA Considerations
-   14. References
-     14.1.  Normative References
-     14.2.  Informative References
-   Acknowledgments
-   Contributors
-   Authors' Addresses
+   1.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   4
+   2.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   5
+   3.  Optical pluggable module in a Device with Packet Functions  .   7
+   4.  Optical Module Functional Building Blocks . . . . . . . . . .   9
+     4.1.  Optical Channel/OTSi  . . . . . . . . . . . . . . . . . .  10
+     4.2.  Media Logical Channels  . . . . . . . . . . . . . . . . .  11
+     4.3.  Host Logical Channels . . . . . . . . . . . . . . . . . .  11
+     4.4.  Electrical Channels . . . . . . . . . . . . . . . . . . .  11
+     4.5.  Equipment . . . . . . . . . . . . . . . . . . . . . . . .  12
+   5.  Optical modules Data Modeling . . . . . . . . . . . . . . . .  12
+     5.1.  optical module Capability Attributes (aka,
+           Supported-Modes)  . . . . . . . . . . . . . . . . . . . .  13
+     5.2.  optical module Configurations Attributes  . . . . . . . .  14
+     5.3.  optical optical module Performance Monitoring Data  . . .  14
+     5.4.  optical module Threshold Definition . . . . . . . . . . .  16
+     5.5.  optical module Alarm Notifications  . . . . . . . . . . .  18
+   6.  Complete list of optical modules Attributes From Google
+           Sheet . . . . . . . . . . . . . . . . . . . . . . . . . .  18
+   7.  Optical Module Data Modeling Gap Analysis . . . . . . . . . .  20
+     7.1.  List of Missing Optical Pluggable Capability Attributes
+           Based on Gap Analysis . . . . . . . . . . . . . . . . . .  20
+     7.2.  List of Missing Optical Pluggable Configuration Attributes
+           Based on Gap Analysis . . . . . . . . . . . . . . . . . .  25
+     7.3.  List of Missing Optical Pluggable PM/States Attributes
+           Based on Gap Analysis . . . . . . . . . . . . . . . . . .  26
+     7.4.  Coherent Pluggable Syntax Gaps  . . . . . . . . . . . . .  29
+     7.5.  Next Steps on Optical Module Data Modeling Gap
+           Analysis  . . . . . . . . . . . . . . . . . . . . . . . .  30
+   8.  Optical pluggable modules Lifecycle Management  . . . . . . .  31
+     8.1.  Approving the pluggable module type and version . . . . .  33
+     8.2.  Planning the network  . . . . . . . . . . . . . . . . . .  33
+     8.3.  Dealing with service demand . . . . . . . . . . . . . . .  34
+     8.4.  Installing and operationalizing the pluggable module  . .  35
+     8.5.  Expressing capabilities . . . . . . . . . . . . . . . . .  36
+   9.  Appendix A - Coherent pluggable module Examples . . . . . . .  38
+     9.1.  Example-1: Coherent Pluggables Already Provisioned  . . .  38
+     9.2.  Example-2: Coherent Pluggables Planning . . . . . . . . .  40
+   10. Appendix B - Support of Opaque Attributes . . . . . . . . . .  44
+     10.1.  Support of Opaque Capability Attributes  . . . . . . . .  46
+     10.2.  Support of Opaque Secret Capability Attributes . . . . .  46
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                 [Page 3]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
+     10.3.  Support of Opaque Configuration Attributes
+            (Solution-1) . . . . . . . . . . . . . . . . . . . . . .  47
+     10.4.  Support of Opaque Configuration Attributes
+            (Solution-2) . . . . . . . . . . . . . . . . . . . . . .  48
+     10.5.  Support of Opaque Configuration Attributes
+            (Solution-3) . . . . . . . . . . . . . . . . . . . . . .  49
+     10.6.  Support of Opaque Secret Configuration Attributes  . . .  49
+     10.7.  Support of Opaque Performance Monitoring Data  . . . . .  50
+   11. Appendix C - Coherent Pluggable Repository  . . . . . . . . .  50
+   12. Security Considerations . . . . . . . . . . . . . . . . . . .  56
+   13. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  56
+   14. References  . . . . . . . . . . . . . . . . . . . . . . . . .  56
+     14.1.  Normative References . . . . . . . . . . . . . . . . . .  56
+     14.2.  Informative References . . . . . . . . . . . . . . . . .  57
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  58
+   Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  58
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  60
 
 1.  Terminology
 
@@ -178,6 +218,14 @@ Table of Contents
       specification defines an interface for managing optical (and
       copper) modules in a standardized way while still permitting
       vendor-specific functionality.  It eases the integration of
+
+
+
+Rokui, et al.             Expires 12 March 2026                 [Page 4]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
       modules supporting the CMIS interface into host platforms from
       different system vendors.  It shall be noted that CMIS targets any
       module, not only coherent optical modules, which is the scope of
@@ -224,6 +272,15 @@ Table of Contents
    available, have given rise to open optical pluggable modules.
    Communication between optical modules and the host occurs through the
    CMIS standard developed by OIF [CMIS].
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                 [Page 5]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    While standardized transmission modes like ZR can handle basic
    applications, proprietary modes from vendors are often necessary to
@@ -274,6 +331,13 @@ Table of Contents
       values.  It is also possible to apply thresholds on each of these
       attributes to support threshold crossing alert (TCA).
 
+
+
+Rokui, et al.             Expires 12 March 2026                 [Page 6]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    Both vendor-agnostic and vendor-specific attributes are important
    considerations in the modeling of optical pluggable modules.
 
@@ -286,7 +350,8 @@ Table of Contents
 
    *  Section 5: Optical Modules Data Modeling
 
-   *  Section 6: Addressing Optical Modules Attributes From Google Sheet
+   *  Section 6: Complete list of Optical Modules Attributes From Google
+      Sheet
 
    *  Section 7: Optical Module Data Modeling Gap Analysis
 
@@ -318,6 +383,16 @@ Table of Contents
    modules.  This carries the flow of photonic signal from the optical
    device to the optical pluggable modules.  Section 4 will discuss this
    in more details.
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                 [Page 7]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    The model presented in Section 5 consolidates properties of optical
    pluggable module on interfaces (D) and (C) in Figure 1 where
@@ -367,6 +442,14 @@ Table of Contents
        (D) Media side of coherent optical pluggable module
                  (towards Optical/Photonic network)
 
+
+
+
+Rokui, et al.             Expires 12 March 2026                 [Page 8]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
            Figure 1: Packet device with optical pluggable modules
 
 4.  Optical Module Functional Building Blocks
@@ -407,6 +490,21 @@ Table of Contents
       functional aspects of the optical pluggable module such as plug
       type, software version, thermal characteristics, power consumption
       etc.
+
+
+
+
+
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                 [Page 9]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
      optical Pluggable Module
     |--------------------------------------------------------------|
@@ -456,6 +554,14 @@ Table of Contents
 
    *  Provides configuration of the signal and monitoring capabilities
 
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 10]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    *  Provides monitoring capabilities in the Tx (toward fiber/medium)
       and Rx (from fiber/medium) directions, Total optical power,
       optical channel power, optical statistics
@@ -502,6 +608,15 @@ Table of Contents
 
    *  The host side lanes of the device forming the physical interface
       to the host platform data path device(s)
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 11]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    *  Lanes grouped to support the type/format and bandwidth of the
       signal used for a service
@@ -552,6 +667,13 @@ Table of Contents
 
    *  Section 5.4: optical module threshold definition
 
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 12]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    *  Section 5.5: optical module alarm notifications
 
    *  Section 10: Support of Opaque Attributes
@@ -597,6 +719,16 @@ Table of Contents
 
    For more detailed information, please refer to draft
    [I-D.ietf-ccamp-optical-impairment-topology-yang].
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 13]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
 5.2.  optical module Configurations Attributes
 
@@ -646,6 +778,14 @@ Table of Contents
     |           monitored-attribute-p                                 |
     |-----------------------------------------------------------------|
 
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 14]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
          Figure 4: Data structure for optical module PM Attributes
 
    As coherent optical technology continues to gain traction, PM has
@@ -694,6 +834,14 @@ Table of Contents
    *  Continuous Increment: The counter value continuously increments
       without resetting upon read.
 
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 15]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    *  Reset on Read: The counter value resets either on read or based on
       a predefined condition.
 
@@ -733,6 +881,22 @@ Table of Contents
    about critical threshold crossings of monitored attributes.  The
    optical module raises an alert by setting an associated Flag on
    module memory-map that represents the alert.
+
+
+
+
+
+
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 16]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    As mentioned previously, the TCA might be supported for a subset of
    optical module monitored attributes.  Since it is possible that the
@@ -780,6 +944,16 @@ Table of Contents
 
      Figure 5: optical module Collection and Threshold Group Definition
 
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 17]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    To define the warning, minor, major, critical threshold values for a
    optical module monitored attribute, operator should set upper and
    lower limits that delineate acceptable performance ranges.  This
@@ -803,58 +977,667 @@ Table of Contents
    The optical modules might generate various alarm notifications due to
    the various reasons.
 
-6.  Addressing optical modules Attributes From Google Sheet
+6.  Complete list of optical modules Attributes From Google Sheet
 
-   [Editorial Note: This section in under review.  It depends on the Gap
-   Analysis as well]
+   This draft was initiated to evaluate the completeness of existing
+   IETF models related to optical modules by incorporating data models
+   and insights from other industry forums and standards bodies,
+   including ITU-T, OpenConfig, OIF, and ONF TAPI.  In particular, the
+   following documents are examined:
 
-   As discussed in the sections on capabilities, configuration, and
-   performance monitoring in Section 5.1, Section 5.2, and Section 5.3,
-   the optical module module includes various read-only capability
-   attributes, read-write configuration attributes, and read-only
-   performance monitoring attributes.  For a comprehensive list of these
-   attributes, refer to the accompanying optical module Google Sheet (Q:
-   how can we incorporate the Google Sheet?).
+   *  IETF Common YANG Data Types for Layer 0 Networks
+      [I-D.ietf-ccamp-rfc9093-bis]
 
-   Based on outcome of Gap analysis, we need to address the module
-   attributes using approaches such as:
+   *  IETF YANG data model to manage configurable DWDM optical
+      interfaces [I-D.ietf-ccamp-dwdm-if-param-yang]
 
-   *  Augmentation of existing IETF YANG data model (e.g. augmentation
-      of draft [I-D.ietf-ccamp-optical-impairment-topology-yang])
+   *  IETF YANG Data Model for Optical Impairment-aware Topology
+      [I-D.ietf-ccamp-optical-impairment-topology-yang]
 
-   *  Extend the content of an existing IETF YANG model via "bis/update"
+   *  IETF YANG Data Model for WDM Tunnels
+      [I-D.ietf-ccamp-wdm-tunnel-yang]
 
-   The detail of this provided after gap analysis on optical module
-   attributes on Google Sheet.
+   *  IETF YANG Data Models for requesting Path Computation in WDM
+      Optical Networks [I-D.ietf-ccamp-optical-path-computation-yang]
+
+   *  Implementation Agreement 400ZR [OIF-400ZR]
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 18]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
+   *  OpenConfig system component inventory[OC-platform]
+
+   *  OpenConfig terminal device [OC-device]
+
+   *  ITU-T Multichannel DWDM applications [G.698.1]
+
+   *  ITU-T Amplified multichannel dense wavelength division
+      multiplexing [G.698.2]
+
+   *  ITU-T Optical interfaces for coarse wavelength division
+      multiplexing [G.695]
+
+   *  ITU-T Optical transport network physical layer interfaces
+      [G.959.1]
+
+   *  Linux Foundation Transport API project [TAPI-2.5.0]
+
+   The primary objective is to assess the properties and structures
+   within these models that are relevant to coherent optical modules and
+   to identify any missing elements or gaps.
+
+   To support this ongoing analysis, relevant properties and structures
+   from both IETF models and external organizations or standards bodies
+   are being collected in Google Sheet.  In Section 7, these properties
+   will serve as the foundation for conducting a comprehensive gap
+   analysis.
+
+   As discussed in Section 5.1, Section 5.2, and Section 5.3, the google
+   sheet provides the Capabilities, Configuration, and Performance
+   Monitoring attributes for coherent pluggable.  The google sheet
+   includes various read-only capability attributes, read-write
+   configuration attributes, and read-only performance monitoring
+   attributes.  For a comprehensive list of these attributes, refer to
+   the accompanying optical module Google Sheet.
+
+   [Editorial Note: The reference to the external Google Sheet is used
+   to finalize the gap content, once all the info are incorporated in
+   the draft, and in any case before publication, this link shall be
+   removed.  Please also note that the content of the google sheet is
+   very important and shall be captured in draft as a table or something
+   else in Appendix section]
+
+   You can download the Google sheet (/Users/rrokui/Desktop/optical-
+   pluggable-attributes-v00-GAP.xslx) to see all the details.
+
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 19]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
 7.  Optical Module Data Modeling Gap Analysis
 
-   [Editorial Note: This section in under review.  Will start after
-   finishing the Google Sheet]
+   [Editorial Note: The “Optical Module Data Modeling Gap Analysis”
+   section is still work in progress and the attributes listed in the 3
+   tables below are subject to change since some comments present in the
+   original Google sheet have not been resolved and agreed yet]
 
-   This draft on "coherent optical module data model and gap analysis"
-   was initiated to examine existing IETF models related to modules for
-   "completeness" to assess existing IETF properties/structures which
-   are relevant to coherent optical modules and also to look for missing
-   properties/structures.  The goal of current work is to achieve best
-   positioning of the IETF work with respect to the other related
-   activities in the industry.
+   To support gap analysis of optical pluggables in packet-over-optical
+   networks, the Google Sheet referenced in Section 6 is utilized.  The
+   attributes listed in the sheet are systematically examined to
+   determine their applicability to optical pluggables.  For applicable
+   attributes, a cross-check is performed to verify whether they are
+   included in existing IETF data models.  Attributes not present in the
+   IETF models are identified as gaps.  Where necessary, proposals for
+   updates or modifications to the IETF models are developed to address
+   these gaps or misalignments.
 
-   To carry out this ongoing examination, properties/structures from
-   relevant external bodies are collected and compared with properties/
-   structures present in IETF models related to coherent modules.  Where
-   properties/structures differ the differences are examined and
-   justifications considered and justification provided for changes to
-   the IETF models these are proposed.
+7.1.  List of Missing Optical Pluggable Capability Attributes Based on
+      Gap Analysis
 
-   The following items are identified as initial gap related to optical
-   modules.  Note that the complete list will be provided after
-   finishing the Google Sheet.
+   Figure 6 provides the missing capabilities attributes highlights
+   important optical pluggable parameters and features that are defined
+   by other standards development organizations (SDOs) and industry
+   forums, but are currently absent from IETF YANG models.
 
-   *  Syntax gaps: Naming inconsistency on existing IETF drafts
-      [I-D.ietf-ccamp-optical-impairment-topology-yang],
-      [I-D.ietf-ccamp-rfc9093-bis] and
-      [I-D.ietf-ccamp-dwdm-if-param-yang] if any.
+   Note that the "Attribute Number" refers to numbering in Google Sheet.
+
+   Harmonizing these attributes between SDOs, and IETF models would
+   support the evolution of open, programmable, and interoperable
+   optical networks.
+
+  For each Attribute Name,
+  - First table displays the "Missing Capability Attributes"
+  - Second table displays the "Summary Description of Missing
+    Capability Attributes"
+
+  | --------- | ------------------------------------------ | --------- |
+  | Attribute | Missing Capability Attributes              | source    |
+  | Number    |                                            |           |
+  | --------- | ------------------------------------------ | --------- |
+  | 4         | tag-id                                     | IETF      |
+  | 16        | Post FEC BER                               | oif       |
+  | 17        | pre-fec-ber                                |           |
+  | 18        | Target reach                               | oif/itu-t |
+  | 19        | Ripple                                     | oif/itu-t |
+  | 20        | max-bit-error-ratio                        | itu-t     |
+  | 22        | min-chromatic-dispersion                   | oif       |
+  | 36        | Polarization Rotation Speed                | oif/itu-t |
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 20]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
+  | 39        | min-tx-osnr                                | OpenConfg |
+  | 46        | pulse-shaping-type                         | OpenConfg |
+  | 53        | fec-coding                                 | OpenConfg |
+  | 68        | Minimum mean input power                   | itu-t     |
+  | 70        | Maximum mean total input power             | itu-t     |
+  | 71        | Maximum mean total output power            | itu-t     |
+  | 73        | Maximum channel power difference           | itu-t     |
+  | 79        | Minimum equivalent sensitivity             | itu-t     |
+  | 80        | Maximum reflectance of receiver            | itu-t     |
+  | 86        | max-laser-temperature                      | ietf      |
+  | 87        | grid-type                                  | OpenConfg |
+  |           |                                            | /tapi     |
+  | 88        | adjustment-granularity                     | OpenConfg |
+  |           |                                            | /tapi     |
+  | 91        | noise-figure                               | IETF/tapi |
+  | 92        | Maximum spectral excursion                 | itu-t     |
+  | 93        | Minimum side mode suppression ratio        | itu-t     |
+  | 95        | max-transmitter-residual-dispersion-osnr-  | itu-t     |
+  |           | penalty                                    |           |
+  | 107       | line-coding                                | itu-t     |
+  | 112       | max-central-wavelength-deviation           | itu-t     |
+  | 116       | max-duty-cycle                             | itu-t     |
+  | 117       | max-laser-linewidth                        | itu-t     |
+  | 121       | Maximum offset between the carrier and the | itu-t     |
+  |           | nominal central frequency                  |           |
+  | 123       | Maximum skew between the two polarizations | itu-t     |
+  | 125       | Maximum spectral power density             | itu-t     |
+  | 126       | Maximum TDECQ                              | itu-t     |
+  | 127       | Maximum I-Q offset                         | itu-t     |
+  | 157       | Laser frequency accuracy                   | oif       |
+  | 158       | Laser frequency noise                      | oif       |
+  | 159       | TX spectral Upper Mask & TX spectral Lower | oif       |
+  |           | Mask                                       |           |
+  | 160       | Laser RIN                                  | oif       |
+  | 161       | Tx clock phase noise (PN): Maximum PN mask | oif       |
+  |           | for low frequency PN                       |           |
+  | 162       | Tx clock phase noise (PN); Maximum total   | oif       |
+  |           | integrated RMS phase jitter between 10kHz  |           |
+  |           | and 10MHz                                  |           |
+  | 163       | Tx clock phase noise (PN)                  | oif       |
+  | 164       | Minimum Excess Bandwidth                   | oif       |
+  | 168       | Total output power with Tx disabled        | oif       |
+  | 169       | Total output power during wavelength       | oif       |
+  |           | switching                                  |           |
+  | 170       | Transmit output power stability            | oif       |
+  | 171       | Transmit output power control absolute     | oif       |
+  |           | accuracy                                   |           |
+  | 174       | Transmitter reflectance                    | oif       |
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 21]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
+  | 175       | Transmitter back reflection tolerance      | oif       |
+  | 176       | Transmitter polarization dependent power   | oif       |
+  | 177       | X-Y Skew                                   | oif       |
+  | 178       | DC I-Q offset (mean per polarization)      | oif       |
+  | 179       | I-Q instantaneous offset                   | oif       |
+  | 180       | Mean I-Q amplitude imbalance               | oif       |
+  | 181       | I-Q phase error                            | oif       |
+  | 182       | I-Q Skew                                   | oif       |
+  | 184       | Frequency offset between received carrier  | oif       |
+  |           | and LO                                     |           |
+  | 188       | Optical return loss                        | oif       |
+  | 195       | Tolerance to change in SOP                 | oif       |
+  | 196       | Optical input power transient tolerance    | oif       |
+  | 197       | Adjacent Channel Crosstalk OSNR Tolerance  | oif       |
+  |           | penalty                                    |           |
+  | 198       | Intra-Channel filtering penalty            | oif       |
+  | --------- | ------------------------------------------ | --------- |
+
+
+  | --------- | ------------------------------------------------------ |
+  | Attribute | Summary Description of                                 |
+  | Number    | Missing Capability Attributes                          |
+  | --------- | ------------------------------------------------------ |
+  | 4         | list of {tag-type, tag-value}                          |
+  | 16        | Refers to error rate measured after applying FEC       |
+  | 17        | Bit error rate measured before forward error           |
+  |           | correction decoding                                    |
+  | 18        | Max optical transmission distance that a coherent      |
+  |           | pluggable module can support                           |
+  | 19        | Peak-to-peak insertion loss difference within filter   |
+  |           | clear bandwidth of the Mux or Demux                    |
+  | 20        | Max acceptable bit error rate for a pluggable optical  |
+  |           | module                                                 |
+  | 22        | Min value of chromatic dispersion (CD) compensation    |
+  |           | range supported by an optical pluggable                |
+  | 36        | Max rate a coherent optical receiver can track and     |
+  |           | compensate for changes in polarization state of        |
+  |           | incoming optical signal                                |
+  | 39        | Min OSNR that the pluggable module's transmitter is    |
+  |           | capable of generating                                  |
+  | 46        | Digital filtering technique applied to electrical      |
+  |           | signal before it modulates optical carrier             |
+  | 53        | Forward error correction coding schema used in the     |
+  |           | transmission mode                                      |
+  | 68        | Min values of the average received power at point RS   |
+  | 70        | Highest allowable average power level that can be      |
+  |           | input into a system or component at a specified point  |
+  | 71        | Analogous to "Maximum mean total input power," but for |
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 22]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
+  |           | output direction                                       |
+  | 73        | max allowable difference in power levels between       |
+  |           | channels in a multi-channel optical transmission       |
+  | 79        | min optical power level that a receiver requires to    |
+  |           | decode incoming signals accurately                     |
+  | 80        | highest allowable level of optical reflectance from the|
+  |           | receiver within those components                       |
+  | 86        | highest laser temperature recorded or allowed for a    |
+  |           | laser                                                  |
+  | 87        | attribute that defines frequency grid used for optical |
+  |           | channels                                               |
+  | 88        | min spectrum separation between the central frequencies|
+  |           | of two adjacent optical channels                       |
+  | 91        | expressed as ratio of input SNR to output SNR.         |
+  |           | Quantifies how much noise a component adds to signal   |
+  | 92        | max acceptable difference between the nominal central  |
+  |           | frequency  and  signal power drops                     |
+  | 93        | A measure of how much the power of the main mode in a  |
+  |           | laser exceeds that of its side modes                   |
+  | 95        | An additional SNR penalty at lowest power with         |
+  |           | worst-case dispersion                                  |
+  | 107       | List of methods of encoding digital data into signal   |
+  |           | waveforms, ensuring proper timing and synchronization  |
+  | 112       | difference between the nominal central wavelength and  |
+  |           | the actual central wavelength                          |
+  | 116       | max percentage of time that a signal is in an active or|
+  |           | "ON" state within a given period                       |
+  | 117       | max allowable width of laser optical signal            |
+  | 121       | max allowed deviation between actual carrier frequency |
+  |           | of an optical signal and its nominal central frequency |
+  | 123       | max difference in timing or phase between signals      |
+  |           | transmitted on different polarizations                 |
+  | 125       | max allowable optical power per unit frequency or      |
+  |           | wavelength interval in a system                        |
+  | 126       | Transmitter Dispersion and Eye Closure Quaternary, a   |
+  |           | metric to evaluate performance of optical transmitters |
+  | 127       | max I-Q offset difference between in-phase (I) and     |
+  |           | quadrature (Q) of a modulated signal                   |
+  | 157       | max deviation of a laser's actual output frequency from|
+  |           | its nominal channel frequency                          |
+  | 158       | Describes the random fluctuations in the laser's output|
+  |           | frequency over time                                    |
+  | 159       | max allowable optical power limits at specific         |
+  |           | frequency offsets from the carrier wavelength          |
+  | 160       | Laser Relative Intensity Noise quantifies random       |
+  |           | fluctuations in laser’s optical power output           |
+  | 161       | refers to random fluctuations in the timing of the     |
+  |           | transmitted signal's clock                             |
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 23]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
+  | 162       | refers to the random fluctuations in timing of the     |
+  |           | transmitted signal's clock                             |
+  | 163       | refers to the random fluctuations in the timing of the |
+  |           | transmitted signal's clock                             |
+  | 164       | min spectral width beyond theoretical minimum required |
+  |           | by the signal's data rate                              |
+  | 168       | amount of optical power emitted by pluggable when      |
+  |           | transmitter is intentionally turned off                |
+  | 169       | optical power level of  pluggable transmitter during   |
+  |           | brief period when it is changing its output wavelength |
+  | 170       | ability of a transmitter to maintain a consistent      |
+  |           | optical output power level over time                   |
+  | 171       | how closely actual output power matches the desired or |
+  |           | configured output power level                          |
+  | 174       | amount of optical power reflected back from the        |
+  |           | transmitter into the optical fiber                     |
+  | 175       | Max amount of optical power reflected back towards     |
+  |           | transmitter without performance degradation            |
+  | 176       | variation in optical power emitted by a transmitter    |
+  |           | depending on the polarization state of the light       |
+  | 177       | timing skew between the X and Y polarization components|
+  |           | of an optical signal in a coherent system              |
+  | 178       | average DC offset In-phase (I) and Quadrature (Q)      |
+  |           | components of received signal for each polarization    |
+  | 179       | time-varying or dynamic offset between In-phase (I)    |
+  |           | and Quadrature (Q) components of received signal       |
+  | 180       | average difference in amplitude between In-phase (I)   |
+  |           | and Quadrature (Q) components of the received signal   |
+  | 181       | deviation from 90-degree phase relationship between    |
+  |           | In-phase (I) and Quadrature (Q) of received signal     |
+  | 182       | time delay or misalignment between In-phase (I) and    |
+  |           | Quadrature (Q) components of a signal                  |
+  | 184       | difference between frequency of incoming optical signal|
+  |           | and the local oscillator (LO) frequency                |
+  | 188       | total reflected light caused by discontinuities in an  |
+  |           | optical path, expressed as ratio of incident to        |
+  |           | reflected power                                        |
+  | 195       | ability of an optical receiver to maintain acceptable  |
+  |           | performance despite variations in State of Polarization|
+  |           | (SOP)                                                  |
+  | 196       | ability of an optical receiver to maintain acceptable  |
+  |           | performance when subjected to sudden changes in        |
+  |           | received optical power level                           |
+  | 197       | increase in required OSNR to maintain a specific BER   |
+  |           | due to interference caused by neighboring optical      |
+  |           | channels                                               |
+  | 198       | degradation in signal quality, measured as an increase |
+  |           | in required OSNR to achieve a target BER               |
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 24]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
+  | --------- | ------------------------------------------------------ |
+
+  Note: The "Attribute Number" refers to numbering in Google Sheet
+
+     Figure 6: List of Optical Pluggable Capability Attributes Based
+                             on Gap Analysis
+
+7.2.  List of Missing Optical Pluggable Configuration Attributes Based
+      on Gap Analysis
+
+   Figure 7 identifies configuration attributes for optical pluggables
+   defined by other standards development organizations (SDOs) and
+   industry forums which may not be fully represented in IETF YANG
+   models.
+
+   Note that the "Attribute Number" refers to numbering in Google Sheet.
+
+  For each Attribute Name,
+  - First table displays the "Missing Configuration Attributes"
+  - Second table displays the "Summary Description of Missing
+    Configuration Attributes"
+
+  | --------- | ------------------------------------------ | --------- |
+  | Attribute | Missing Configuration Attributes           | source    |
+  | Number    |                                            |           |
+  | --------- | ------------------------------------------ | --------- |
+  | 206       | admin-state                                |           |
+  | 210       | line-coding-bit-rate                       | tapi      |
+  | --------- | ------------------------------------------ | --------- |
+
+  | --------- | ------------------------------------------------------ |
+  | Attribute | Summary Description of                                 |
+  | Number    | Missing Configuration Attributes                       |
+  | --------- | ------------------------------------------------------ |
+  | 206       | This is pluggable admin state.                         |
+  | 210       | Identifies the line coding e.g. NRZ-10G and is drawn   |
+  |           | from G.698.2.                                          |
+  | --------- | ------------------------------------------------------ |
+
+  Note: The "Attribute Number" refers to numbering in Google Sheet
+
+       Figure 7: List of Optical Pluggable Configuration Attributes
+                          Based on Gap Analysis
+
+
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 25]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
+7.3.  List of Missing Optical Pluggable PM/States Attributes Based on
+      Gap Analysis
+
+   Figure 8 highlights missing Performance monitoring and States
+   attributes for optical pluggables.  Note that the "Attribute Number"
+   refers to numbering in Google Sheet.
+
+  For each Attribute Name,
+  - First table displays the "Missing PM/States Attributes"
+  - Second table displays the "Summary Description of Missing
+    PM/States Attributes"
+
+  | --------- | ------------------------------------------ | --------- |
+  | Attribute | Missing PM/States Attributes               | Source    |
+  | Number    |                                            |           |
+  | --------- | ------------------------------------------ | --------- |
+  | 216       | operational-state                          |           |
+  | 218       | central-frequency-offset                   | OpenConfg/|
+  |           |                                            | oif/t-api |
+  | 222       | chromatic-dispersion                       | OpenConfg/|
+  |           |                                            | oif/tapi  |
+  | 233       | supply-voltage                             | OpenConfg |
+  | 234       | laser-bias-current                         | OpenConfg |
+  | 235       | max-polarization-dependent-loss            | OpenConfg |
+  | 237       | modulation-error-ratio                     | OpenConfg |
+  | 238       | fec-uncorrectable-blocks                   | OpenConfg |
+  | 239       | q-value                                    | OpenConfg |
+  | 250       | EVMmax                                     | oif       |
+  | 251       | EVMrms                                     | oif       |
+  | 252       | MER                                        | oif       |
+  | 253       | eSNR                                       | OpenConfg/|
+  |           |                                            | oif       |
+  | 254       | SNR Margin                                 | oif       |
+  | 255       | CD-high granularity, short link            | oif       |
+  | 256       | CD-low granularity, long link              | oif       |
+  | 257       | DGD                                        | oif       |
+  | 258       | SOPMD                                      | OpenConfg/|
+  |           |                                            | oif       |
+  | 259       | PDL                                        | oif       |
+  | 260       | SOP ROC                                    | OpenConfg/|
+  |           |                                            | oif       |
+  | 261       | Tx Total Power                             | oif       |
+  | 264       | CFO                                        | oif       |
+  | 265       | Modulator Bias X/I                         | OpenConfg/|
+  |           |                                            | oif       |
+  | 266       | Modulator Bias X/Q                         | OpenConfg/|
+  |           |                                            | oif       |
+  | 267       | Modulator Bias Y/I                         | OpenConfg/|
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 26]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
+  |           |                                            | oif       |
+  | 268       | Modulator Bias Y/Q                         | OpenConfg/|
+  |           |                                            | oif       |
+  | 269       | Modulator Bias X Phase                     | OpenConfg/|
+  |           |                                            | oif       |
+  | 270       | Modulator Bias Y Phase                     | OpenConfg/|
+  |           |                                            | oif       |
+  | 271       | self-phase-modulation (SPM)                | itu-t     |
+  | 272       | cross-phase-modulation (XPM)               | itu-t     |
+  | 273       | Frequency offset between received carrier  | oif       |
+  |           | and LO                                     |           |
+  | 274       | total-channel-output-power                 | IETF      |
+  | --------- | ------------------------------------------ | --------- |
+
+  | --------- | ------------------------------------------------------ |
+  | Attribute | Summary Description of                                 |
+  | Number    | Missing PM/States Attributes                           |
+  | --------- | ------------------------------------------------------ |
+  | 216       | This is pluggable admin state.                         |
+  | 218       | Frequency difference between nominal and actual optical|
+  |           | carrier frequencies, causing phase rotation and        |
+  |           | requiring DSP compensation in coherent systems. It is  |
+  |           | a key parameter in OIF and T-API for channel alignment |
+  |           | and interoperability in DWDM networks.                 |
+  | 222       | Wavelength-dependent variation in light speed within an|
+  |           | optical fiber causing pulse broadening, expressed in   |
+  |           | ps/nm/km, and is a key factor limiting optical         |
+  |           | transmission performance as defined in ITU-T fiber     |
+  |           | standards                                              |
+  | 233       | Supply voltage to the transceiver in volts             |
+  | 234       | Current applied by the system to the transmit laser to |
+  |           | achieve the output power.                              |
+  | 235       | Maximum polarization-dependent-loss accumulated value, |
+  |           | supported by the optical channel associated to the     |
+  |           | associated transmission mode expressed in dB           |
+  | 237       | Modulation error ratio in dB with two decimal precision|
+  | 238       | Number of blocks or frames that were uncorrectable by  |
+  |           | the FEC                                                |
+  | 239       | Quality value (factor) in dB of a channel with two     |
+  |           | decimal precision.                                     |
+  | 250       | EVMmax (Error Vector Magnitude Mx) is a metric for     |
+  |           | evaluating maximum error vector magnitude in coherent  |
+  |           | optics, used for quality and impairment measurement in |
+  |           | coherent optical transceivers                          |
+  | 251       | Error Vector Magnitude normalized by RMS value of      |
+  |           | reference constellation points used to evaluate        |
+  |           | coherent optical signal quality                        |
+  | 252       | Modulation Error Ratio (MER) is a measure of how far   |
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 27]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
+  |           | received symbols deviate from their ideal constellation|
+  |           | position.                                              |
+  | 253       | Effective Signal-to-Noise Ratio, reflecting combined   |
+  |           | optical and electrical impairments.                    |
+  | 254       | The difference between the measured SNGR and the       |
+  |           | tolerable SNR that still allows acceptable BER and/or  |
+  |           | Q-factor.                                              |
+  | 255       | High-granularity chromatic dispersion measurement for  |
+  |           | short spans (media-side fiber estimate). DSP estimates |
+  |           | chromatic dispersion based on signal shape and         |
+  |           | compensation requirements.                             |
+  | 256       | Low-granularity chromatic dispersion measurement for   |
+  |           | longer spans (media-side fiber estimate). DSP estimates|
+  |           | chromatic dispersion based on signal shape and         |
+  |           | compensation requirements                              |
+  | 257       | Differential Group Delay - max delay between           |
+  |           | polarization modes. Transponder DSP measures           |
+  |           | Differential Group Delay as part of PMD compensation   |
+  | 258       | Second Order Polarization Mode Dispersion measured with|
+  |           | fine granularity                                       |
+  | 259       | Polarization Dependent Loss (affects coherent detection|
+  |           | DSP can estimate it dynamically                        |
+  | 260       | Rate of change of polarization state. Measured in      |
+  |           | real-time by tracking the speed of polarization state  |
+  |           | rotation at the Rx                                     |
+  | 261       | Total optical power emitted by the transmitter module, |
+  |           | critical for link budget and interoperability          |
+  | 264       | Central Frequency Offset is frequency mismatch between |
+  |           | transmitter and receiver oscillators causing phase     |
+  |           | errors and interference in coherent optical systems    |
+  | 265       | Bias on the in-phase (I) path of polarization X in a   |
+  |           | coherent optical modulator, expressed as a percentage  |
+  |           | with 2 decimal places, including statistical values    |
+  |           | (instant, avg, min, max)                               |
+  | 266       | Bias on the quadrature (Q) path of polarization X in a |
+  |           | coherent optical modulator, similarly expressed as a   |
+  |           | percentage with 2 decimal places, including the same   |
+  |           | set of statistical values (instant, avg, min, max)     |
+  | 267       | Bias on the in-phase (I) path of polarization Y in a   |
+  |           | coherent optical modulator, expressed as a percentage  |
+  |           | with 2 decimal places, including statistical values    |
+  |           | (instantaneous, average, min, max)                     |
+  | 268       | Bias on the quadrature (Q) path of polarization Y in a |
+  |           | coherent optical modulator, expressed as a percentage  |
+  |           | with 2 decimal places, including statistical values    |
+  |           | (instantaneous, average, min, max)                     |
+  | 269       | Bias on phase path of polarization X in a coherent     |
+  |           | optical modulator, expressed as a percentage with 2    |
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 28]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
+  |           | decimal places, including statistical values           |
+  |           | (instantaneous, average, min, max)                     |
+  | 270       | Bias on phase path of polarization Y in a coherent     |
+  |           | optical modulator, expressed as a percentage with 2    |
+  |           | decimal places, including statistical values           |
+  |           | (instantaneous, average, min, max)                     |
+  | 271       | A nonlinear optical effect where the phase of a light  |
+  |           | pulse is modulated by its own intensity due to the Kerr|
+  |           | effect, leading to a time-dependent phase shift and    |
+  |           | spectral broadening of the pulse as it propagates      |
+  |           | through an optical medium like a fiber                 |
+  | 272       | A nonlinear optical effect where the intensity of one  |
+  |           | light signal modulates the phase of another signal     |
+  |           | traveling through the same fiber, leading to inter-    |
+  |           | channel crosstalk and signal degradation in wavelength |
+  |           | division multiplexing (WDM) system                     |
+  | 273       | Estimated frequency offset is a key performance        |
+  |           | indicator that can be monitored to assess the health   |
+  |           | and stability of the link                              |
+  | 274       | The total output power of this interface               |
+  | --------- | ------------------------------------------------------ |
+
+  Note: The "Attribute Number" refers to numbering in Google Sheet
+
+     Figure 8: List of Optical Pluggable PM State Attributes Based on
+                               Gap Analysis
+
+7.4.  Coherent Pluggable Syntax Gaps
+
+   Addressing syntax gaps in coherent pluggable attributes is crucial
+   for achieving consistent and interoperable management across
+   different implementations.  One key issue lies in establishing a
+   standardized naming convention.  There are some naming inconsistency
+   on existing IETF drafts
+   [I-D.ietf-ccamp-optical-impairment-topology-yang],
+   [I-D.ietf-ccamp-rfc9093-bis] and [I-D.ietf-ccamp-dwdm-if-param-yang].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 29]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
+   Figure 9 shows a proposal for naming convention of optical pluggable
+   attributes.  The current proposal, while illustrative, may need
+   further refinement to ensure clarity and avoid ambiguity.
+   Specifically, the prefixing of attributes with directions like "tx"
+   or "rx" should be consistently applied to all relevant parameters to
+   clearly identify the directionality of the signal.  The example also
+   shows the need to clearly define the value type associated with the
+   attribute, such as min, max, current, or none, for a cohesive and
+   standardized approach.  Furthermore, the examples for attribute
+   naming should be universally adopted to establish an attribute
+   mapping that is aligned with IETF, improving the overall clarity and
+   usability of the YANG models for managing coherent pluggables.
 
    Naming convention:
      direction [tx/rx/both/none]-
@@ -874,13 +1657,30 @@ Table of Contents
        for IETF attribute "channel-output-power", use
           tx-channel-power
 
-   *  Semantic gaps: As part of gap analysis and for a complete solution
-      for optical module, there should be some alignment between the
-      capabilities, configuration, PM attributes and PM thresholds
-      supported by IETF optical module and OIF supported by [CMIS].
-      This needs further investigation.
+         Figure 9: Proposed naming convention for optical pluggable
+                              attribute names
 
-   *  [Editor's note: More to be added after Gap Analysis.]
+7.5.  Next Steps on Optical Module Data Modeling Gap Analysis
+
+   Based on the results of the gap analysis, the next step will be to
+   incorporate the identified pluggable attributes using one of the
+   proposed approaches.  It is important to note that this step
+   represents the final phase of this draft, and its details will be
+   provided in the next version of this draft.
+
+   *  Augmentation of existing IETF YANG data model (e.g. augmentation
+      of draft [I-D.ietf-ccamp-optical-impairment-topology-yang])
+
+   *  Extend the content of an existing IETF YANG model via "bis/update"
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 30]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
 8.  Optical pluggable modules Lifecycle Management
 
@@ -897,7 +1697,7 @@ Table of Contents
    *  Move it to other IETF draft]
 
    This section discusses the complete lifecycle of an optical pluggable
-   module as shown in Figure 6.  It includes discussion on the pre-
+   module as shown in Figure 10.  It includes discussion on the pre-
    purchase evaluation of pluggable modules through installation to the
    operation of a pluggable module in a live network.
 
@@ -930,6 +1730,14 @@ Table of Contents
      Trials & PoCs                     |
           |                            |
           v                            |
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 31]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
      Approve pluggable module type     /
           |                   ---------
           v                            \
@@ -974,10 +1782,17 @@ Table of Contents
           v                            |
      Operate service                   /
 
-             Figure 6: Lifecycle of a optical pluggable module
+             Figure 10: Lifecycle of a optical pluggable module
 
    The following sub-sections discuss the overall flow of activities and
    then work through the lifecycle stages in some detail.
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 32]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
 8.1.  Approving the pluggable module type and version
 
@@ -1027,6 +1842,14 @@ Table of Contents
    deploying each service type is defined for each operational context
    (application etc.)
 
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 33]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    As a result of the planning exercise, numbers of each pluggable
    module type&version required will be known and purchasing can be
    initiated.  The purchased pluggable modules will be added to the
@@ -1063,6 +1886,25 @@ Table of Contents
    choices, so a pluggable module is not deployed (and hence is not
    cabled) until the solution to realization of the optical service has
    been determined.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 34]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    Regardless of the deployment approach, the module capability will be
    accounted for in the optical network analysis activity.  Where
@@ -1112,6 +1954,14 @@ Table of Contents
    Beyond this point normal operational activities such as engineering
    works, restoration, upgrade, fault location etc. will be carried out.
    Clearly, there is also the reverse sequence which includes
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 35]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    deactivating a service and removing the plug and there are also
    various edits and refinements that result from changes in demand and
    changes in understanding of the service needs etc.  These steps have
@@ -1156,6 +2006,17 @@ Table of Contents
    pluggable module).  This is essentially the type&version used when
    considering spares holding and like-for-like replacement in the
    field.
+
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 36]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    From this perspective, all that is required from a running pluggable
    module is to report the complete type&version detail so that this can
@@ -1205,6 +2066,14 @@ Table of Contents
    into a machine interpretable form through a manual intermediate step
    (normally performed, with errors and performed many times for any
    particular device type etc.).  It is suggested here that the best
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 37]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    source of the machine interpretable data is the specifying authority
    (e.g., ITU-T for standard applications, the vendor for plug
    capabilities, an operator for non-standard applications).
@@ -1218,13 +2087,48 @@ Table of Contents
 
 9.1.  Example-1: Coherent Pluggables Already Provisioned
 
-   The first example is illustrated in Figure 7.  This is a simple
+   The first example is illustrated in Figure 11.  This is a simple
    example where the packet over optical network has been already
    provisioned with both optical underlay and packet overlay services.
    The role of SDN controller is just to discover and manage the
    network.  In other words, the SDN controller was not involved in
    various aspects of service provisioning and viability.  The second
    example will come all these aspects in more detail.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 38]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
          <------------------ L3 service-1 ------------------->
           <------------------ TE-Tunnel-1 ------------------>
@@ -1257,7 +2161,7 @@ Table of Contents
        R1, R2      Packet device (i.e., Router)
        m1, m2, m3  Photonic node (ROADM)
 
-             Figure 7: Coherent Pluggable Repository Example-1
+             Figure 11: Coherent Pluggable Repository Example-1
 
    In this example, all optical and IP/MPLS services had been already
    provisioned and deployed and the packet over optical network is fully
@@ -1274,6 +2178,14 @@ Table of Contents
    A single photonic service is established between these pluggables and
    an IP link is mapped to this L0 photonic service.  The overlay TE-
    Tunnel-1 and L3 service-1 had been also provisioned.  The following
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 39]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    steps outline the details of how this network is discovered and
    managed by SDN controllers (note that the SDN controller was not
    involved in provisioning):
@@ -1315,12 +2227,22 @@ Table of Contents
 
 9.2.  Example-2: Coherent Pluggables Planning
 
-   The example in Figure 8 demonstrates the usage of the "Coherent
+   The example in Figure 12 demonstrates the usage of the "Coherent
    Pluggable Repository" for entire lifecycle of photonic service from
    including service planning, viability, provisioning, collection of PM
    telemetry, collection of alarm notifications and optimization.
 
-   Note that the packet over optical network in Figure 8 is not created
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 40]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
+   Note that the packet over optical network in Figure 12 is not created
    yet.  The ports port_a and port_b of packet device R1 and R2 are
    empty and can accept coherent pluggables.  In addition, ports port_a
    and port_b are not connected to the optical network yet, i.e., there
@@ -1334,6 +2256,47 @@ Table of Contents
    service-2.  To achieve this, the SDN controller should first plan an
    optical service-2, perform the viability to make sure this photonic
    service is feasible, provision it and then map it to an IP link-2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 41]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
          <------------------ L3 service-2 ------------------->
           <------------------ TE-Tunnel-2 ------------------>
@@ -1370,7 +2333,7 @@ Table of Contents
        port_b      Router R2 port which is empty and can
                    potentially populated by coherent pluggables
 
-              Figure 8: Coherent Pluggable Repository Usage 2
+              Figure 12: Coherent Pluggable Repository Usage 2
 
    Let's assume that the operator of this network has already purchased
    coherent pluggables from Vendor-X, which can support the following
@@ -1383,6 +2346,13 @@ Table of Contents
    *  [organization-identifier, operational-mode] = [OIF, 0x3E]
 
    *  [organization-identifier, operational-mode] = [Vendor-X, 0x22]
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 42]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    The following steps outline the details of how this network is
    planned, provisioned, discovered and managed by SDN controllers:
@@ -1431,6 +2401,14 @@ Table of Contents
       pluggables for ports port_a and port_b and provides instructions
       on how to connect them to the respective photonic devices (m1, m2,
       m3).
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 43]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    *  The operator installs the designated pluggables into ports port_a
       and port_b and connects them to the specified photonic devices.
@@ -1481,6 +2459,13 @@ Table of Contents
 
    *  Read-only opaque PM/state attributes
 
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 44]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    As part of coherent pluggable work, we need to address this situation
    where a coherent pluggable contains some proprietary capability,
    configuration and PM/states attributes which are needed to be
@@ -1528,6 +2513,15 @@ Table of Contents
    below.  To demonstrate these solutions, consider the host Vendor-X
    and pluggable Vendor-Y in Figure 1.  Let's assume:
 
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 45]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    *  Vendor-Y has a new read-write proprietary configuration attributes
       "AA" which should be configured in pluggable (in addition to well-
       known attributes such as central-frequency, power and operational-
@@ -1541,7 +2535,7 @@ Table of Contents
 10.1.  Support of Opaque Capability Attributes
 
    The coherent pluggable YANG data model is augmented with a list of
-   new capability attributes.  As demonstrated in Figure 9, the YANG
+   new capability attributes.  As demonstrated in Figure 13, the YANG
    data model is augmented with the following information:
 
    *  ID of new capability proprietary attribute
@@ -1552,7 +2546,7 @@ Table of Contents
 
    *  Maximum value of new attribute
 
-   The Figure 9 shows an example of new capability attribute "CC" whose
+   The Figure 13 shows an example of new capability attribute "CC" whose
    min and max values are 1.1 and 3.3, respectively.
 
     +--ro opaque-capability-attribute-list* [cap-attribute-id]
@@ -1568,11 +2562,21 @@ Table of Contents
      <cap-max-value> 3.3 </cap-max-value>
    </opaque-capability-attribute-list>
 
-             Figure 9: Support of Opaque Capability Attributes
+             Figure 13: Support of Opaque Capability Attributes
 
 10.2.  Support of Opaque Secret Capability Attributes
 
    to be added
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 46]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
 10.3.  Support of Opaque Configuration Attributes (Solution-1)
 
@@ -1584,7 +2588,7 @@ Table of Contents
    the corresponding memory-map locations on the pluggable device.  In
    this solution, the memory-map locations must be known to the
    operator, potentially provided in the Coherent Pluggable Repository.
-   The Figure 10 illustrates the coherent pluggable YANG data model,
+   The Figure 14 illustrates the coherent pluggable YANG data model,
    which has been augmented with the following information:
 
    *  ID of new proprietary configuration attribute
@@ -1600,7 +2604,7 @@ Table of Contents
    configure a new proprietary attribute, "AA," with a value of 100, and
    a memory-map location on the pluggable set to 0x1100.  In this
    process, the host platform receives the attribute "AA" as defined in
-   Figure 10.  The host platform then relays this information to the
+   Figure 14.  The host platform then relays this information to the
    coherent pluggable via the CMIS protocol, without performing any
    interpretation.  In other words, the host platform is not required to
    understand the syntax or semantics of these attributes; it functions
@@ -1620,15 +2624,23 @@ Table of Contents
      <memory-map> 1100 </memory-map>
    </opaque-config-attribute-list>
 
-       Figure 10: Solution-1 for support of opaque config attributes
+       Figure 14: Solution-1 for support of opaque config attributes
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 47]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
 10.4.  Support of Opaque Configuration Attributes (Solution-2)
 
-   This approach is similar to Figure 10 but requires the host platform
+   This approach is similar to Figure 14 but requires the host platform
    to implement lookup logic to determine the memory-map location on the
    pluggables.  In this solution, the coherent pluggable YANG data model
    is augmented with the following new attributes, as shown in
-   Figure 11:
+   Figure 15:
 
    *  ID of new proprietary configuration attribute
 
@@ -1643,12 +2655,12 @@ Table of Contents
    must search the pluggable Repository to locate the corresponding
    memory-map location for each new attribute.  These values are then
    communicated to the pluggable via the CMIS protocol for
-   configuration.  As in Figure 10, the host platform does not need to
+   configuration.  As in Figure 14, the host platform does not need to
    understand the syntax or semantics of the new attributes; it only
    needs to search the pluggable Repository to identify the memory-map
    locations for the new attributes.
 
-   As illustrated in Figure 11, the host platform receives the new
+   As illustrated in Figure 15, the host platform receives the new
    attribute "AA" via its Northbound Interface (NBI), with a
    configuration value of 0x1100.  The host then searches the coherent
    pluggable Repository to determine the memory-map location associated
@@ -1659,6 +2671,24 @@ Table of Contents
    transmitting the values from the NBI to the appropriate memory-map
    locations on the pluggable without needing to understand the meaning
    of the attributes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 48]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
     +--rw opaque-config-attribute-list* [conf-attribute-id]
         +--rw conf-attribute-id             uint32
@@ -1673,14 +2703,14 @@ Table of Contents
      <value> 1100 </value>
    </opaque-config-attribute-list>
 
-       Figure 11: Solution-2 for support of opaque config attributes
+       Figure 15: Solution-2 for support of opaque config attributes
 
 10.5.  Support of Opaque Configuration Attributes (Solution-3)
 
    This solution represents an advanced approach when a new opaque
    configuration attribute is mapped to multiple memory-map locations on
    a pluggable device, or when multiple such attributes are mapped to a
-   single memory-map location on pluggable.  Similar to Figure 11, the
+   single memory-map location on pluggable.  Similar to Figure 15, the
    mapping between these new attributes and their corresponding memory-
    map locations should be detailed in the pluggable Repository.  For
    each new opaque attribute, the host platform is required to perform a
@@ -1707,6 +2737,15 @@ Table of Contents
    different register positions on each read/write, depending on the
    encryption technique used.
 
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 49]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    It is important to note that since the pluggable device encrypts the
    data, mapping the data offers no additional benefit.  The YANG model
    would simply convey the register values as requested.  The properties
@@ -1719,7 +2758,7 @@ Table of Contents
    As an example, let's assume a vendor defines secret attribute "DD"
    for its coherent pluggable.  Vendor first needs to augment IETF data
    model with a list of encrypted values and memory-maps shown in
-   Figure 12.  This very similar to Figure 10 where essentially the host
+   Figure 16.  This very similar to Figure 14 where essentially the host
    functions as a proxy, transmitting the values from the NBI to the
    appropriate memory-map locations on the pluggable without needing to
    understand the meaning and semantics of these attributes.
@@ -1730,7 +2769,7 @@ Table of Contents
         +--rw encrypted-attribute-value     string
         +--rw memory-map                    decimal64
 
-      Figure 12: Solution-4 for support of opaque secret configuration
+      Figure 16: Solution-4 for support of opaque secret configuration
                                  attributes
 
 10.7.  Support of Opaque Performance Monitoring Data
@@ -1754,6 +2793,14 @@ Table of Contents
    existing IETF draft or to a new draft.  We need to align with draft
    https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-poi-pluggable-
    usecases-gaps/ as well]
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 50]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    Referring to Section 5.1, the coherent pluggable capability
    attributes (i.e., supported-modes) are crucial aspects of coherent
@@ -1796,6 +2843,20 @@ Table of Contents
    A pluggable type & version may offer a subset of standard
    capabilities.  The subset is described by simply omitting
    definitions.
+
+
+
+
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 51]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    A pluggable type & version may offer a super-set.  The super-set is
    detailed by adding definitions via "augmentation" to the set of
@@ -1844,6 +2905,15 @@ Table of Contents
 
    The Coherent Pluggable Repository contains four sections:
 
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 52]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    *  Photonic/Optical capability section: This section contains all
       photonic/optical capabilities of the coherent pluggable and
       identifies all read-only attributes.  It also allow augmentation
@@ -1863,7 +2933,7 @@ Table of Contents
       attributes, this section contains the threshold settings for
       threshold crossing alerts (TCA) if applicable.
 
-   Figure 13 illustrates the overall structure of the "Coherent
+   Figure 17 illustrates the overall structure of the "Coherent
    Pluggable Repository".  It contains several operational-mode records
    where each record includes all the capability attributes for tuple
    [organization-identifier, operational-mode].  As discussed in
@@ -1892,6 +2962,14 @@ Table of Contents
      |  (i.e., Read-only attributes defined in                | | |
      |   operational-mode of this draft. For each attribute,  | | |
      |   min, max, default values might be available)         | | |
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 53]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
      |    - attribute A1                                      | | |
      |    - attribute A2                                      | | |
      |      ...                                               | | |
@@ -1938,10 +3016,18 @@ Table of Contents
       - Each record for tuple [organization-identifier,operational-mode]
       - It is machine-readable/interpretable
 
-                  Figure 13: Coherent Pluggable Repository
+                  Figure 17: Coherent Pluggable Repository
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 54]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    Below are several examples that demonstrate the concept of the
-   "Coherent Pluggable Repository."  Figure 14 illustrates the content
+   "Coherent Pluggable Repository."  Figure 18 illustrates the content
    of a Repository record for operational mode 0x3E, as defined by the
    OIF forum.  This operational mode is widely recognized and supported
    by nearly all coherent pluggable devices.  Detailed information
@@ -1959,9 +3045,9 @@ Table of Contents
    // Monitored attributes PM collection
    // Monitored attributes Threshold setting
 
-          Figure 14: Coherent Pluggable repository Defined by OIF
+          Figure 18: Coherent Pluggable repository Defined by OIF
 
-   Figure 15 is anther repository record where the Vendor-X has defined
+   Figure 19 is anther repository record where the Vendor-X has defined
    the operational-mode 0x22.  In this case, Vendor-X defines all the
    attributes related to this operational-mode, which might not be
    supported by other pluggable vendors.
@@ -1978,16 +3064,24 @@ Table of Contents
    // Monitored attributes PM collection
    // Monitored attributes Threshold setting
 
-             Figure 15: Coherent Pluggable repository Example-2
+             Figure 19: Coherent Pluggable repository Example-2
 
-   "Figure 16" presents an example where the Vendor-Y defined an
+   "Figure 20" presents an example where the Vendor-Y defined an
    operational-mode 0x22 as well.  In this scenario, the organization
    associated with the pluggable module is Vendor-Y, which defined the
    same operational-mode 0x22 as "Vendor-X"
 
    It is important to note that while the operational-modes in both
-   Figure 15 and Figure 16 share the same values, they are defined by
+   Figure 19 and Figure 20 share the same values, they are defined by
    different vendors.  Consequently, these operational-modes are not
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 55]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    related and may differ significantly in their attributes.  In other
    words, although the semantics of these modes are identical, their
    actual content might vary significantly.  This is one of the reasons
@@ -2007,7 +3101,7 @@ Table of Contents
    // Monitored attributes PM collection
    // Monitored attributes Threshold setting
 
-             Figure 16: Coherent Pluggable repository Example-3
+             Figure 20: Coherent Pluggable repository Example-3
 
 12.  Security Considerations
 
@@ -2026,11 +3120,46 @@ Table of Contents
               September 2024, <https://www.oiforum.com/wp-
               content/uploads/OIF-CMIS-05.3.pdf>.
 
+   [G.695]    ITU-T Recommendation G.695, "Optical interfaces for coarse
+              wavelength division multiplexing applications", May 2025,
+              <https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-
+              G.695-200402-S!!PDF-E&type=items>.
+
+   [G.698.1]  ITU-T Recommendation G.698.1, "Multichannel DWDM
+              applications with single-channel optical interfaces", June
+              2005, <https://www.itu.int/rec/
+              dologin_pub.asp?lang=f&id=T-REC-G.698.1-200506-S!!PDF-
+              E&type=items>.
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 56]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
+
    [G.698.2]  ITU-T Recommendation G.698.2, "Amplified multichannel
               dense wavelength division multiplexing applications with
               single channel optical interfaces", November 2018,
               <https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-
               G.698.2-201811-I!!PDF-E&type=items>.
+
+   [G.959.1]  "Optical transport network physical layer interfaces",
+              February 2012, <https://www.itu.int/rec/
+              dologin_pub.asp?lang=e&id=T-REC-G.959.1-202401-I!!PDF-
+              E&type=items>.
+
+   [OC-device]
+              "Module to extend OpenConfig terminal device operational
+              modes data",
+              <https://openconfig.net/projects/models/schemadocs/
+              yangdoc/openconfig-terminal-device-properties.html>.
+
+   [OC-platform]
+              "Data model for representing a system component
+              inventory",
+              <https://openconfig.net/projects/models/schemadocs/
+              yangdoc/openconfig-platform.html>.
 
    [OIF-400ZR]
               OIF Forum, "Implementation Agreement 400ZR", November
@@ -2051,33 +3180,59 @@ Table of Contents
               Management Reference Code Tables", November 2023,
               <https://members.snia.org/document/dl/26423>.
 
+   [TAPI-2.5.0]
+              "Linux Foundation Project Transport API (TAPI)",
+              <https://github.com/Open-Network-Models-and-Interfaces-
+              ONMI/TAPI/tree/v2.5.0>.
+
 14.2.  Informative References
 
-   [G.959.1]  "Optical transport network physical layer interfaces",
-              February 2012, <ITU-T Recommendation G.959.1>.
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 57]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    [I-D.ietf-ccamp-dwdm-if-param-yang]
               Galimberti, G., Hiremagalur, D., Grammel, G., Manzotti,
               R., and D. Breuer, "A YANG data model to manage
               configurable DWDM optical interfaces", Work in Progress,
-              Internet-Draft, draft-ietf-ccamp-dwdm-if-param-yang-12, 12
-              February 2025, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-ccamp-dwdm-if-param-yang-12>.
+              Internet-Draft, draft-ietf-ccamp-dwdm-if-param-yang-13, 7
+              July 2025, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-ccamp-dwdm-if-param-yang-13>.
 
    [I-D.ietf-ccamp-optical-impairment-topology-yang]
               Beller, D., Le Rouzic, E., Belotti, S., Galimberti, G.,
               and I. Busi, "A YANG Data Model for Optical Impairment-
               aware Topology", Work in Progress, Internet-Draft, draft-
-              ietf-ccamp-optical-impairment-topology-yang-18, 11 April
+              ietf-ccamp-optical-impairment-topology-yang-19, 7 July
               2025, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              ccamp-optical-impairment-topology-yang-18>.
+              ccamp-optical-impairment-topology-yang-19>.
+
+   [I-D.ietf-ccamp-optical-path-computation-yang]
+              Busi, I., Guo, A., and S. Belotti, "YANG Data Models for
+              requesting Path Computation in WDM Optical Networks", Work
+              in Progress, Internet-Draft, draft-ietf-ccamp-optical-
+              path-computation-yang-06, 29 August 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
+              optical-path-computation-yang-06>.
 
    [I-D.ietf-ccamp-rfc9093-bis]
               Belotti, S., Busi, I., Beller, D., Le Rouzic, E., and A.
-              Guo, "Common YANG Data Types for Layer 0 Networks", Work
-              in Progress, Internet-Draft, draft-ietf-ccamp-rfc9093-bis-
-              13, 17 March 2025, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-ccamp-rfc9093-bis-13>.
+              Guo, "Common YANG Data Types for Layer 0 Optical
+              Networks", Work in Progress, Internet-Draft, draft-ietf-
+              ccamp-rfc9093-bis-16, 7 August 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
+              rfc9093-bis-16>.
+
+   [I-D.ietf-ccamp-wdm-tunnel-yang]
+              Guo, A., Belotti, S., Galimberti, G., de Madrid, U. A.,
+              and D. P. Burrero, "A YANG Data Model for WDM Tunnels",
+              Work in Progress, Internet-Draft, draft-ietf-ccamp-wdm-
+              tunnel-yang-05, 3 July 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
+              wdm-tunnel-yang-05>.
 
 Acknowledgments
 
@@ -2086,6 +3241,14 @@ Acknowledgments
    module
 
 Contributors
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 58]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
+
 
    Nigel Davis
    Ciena
@@ -2118,13 +3281,13 @@ Contributors
 
 
    Gabriele Galimberti
-   Individual
+   Nokia
    Email: ggalimbe56@gmail.com
 
 
    Harish Venkatraman
-   Infinera
-   Email: hvenkatraman@infinera.com
+   Nokia
+   Email: harish.venkatraman@nokia.com
 
 
    Gyan Mishra
@@ -2135,6 +3298,12 @@ Contributors
    Stefan Melin
    Telia
    Email: stefan.melin@teliacompany.com
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 59]
+
+Internet-Draft        Modelling Optical Pluggables        September 2025
 
 
    Majid Hossein Poor
@@ -2172,3 +3341,20 @@ Authors' Addresses
    Gert Grammel
    Juniper
    Email: ggrammel@juniper.net
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rokui, et al.             Expires 12 March 2026                [Page 60]

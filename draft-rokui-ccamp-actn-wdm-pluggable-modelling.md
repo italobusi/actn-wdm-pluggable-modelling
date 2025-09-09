@@ -94,14 +94,14 @@ contributor:
   -
     ins: G. Galimberti
     fullname: Gabriele Galimberti
-    org: Individual
+    org: Nokia
     email: ggalimbe56@gmail.com
 
   -
     ins: H. Venkatraman
     fullname: Harish Venkatraman
-    org: Infinera
-    email: hvenkatraman@infinera.com
+    org: Nokia
+    email: harish.venkatraman@nokia.com
 
   -
     ins: G. Mishra
@@ -144,6 +144,14 @@ normative:
     seriesinfo:
     target: https://www.oiforum.com/wp-content/uploads/OIF-400ZR-02.0.pdf
 
+  G.698.1:
+    title: "Multichannel DWDM applications with single-channel optical interfaces"
+    author:
+      org: ITU-T Recommendation G.698.1
+    date: June 2005
+    seriesinfo:
+    target: https://www.itu.int/rec/dologin_pub.asp?lang=f&id=T-REC-G.698.1-200506-S!!PDF-E&type=items
+
   G.698.2:
     title: "Amplified multichannel dense wavelength division multiplexing applications with single channel optical interfaces"
     author:
@@ -151,6 +159,42 @@ normative:
     date: November 2018
     seriesinfo:
     target: https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.698.2-201811-I!!PDF-E&type=items
+
+  G.695:
+    title: "Optical interfaces for coarse wavelength division multiplexing applications"
+    author:
+      org: ITU-T Recommendation G.695
+    date: May 2025
+    seriesinfo:
+    target: https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.695-200402-S!!PDF-E&type=items
+
+  G.959.1:
+    title: "Optical transport network physical layer interfaces"
+    date: 2012-02
+    target: ITU-T Recommendation G.959.1
+    seriesinfo:
+    target: https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.959.1-202401-I!!PDF-E&type=items
+
+  OC-device:
+    title: "Module to extend OpenConfig terminal device operational modes data"
+    date: Version 0.2.0
+    target: OpenConfig
+    seriesinfo:
+    target: https://openconfig.net/projects/models/schemadocs/yangdoc/openconfig-terminal-device-properties.html
+
+  OC-platform:
+    title: "Data model for representing a system component inventory"
+    date: Version 0.31.0
+    target: OpenConfig
+    seriesinfo:
+    target: https://openconfig.net/projects/models/schemadocs/yangdoc/openconfig-platform.html
+
+  TAPI-2.5.0:
+    title: "Linux Foundation Project Transport API (TAPI)"
+    date: Version 2.5.0
+    target: T-API
+    seriesinfo:
+    target: https://github.com/Open-Network-Models-and-Interfaces-ONMI/TAPI/tree/v2.5.0
 
   SFF8024:
     title: "SFF Module Management Reference Code Tables"
@@ -161,10 +205,6 @@ normative:
     target: https://members.snia.org/document/dl/26423
 
 informative:
-  G.959.1:
-    title: "Optical transport network physical layer interfaces"
-    date: 2012-02
-    target: ITU-T Recommendation G.959.1
 
 --- abstract
 
@@ -172,7 +212,7 @@ This draft outlines the pluggable module attributes within a host device. It inc
 
 This draft provides a gap analysis with respect to existing IETF work in the following areas:
 
-* It provides an analysis of optical attributes provided by other organizations and identifying modeling gaps in current IETF drafts.
+* It provides an analysis of optical attributes in a set of IETF documents with specifications of other organizations to identify modeling gaps.
 * It identifies modeling needs addressing the specific aspect of pluggability of transceiver modules. The authors recognize the fact that that not all pluggable modules are coherent, not all coherent pluggable modules are DWDM capable and not all DWDM capable interfaces are implemented as pluggable modules. This analysis identifies gaps to manage the lifecycle of an optical pluggable module, from operator approval and viability assessment, to deployment, monitoring and phase-out.
 
 The lifecycle of an optical pluggable module, from operator approval and viability assessment to deployment and monitoring, is also addressed.
@@ -239,7 +279,7 @@ The document is divided into the following sections:
 
 - {{data-model}}: Optical Modules Data Modeling
 
-- {{yang-model}}: Addressing Optical Modules Attributes From Google Sheet
+- {{google-sheet}}: Complete list of Optical Modules Attributes From Google Sheet
 
 - {{gap-analysis}}: Optical Module Data Modeling Gap Analysis
 
@@ -545,33 +585,488 @@ Note that sometimes these thresholds are configurable and sometime they are hard
 
 The optical modules might generate various alarm notifications due to the various reasons.
 
-{: #yang-model}
-# Addressing optical modules Attributes From Google Sheet
+{: #google-sheet}
+# Complete list of optical modules Attributes From Google Sheet
 
-\[Editorial Note: This section in under review. It depends on the Gap Analysis as well]
+This draft was initiated to evaluate the completeness of existing IETF models related to optical modules by incorporating data models and insights from other industry forums and standards bodies, including ITU-T, OpenConfig, OIF, and ONF TAPI. In particular, the following documents are examined:
 
-As discussed in the sections on capabilities, configuration, and performance monitoring in {{plug-capabilities-attributes}}, {{plug-config-attribute}}, and {{plug-pm-definition}}, the optical module module includes various read-only capability attributes, read-write configuration attributes, and read-only performance monitoring attributes. For a comprehensive list of these attributes, refer to the accompanying optical module Google Sheet
-(Q: how can we incorporate the Google Sheet?).
+* IETF Common YANG Data Types for Layer 0 Networks {{?I-D.ietf-ccamp-rfc9093-bis}}
+* IETF YANG  data model to manage configurable DWDM optical interfaces {{?I-D.ietf-ccamp-dwdm-if-param-yang}}
+* IETF YANG Data Model for Optical Impairment-aware Topology  {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}
+* IETF YANG Data Model for WDM Tunnels {{?I-D.ietf-ccamp-wdm-tunnel-yang}}
+* IETF YANG Data Models for requesting Path Computation in WDM Optical Networks {{?I-D.ietf-ccamp-optical-path-computation-yang}}
+* Implementation Agreement 400ZR {{OIF-400ZR}}
+* OpenConfig system component inventory{{OC-platform}}
+* OpenConfig terminal device {{OC-device}}
+* ITU-T Multichannel DWDM applications {{G.698.1}}
+* ITU-T Amplified multichannel dense wavelength division multiplexing {{G.698.2}}
+* ITU-T Optical interfaces for coarse wavelength division multiplexing {{G.695}}
+* ITU-T Optical transport network physical layer interfaces {{G.959.1}}
+* Linux Foundation Transport API project {{TAPI-2.5.0}}
 
-Based on outcome of Gap analysis, we need to address the module attributes using approaches such as:
+The primary objective is to assess the properties and structures within these models that are relevant to coherent optical modules and to identify any missing elements or gaps. 
 
-* Augmentation of existing IETF YANG data model (e.g. augmentation of draft {{?I-D.ietf-ccamp-optical-impairment-topology-yang}})
-* Extend the content of an existing IETF YANG model via "bis/update"
+To support this ongoing analysis, relevant properties and structures from both IETF models and external organizations or standards bodies are being collected in Google Sheet. In {{gap-analysis}}, these properties will serve as the foundation for conducting a comprehensive gap analysis.
 
-The detail of this provided after gap analysis on optical module attributes on Google Sheet.
+As discussed in {{plug-capabilities-attributes}}, {{plug-config-attribute}}, and {{plug-pm-definition}}, the google sheet provides the Capabilities, Configuration, and Performance Monitoring attributes for coherent pluggable. The google sheet includes various read-only capability attributes, read-write configuration attributes, and read-only performance monitoring attributes. For a comprehensive list of these attributes, refer to the accompanying optical module Google Sheet.
+
+\[Editorial Note: The reference to the external Google Sheet is used to finalize the gap content, 
+once all the info are incorporated in the draft, and in any case before publication, this link shall be removed. Please also note that the content of the google sheet is very important and shall be captured in draft as a table or something else in Appendix section]
+
+You can [download the Google sheet](/Users/rrokui/Desktop/optical-pluggable-attributes-v00-GAP.xslx) to see all the details.
+
 
 {: #gap-analysis}
 # Optical Module Data Modeling Gap Analysis
 
-\[Editorial Note: This section in under review. Will start after finishing the Google Sheet]
+\[Editorial Note: The “Optical Module Data Modeling Gap Analysis” section is still work in progress and the attributes listed in the 3 tables below are subject to change since some comments present in the original Google sheet have not been resolved and agreed yet]
 
-This draft on "coherent optical module data model and gap analysis" was initiated to examine existing IETF models related to modules for "completeness" to assess existing IETF properties/structures which are relevant to coherent optical modules and also to look for missing properties/structures. The goal of current work is to achieve best positioning of the IETF work with respect to the other related activities in the industry.
+To support gap analysis of optical pluggables in packet-over-optical networks, the Google Sheet referenced in {{google-sheet}} is utilized. The attributes listed in the sheet are systematically examined to determine their applicability to optical pluggables. For applicable attributes, a cross-check is performed to verify whether they are included in existing IETF data models. Attributes not present in the IETF models are identified as gaps. Where necessary, proposals for updates or modifications to the IETF models are developed to address these gaps or misalignments.
 
-To carry out this ongoing examination, properties/structures from relevant external bodies are collected and compared with properties/structures present in IETF models related to coherent modules. Where properties/structures differ the differences are examined and justifications considered and justification provided for changes to the IETF models these are proposed.
+{: #gap-analysis-capabilities}
+## List of Missing Optical Pluggable Capability Attributes Based on Gap Analysis
 
-The following items are identified as initial gap related to optical modules. Note that the complete list will be provided after finishing the Google Sheet.
+{{figure-gap-analysis-capabilities}} provides the missing capabilities attributes highlights important optical pluggable parameters and features that are defined by other standards development organizations (SDOs) and industry forums, but are currently absent from IETF YANG models. 
 
-* Syntax gaps: Naming inconsistency on existing IETF drafts {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}, {{?I-D.ietf-ccamp-rfc9093-bis}} and {{?I-D.ietf-ccamp-dwdm-if-param-yang}} if any.
+Note that the "Attribute Number" refers to numbering in Google Sheet.
+
+Harmonizing these attributes between SDOs, and IETF models would support the evolution of open, programmable, and interoperable optical networks.
+
+~~~~
+
+For each Attribute Name, 
+- First table displays the "Missing Capability Attributes" 
+- Second table displays the "Summary Description of Missing  
+  Capability Attributes"
+
+| --------- | ------------------------------------------ | --------- |
+| Attribute | Missing Capability Attributes              | source    |
+| Number    |                                            |           |
+| --------- | ------------------------------------------ | --------- |
+| 4         | tag-id                                     | IETF      |
+| 16        | Post FEC BER                               | oif       |
+| 17        | pre-fec-ber                                |           |
+| 18        | Target reach                               | oif/itu-t |
+| 19        | Ripple                                     | oif/itu-t |
+| 20        | max-bit-error-ratio                        | itu-t     |
+| 22        | min-chromatic-dispersion                   | oif       |
+| 36        | Polarization Rotation Speed                | oif/itu-t |
+| 39        | min-tx-osnr                                | OpenConfg |
+| 46        | pulse-shaping-type                         | OpenConfg |
+| 53        | fec-coding                                 | OpenConfg |
+| 68        | Minimum mean input power                   | itu-t     |
+| 70        | Maximum mean total input power             | itu-t     |
+| 71        | Maximum mean total output power            | itu-t     |
+| 73        | Maximum channel power difference           | itu-t     |
+| 79        | Minimum equivalent sensitivity             | itu-t     |
+| 80        | Maximum reflectance of receiver            | itu-t     |
+| 86        | max-laser-temperature                      | ietf      |
+| 87        | grid-type                                  | OpenConfg |
+|           |                                            | /tapi     |
+| 88        | adjustment-granularity                     | OpenConfg |
+|           |                                            | /tapi     |
+| 91        | noise-figure                               | IETF/tapi |
+| 92        | Maximum spectral excursion                 | itu-t     |
+| 93        | Minimum side mode suppression ratio        | itu-t     |
+| 95        | max-transmitter-residual-dispersion-osnr-  | itu-t     |
+|           | penalty                                    |           |
+| 107       | line-coding                                | itu-t     |
+| 112       | max-central-wavelength-deviation           | itu-t     |
+| 116       | max-duty-cycle                             | itu-t     |
+| 117       | max-laser-linewidth                        | itu-t     |
+| 121       | Maximum offset between the carrier and the | itu-t     |
+|           | nominal central frequency                  |           |
+| 123       | Maximum skew between the two polarizations | itu-t     |
+| 125       | Maximum spectral power density             | itu-t     |
+| 126       | Maximum TDECQ                              | itu-t     |
+| 127       | Maximum I-Q offset                         | itu-t     |
+| 157       | Laser frequency accuracy                   | oif       |
+| 158       | Laser frequency noise                      | oif       |
+| 159       | TX spectral Upper Mask & TX spectral Lower | oif       |
+|           | Mask                                       |           |
+| 160       | Laser RIN                                  | oif       |
+| 161       | Tx clock phase noise (PN): Maximum PN mask | oif       |
+|           | for low frequency PN                       |           |
+| 162       | Tx clock phase noise (PN); Maximum total   | oif       |
+|           | integrated RMS phase jitter between 10kHz  |           |
+|           | and 10MHz                                  |           |
+| 163       | Tx clock phase noise (PN)                  | oif       |
+| 164       | Minimum Excess Bandwidth                   | oif       |
+| 168       | Total output power with Tx disabled        | oif       |
+| 169       | Total output power during wavelength       | oif       |
+|           | switching                                  |           |
+| 170       | Transmit output power stability            | oif       |
+| 171       | Transmit output power control absolute     | oif       |
+|           | accuracy                                   |           |
+| 174       | Transmitter reflectance                    | oif       |
+| 175       | Transmitter back reflection tolerance      | oif       |
+| 176       | Transmitter polarization dependent power   | oif       |
+| 177       | X-Y Skew                                   | oif       |
+| 178       | DC I-Q offset (mean per polarization)      | oif       |
+| 179       | I-Q instantaneous offset                   | oif       |
+| 180       | Mean I-Q amplitude imbalance               | oif       |
+| 181       | I-Q phase error                            | oif       |
+| 182       | I-Q Skew                                   | oif       |
+| 184       | Frequency offset between received carrier  | oif       |
+|           | and LO                                     |           |
+| 188       | Optical return loss                        | oif       |
+| 195       | Tolerance to change in SOP                 | oif       |
+| 196       | Optical input power transient tolerance    | oif       |
+| 197       | Adjacent Channel Crosstalk OSNR Tolerance  | oif       |
+|           | penalty                                    |           |
+| 198       | Intra-Channel filtering penalty            | oif       |
+| --------- | ------------------------------------------ | --------- |
+
+
+| --------- | ------------------------------------------------------ |
+| Attribute | Summary Description of                                 |
+| Number    | Missing Capability Attributes                          |
+| --------- | ------------------------------------------------------ |
+| 4         | list of {tag-type, tag-value}                          |
+| 16        | Refers to error rate measured after applying FEC       |
+| 17        | Bit error rate measured before forward error           |
+|           | correction decoding                                    |
+| 18        | Max optical transmission distance that a coherent      |
+|           | pluggable module can support                           |
+| 19        | Peak-to-peak insertion loss difference within filter   |
+|           | clear bandwidth of the Mux or Demux                    |
+| 20        | Max acceptable bit error rate for a pluggable optical  |
+|           | module                                                 |
+| 22        | Min value of chromatic dispersion (CD) compensation    |
+|           | range supported by an optical pluggable                |
+| 36        | Max rate a coherent optical receiver can track and     |
+|           | compensate for changes in polarization state of        |
+|           | incoming optical signal                                |
+| 39        | Min OSNR that the pluggable module's transmitter is    |
+|           | capable of generating                                  |
+| 46        | Digital filtering technique applied to electrical      |
+|           | signal before it modulates optical carrier             |
+| 53        | Forward error correction coding schema used in the     |
+|           | transmission mode                                      |
+| 68        | Min values of the average received power at point RS   |
+| 70        | Highest allowable average power level that can be      |
+|           | input into a system or component at a specified point  |
+| 71        | Analogous to "Maximum mean total input power," but for |
+|           | output direction                                       |
+| 73        | max allowable difference in power levels between       |
+|           | channels in a multi-channel optical transmission       |
+| 79        | min optical power level that a receiver requires to    |
+|           | decode incoming signals accurately                     |
+| 80        | highest allowable level of optical reflectance from the|
+|           | receiver within those components                       |
+| 86        | highest laser temperature recorded or allowed for a    |
+|           | laser                                                  |
+| 87        | attribute that defines frequency grid used for optical |
+|           | channels                                               |
+| 88        | min spectrum separation between the central frequencies|
+|           | of two adjacent optical channels                       |
+| 91        | expressed as ratio of input SNR to output SNR.         |
+|           | Quantifies how much noise a component adds to signal   |
+| 92        | max acceptable difference between the nominal central  |
+|           | frequency  and  signal power drops                     |
+| 93        | A measure of how much the power of the main mode in a  |
+|           | laser exceeds that of its side modes                   |
+| 95        | An additional SNR penalty at lowest power with         |
+|           | worst-case dispersion                                  |
+| 107       | List of methods of encoding digital data into signal   |
+|           | waveforms, ensuring proper timing and synchronization  |
+| 112       | difference between the nominal central wavelength and  |
+|           | the actual central wavelength                          |
+| 116       | max percentage of time that a signal is in an active or|
+|           | "ON" state within a given period                       |
+| 117       | max allowable width of laser optical signal            |
+| 121       | max allowed deviation between actual carrier frequency |
+|           | of an optical signal and its nominal central frequency |
+| 123       | max difference in timing or phase between signals      |
+|           | transmitted on different polarizations                 |
+| 125       | max allowable optical power per unit frequency or      |
+|           | wavelength interval in a system                        |
+| 126       | Transmitter Dispersion and Eye Closure Quaternary, a   |
+|           | metric to evaluate performance of optical transmitters |
+| 127       | max I-Q offset difference between in-phase (I) and     |
+|           | quadrature (Q) of a modulated signal                   |
+| 157       | max deviation of a laser's actual output frequency from|
+|           | its nominal channel frequency                          |
+| 158       | Describes the random fluctuations in the laser's output|
+|           | frequency over time                                    |
+| 159       | max allowable optical power limits at specific         |
+|           | frequency offsets from the carrier wavelength          |
+| 160       | Laser Relative Intensity Noise quantifies random       |
+|           | fluctuations in laser’s optical power output           |
+| 161       | refers to random fluctuations in the timing of the     |
+|           | transmitted signal's clock                             |
+| 162       | refers to the random fluctuations in timing of the     |
+|           | transmitted signal's clock                             |
+| 163       | refers to the random fluctuations in the timing of the |
+|           | transmitted signal's clock                             |
+| 164       | min spectral width beyond theoretical minimum required |
+|           | by the signal's data rate                              |
+| 168       | amount of optical power emitted by pluggable when      |
+|           | transmitter is intentionally turned off                |
+| 169       | optical power level of  pluggable transmitter during   |
+|           | brief period when it is changing its output wavelength |
+| 170       | ability of a transmitter to maintain a consistent      |
+|           | optical output power level over time                   |
+| 171       | how closely actual output power matches the desired or |
+|           | configured output power level                          |
+| 174       | amount of optical power reflected back from the        |
+|           | transmitter into the optical fiber                     |
+| 175       | Max amount of optical power reflected back towards     |
+|           | transmitter without performance degradation            |
+| 176       | variation in optical power emitted by a transmitter    |
+|           | depending on the polarization state of the light       |
+| 177       | timing skew between the X and Y polarization components|
+|           | of an optical signal in a coherent system              |
+| 178       | average DC offset In-phase (I) and Quadrature (Q)      |
+|           | components of received signal for each polarization    |
+| 179       | time-varying or dynamic offset between In-phase (I)    |
+|           | and Quadrature (Q) components of received signal       |
+| 180       | average difference in amplitude between In-phase (I)   |
+|           | and Quadrature (Q) components of the received signal   |
+| 181       | deviation from 90-degree phase relationship between    |
+|           | In-phase (I) and Quadrature (Q) of received signal     |
+| 182       | time delay or misalignment between In-phase (I) and    |
+|           | Quadrature (Q) components of a signal                  |
+| 184       | difference between frequency of incoming optical signal|
+|           | and the local oscillator (LO) frequency                |
+| 188       | total reflected light caused by discontinuities in an  |
+|           | optical path, expressed as ratio of incident to        |
+|           | reflected power                                        |
+| 195       | ability of an optical receiver to maintain acceptable  |
+|           | performance despite variations in State of Polarization|
+|           | (SOP)                                                  |
+| 196       | ability of an optical receiver to maintain acceptable  |
+|           | performance when subjected to sudden changes in        |
+|           | received optical power level                           |
+| 197       | increase in required OSNR to maintain a specific BER   |
+|           | due to interference caused by neighboring optical      |
+|           | channels                                               |
+| 198       | degradation in signal quality, measured as an increase |
+|           | in required OSNR to achieve a target BER               |
+| --------- | ------------------------------------------------------ |
+
+Note: The "Attribute Number" refers to numbering in Google Sheet
+
+~~~~
+{: #figure-gap-analysis-capabilities title="List of Optical Pluggable Capability Attributes Based on Gap Analysis"}
+
+
+{: #gap-analysis-config}
+## List of Missing Optical Pluggable Configuration Attributes Based on Gap Analysis
+
+
+{{figure-gap-analysis-Configuration}} identifies configuration attributes for optical pluggables defined by other standards development organizations (SDOs) and industry forums which may not be fully represented in IETF YANG models. 
+
+Note that the "Attribute Number" refers to numbering in Google Sheet.
+
+~~~~
+
+For each Attribute Name, 
+- First table displays the "Missing Configuration Attributes" 
+- Second table displays the "Summary Description of Missing  
+  Configuration Attributes"
+  
+| --------- | ------------------------------------------ | --------- |
+| Attribute | Missing Configuration Attributes           | source    |
+| Number    |                                            |           |
+| --------- | ------------------------------------------ | --------- |
+| 206       | admin-state                                |           |
+| 210       | line-coding-bit-rate                       | tapi      |
+| --------- | ------------------------------------------ | --------- |
+
+| --------- | ------------------------------------------------------ |
+| Attribute | Summary Description of                                 |
+| Number    | Missing Configuration Attributes                       |
+| --------- | ------------------------------------------------------ |
+| 206       | This is pluggable admin state.                         |
+| 210       | Identifies the line coding e.g. NRZ-10G and is drawn   |
+|           | from G.698.2.                                          |
+| --------- | ------------------------------------------------------ |
+
+Note: The "Attribute Number" refers to numbering in Google Sheet
+
+~~~~
+{: #figure-gap-analysis-Configuration title="List of Optical Pluggable Configuration Attributes Based on Gap Analysis"}
+
+
+{: #gap-analysis-pm}
+## List of Missing Optical Pluggable PM/States Attributes Based on Gap Analysis
+
+{{figure-gap-analysis-pm}} highlights missing Performance monitoring and States attributes for optical pluggables. Note that the "Attribute Number" refers to numbering in Google Sheet.
+
+~~~~
+
+For each Attribute Name, 
+- First table displays the "Missing PM/States Attributes" 
+- Second table displays the "Summary Description of Missing  
+  PM/States Attributes"
+
+| --------- | ------------------------------------------ | --------- |
+| Attribute | Missing PM/States Attributes               | Source    |
+| Number    |                                            |           |
+| --------- | ------------------------------------------ | --------- |
+| 216       | operational-state                          |           |
+| 218       | central-frequency-offset                   | OpenConfg/|
+|           |                                            | oif/t-api |
+| 222       | chromatic-dispersion                       | OpenConfg/|
+|           |                                            | oif/tapi  |
+| 233       | supply-voltage                             | OpenConfg |
+| 234       | laser-bias-current                         | OpenConfg |
+| 235       | max-polarization-dependent-loss            | OpenConfg |
+| 237       | modulation-error-ratio                     | OpenConfg |
+| 238       | fec-uncorrectable-blocks                   | OpenConfg |
+| 239       | q-value                                    | OpenConfg |
+| 250       | EVMmax                                     | oif       |
+| 251       | EVMrms                                     | oif       |
+| 252       | MER                                        | oif       |
+| 253       | eSNR                                       | OpenConfg/|
+|           |                                            | oif       |
+| 254       | SNR Margin                                 | oif       |
+| 255       | CD-high granularity, short link            | oif       |
+| 256       | CD-low granularity, long link              | oif       |
+| 257       | DGD                                        | oif       |
+| 258       | SOPMD                                      | OpenConfg/|
+|           |                                            | oif       |
+| 259       | PDL                                        | oif       |
+| 260       | SOP ROC                                    | OpenConfg/|
+|           |                                            | oif       |
+| 261       | Tx Total Power                             | oif       |
+| 264       | CFO                                        | oif       |
+| 265       | Modulator Bias X/I                         | OpenConfg/|
+|           |                                            | oif       |
+| 266       | Modulator Bias X/Q                         | OpenConfg/|
+|           |                                            | oif       |
+| 267       | Modulator Bias Y/I                         | OpenConfg/|
+|           |                                            | oif       |
+| 268       | Modulator Bias Y/Q                         | OpenConfg/|
+|           |                                            | oif       |
+| 269       | Modulator Bias X Phase                     | OpenConfg/|
+|           |                                            | oif       |
+| 270       | Modulator Bias Y Phase                     | OpenConfg/|
+|           |                                            | oif       |
+| 271       | self-phase-modulation (SPM)                | itu-t     |
+| 272       | cross-phase-modulation (XPM)               | itu-t     |
+| 273       | Frequency offset between received carrier  | oif       |
+|           | and LO                                     |           |
+| 274       | total-channel-output-power                 | IETF      |
+| --------- | ------------------------------------------ | --------- |
+
+| --------- | ------------------------------------------------------ |
+| Attribute | Summary Description of                                 |
+| Number    | Missing PM/States Attributes                           |
+| --------- | ------------------------------------------------------ |
+| 216       | This is pluggable admin state.                         |
+| 218       | Frequency difference between nominal and actual optical|
+|           | carrier frequencies, causing phase rotation and        |
+|           | requiring DSP compensation in coherent systems. It is  |
+|           | a key parameter in OIF and T-API for channel alignment |
+|           | and interoperability in DWDM networks.                 |
+| 222       | Wavelength-dependent variation in light speed within an|
+|           | optical fiber causing pulse broadening, expressed in   |
+|           | ps/nm/km, and is a key factor limiting optical         |
+|           | transmission performance as defined in ITU-T fiber     |
+|           | standards                                              |
+| 233       | Supply voltage to the transceiver in volts             |
+| 234       | Current applied by the system to the transmit laser to |
+|           | achieve the output power.                              |
+| 235       | Maximum polarization-dependent-loss accumulated value, |
+|           | supported by the optical channel associated to the     |
+|           | associated transmission mode expressed in dB           |
+| 237       | Modulation error ratio in dB with two decimal precision|
+| 238       | Number of blocks or frames that were uncorrectable by  |
+|           | the FEC                                                |
+| 239       | Quality value (factor) in dB of a channel with two     |
+|           | decimal precision.                                     |
+| 250       | EVMmax (Error Vector Magnitude Mx) is a metric for     |
+|           | evaluating maximum error vector magnitude in coherent  |
+|           | optics, used for quality and impairment measurement in |
+|           | coherent optical transceivers                          |
+| 251       | Error Vector Magnitude normalized by RMS value of      |
+|           | reference constellation points used to evaluate        |
+|           | coherent optical signal quality                        |
+| 252       | Modulation Error Ratio (MER) is a measure of how far   |
+|           | received symbols deviate from their ideal constellation|
+|           | position.                                              |
+| 253       | Effective Signal-to-Noise Ratio, reflecting combined   |
+|           | optical and electrical impairments.                    |
+| 254       | The difference between the measured SNGR and the       |
+|           | tolerable SNR that still allows acceptable BER and/or  |
+|           | Q-factor.                                              |
+| 255       | High-granularity chromatic dispersion measurement for  |
+|           | short spans (media-side fiber estimate). DSP estimates |
+|           | chromatic dispersion based on signal shape and         |
+|           | compensation requirements.                             |
+| 256       | Low-granularity chromatic dispersion measurement for   |
+|           | longer spans (media-side fiber estimate). DSP estimates|
+|           | chromatic dispersion based on signal shape and         |
+|           | compensation requirements                              |
+| 257       | Differential Group Delay - max delay between           |
+|           | polarization modes. Transponder DSP measures           |
+|           | Differential Group Delay as part of PMD compensation   |
+| 258       | Second Order Polarization Mode Dispersion measured with|
+|           | fine granularity                                       |
+| 259       | Polarization Dependent Loss (affects coherent detection|
+|           | DSP can estimate it dynamically                        |
+| 260       | Rate of change of polarization state. Measured in      |
+|           | real-time by tracking the speed of polarization state  |
+|           | rotation at the Rx                                     |
+| 261       | Total optical power emitted by the transmitter module, |
+|           | critical for link budget and interoperability          |
+| 264       | Central Frequency Offset is frequency mismatch between |
+|           | transmitter and receiver oscillators causing phase     |
+|           | errors and interference in coherent optical systems    |
+| 265       | Bias on the in-phase (I) path of polarization X in a   |
+|           | coherent optical modulator, expressed as a percentage  |
+|           | with 2 decimal places, including statistical values    |
+|           | (instant, avg, min, max)                               |
+| 266       | Bias on the quadrature (Q) path of polarization X in a |
+|           | coherent optical modulator, similarly expressed as a   |
+|           | percentage with 2 decimal places, including the same   |
+|           | set of statistical values (instant, avg, min, max)     |
+| 267       | Bias on the in-phase (I) path of polarization Y in a   |
+|           | coherent optical modulator, expressed as a percentage  |
+|           | with 2 decimal places, including statistical values    |
+|           | (instantaneous, average, min, max)                     |
+| 268       | Bias on the quadrature (Q) path of polarization Y in a |
+|           | coherent optical modulator, expressed as a percentage  |
+|           | with 2 decimal places, including statistical values    |
+|           | (instantaneous, average, min, max)                     |
+| 269       | Bias on phase path of polarization X in a coherent     |
+|           | optical modulator, expressed as a percentage with 2    |
+|           | decimal places, including statistical values           |
+|           | (instantaneous, average, min, max)                     |
+| 270       | Bias on phase path of polarization Y in a coherent     |
+|           | optical modulator, expressed as a percentage with 2    |
+|           | decimal places, including statistical values           |
+|           | (instantaneous, average, min, max)                     |
+| 271       | A nonlinear optical effect where the phase of a light  |
+|           | pulse is modulated by its own intensity due to the Kerr|
+|           | effect, leading to a time-dependent phase shift and    |
+|           | spectral broadening of the pulse as it propagates      |
+|           | through an optical medium like a fiber                 |
+| 272       | A nonlinear optical effect where the intensity of one  |
+|           | light signal modulates the phase of another signal     |
+|           | traveling through the same fiber, leading to inter-    |
+|           | channel crosstalk and signal degradation in wavelength |
+|           | division multiplexing (WDM) system                     |
+| 273       | Estimated frequency offset is a key performance        |
+|           | indicator that can be monitored to assess the health   |
+|           | and stability of the link                              |
+| 274       | The total output power of this interface               |
+| --------- | ------------------------------------------------------ |
+
+Note: The "Attribute Number" refers to numbering in Google Sheet
+
+~~~~
+{: #figure-gap-analysis-pm title="List of Optical Pluggable PM State Attributes Based on Gap Analysis"}
+
+
+{: #gap-syntax}
+## Coherent Pluggable Syntax Gaps
+
+Addressing syntax gaps in coherent pluggable attributes is crucial for achieving consistent and interoperable management across different implementations. One key issue lies in establishing a standardized naming convention. There are some naming inconsistency on existing IETF drafts {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}, {{?I-D.ietf-ccamp-rfc9093-bis}} and {{?I-D.ietf-ccamp-dwdm-if-param-yang}}. 
+
+{{figure-gap-syntax}} shows a proposal for naming convention of optical pluggable attributes.  The current proposal, while illustrative, may need further refinement to ensure clarity and avoid ambiguity. Specifically, the prefixing of attributes with directions like "tx" or "rx" should be consistently applied to all relevant parameters to clearly identify the directionality of the signal. The example also shows the need to clearly define the value type associated with the attribute, such as min, max, current, or none, for a cohesive and standardized approach. Furthermore, the examples for attribute naming should be universally adopted to establish an attribute mapping that is aligned with IETF, improving the overall clarity and usability of the YANG models for managing coherent pluggables.
 
 ~~~~
 Naming convention:
@@ -592,10 +1087,15 @@ Examples:
     for IETF attribute "channel-output-power", use
        tx-channel-power
 ~~~~
+{: #figure-gap-syntax title="Proposed naming convention for optical pluggable attribute names"}
 
-* Semantic gaps: As part of gap analysis and for a complete solution for optical module, there should be some alignment between the capabilities, configuration, PM attributes and PM thresholds supported by IETF optical module and OIF supported by {{CMIS}}. This needs further investigation.
+{: #gap-analysis-next-steps}
+## Next Steps on Optical Module Data Modeling Gap Analysis
 
-* \[Editor's note: More to be added after Gap Analysis.]
+Based on the results of the gap analysis, the next step will be to incorporate the identified pluggable attributes using one of the proposed approaches. It is important to note that this step represents the final phase of this draft, and its details will be provided in the next version of this draft.
+
+* Augmentation of existing IETF YANG data model (e.g. augmentation of draft {{?I-D.ietf-ccamp-optical-impairment-topology-yang}})
+* Extend the content of an existing IETF YANG model via "bis/update"
 
 {: #plug-lcm}
 # Optical pluggable modules Lifecycle Management
