@@ -15,7 +15,7 @@
        This draft provides a gap analysis with respect to existing IETF work in the following areas: 
        
          
-           It provides an analysis of optical attributes provided by other organizations and identifying modeling gaps in current IETF drafts. 
+           It provides an analysis of optical attributes in a set of IETF documents with specifications of other organizations to identify modeling gaps. 
          
          
            It identifies modeling needs addressing the specific aspect of pluggability of transceiver modules. The authors recognize the fact that that not all pluggable modules are coherent, not all coherent pluggable modules are DWDM capable and not all DWDM capable interfaces are implemented as pluggable modules. This analysis identifies gaps to manage the lifecycle of an optical pluggable module, from operator approval and viability assessment, to deployment, monitoring and phase-out. 
@@ -23,27 +23,26 @@
        
        The lifecycle of an optical pluggable module, from operator approval and viability assessment to deployment and monitoring, is also addressed. 
     " name="description">
-<meta content="xml2rfc 3.28.1" name="generator">
+<meta content="xml2rfc 3.31.0" name="generator">
 <meta content="next generation" name="keyword">
 <meta content="unicorn" name="keyword">
 <meta content="sparkling distributed ledger" name="keyword">
-<meta content="draft-rokui-ccamp-actn-wdm-pluggable-modelling-latest" name="ietf.draft">
+<meta content="draft-ietf-ccamp-actn-wdm-pluggable-modelling-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.28.1
-    Python 3.12.10
+  xml2rfc 3.31.0
+    Python 3.12.12
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.6
-    lxml 5.3.0
-    platformdirs 4.3.8
+    lxml 5.3.1
+    platformdirs 4.5.0
     pycountry 24.6.1
     PyYAML 6.0.2
-    requests 2.32.3
-    setuptools 70.3.0
-    wcwidth 0.2.13
+    requests 2.32.5
+    wcwidth 0.2.14
 -->
-<link href="draft-rokui-ccamp-actn-wdm-pluggable-modelling.xml" rel="alternate" type="application/rfc+xml">
+<link href="draft-ietf-ccamp-actn-wdm-pluggable-modelling.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
 <style type="text/css">@font-face {
   font-family: 'Lora';
@@ -1060,11 +1059,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Modelling Optical Pluggables</td>
-<td class="right">May 2025</td>
+<td class="right">December 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Rokui, et al.</td>
-<td class="center">Expires 27 November 2025</td>
+<td class="center">Expires 15 June 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1074,15 +1073,15 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dt class="label-workgroup">Workgroup:</dt>
 <dd class="workgroup">Common Control and Measurement Plane</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
-<dd class="internet-draft">draft-rokui-ccamp-actn-wdm-pluggable-modelling-latest</dd>
+<dd class="internet-draft">draft-ietf-ccamp-actn-wdm-pluggable-modelling-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-05-26" class="published">26 May 2025</time>
+<time datetime="2025-12-12" class="published">12 December 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-11-27">27 November 2025</time></dd>
+<dd class="expires"><time datetime="2026-06-15">15 June 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1115,7 +1114,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-abstract-2">This draft provides a gap analysis with respect to existing IETF work in the following areas:<a href="#section-abstract-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-abstract-3.1">
-          <p id="section-abstract-3.1.1">It provides an analysis of optical attributes provided by other organizations and identifying modeling gaps in current IETF drafts.<a href="#section-abstract-3.1.1" class="pilcrow">¶</a></p>
+          <p id="section-abstract-3.1.1">It provides an analysis of optical attributes in a set of IETF documents with specifications of other organizations to identify modeling gaps.<a href="#section-abstract-3.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-abstract-3.2">
           <p id="section-abstract-3.2.1">It identifies modeling needs addressing the specific aspect of pluggability of transceiver modules. The authors recognize the fact that that not all pluggable modules are coherent, not all coherent pluggable modules are DWDM capable and not all DWDM capable interfaces are implemented as pluggable modules. This analysis identifies gaps to manage the lifecycle of an optical pluggable module, from operator approval and viability assessment, to deployment, monitoring and phase-out.<a href="#section-abstract-3.2.1" class="pilcrow">¶</a></p>
@@ -1130,7 +1129,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
 <p id="section-note.1-2">
         The latest revision of this draft can be found at <span><a href="https://italobusi.github.io/actn-wdm-pluggable-modelling/draft-rokui-ccamp-actn-wdm-pluggable-modelling.html">https://italobusi.github.io/actn-wdm-pluggable-modelling/draft-rokui-ccamp-actn-wdm-pluggable-modelling.html</a></span>.
-        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-rokui-ccamp-actn-wdm-pluggable-modelling/">https://datatracker.ietf.org/doc/draft-rokui-ccamp-actn-wdm-pluggable-modelling/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
+        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-wdm-pluggable-modelling/">https://datatracker.ietf.org/doc/draft-ietf-ccamp-actn-wdm-pluggable-modelling/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
 <p id="section-note.1-3">
         Discussion of this document takes place on the
         Common Control and Measurement Plane Working Group mailing list (<span><a href="mailto:ccamp@ietf.org">mailto:ccamp@ietf.org</a></span>),
@@ -1158,7 +1157,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 27 November 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 15 June 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1237,10 +1236,27 @@ svg :is([fill="white"], [fill^="#fff"]) {
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-addressing-optical-modules-" class="internal xref">Addressing optical modules Attributes From Google Sheet</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-complete-list-of-optical-mo" class="internal xref">Complete list of optical modules Attributes From Google Sheet</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
             <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-optical-module-data-modelin" class="internal xref">Optical Module Data Modeling Gap Analysis</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.1">
+                <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="auto internal xref">7.1</a>.  <a href="#name-list-of-missing-optical-plu" class="internal xref">List of Missing Optical Pluggable Capability Attributes Based on Gap Analysis</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2">
+                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-list-of-missing-optical-plug" class="internal xref">List of Missing Optical Pluggable Configuration Attributes Based on Gap Analysis</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.3">
+                <p id="section-toc.1-1.7.2.3.1"><a href="#section-7.3" class="auto internal xref">7.3</a>.  <a href="#name-list-of-missing-optical-plugg" class="internal xref">List of Missing Optical Pluggable PM/States Attributes Based on Gap Analysis</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.4">
+                <p id="section-toc.1-1.7.2.4.1"><a href="#section-7.4" class="auto internal xref">7.4</a>.  <a href="#name-coherent-pluggable-syntax-g" class="internal xref">Coherent Pluggable Syntax Gaps</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.5">
+                <p id="section-toc.1-1.7.2.5.1"><a href="#section-7.5" class="auto internal xref">7.5</a>.  <a href="#name-next-steps-on-optical-modul" class="internal xref">Next Steps on Optical Module Data Modeling Gap Analysis</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
             <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-optical-pluggable-modules-l" class="internal xref">Optical pluggable modules Lifecycle Management</a></p>
@@ -1416,7 +1432,7 @@ appear in all capitals, as shown here.<a href="#section-1-1" class="pilcrow">¶<
           <p id="section-2-11.3.1"><a href="#data-model" class="auto internal xref">Section 5</a>: Optical Modules Data Modeling<a href="#section-2-11.3.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-2-11.4">
-          <p id="section-2-11.4.1"><a href="#yang-model" class="auto internal xref">Section 6</a>: Addressing Optical Modules Attributes From Google Sheet<a href="#section-2-11.4.1" class="pilcrow">¶</a></p>
+          <p id="section-2-11.4.1"><a href="#google-sheet" class="auto internal xref">Section 6</a>: Complete list of Optical Modules Attributes From Google Sheet<a href="#section-2-11.4.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-2-11.5">
           <p id="section-2-11.5.1"><a href="#gap-analysis" class="auto internal xref">Section 7</a>: Optical Module Data Modeling Gap Analysis<a href="#section-2-11.5.1" class="pilcrow">¶</a></p>
@@ -1844,24 +1860,59 @@ appear in all capitals, as shown here.<a href="#section-1-1" class="pilcrow">¶<
 </div>
 </section>
 </div>
-<div id="yang-model">
+<div id="google-sheet">
 <section id="section-6">
-      <h2 id="name-addressing-optical-modules-">
-<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-addressing-optical-modules-" class="section-name selfRef">Addressing optical modules Attributes From Google Sheet</a>
+      <h2 id="name-complete-list-of-optical-mo">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-complete-list-of-optical-mo" class="section-name selfRef">Complete list of optical modules Attributes From Google Sheet</a>
       </h2>
-<p id="section-6-1">[Editorial Note: This section in under review. It depends on the Gap Analysis as well]<a href="#section-6-1" class="pilcrow">¶</a></p>
-<p id="section-6-2">As discussed in the sections on capabilities, configuration, and performance monitoring in <a href="#plug-capabilities-attributes" class="auto internal xref">Section 5.1</a>, <a href="#plug-config-attribute" class="auto internal xref">Section 5.2</a>, and <a href="#plug-pm-definition" class="auto internal xref">Section 5.3</a>, the optical module module includes various read-only capability attributes, read-write configuration attributes, and read-only performance monitoring attributes. For a comprehensive list of these attributes, refer to the accompanying optical module Google Sheet
-(Q: how can we incorporate the Google Sheet?).<a href="#section-6-2" class="pilcrow">¶</a></p>
-<p id="section-6-3">Based on outcome of Gap analysis, we need to address the module attributes using approaches such as:<a href="#section-6-3" class="pilcrow">¶</a></p>
+<p id="section-6-1">This draft was initiated to evaluate the completeness of existing IETF models related to optical modules by incorporating data models and insights from other industry forums and standards bodies, including ITU-T, OpenConfig, OIF, and ONF TAPI. In particular, the following documents are examined:<a href="#section-6-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-6-4.1">
-          <p id="section-6-4.1.1">Augmentation of existing IETF YANG data model (e.g. augmentation of draft <span>[<a href="#I-D.ietf-ccamp-optical-impairment-topology-yang" class="cite xref">I-D.ietf-ccamp-optical-impairment-topology-yang</a>]</span>)<a href="#section-6-4.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-6-2.1">
+          <p id="section-6-2.1.1">IETF Common YANG Data Types for Layer 0 Networks <span>[<a href="#I-D.ietf-ccamp-rfc9093-bis" class="cite xref">I-D.ietf-ccamp-rfc9093-bis</a>]</span><a href="#section-6-2.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-6-4.2">
-          <p id="section-6-4.2.1">Extend the content of an existing IETF YANG model via "bis/update"<a href="#section-6-4.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-6-2.2">
+          <p id="section-6-2.2.1">IETF YANG  data model to manage configurable DWDM optical interfaces <span>[<a href="#I-D.ietf-ccamp-dwdm-if-param-yang" class="cite xref">I-D.ietf-ccamp-dwdm-if-param-yang</a>]</span><a href="#section-6-2.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.3">
+          <p id="section-6-2.3.1">IETF YANG Data Model for Optical Impairment-aware Topology  <span>[<a href="#I-D.ietf-ccamp-optical-impairment-topology-yang" class="cite xref">I-D.ietf-ccamp-optical-impairment-topology-yang</a>]</span><a href="#section-6-2.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.4">
+          <p id="section-6-2.4.1">IETF YANG Data Model for WDM Tunnels <span>[<a href="#I-D.ietf-ccamp-wdm-tunnel-yang" class="cite xref">I-D.ietf-ccamp-wdm-tunnel-yang</a>]</span><a href="#section-6-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.5">
+          <p id="section-6-2.5.1">IETF YANG Data Models for requesting Path Computation in WDM Optical Networks <span>[<a href="#I-D.ietf-ccamp-optical-path-computation-yang" class="cite xref">I-D.ietf-ccamp-optical-path-computation-yang</a>]</span><a href="#section-6-2.5.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.6">
+          <p id="section-6-2.6.1">Implementation Agreement 400ZR <span>[<a href="#OIF-400ZR" class="cite xref">OIF-400ZR</a>]</span><a href="#section-6-2.6.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.7">
+          <p id="section-6-2.7.1">OpenConfig system component inventory<span>[<a href="#OC-platform" class="cite xref">OC-platform</a>]</span><a href="#section-6-2.7.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.8">
+          <p id="section-6-2.8.1">OpenConfig terminal device <span>[<a href="#OC-device" class="cite xref">OC-device</a>]</span><a href="#section-6-2.8.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.9">
+          <p id="section-6-2.9.1">ITU-T Multichannel DWDM applications <span>[<a href="#G.698.1" class="cite xref">G.698.1</a>]</span><a href="#section-6-2.9.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.10">
+          <p id="section-6-2.10.1">ITU-T Amplified multichannel dense wavelength division multiplexing <span>[<a href="#G.698.2" class="cite xref">G.698.2</a>]</span><a href="#section-6-2.10.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.11">
+          <p id="section-6-2.11.1">ITU-T Optical interfaces for coarse wavelength division multiplexing <span>[<a href="#G.695" class="cite xref">G.695</a>]</span><a href="#section-6-2.11.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.12">
+          <p id="section-6-2.12.1">ITU-T Optical transport network physical layer interfaces <span>[<a href="#G.959.1" class="cite xref">G.959.1</a>]</span><a href="#section-6-2.12.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.13">
+          <p id="section-6-2.13.1">Linux Foundation Transport API project <span>[<a href="#TAPI-2.5.0" class="cite xref">TAPI-2.5.0</a>]</span><a href="#section-6-2.13.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-6-5">The detail of this provided after gap analysis on optical module attributes on Google Sheet.<a href="#section-6-5" class="pilcrow">¶</a></p>
+<p id="section-6-3">The primary objective is to assess the properties and structures within these models that are relevant to coherent optical modules and to identify any missing elements or gaps.<a href="#section-6-3" class="pilcrow">¶</a></p>
+<p id="section-6-4">To support this ongoing analysis, relevant properties and structures from both IETF models and external organizations or standards bodies are being collected in Google Sheet. In <a href="#gap-analysis" class="auto internal xref">Section 7</a>, these properties will serve as the foundation for conducting a comprehensive gap analysis.<a href="#section-6-4" class="pilcrow">¶</a></p>
+<p id="section-6-5">As discussed in <a href="#plug-capabilities-attributes" class="auto internal xref">Section 5.1</a>, <a href="#plug-config-attribute" class="auto internal xref">Section 5.2</a>, and <a href="#plug-pm-definition" class="auto internal xref">Section 5.3</a>, the google sheet provides the Capabilities, Configuration, and Performance Monitoring attributes for coherent pluggable. The google sheet includes various read-only capability attributes, read-write configuration attributes, and read-only performance monitoring attributes. For a comprehensive list of these attributes, refer to the accompanying optical module Google Sheet.<a href="#section-6-5" class="pilcrow">¶</a></p>
+<p id="section-6-6">[Editorial Note: The reference to the external Google Sheet is used to finalize the gap content,
+once all the info are incorporated in the draft, and in any case before publication, this link shall be removed. Please also note that the content of the google sheet is very important and shall be captured in draft as a table or something else in Appendix section]<a href="#section-6-6" class="pilcrow">¶</a></p>
+<p id="section-6-7">You can <a href="/Users/rrokui/Desktop/optical-pluggable-attributes-v00-GAP.xslx">download the Google sheet</a> to see all the details.<a href="#section-6-7" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="gap-analysis">
@@ -1869,16 +1920,473 @@ appear in all capitals, as shown here.<a href="#section-1-1" class="pilcrow">¶<
       <h2 id="name-optical-module-data-modelin">
 <a href="#section-7" class="section-number selfRef">7. </a><a href="#name-optical-module-data-modelin" class="section-name selfRef">Optical Module Data Modeling Gap Analysis</a>
       </h2>
-<p id="section-7-1">[Editorial Note: This section in under review. Will start after finishing the Google Sheet]<a href="#section-7-1" class="pilcrow">¶</a></p>
-<p id="section-7-2">This draft on "coherent optical module data model and gap analysis" was initiated to examine existing IETF models related to modules for "completeness" to assess existing IETF properties/structures which are relevant to coherent optical modules and also to look for missing properties/structures. The goal of current work is to achieve best positioning of the IETF work with respect to the other related activities in the industry.<a href="#section-7-2" class="pilcrow">¶</a></p>
-<p id="section-7-3">To carry out this ongoing examination, properties/structures from relevant external bodies are collected and compared with properties/structures present in IETF models related to coherent modules. Where properties/structures differ the differences are examined and justifications considered and justification provided for changes to the IETF models these are proposed.<a href="#section-7-3" class="pilcrow">¶</a></p>
-<p id="section-7-4">The following items are identified as initial gap related to optical modules. Note that the complete list will be provided after finishing the Google Sheet.<a href="#section-7-4" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-7-5.1">
-          <p id="section-7-5.1.1">Syntax gaps: Naming inconsistency on existing IETF drafts <span>[<a href="#I-D.ietf-ccamp-optical-impairment-topology-yang" class="cite xref">I-D.ietf-ccamp-optical-impairment-topology-yang</a>]</span>, <span>[<a href="#I-D.ietf-ccamp-rfc9093-bis" class="cite xref">I-D.ietf-ccamp-rfc9093-bis</a>]</span> and <span>[<a href="#I-D.ietf-ccamp-dwdm-if-param-yang" class="cite xref">I-D.ietf-ccamp-dwdm-if-param-yang</a>]</span> if any.<a href="#section-7-5.1.1" class="pilcrow">¶</a></p>
-</li>
-      </ul>
-<div class="alignLeft art-text artwork" id="section-7-6">
+<p id="section-7-1">[Editorial Note: The “Optical Module Data Modeling Gap Analysis” section is still work in progress and the attributes listed in the 3 tables below are subject to change since some comments present in the original Google sheet have not been resolved and agreed yet]<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-2">To support gap analysis of optical pluggables in packet-over-optical networks, the Google Sheet referenced in <a href="#google-sheet" class="auto internal xref">Section 6</a> is utilized. The attributes listed in the sheet are systematically examined to determine their applicability to optical pluggables. For applicable attributes, a cross-check is performed to verify whether they are included in existing IETF data models. Attributes not present in the IETF models are identified as gaps. Where necessary, proposals for updates or modifications to the IETF models are developed to address these gaps or misalignments.<a href="#section-7-2" class="pilcrow">¶</a></p>
+<div id="gap-analysis-capabilities">
+<section id="section-7.1">
+        <h3 id="name-list-of-missing-optical-plu">
+<a href="#section-7.1" class="section-number selfRef">7.1. </a><a href="#name-list-of-missing-optical-plu" class="section-name selfRef">List of Missing Optical Pluggable Capability Attributes Based on Gap Analysis</a>
+        </h3>
+<p id="section-7.1-1"><a href="#_figure-gap-analysis-capabilities" class="auto internal xref">Figure 6</a> provides the missing capabilities attributes highlights important optical pluggable parameters and features that are defined by other standards development organizations (SDOs) and industry forums, but are currently absent from IETF YANG models.<a href="#section-7.1-1" class="pilcrow">¶</a></p>
+<p id="section-7.1-2">Note that the "Attribute Number" refers to numbering in Google Sheet.<a href="#section-7.1-2" class="pilcrow">¶</a></p>
+<p id="section-7.1-3">Harmonizing these attributes between SDOs, and IETF models would support the evolution of open, programmable, and interoperable optical networks.<a href="#section-7.1-3" class="pilcrow">¶</a></p>
+<span id="name-list-of-optical-pluggable-c"></span><div id="_figure-gap-analysis-capabilities">
+<figure id="figure-6">
+          <div class="alignLeft art-text artwork" id="section-7.1-4.1">
+<pre>
+For each Attribute Name,
+- First table displays the "Missing Capability Attributes"
+- Second table displays the "Summary Description of Missing
+  Capability Attributes"
+
+| --------- | ------------------------------------------ | --------- |
+| Attribute | Missing Capability Attributes              | source    |
+| Number    |                                            |           |
+| --------- | ------------------------------------------ | --------- |
+| 4         | tag-id                                     | IETF      |
+| 16        | Post FEC BER                               | oif       |
+| 17        | pre-fec-ber                                |           |
+| 18        | Target reach                               | oif/itu-t |
+| 19        | Ripple                                     | oif/itu-t |
+| 20        | max-bit-error-ratio                        | itu-t     |
+| 22        | min-chromatic-dispersion                   | oif       |
+| 36        | Polarization Rotation Speed                | oif/itu-t |
+| 39        | min-tx-osnr                                | OpenConfg |
+| 46        | pulse-shaping-type                         | OpenConfg |
+| 53        | fec-coding                                 | OpenConfg |
+| 68        | Minimum mean input power                   | itu-t     |
+| 70        | Maximum mean total input power             | itu-t     |
+| 71        | Maximum mean total output power            | itu-t     |
+| 73        | Maximum channel power difference           | itu-t     |
+| 79        | Minimum equivalent sensitivity             | itu-t     |
+| 80        | Maximum reflectance of receiver            | itu-t     |
+| 86        | max-laser-temperature                      | ietf      |
+| 87        | grid-type                                  | OpenConfg |
+|           |                                            | /tapi     |
+| 88        | adjustment-granularity                     | OpenConfg |
+|           |                                            | /tapi     |
+| 91        | noise-figure                               | IETF/tapi |
+| 92        | Maximum spectral excursion                 | itu-t     |
+| 93        | Minimum side mode suppression ratio        | itu-t     |
+| 95        | max-transmitter-residual-dispersion-osnr-  | itu-t     |
+|           | penalty                                    |           |
+| 107       | line-coding                                | itu-t     |
+| 112       | max-central-wavelength-deviation           | itu-t     |
+| 116       | max-duty-cycle                             | itu-t     |
+| 117       | max-laser-linewidth                        | itu-t     |
+| 121       | Maximum offset between the carrier and the | itu-t     |
+|           | nominal central frequency                  |           |
+| 123       | Maximum skew between the two polarizations | itu-t     |
+| 125       | Maximum spectral power density             | itu-t     |
+| 126       | Maximum TDECQ                              | itu-t     |
+| 127       | Maximum I-Q offset                         | itu-t     |
+| 157       | Laser frequency accuracy                   | oif       |
+| 158       | Laser frequency noise                      | oif       |
+| 159       | TX spectral Upper Mask &amp; TX spectral Lower | oif       |
+|           | Mask                                       |           |
+| 160       | Laser RIN                                  | oif       |
+| 161       | Tx clock phase noise (PN): Maximum PN mask | oif       |
+|           | for low frequency PN                       |           |
+| 162       | Tx clock phase noise (PN); Maximum total   | oif       |
+|           | integrated RMS phase jitter between 10kHz  |           |
+|           | and 10MHz                                  |           |
+| 163       | Tx clock phase noise (PN)                  | oif       |
+| 164       | Minimum Excess Bandwidth                   | oif       |
+| 168       | Total output power with Tx disabled        | oif       |
+| 169       | Total output power during wavelength       | oif       |
+|           | switching                                  |           |
+| 170       | Transmit output power stability            | oif       |
+| 171       | Transmit output power control absolute     | oif       |
+|           | accuracy                                   |           |
+| 174       | Transmitter reflectance                    | oif       |
+| 175       | Transmitter back reflection tolerance      | oif       |
+| 176       | Transmitter polarization dependent power   | oif       |
+| 177       | X-Y Skew                                   | oif       |
+| 178       | DC I-Q offset (mean per polarization)      | oif       |
+| 179       | I-Q instantaneous offset                   | oif       |
+| 180       | Mean I-Q amplitude imbalance               | oif       |
+| 181       | I-Q phase error                            | oif       |
+| 182       | I-Q Skew                                   | oif       |
+| 184       | Frequency offset between received carrier  | oif       |
+|           | and LO                                     |           |
+| 188       | Optical return loss                        | oif       |
+| 195       | Tolerance to change in SOP                 | oif       |
+| 196       | Optical input power transient tolerance    | oif       |
+| 197       | Adjacent Channel Crosstalk OSNR Tolerance  | oif       |
+|           | penalty                                    |           |
+| 198       | Intra-Channel filtering penalty            | oif       |
+| --------- | ------------------------------------------ | --------- |
+
+
+| --------- | ------------------------------------------------------ |
+| Attribute | Summary Description of                                 |
+| Number    | Missing Capability Attributes                          |
+| --------- | ------------------------------------------------------ |
+| 4         | list of {tag-type, tag-value}                          |
+| 16        | Refers to error rate measured after applying FEC       |
+| 17        | Bit error rate measured before forward error           |
+|           | correction decoding                                    |
+| 18        | Max optical transmission distance that a coherent      |
+|           | pluggable module can support                           |
+| 19        | Peak-to-peak insertion loss difference within filter   |
+|           | clear bandwidth of the Mux or Demux                    |
+| 20        | Max acceptable bit error rate for a pluggable optical  |
+|           | module                                                 |
+| 22        | Min value of chromatic dispersion (CD) compensation    |
+|           | range supported by an optical pluggable                |
+| 36        | Max rate a coherent optical receiver can track and     |
+|           | compensate for changes in polarization state of        |
+|           | incoming optical signal                                |
+| 39        | Min OSNR that the pluggable module's transmitter is    |
+|           | capable of generating                                  |
+| 46        | Digital filtering technique applied to electrical      |
+|           | signal before it modulates optical carrier             |
+| 53        | Forward error correction coding schema used in the     |
+|           | transmission mode                                      |
+| 68        | Min values of the average received power at point RS   |
+| 70        | Highest allowable average power level that can be      |
+|           | input into a system or component at a specified point  |
+| 71        | Analogous to "Maximum mean total input power," but for |
+|           | output direction                                       |
+| 73        | max allowable difference in power levels between       |
+|           | channels in a multi-channel optical transmission       |
+| 79        | min optical power level that a receiver requires to    |
+|           | decode incoming signals accurately                     |
+| 80        | highest allowable level of optical reflectance from the|
+|           | receiver within those components                       |
+| 86        | highest laser temperature recorded or allowed for a    |
+|           | laser                                                  |
+| 87        | attribute that defines frequency grid used for optical |
+|           | channels                                               |
+| 88        | min spectrum separation between the central frequencies|
+|           | of two adjacent optical channels                       |
+| 91        | expressed as ratio of input SNR to output SNR.         |
+|           | Quantifies how much noise a component adds to signal   |
+| 92        | max acceptable difference between the nominal central  |
+|           | frequency  and  signal power drops                     |
+| 93        | A measure of how much the power of the main mode in a  |
+|           | laser exceeds that of its side modes                   |
+| 95        | An additional SNR penalty at lowest power with         |
+|           | worst-case dispersion                                  |
+| 107       | List of methods of encoding digital data into signal   |
+|           | waveforms, ensuring proper timing and synchronization  |
+| 112       | difference between the nominal central wavelength and  |
+|           | the actual central wavelength                          |
+| 116       | max percentage of time that a signal is in an active or|
+|           | "ON" state within a given period                       |
+| 117       | max allowable width of laser optical signal            |
+| 121       | max allowed deviation between actual carrier frequency |
+|           | of an optical signal and its nominal central frequency |
+| 123       | max difference in timing or phase between signals      |
+|           | transmitted on different polarizations                 |
+| 125       | max allowable optical power per unit frequency or      |
+|           | wavelength interval in a system                        |
+| 126       | Transmitter Dispersion and Eye Closure Quaternary, a   |
+|           | metric to evaluate performance of optical transmitters |
+| 127       | max I-Q offset difference between in-phase (I) and     |
+|           | quadrature (Q) of a modulated signal                   |
+| 157       | max deviation of a laser's actual output frequency from|
+|           | its nominal channel frequency                          |
+| 158       | Describes the random fluctuations in the laser's output|
+|           | frequency over time                                    |
+| 159       | max allowable optical power limits at specific         |
+|           | frequency offsets from the carrier wavelength          |
+| 160       | Laser Relative Intensity Noise quantifies random       |
+|           | fluctuations in laser’s optical power output           |
+| 161       | refers to random fluctuations in the timing of the     |
+|           | transmitted signal's clock                             |
+| 162       | refers to the random fluctuations in timing of the     |
+|           | transmitted signal's clock                             |
+| 163       | refers to the random fluctuations in the timing of the |
+|           | transmitted signal's clock                             |
+| 164       | min spectral width beyond theoretical minimum required |
+|           | by the signal's data rate                              |
+| 168       | amount of optical power emitted by pluggable when      |
+|           | transmitter is intentionally turned off                |
+| 169       | optical power level of  pluggable transmitter during   |
+|           | brief period when it is changing its output wavelength |
+| 170       | ability of a transmitter to maintain a consistent      |
+|           | optical output power level over time                   |
+| 171       | how closely actual output power matches the desired or |
+|           | configured output power level                          |
+| 174       | amount of optical power reflected back from the        |
+|           | transmitter into the optical fiber                     |
+| 175       | Max amount of optical power reflected back towards     |
+|           | transmitter without performance degradation            |
+| 176       | variation in optical power emitted by a transmitter    |
+|           | depending on the polarization state of the light       |
+| 177       | timing skew between the X and Y polarization components|
+|           | of an optical signal in a coherent system              |
+| 178       | average DC offset In-phase (I) and Quadrature (Q)      |
+|           | components of received signal for each polarization    |
+| 179       | time-varying or dynamic offset between In-phase (I)    |
+|           | and Quadrature (Q) components of received signal       |
+| 180       | average difference in amplitude between In-phase (I)   |
+|           | and Quadrature (Q) components of the received signal   |
+| 181       | deviation from 90-degree phase relationship between    |
+|           | In-phase (I) and Quadrature (Q) of received signal     |
+| 182       | time delay or misalignment between In-phase (I) and    |
+|           | Quadrature (Q) components of a signal                  |
+| 184       | difference between frequency of incoming optical signal|
+|           | and the local oscillator (LO) frequency                |
+| 188       | total reflected light caused by discontinuities in an  |
+|           | optical path, expressed as ratio of incident to        |
+|           | reflected power                                        |
+| 195       | ability of an optical receiver to maintain acceptable  |
+|           | performance despite variations in State of Polarization|
+|           | (SOP)                                                  |
+| 196       | ability of an optical receiver to maintain acceptable  |
+|           | performance when subjected to sudden changes in        |
+|           | received optical power level                           |
+| 197       | increase in required OSNR to maintain a specific BER   |
+|           | due to interference caused by neighboring optical      |
+|           | channels                                               |
+| 198       | degradation in signal quality, measured as an increase |
+|           | in required OSNR to achieve a target BER               |
+| --------- | ------------------------------------------------------ |
+
+Note: The "Attribute Number" refers to numbering in Google Sheet
+
+</pre>
+</div>
+<figcaption><a href="#figure-6" class="selfRef">Figure 6</a>:
+<a href="#name-list-of-optical-pluggable-c" class="selfRef">List of Optical Pluggable Capability Attributes Based on Gap Analysis</a>
+          </figcaption></figure>
+</div>
+</section>
+</div>
+<div id="gap-analysis-config">
+<section id="section-7.2">
+        <h3 id="name-list-of-missing-optical-plug">
+<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-list-of-missing-optical-plug" class="section-name selfRef">List of Missing Optical Pluggable Configuration Attributes Based on Gap Analysis</a>
+        </h3>
+<p id="section-7.2-1"><a href="#_figure-gap-analysis-Configuration" class="auto internal xref">Figure 7</a> identifies configuration attributes for optical pluggables defined by other standards development organizations (SDOs) and industry forums which may not be fully represented in IETF YANG models.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
+<p id="section-7.2-2">Note that the "Attribute Number" refers to numbering in Google Sheet.<a href="#section-7.2-2" class="pilcrow">¶</a></p>
+<span id="name-list-of-optical-pluggable-co"></span><div id="_figure-gap-analysis-Configuration">
+<figure id="figure-7">
+          <div class="alignLeft art-text artwork" id="section-7.2-3.1">
+<pre>
+For each Attribute Name,
+- First table displays the "Missing Configuration Attributes"
+- Second table displays the "Summary Description of Missing
+  Configuration Attributes"
+
+| --------- | ------------------------------------------ | --------- |
+| Attribute | Missing Configuration Attributes           | source    |
+| Number    |                                            |           |
+| --------- | ------------------------------------------ | --------- |
+| 206       | admin-state                                |           |
+| 210       | line-coding-bit-rate                       | tapi      |
+| --------- | ------------------------------------------ | --------- |
+
+| --------- | ------------------------------------------------------ |
+| Attribute | Summary Description of                                 |
+| Number    | Missing Configuration Attributes                       |
+| --------- | ------------------------------------------------------ |
+| 206       | This is pluggable admin state.                         |
+| 210       | Identifies the line coding e.g. NRZ-10G and is drawn   |
+|           | from G.698.2.                                          |
+| --------- | ------------------------------------------------------ |
+
+Note: The "Attribute Number" refers to numbering in Google Sheet
+
+</pre>
+</div>
+<figcaption><a href="#figure-7" class="selfRef">Figure 7</a>:
+<a href="#name-list-of-optical-pluggable-co" class="selfRef">List of Optical Pluggable Configuration Attributes Based on Gap Analysis</a>
+          </figcaption></figure>
+</div>
+</section>
+</div>
+<div id="gap-analysis-pm">
+<section id="section-7.3">
+        <h3 id="name-list-of-missing-optical-plugg">
+<a href="#section-7.3" class="section-number selfRef">7.3. </a><a href="#name-list-of-missing-optical-plugg" class="section-name selfRef">List of Missing Optical Pluggable PM/States Attributes Based on Gap Analysis</a>
+        </h3>
+<p id="section-7.3-1"><a href="#_figure-gap-analysis-pm" class="auto internal xref">Figure 8</a> highlights missing Performance monitoring and States attributes for optical pluggables. Note that the "Attribute Number" refers to numbering in Google Sheet.<a href="#section-7.3-1" class="pilcrow">¶</a></p>
+<span id="name-list-of-optical-pluggable-p"></span><div id="_figure-gap-analysis-pm">
+<figure id="figure-8">
+          <div class="alignLeft art-text artwork" id="section-7.3-2.1">
+<pre>
+For each Attribute Name,
+- First table displays the "Missing PM/States Attributes"
+- Second table displays the "Summary Description of Missing
+  PM/States Attributes"
+
+| --------- | ------------------------------------------ | --------- |
+| Attribute | Missing PM/States Attributes               | Source    |
+| Number    |                                            |           |
+| --------- | ------------------------------------------ | --------- |
+| 216       | operational-state                          |           |
+| 218       | central-frequency-offset                   | OpenConfg/|
+|           |                                            | oif/t-api |
+| 222       | chromatic-dispersion                       | OpenConfg/|
+|           |                                            | oif/tapi  |
+| 233       | supply-voltage                             | OpenConfg |
+| 234       | laser-bias-current                         | OpenConfg |
+| 235       | max-polarization-dependent-loss            | OpenConfg |
+| 237       | modulation-error-ratio                     | OpenConfg |
+| 238       | fec-uncorrectable-blocks                   | OpenConfg |
+| 239       | q-value                                    | OpenConfg |
+| 250       | EVMmax                                     | oif       |
+| 251       | EVMrms                                     | oif       |
+| 252       | MER                                        | oif       |
+| 253       | eSNR                                       | OpenConfg/|
+|           |                                            | oif       |
+| 254       | SNR Margin                                 | oif       |
+| 255       | CD-high granularity, short link            | oif       |
+| 256       | CD-low granularity, long link              | oif       |
+| 257       | DGD                                        | oif       |
+| 258       | SOPMD                                      | OpenConfg/|
+|           |                                            | oif       |
+| 259       | PDL                                        | oif       |
+| 260       | SOP ROC                                    | OpenConfg/|
+|           |                                            | oif       |
+| 261       | Tx Total Power                             | oif       |
+| 264       | CFO                                        | oif       |
+| 265       | Modulator Bias X/I                         | OpenConfg/|
+|           |                                            | oif       |
+| 266       | Modulator Bias X/Q                         | OpenConfg/|
+|           |                                            | oif       |
+| 267       | Modulator Bias Y/I                         | OpenConfg/|
+|           |                                            | oif       |
+| 268       | Modulator Bias Y/Q                         | OpenConfg/|
+|           |                                            | oif       |
+| 269       | Modulator Bias X Phase                     | OpenConfg/|
+|           |                                            | oif       |
+| 270       | Modulator Bias Y Phase                     | OpenConfg/|
+|           |                                            | oif       |
+| 271       | self-phase-modulation (SPM)                | itu-t     |
+| 272       | cross-phase-modulation (XPM)               | itu-t     |
+| 273       | Frequency offset between received carrier  | oif       |
+|           | and LO                                     |           |
+| 274       | total-channel-output-power                 | IETF      |
+| --------- | ------------------------------------------ | --------- |
+
+| --------- | ------------------------------------------------------ |
+| Attribute | Summary Description of                                 |
+| Number    | Missing PM/States Attributes                           |
+| --------- | ------------------------------------------------------ |
+| 216       | This is pluggable admin state.                         |
+| 218       | Frequency difference between nominal and actual optical|
+|           | carrier frequencies, causing phase rotation and        |
+|           | requiring DSP compensation in coherent systems. It is  |
+|           | a key parameter in OIF and T-API for channel alignment |
+|           | and interoperability in DWDM networks.                 |
+| 222       | Wavelength-dependent variation in light speed within an|
+|           | optical fiber causing pulse broadening, expressed in   |
+|           | ps/nm/km, and is a key factor limiting optical         |
+|           | transmission performance as defined in ITU-T fiber     |
+|           | standards                                              |
+| 233       | Supply voltage to the transceiver in volts             |
+| 234       | Current applied by the system to the transmit laser to |
+|           | achieve the output power.                              |
+| 235       | Maximum polarization-dependent-loss accumulated value, |
+|           | supported by the optical channel associated to the     |
+|           | associated transmission mode expressed in dB           |
+| 237       | Modulation error ratio in dB with two decimal precision|
+| 238       | Number of blocks or frames that were uncorrectable by  |
+|           | the FEC                                                |
+| 239       | Quality value (factor) in dB of a channel with two     |
+|           | decimal precision.                                     |
+| 250       | EVMmax (Error Vector Magnitude Mx) is a metric for     |
+|           | evaluating maximum error vector magnitude in coherent  |
+|           | optics, used for quality and impairment measurement in |
+|           | coherent optical transceivers                          |
+| 251       | Error Vector Magnitude normalized by RMS value of      |
+|           | reference constellation points used to evaluate        |
+|           | coherent optical signal quality                        |
+| 252       | Modulation Error Ratio (MER) is a measure of how far   |
+|           | received symbols deviate from their ideal constellation|
+|           | position.                                              |
+| 253       | Effective Signal-to-Noise Ratio, reflecting combined   |
+|           | optical and electrical impairments.                    |
+| 254       | The difference between the measured SNGR and the       |
+|           | tolerable SNR that still allows acceptable BER and/or  |
+|           | Q-factor.                                              |
+| 255       | High-granularity chromatic dispersion measurement for  |
+|           | short spans (media-side fiber estimate). DSP estimates |
+|           | chromatic dispersion based on signal shape and         |
+|           | compensation requirements.                             |
+| 256       | Low-granularity chromatic dispersion measurement for   |
+|           | longer spans (media-side fiber estimate). DSP estimates|
+|           | chromatic dispersion based on signal shape and         |
+|           | compensation requirements                              |
+| 257       | Differential Group Delay - max delay between           |
+|           | polarization modes. Transponder DSP measures           |
+|           | Differential Group Delay as part of PMD compensation   |
+| 258       | Second Order Polarization Mode Dispersion measured with|
+|           | fine granularity                                       |
+| 259       | Polarization Dependent Loss (affects coherent detection|
+|           | DSP can estimate it dynamically                        |
+| 260       | Rate of change of polarization state. Measured in      |
+|           | real-time by tracking the speed of polarization state  |
+|           | rotation at the Rx                                     |
+| 261       | Total optical power emitted by the transmitter module, |
+|           | critical for link budget and interoperability          |
+| 264       | Central Frequency Offset is frequency mismatch between |
+|           | transmitter and receiver oscillators causing phase     |
+|           | errors and interference in coherent optical systems    |
+| 265       | Bias on the in-phase (I) path of polarization X in a   |
+|           | coherent optical modulator, expressed as a percentage  |
+|           | with 2 decimal places, including statistical values    |
+|           | (instant, avg, min, max)                               |
+| 266       | Bias on the quadrature (Q) path of polarization X in a |
+|           | coherent optical modulator, similarly expressed as a   |
+|           | percentage with 2 decimal places, including the same   |
+|           | set of statistical values (instant, avg, min, max)     |
+| 267       | Bias on the in-phase (I) path of polarization Y in a   |
+|           | coherent optical modulator, expressed as a percentage  |
+|           | with 2 decimal places, including statistical values    |
+|           | (instantaneous, average, min, max)                     |
+| 268       | Bias on the quadrature (Q) path of polarization Y in a |
+|           | coherent optical modulator, expressed as a percentage  |
+|           | with 2 decimal places, including statistical values    |
+|           | (instantaneous, average, min, max)                     |
+| 269       | Bias on phase path of polarization X in a coherent     |
+|           | optical modulator, expressed as a percentage with 2    |
+|           | decimal places, including statistical values           |
+|           | (instantaneous, average, min, max)                     |
+| 270       | Bias on phase path of polarization Y in a coherent     |
+|           | optical modulator, expressed as a percentage with 2    |
+|           | decimal places, including statistical values           |
+|           | (instantaneous, average, min, max)                     |
+| 271       | A nonlinear optical effect where the phase of a light  |
+|           | pulse is modulated by its own intensity due to the Kerr|
+|           | effect, leading to a time-dependent phase shift and    |
+|           | spectral broadening of the pulse as it propagates      |
+|           | through an optical medium like a fiber                 |
+| 272       | A nonlinear optical effect where the intensity of one  |
+|           | light signal modulates the phase of another signal     |
+|           | traveling through the same fiber, leading to inter-    |
+|           | channel crosstalk and signal degradation in wavelength |
+|           | division multiplexing (WDM) system                     |
+| 273       | Estimated frequency offset is a key performance        |
+|           | indicator that can be monitored to assess the health   |
+|           | and stability of the link                              |
+| 274       | The total output power of this interface               |
+| --------- | ------------------------------------------------------ |
+
+Note: The "Attribute Number" refers to numbering in Google Sheet
+
+</pre>
+</div>
+<figcaption><a href="#figure-8" class="selfRef">Figure 8</a>:
+<a href="#name-list-of-optical-pluggable-p" class="selfRef">List of Optical Pluggable PM State Attributes Based on Gap Analysis</a>
+          </figcaption></figure>
+</div>
+</section>
+</div>
+<div id="gap-syntax">
+<section id="section-7.4">
+        <h3 id="name-coherent-pluggable-syntax-g">
+<a href="#section-7.4" class="section-number selfRef">7.4. </a><a href="#name-coherent-pluggable-syntax-g" class="section-name selfRef">Coherent Pluggable Syntax Gaps</a>
+        </h3>
+<p id="section-7.4-1">Addressing syntax gaps in coherent pluggable attributes is crucial for achieving consistent and interoperable management across different implementations. One key issue lies in establishing a standardized naming convention. There are some naming inconsistency on existing IETF drafts <span>[<a href="#I-D.ietf-ccamp-optical-impairment-topology-yang" class="cite xref">I-D.ietf-ccamp-optical-impairment-topology-yang</a>]</span>, <span>[<a href="#I-D.ietf-ccamp-rfc9093-bis" class="cite xref">I-D.ietf-ccamp-rfc9093-bis</a>]</span> and <span>[<a href="#I-D.ietf-ccamp-dwdm-if-param-yang" class="cite xref">I-D.ietf-ccamp-dwdm-if-param-yang</a>]</span>.<a href="#section-7.4-1" class="pilcrow">¶</a></p>
+<p id="section-7.4-2"><a href="#_figure-gap-syntax" class="auto internal xref">Figure 9</a> shows a proposal for naming convention of optical pluggable attributes.  The current proposal, while illustrative, may need further refinement to ensure clarity and avoid ambiguity. Specifically, the prefixing of attributes with directions like "tx" or "rx" should be consistently applied to all relevant parameters to clearly identify the directionality of the signal. The example also shows the need to clearly define the value type associated with the attribute, such as min, max, current, or none, for a cohesive and standardized approach. Furthermore, the examples for attribute naming should be universally adopted to establish an attribute mapping that is aligned with IETF, improving the overall clarity and usability of the YANG models for managing coherent pluggables.<a href="#section-7.4-2" class="pilcrow">¶</a></p>
+<span id="name-proposed-naming-convention-"></span><div id="_figure-gap-syntax">
+<figure id="figure-9">
+          <div class="alignLeft art-text artwork" id="section-7.4-3.1">
 <pre>
 Naming convention:
   direction [tx/rx/both/none]-
@@ -1897,16 +2405,30 @@ Examples:
 
     for IETF attribute "channel-output-power", use
        tx-channel-power
-</pre><a href="#section-7-6" class="pilcrow">¶</a>
+</pre>
 </div>
+<figcaption><a href="#figure-9" class="selfRef">Figure 9</a>:
+<a href="#name-proposed-naming-convention-" class="selfRef">Proposed naming convention for optical pluggable attribute names</a>
+          </figcaption></figure>
+</div>
+</section>
+</div>
+<div id="gap-analysis-next-steps">
+<section id="section-7.5">
+        <h3 id="name-next-steps-on-optical-modul">
+<a href="#section-7.5" class="section-number selfRef">7.5. </a><a href="#name-next-steps-on-optical-modul" class="section-name selfRef">Next Steps on Optical Module Data Modeling Gap Analysis</a>
+        </h3>
+<p id="section-7.5-1">Based on the results of the gap analysis, the next step will be to incorporate the identified pluggable attributes using one of the proposed approaches. It is important to note that this step represents the final phase of this draft, and its details will be provided in the next version of this draft.<a href="#section-7.5-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-7-7.1">
-          <p id="section-7-7.1.1">Semantic gaps: As part of gap analysis and for a complete solution for optical module, there should be some alignment between the capabilities, configuration, PM attributes and PM thresholds supported by IETF optical module and OIF supported by <span>[<a href="#CMIS" class="cite xref">CMIS</a>]</span>. This needs further investigation.<a href="#section-7-7.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-7.5-2.1">
+            <p id="section-7.5-2.1.1">Augmentation of existing IETF YANG data model (e.g. augmentation of draft <span>[<a href="#I-D.ietf-ccamp-optical-impairment-topology-yang" class="cite xref">I-D.ietf-ccamp-optical-impairment-topology-yang</a>]</span>)<a href="#section-7.5-2.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-7-7.2">
-          <p id="section-7-7.2.1">[Editor's note: More to be added after Gap Analysis.]<a href="#section-7-7.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-7.5-2.2">
+            <p id="section-7.5-2.2.1">Extend the content of an existing IETF YANG model via "bis/update"<a href="#section-7.5-2.2.1" class="pilcrow">¶</a></p>
 </li>
-      </ul>
+        </ul>
+</section>
+</div>
 </section>
 </div>
 <div id="plug-lcm">
@@ -1927,13 +2449,13 @@ It was agreed that this section is important. Having said that, there are a few 
           <p id="section-8-2.3.1">Move it to other IETF draft]<a href="#section-8-2.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-8-3">This section discusses the complete lifecycle of an optical pluggable module as shown in <a href="#_figure-overview-lifecycle-pluggable" class="auto internal xref">Figure 6</a>. It includes discussion on the pre-purchase evaluation of pluggable modules through installation to the operation of a pluggable module in a live network.<a href="#section-8-3" class="pilcrow">¶</a></p>
+<p id="section-8-3">This section discusses the complete lifecycle of an optical pluggable module as shown in <a href="#_figure-overview-lifecycle-pluggable" class="auto internal xref">Figure 10</a>. It includes discussion on the pre-purchase evaluation of pluggable modules through installation to the operation of a pluggable module in a live network.<a href="#section-8-3" class="pilcrow">¶</a></p>
 <p id="section-8-4">Most of this lifecycle discussion applies to a majority of equipment types. Where the pluggable module is special, this is highlighted.<a href="#section-8-4" class="pilcrow">¶</a></p>
 <p id="section-8-5">The figure below provides a high level flow. In a real environment, all stages will be running in parallel for various plug versions etc. and there may be feedback from any stage to a previous stage. For example, the research, evaluation and planning exercises are ongoing activities that continue as the network grows and changes and as new pluggable module type &amp; versions are introduced by vendors and insight from deployment may feed back to the evaluation stage.<a href="#section-8-5" class="pilcrow">¶</a></p>
 <p id="section-8-6">Throughout the lifecycle specific use cases and scenarios will be considered and applied. These will be developed during the early stages and applied in service design.<a href="#section-8-6" class="pilcrow">¶</a></p>
 <p id="section-8-7">Note: The stages and the terminology used are not intended to reflect any specific operational practice. They are intended to be neutral with respect to any existing operator's processes, aligning with the essence of the processes.<a href="#section-8-7" class="pilcrow">¶</a></p>
 <span id="name-lifecycle-of-a-optical-plug"></span><div id="_figure-overview-lifecycle-pluggable">
-<figure id="figure-6">
+<figure id="figure-10">
         <div class="alignLeft art-text artwork" id="section-8-8.1">
 <pre>
   Market research                   \
@@ -1990,7 +2512,7 @@ It was agreed that this section is important. Having said that, there are a few 
   Operate service                   /
 </pre>
 </div>
-<figcaption><a href="#figure-6" class="selfRef">Figure 6</a>:
+<figcaption><a href="#figure-10" class="selfRef">Figure 10</a>:
 <a href="#name-lifecycle-of-a-optical-plug" class="selfRef">Lifecycle of a optical pluggable module</a>
         </figcaption></figure>
 </div>
@@ -2089,9 +2611,9 @@ In this section, we present several use cases that demonstrate the practical app
         <h3 id="name-example-1-coherent-pluggabl">
 <a href="#section-9.1" class="section-number selfRef">9.1. </a><a href="#name-example-1-coherent-pluggabl" class="section-name selfRef">Example-1: Coherent Pluggables Already Provisioned</a>
         </h3>
-<p id="section-9.1-1">The first example is illustrated in <a href="#_figure-optical-pluggable-repository-usage-1" class="auto internal xref">Figure 7</a>. This is a simple example where the packet over optical network has been already provisioned with both optical underlay and packet overlay services. The role of SDN controller is just to discover and manage the network. In other words, the SDN controller was not involved in various aspects of service provisioning and viability. The second example will come all these aspects in more detail.<a href="#section-9.1-1" class="pilcrow">¶</a></p>
+<p id="section-9.1-1">The first example is illustrated in <a href="#_figure-optical-pluggable-repository-usage-1" class="auto internal xref">Figure 11</a>. This is a simple example where the packet over optical network has been already provisioned with both optical underlay and packet overlay services. The role of SDN controller is just to discover and manage the network. In other words, the SDN controller was not involved in various aspects of service provisioning and viability. The second example will come all these aspects in more detail.<a href="#section-9.1-1" class="pilcrow">¶</a></p>
 <span id="name-coherent-pluggable-reposito"></span><div id="_figure-optical-pluggable-repository-usage-1">
-<figure id="figure-7">
+<figure id="figure-11">
           <div class="alignLeft art-text artwork" id="section-9.1-2.1">
 <pre>
       &lt;------------------ L3 service-1 -------------------&gt;
@@ -2127,7 +2649,7 @@ In this section, we present several use cases that demonstrate the practical app
 
 </pre>
 </div>
-<figcaption><a href="#figure-7" class="selfRef">Figure 7</a>:
+<figcaption><a href="#figure-11" class="selfRef">Figure 11</a>:
 <a href="#name-coherent-pluggable-reposito" class="selfRef">Coherent Pluggable Repository Example-1</a>
           </figcaption></figure>
 </div>
@@ -2172,11 +2694,11 @@ In this section, we present several use cases that demonstrate the practical app
         <h3 id="name-example-2-coherent-pluggabl">
 <a href="#section-9.2" class="section-number selfRef">9.2. </a><a href="#name-example-2-coherent-pluggabl" class="section-name selfRef">Example-2: Coherent Pluggables Planning</a>
         </h3>
-<p id="section-9.2-1">The example in <a href="#_figure-optical-pluggable-repository-usage-2" class="auto internal xref">Figure 8</a> demonstrates the usage of the "Coherent Pluggable Repository" for entire lifecycle of photonic service from including service planning, viability, provisioning, collection of PM telemetry, collection of alarm notifications and optimization.<a href="#section-9.2-1" class="pilcrow">¶</a></p>
-<p id="section-9.2-2">Note that the packet over optical network in <a href="#_figure-optical-pluggable-repository-usage-2" class="auto internal xref">Figure 8</a> is not created yet. The ports port_a and port_b of packet device R1 and R2 are empty and can accept coherent pluggables. In addition, ports port_a and port_b are not connected to the optical network yet, i.e., there is no connection between packet devices R1, R2 and optical network. The port_a and port_b of packet device R1 and R2 can be potentially connected to any photonic nodes m1, m2 or m3.<a href="#section-9.2-2" class="pilcrow">¶</a></p>
+<p id="section-9.2-1">The example in <a href="#_figure-optical-pluggable-repository-usage-2" class="auto internal xref">Figure 12</a> demonstrates the usage of the "Coherent Pluggable Repository" for entire lifecycle of photonic service from including service planning, viability, provisioning, collection of PM telemetry, collection of alarm notifications and optimization.<a href="#section-9.2-1" class="pilcrow">¶</a></p>
+<p id="section-9.2-2">Note that the packet over optical network in <a href="#_figure-optical-pluggable-repository-usage-2" class="auto internal xref">Figure 12</a> is not created yet. The ports port_a and port_b of packet device R1 and R2 are empty and can accept coherent pluggables. In addition, ports port_a and port_b are not connected to the optical network yet, i.e., there is no connection between packet devices R1, R2 and optical network. The port_a and port_b of packet device R1 and R2 can be potentially connected to any photonic nodes m1, m2 or m3.<a href="#section-9.2-2" class="pilcrow">¶</a></p>
 <p id="section-9.2-3">Operator's goal is to use the SDN controller to plan, provision and monitor an optimal IP link-2 between packet devices R1 and R2. Optionally they can also provision overlay TE-Tunnel-2 and L3 service-2. To achieve this, the SDN controller should first plan an optical service-2, perform the viability to make sure this photonic service is feasible, provision it and then map it to an IP link-2.<a href="#section-9.2-3" class="pilcrow">¶</a></p>
 <span id="name-coherent-pluggable-repositor"></span><div id="_figure-optical-pluggable-repository-usage-2">
-<figure id="figure-8">
+<figure id="figure-12">
           <div class="alignLeft art-text artwork" id="section-9.2-4.1">
 <pre>
       &lt;------------------ L3 service-2 -------------------&gt;
@@ -2216,7 +2738,7 @@ In this section, we present several use cases that demonstrate the practical app
 
 </pre>
 </div>
-<figcaption><a href="#figure-8" class="selfRef">Figure 8</a>:
+<figcaption><a href="#figure-12" class="selfRef">Figure 12</a>:
 <a href="#name-coherent-pluggable-repositor" class="selfRef">Coherent Pluggable Repository Usage 2</a>
           </figcaption></figure>
 </div>
@@ -2336,7 +2858,7 @@ In this section, we present several use cases that demonstrate the practical app
         <h3 id="name-support-of-opaque-capabilit">
 <a href="#section-10.1" class="section-number selfRef">10.1. </a><a href="#name-support-of-opaque-capabilit" class="section-name selfRef">Support of Opaque Capability Attributes</a>
         </h3>
-<p id="section-10.1-1">The coherent pluggable YANG data model is augmented with a list of new capability attributes. As demonstrated in <a href="#solution-vs-cap-attributes" class="auto internal xref">Figure 9</a>, the YANG data model is augmented with the following information:<a href="#section-10.1-1" class="pilcrow">¶</a></p>
+<p id="section-10.1-1">The coherent pluggable YANG data model is augmented with a list of new capability attributes. As demonstrated in <a href="#solution-vs-cap-attributes" class="auto internal xref">Figure 13</a>, the YANG data model is augmented with the following information:<a href="#section-10.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-10.1-2.1">
             <p id="section-10.1-2.1.1">ID of new capability proprietary attribute<a href="#section-10.1-2.1.1" class="pilcrow">¶</a></p>
@@ -2351,9 +2873,9 @@ In this section, we present several use cases that demonstrate the practical app
             <p id="section-10.1-2.4.1">Maximum value of new attribute<a href="#section-10.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-10.1-3">The <a href="#solution-vs-cap-attributes" class="auto internal xref">Figure 9</a> shows an example of new capability attribute "CC" whose min and max values are 1.1 and 3.3, respectively.<a href="#section-10.1-3" class="pilcrow">¶</a></p>
+<p id="section-10.1-3">The <a href="#solution-vs-cap-attributes" class="auto internal xref">Figure 13</a> shows an example of new capability attribute "CC" whose min and max values are 1.1 and 3.3, respectively.<a href="#section-10.1-3" class="pilcrow">¶</a></p>
 <span id="name-support-of-opaque-capability"></span><div id="solution-vs-cap-attributes">
-<figure id="figure-9">
+<figure id="figure-13">
           <div class="alignLeft art-text artwork" id="section-10.1-4.1">
 <pre>
  +--ro opaque-capability-attribute-list* [cap-attribute-id]
@@ -2370,7 +2892,7 @@ In this section, we present several use cases that demonstrate the practical app
 &lt;/opaque-capability-attribute-list&gt;
 </pre>
 </div>
-<figcaption><a href="#figure-9" class="selfRef">Figure 9</a>:
+<figcaption><a href="#figure-13" class="selfRef">Figure 13</a>:
 <a href="#name-support-of-opaque-capability" class="selfRef">Support of Opaque Capability Attributes</a>
           </figcaption></figure>
 </div>
@@ -2389,7 +2911,7 @@ In this section, we present several use cases that demonstrate the practical app
         <h3 id="name-support-of-opaque-configura">
 <a href="#section-10.3" class="section-number selfRef">10.3. </a><a href="#name-support-of-opaque-configura" class="section-name selfRef">Support of Opaque Configuration Attributes (Solution-1)</a>
         </h3>
-<p id="section-10.3-1">To support the opaque configuration attributes, there are a few potential solutions which are discussed below. This approach is the simplest solution, as it requires no interpretation by the host platform. The coherent pluggable YANG data model is augmented with a list that directly maps the values of new configuration attributes to the corresponding memory-map locations on the pluggable device. In this solution, the memory-map locations must be known to the operator, potentially provided in the Coherent Pluggable Repository. The <a href="#solution-1" class="auto internal xref">Figure 10</a> illustrates the coherent pluggable YANG data model, which has been augmented with the following information:<a href="#section-10.3-1" class="pilcrow">¶</a></p>
+<p id="section-10.3-1">To support the opaque configuration attributes, there are a few potential solutions which are discussed below. This approach is the simplest solution, as it requires no interpretation by the host platform. The coherent pluggable YANG data model is augmented with a list that directly maps the values of new configuration attributes to the corresponding memory-map locations on the pluggable device. In this solution, the memory-map locations must be known to the operator, potentially provided in the Coherent Pluggable Repository. The <a href="#solution-1" class="auto internal xref">Figure 14</a> illustrates the coherent pluggable YANG data model, which has been augmented with the following information:<a href="#section-10.3-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-10.3-2.1">
             <p id="section-10.3-2.1.1">ID of new proprietary configuration attribute<a href="#section-10.3-2.1.1" class="pilcrow">¶</a></p>
@@ -2404,9 +2926,9 @@ In this section, we present several use cases that demonstrate the practical app
             <p id="section-10.3-2.4.1">The memory map of new proprietary attribute (which is used in CMIS communication between host and pluggable)<a href="#section-10.3-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-10.3-3">For instance, consider a scenario where the operator intends to configure a new proprietary attribute, "AA," with a value of 100, and a memory-map location on the pluggable set to 0x1100. In this process, the host platform receives the attribute "AA" as defined in <a href="#solution-1" class="auto internal xref">Figure 10</a>. The host platform then relays this information to the coherent pluggable via the CMIS protocol, without performing any interpretation. In other words, the host platform is not required to understand the syntax or semantics of these attributes; it functions merely as a conduit, transmitting the values from the NBI to the designated memory-map locations on the pluggable.<a href="#section-10.3-3" class="pilcrow">¶</a></p>
+<p id="section-10.3-3">For instance, consider a scenario where the operator intends to configure a new proprietary attribute, "AA," with a value of 100, and a memory-map location on the pluggable set to 0x1100. In this process, the host platform receives the attribute "AA" as defined in <a href="#solution-1" class="auto internal xref">Figure 14</a>. The host platform then relays this information to the coherent pluggable via the CMIS protocol, without performing any interpretation. In other words, the host platform is not required to understand the syntax or semantics of these attributes; it functions merely as a conduit, transmitting the values from the NBI to the designated memory-map locations on the pluggable.<a href="#section-10.3-3" class="pilcrow">¶</a></p>
 <span id="name-solution-1-for-support-of-o"></span><div id="solution-1">
-<figure id="figure-10">
+<figure id="figure-14">
           <div class="alignLeft art-text artwork" id="section-10.3-4.1">
 <pre>
  +--rw opaque-config-attribute-list* [conf-attribute-id]
@@ -2423,7 +2945,7 @@ In this section, we present several use cases that demonstrate the practical app
 &lt;/opaque-config-attribute-list&gt;
 </pre>
 </div>
-<figcaption><a href="#figure-10" class="selfRef">Figure 10</a>:
+<figcaption><a href="#figure-14" class="selfRef">Figure 14</a>:
 <a href="#name-solution-1-for-support-of-o" class="selfRef">Solution-1 for support of opaque config attributes</a>
           </figcaption></figure>
 </div>
@@ -2434,7 +2956,7 @@ In this section, we present several use cases that demonstrate the practical app
         <h3 id="name-support-of-opaque-configurat">
 <a href="#section-10.4" class="section-number selfRef">10.4. </a><a href="#name-support-of-opaque-configurat" class="section-name selfRef">Support of Opaque Configuration Attributes (Solution-2)</a>
         </h3>
-<p id="section-10.4-1">This approach is similar to <a href="#solution-1" class="auto internal xref">Figure 10</a> but requires the host platform to implement lookup logic to determine the memory-map location on the pluggables. In this solution, the coherent pluggable YANG data model is augmented with the following new attributes, as shown in <a href="#solution-2" class="auto internal xref">Figure 11</a>:<a href="#section-10.4-1" class="pilcrow">¶</a></p>
+<p id="section-10.4-1">This approach is similar to <a href="#solution-1" class="auto internal xref">Figure 14</a> but requires the host platform to implement lookup logic to determine the memory-map location on the pluggables. In this solution, the coherent pluggable YANG data model is augmented with the following new attributes, as shown in <a href="#solution-2" class="auto internal xref">Figure 15</a>:<a href="#section-10.4-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-10.4-2.1">
             <p id="section-10.4-2.1.1">ID of new proprietary configuration attribute<a href="#section-10.4-2.1.1" class="pilcrow">¶</a></p>
@@ -2446,10 +2968,10 @@ In this section, we present several use cases that demonstrate the practical app
             <p id="section-10.4-2.3.1">Value of new proprietary attribute<a href="#section-10.4-2.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-10.4-3">The operator does not have visibility into the specific memory-map locations for these attributes on the coherent pluggable device. Instead, the memory-map for each new attribute is provided in the Coherent Pluggable Repository. In this scenario, the host platform must search the pluggable Repository to locate the corresponding memory-map location for each new attribute. These values are then communicated to the pluggable via the CMIS protocol for configuration. As in <a href="#solution-1" class="auto internal xref">Figure 10</a>, the host platform does not need to understand the syntax or semantics of the new attributes; it only needs to search the pluggable Repository to identify the memory-map locations for the new attributes.<a href="#section-10.4-3" class="pilcrow">¶</a></p>
-<p id="section-10.4-4">As illustrated in <a href="#solution-2" class="auto internal xref">Figure 11</a>, the host platform receives the new attribute "AA" via its Northbound Interface (NBI), with a configuration value of 0x1100. The host then searches the coherent pluggable Repository to determine the memory-map location associated with this attribute and identifies it as 0x1100. Without interpreting the attribute's syntax or semantics, the host platform communicates this information to the coherent pluggable via the CMIS protocol. Essentially, the host platform functions as a proxy, transmitting the values from the NBI to the appropriate memory-map locations on the pluggable without needing to understand the meaning of the attributes.<a href="#section-10.4-4" class="pilcrow">¶</a></p>
+<p id="section-10.4-3">The operator does not have visibility into the specific memory-map locations for these attributes on the coherent pluggable device. Instead, the memory-map for each new attribute is provided in the Coherent Pluggable Repository. In this scenario, the host platform must search the pluggable Repository to locate the corresponding memory-map location for each new attribute. These values are then communicated to the pluggable via the CMIS protocol for configuration. As in <a href="#solution-1" class="auto internal xref">Figure 14</a>, the host platform does not need to understand the syntax or semantics of the new attributes; it only needs to search the pluggable Repository to identify the memory-map locations for the new attributes.<a href="#section-10.4-3" class="pilcrow">¶</a></p>
+<p id="section-10.4-4">As illustrated in <a href="#solution-2" class="auto internal xref">Figure 15</a>, the host platform receives the new attribute "AA" via its Northbound Interface (NBI), with a configuration value of 0x1100. The host then searches the coherent pluggable Repository to determine the memory-map location associated with this attribute and identifies it as 0x1100. Without interpreting the attribute's syntax or semantics, the host platform communicates this information to the coherent pluggable via the CMIS protocol. Essentially, the host platform functions as a proxy, transmitting the values from the NBI to the appropriate memory-map locations on the pluggable without needing to understand the meaning of the attributes.<a href="#section-10.4-4" class="pilcrow">¶</a></p>
 <span id="name-solution-2-for-support-of-o"></span><div id="solution-2">
-<figure id="figure-11">
+<figure id="figure-15">
           <div class="alignLeft art-text artwork" id="section-10.4-5.1">
 <pre>
  +--rw opaque-config-attribute-list* [conf-attribute-id]
@@ -2467,7 +2989,7 @@ In this section, we present several use cases that demonstrate the practical app
 
 </pre>
 </div>
-<figcaption><a href="#figure-11" class="selfRef">Figure 11</a>:
+<figcaption><a href="#figure-15" class="selfRef">Figure 15</a>:
 <a href="#name-solution-2-for-support-of-o" class="selfRef">Solution-2 for support of opaque config attributes</a>
           </figcaption></figure>
 </div>
@@ -2478,7 +3000,7 @@ In this section, we present several use cases that demonstrate the practical app
         <h3 id="name-support-of-opaque-configurati">
 <a href="#section-10.5" class="section-number selfRef">10.5. </a><a href="#name-support-of-opaque-configurati" class="section-name selfRef">Support of Opaque Configuration Attributes (Solution-3)</a>
         </h3>
-<p id="section-10.5-1">This solution represents an advanced approach when a new opaque configuration attribute is mapped to multiple memory-map locations on a pluggable device, or when multiple such attributes are mapped to a single memory-map location on pluggable. Similar to <a href="#solution-2" class="auto internal xref">Figure 11</a>, the mapping between these new attributes and their corresponding memory-map locations should be detailed in the pluggable Repository. For each new opaque attribute, the host platform is required to perform a lookup in the pluggable Repository to identify the relevant memory-map locations. The platform then assembles the corresponding values, which are communicated to the pluggable device via the CMIS protocol.<a href="#section-10.5-1" class="pilcrow">¶</a></p>
+<p id="section-10.5-1">This solution represents an advanced approach when a new opaque configuration attribute is mapped to multiple memory-map locations on a pluggable device, or when multiple such attributes are mapped to a single memory-map location on pluggable. Similar to <a href="#solution-2" class="auto internal xref">Figure 15</a>, the mapping between these new attributes and their corresponding memory-map locations should be detailed in the pluggable Repository. For each new opaque attribute, the host platform is required to perform a lookup in the pluggable Repository to identify the relevant memory-map locations. The platform then assembles the corresponding values, which are communicated to the pluggable device via the CMIS protocol.<a href="#section-10.5-1" class="pilcrow">¶</a></p>
 <p id="section-10.5-2">Although this solution is included for completeness, it is not practical or desirable due to its complexity and the need for interpretation by the host software<a href="#section-10.5-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -2489,9 +3011,9 @@ In this section, we present several use cases that demonstrate the practical app
         </h3>
 <p id="section-10.6-1">There are situations where opaque configuration attributes are confidential, and the vendor wishes to conceal their meanings and values. When considering the interface from the pluggable device to the host via CMIS, it is crucial that the pluggable does not expose the meaning or value of these confidential attributes. Ideally, the pluggable device would encrypt the data. Within the context of CMIS, it may be sufficient to allocate an array of register locations to convey the property values. These registers would store an encrypted data blob for read-only properties and accept an encrypted blob for writable registers. The specific value might be set or read through different register positions on each read/write, depending on the encryption technique used.<a href="#section-10.6-1" class="pilcrow">¶</a></p>
 <p id="section-10.6-2">It is important to note that since the pluggable device encrypts the data, mapping the data offers no additional benefit. The YANG model would simply convey the register values as requested. The properties are applied to the memory map in a manner that may appear disordered. The location values must always be read together and written as specified, potentially requiring multiple reads to retrieve all properties. This approach could be incorporated into the basic register-based option discussed in <a href="#opaque-config-solution-1" class="auto internal xref">Section 10.3</a>.<a href="#section-10.6-2" class="pilcrow">¶</a></p>
-<p id="section-10.6-3">As an example, let's assume a vendor defines secret attribute "DD" for its coherent pluggable. Vendor first needs to augment IETF data model with a list of encrypted values and memory-maps shown in <a href="#solution-4" class="auto internal xref">Figure 12</a>. This very similar to <a href="#solution-1" class="auto internal xref">Figure 10</a> where essentially the host functions as a proxy, transmitting the values from the NBI to the appropriate memory-map locations on the pluggable without needing to understand the meaning and semantics of these attributes.<a href="#section-10.6-3" class="pilcrow">¶</a></p>
+<p id="section-10.6-3">As an example, let's assume a vendor defines secret attribute "DD" for its coherent pluggable. Vendor first needs to augment IETF data model with a list of encrypted values and memory-maps shown in <a href="#solution-4" class="auto internal xref">Figure 16</a>. This very similar to <a href="#solution-1" class="auto internal xref">Figure 14</a> where essentially the host functions as a proxy, transmitting the values from the NBI to the appropriate memory-map locations on the pluggable without needing to understand the meaning and semantics of these attributes.<a href="#section-10.6-3" class="pilcrow">¶</a></p>
 <span id="name-solution-4-for-support-of-o"></span><div id="solution-4">
-<figure id="figure-12">
+<figure id="figure-16">
           <div class="alignLeft art-text artwork" id="section-10.6-4.1">
 <pre>
  +--rw opaque-config-attribute-list* [conf-attribute-id]
@@ -2501,7 +3023,7 @@ In this section, we present several use cases that demonstrate the practical app
      +--rw memory-map                    decimal64
 </pre>
 </div>
-<figcaption><a href="#figure-12" class="selfRef">Figure 12</a>:
+<figcaption><a href="#figure-16" class="selfRef">Figure 16</a>:
 <a href="#name-solution-4-for-support-of-o" class="selfRef">Solution-4 for support of opaque secret configuration attributes</a>
           </figcaption></figure>
 </div>
@@ -2558,11 +3080,11 @@ In this section, we present several use cases that demonstrate the practical app
           <p id="section-11-13.4.1">PM Threshold values: For all or a subset of read-only monitored attributes, this section contains the threshold settings for threshold crossing alerts (TCA) if applicable.<a href="#section-11-13.4.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-11-14"><a href="#_figure-optical-pluggable-repository" class="auto internal xref">Figure 13</a> illustrates the overall structure of the "Coherent Pluggable Repository". It contains several operational-mode records where each record includes all the capability attributes for tuple [organization-identifier, operational-mode]. As discussed in <a href="#plug-capabilities-attributes" class="auto internal xref">Section 5.1</a>, "organization-identifier" refers to any authority that defines these attributes.<a href="#section-11-14" class="pilcrow">¶</a></p>
+<p id="section-11-14"><a href="#_figure-optical-pluggable-repository" class="auto internal xref">Figure 17</a> illustrates the overall structure of the "Coherent Pluggable Repository". It contains several operational-mode records where each record includes all the capability attributes for tuple [organization-identifier, operational-mode]. As discussed in <a href="#plug-capabilities-attributes" class="auto internal xref">Section 5.1</a>, "organization-identifier" refers to any authority that defines these attributes.<a href="#section-11-14" class="pilcrow">¶</a></p>
 <p id="section-11-15">Each record in the coherent pluggable Repository is machine readable/interpretable and is uniquely identified by a tuple [organization-identifier, operational-mode].<a href="#section-11-15" class="pilcrow">¶</a></p>
 <p id="section-11-16">Using "Coherent Pluggable Repository", the format of all operational-modes are identical whether it is defined by for example ITU-T, OIF, OpenConfig, or defined by a vendor.<a href="#section-11-16" class="pilcrow">¶</a></p>
 <span id="name-coherent-pluggable-repository"></span><div id="_figure-optical-pluggable-repository">
-<figure id="figure-13">
+<figure id="figure-17">
         <div class="alignLeft art-text artwork" id="section-11-17.1">
 <pre>
    A record identified by
@@ -2627,13 +3149,13 @@ In this section, we present several use cases that demonstrate the practical app
 
 </pre>
 </div>
-<figcaption><a href="#figure-13" class="selfRef">Figure 13</a>:
+<figcaption><a href="#figure-17" class="selfRef">Figure 17</a>:
 <a href="#name-coherent-pluggable-repository" class="selfRef">Coherent Pluggable Repository</a>
         </figcaption></figure>
 </div>
-<p id="section-11-18">Below are several examples that demonstrate the concept of the "Coherent Pluggable Repository." <a href="#_figure-optical-pluggable-repository-example_1" class="auto internal xref">Figure 14</a> illustrates the content of a Repository record for operational mode 0x3E, as defined by the OIF forum. This operational mode is widely recognized and supported by nearly all coherent pluggable devices. Detailed information regarding this operational mode can be found in <span>[<a href="#SFF8024" class="cite xref">SFF8024</a>]</span>, Table 4-7.<a href="#section-11-18" class="pilcrow">¶</a></p>
+<p id="section-11-18">Below are several examples that demonstrate the concept of the "Coherent Pluggable Repository." <a href="#_figure-optical-pluggable-repository-example_1" class="auto internal xref">Figure 18</a> illustrates the content of a Repository record for operational mode 0x3E, as defined by the OIF forum. This operational mode is widely recognized and supported by nearly all coherent pluggable devices. Detailed information regarding this operational mode can be found in <span>[<a href="#SFF8024" class="cite xref">SFF8024</a>]</span>, Table 4-7.<a href="#section-11-18" class="pilcrow">¶</a></p>
 <span id="name-coherent-pluggable-repository-"></span><div id="_figure-optical-pluggable-repository-example_1">
-<figure id="figure-14">
+<figure id="figure-18">
         <div class="alignLeft art-text artwork" id="section-11-19.1">
 <pre>
 organization-identifier:  OIF
@@ -2649,13 +3171,13 @@ list of attributes
 // Monitored attributes Threshold setting
 </pre>
 </div>
-<figcaption><a href="#figure-14" class="selfRef">Figure 14</a>:
+<figcaption><a href="#figure-18" class="selfRef">Figure 18</a>:
 <a href="#name-coherent-pluggable-repository-" class="selfRef">Coherent Pluggable repository Defined by OIF</a>
         </figcaption></figure>
 </div>
-<p id="section-11-20"><a href="#_figure-optical-pluggable-repository-example_2" class="auto internal xref">Figure 15</a> is anther repository record where the Vendor-X has defined the operational-mode 0x22. In this case, Vendor-X defines all the attributes related to this operational-mode, which might not be supported by other pluggable vendors.<a href="#section-11-20" class="pilcrow">¶</a></p>
+<p id="section-11-20"><a href="#_figure-optical-pluggable-repository-example_2" class="auto internal xref">Figure 19</a> is anther repository record where the Vendor-X has defined the operational-mode 0x22. In this case, Vendor-X defines all the attributes related to this operational-mode, which might not be supported by other pluggable vendors.<a href="#section-11-20" class="pilcrow">¶</a></p>
 <span id="name-coherent-pluggable-repository-e"></span><div id="_figure-optical-pluggable-repository-example_2">
-<figure id="figure-15">
+<figure id="figure-19">
         <div class="alignLeft art-text artwork" id="section-11-21.1">
 <pre>
 organization-identifier: Vendor-X
@@ -2671,14 +3193,14 @@ list of attributes
 // Monitored attributes Threshold setting
 </pre>
 </div>
-<figcaption><a href="#figure-15" class="selfRef">Figure 15</a>:
+<figcaption><a href="#figure-19" class="selfRef">Figure 19</a>:
 <a href="#name-coherent-pluggable-repository-e" class="selfRef">Coherent Pluggable repository Example-2</a>
         </figcaption></figure>
 </div>
-<p id="section-11-22">"<a href="#_figure-optical-pluggable-repository-example_3" class="auto internal xref">Figure 16</a>" presents an example where the Vendor-Y defined an operational-mode 0x22 as well. In this scenario, the organization associated with the pluggable module is Vendor-Y, which defined the same operational-mode 0x22 as "Vendor-X"<a href="#section-11-22" class="pilcrow">¶</a></p>
-<p id="section-11-23">It is important to note that while the operational-modes in both <a href="#_figure-optical-pluggable-repository-example_2" class="auto internal xref">Figure 15</a> and <a href="#_figure-optical-pluggable-repository-example_3" class="auto internal xref">Figure 16</a> share the same values, they are defined by different vendors. Consequently, these operational-modes are not related and may differ significantly in their attributes. In other words, although the semantics of these modes are identical, their actual content might vary significantly. This is one of the reasons that any record in Coherent Pluggable Repository is uniquely identified by tuple [organization-identifier, operational-mode].<a href="#section-11-23" class="pilcrow">¶</a></p>
+<p id="section-11-22">"<a href="#_figure-optical-pluggable-repository-example_3" class="auto internal xref">Figure 20</a>" presents an example where the Vendor-Y defined an operational-mode 0x22 as well. In this scenario, the organization associated with the pluggable module is Vendor-Y, which defined the same operational-mode 0x22 as "Vendor-X"<a href="#section-11-22" class="pilcrow">¶</a></p>
+<p id="section-11-23">It is important to note that while the operational-modes in both <a href="#_figure-optical-pluggable-repository-example_2" class="auto internal xref">Figure 19</a> and <a href="#_figure-optical-pluggable-repository-example_3" class="auto internal xref">Figure 20</a> share the same values, they are defined by different vendors. Consequently, these operational-modes are not related and may differ significantly in their attributes. In other words, although the semantics of these modes are identical, their actual content might vary significantly. This is one of the reasons that any record in Coherent Pluggable Repository is uniquely identified by tuple [organization-identifier, operational-mode].<a href="#section-11-23" class="pilcrow">¶</a></p>
 <span id="name-coherent-pluggable-repository-ex"></span><div id="_figure-optical-pluggable-repository-example_3">
-<figure id="figure-16">
+<figure id="figure-20">
         <div class="alignLeft art-text artwork" id="section-11-24.1">
 <pre>
 organization-identifier: Vendor-Y
@@ -2695,7 +3217,7 @@ list of attributes
 // Monitored attributes Threshold setting
 </pre>
 </div>
-<figcaption><a href="#figure-16" class="selfRef">Figure 16</a>:
+<figcaption><a href="#figure-20" class="selfRef">Figure 20</a>:
 <a href="#name-coherent-pluggable-repository-ex" class="selfRef">Coherent Pluggable repository Example-3</a>
         </figcaption></figure>
 </div>
@@ -2732,9 +3254,29 @@ list of attributes
         <dd>
 <span class="refAuthor">OIF Forum</span>, <span class="refTitle">"OIF Implementation Agreement (IA) Common Management Interface Specification (CMIS))"</span>, <span class="seriesInfo">OIF CMIS IA </span>, <time datetime="2024-09" class="refDate">September 2024</time>, <span>&lt;<a href="https://www.oiforum.com/wp-content/uploads/OIF-CMIS-05.3.pdf">https://www.oiforum.com/wp-content/uploads/OIF-CMIS-05.3.pdf</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="G.695">[G.695]</dt>
+        <dd>
+<span class="refAuthor">ITU-T Recommendation G.695</span>, <span class="refTitle">"Optical interfaces for coarse wavelength division multiplexing applications"</span>, <time datetime="2025-05" class="refDate">May 2025</time>, <span>&lt;<a href="https://www.itu.int/rec/dologin_pub.asp?lang=e&amp;id=T-REC-G.695-200402-S!!PDF-E&amp;type=items">https://www.itu.int/rec/dologin_pub.asp?lang=e&amp;id=T-REC-G.695-200402-S!!PDF-E&amp;type=items</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="G.698.1">[G.698.1]</dt>
+        <dd>
+<span class="refAuthor">ITU-T Recommendation G.698.1</span>, <span class="refTitle">"Multichannel DWDM applications with single-channel optical interfaces"</span>, <time datetime="2005-06" class="refDate">June 2005</time>, <span>&lt;<a href="https://www.itu.int/rec/dologin_pub.asp?lang=f&amp;id=T-REC-G.698.1-200506-S!!PDF-E&amp;type=items">https://www.itu.int/rec/dologin_pub.asp?lang=f&amp;id=T-REC-G.698.1-200506-S!!PDF-E&amp;type=items</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="G.698.2">[G.698.2]</dt>
         <dd>
 <span class="refAuthor">ITU-T Recommendation G.698.2</span>, <span class="refTitle">"Amplified multichannel dense wavelength division multiplexing applications with single channel optical interfaces"</span>, <time datetime="2018-11" class="refDate">November 2018</time>, <span>&lt;<a href="https://www.itu.int/rec/dologin_pub.asp?lang=e&amp;id=T-REC-G.698.2-201811-I!!PDF-E&amp;type=items">https://www.itu.int/rec/dologin_pub.asp?lang=e&amp;id=T-REC-G.698.2-201811-I!!PDF-E&amp;type=items</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="G.959.1">[G.959.1]</dt>
+        <dd>
+<span class="refTitle">"Optical transport network physical layer interfaces"</span>, <time datetime="2012-02" class="refDate">February 2012</time>, <span>&lt;<a href="https://www.itu.int/rec/dologin_pub.asp?lang=e&amp;id=T-REC-G.959.1-202401-I!!PDF-E&amp;type=items">https://www.itu.int/rec/dologin_pub.asp?lang=e&amp;id=T-REC-G.959.1-202401-I!!PDF-E&amp;type=items</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="OC-device">[OC-device]</dt>
+        <dd>
+<span class="refTitle">"Module to extend OpenConfig terminal device operational modes data"</span>, <span>&lt;<a href="https://openconfig.net/projects/models/schemadocs/yangdoc/openconfig-terminal-device-properties.html">https://openconfig.net/projects/models/schemadocs/yangdoc/openconfig-terminal-device-properties.html</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="OC-platform">[OC-platform]</dt>
+        <dd>
+<span class="refTitle">"Data model for representing a system component inventory"</span>, <span>&lt;<a href="https://openconfig.net/projects/models/schemadocs/yangdoc/openconfig-platform.html">https://openconfig.net/projects/models/schemadocs/yangdoc/openconfig-platform.html</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="OIF-400ZR">[OIF-400ZR]</dt>
         <dd>
@@ -2749,8 +3291,12 @@ list of attributes
 <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="SFF8024">[SFF8024]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">SNIA SFF Technology Affiliate (TA) Technical Work Group (TWG), Small Form Factor Technology Affiliate</span>, <span class="refTitle">"SFF Module Management Reference Code Tables"</span>, <time datetime="2023-11" class="refDate">November 2023</time>, <span>&lt;<a href="https://members.snia.org/document/dl/26423">https://members.snia.org/document/dl/26423</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="TAPI-2.5.0">[TAPI-2.5.0]</dt>
+      <dd>
+<span class="refTitle">"Linux Foundation Project Transport API (TAPI)"</span>, <span>&lt;<a href="https://github.com/Open-Network-Models-and-Interfaces-ONMI/TAPI/tree/v2.5.0">https://github.com/Open-Network-Models-and-Interfaces-ONMI/TAPI/tree/v2.5.0</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -2761,21 +3307,25 @@ list of attributes
 <a href="#section-14.2" class="section-number selfRef">14.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
-<dt id="G.959.1">[G.959.1]</dt>
-        <dd>
-<span class="refTitle">"Optical transport network physical layer interfaces"</span>, <time datetime="2012-02" class="refDate">February 2012</time>, <span>&lt;<a href="ITU-T%20Recommendation%20G.959.1">ITU-T Recommendation G.959.1</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="I-D.ietf-ccamp-dwdm-if-param-yang">[I-D.ietf-ccamp-dwdm-if-param-yang]</dt>
         <dd>
-<span class="refAuthor">Galimberti, G.</span>, <span class="refAuthor">Hiremagalur, D.</span>, <span class="refAuthor">Grammel, G.</span>, <span class="refAuthor">Manzotti, R.</span>, and <span class="refAuthor">D. Breuer</span>, <span class="refTitle">"A YANG data model to manage configurable DWDM optical interfaces"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-dwdm-if-param-yang-12</span>, <time datetime="2025-02-12" class="refDate">12 February 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-dwdm-if-param-yang-12">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-dwdm-if-param-yang-12</a>&gt;</span>. </dd>
+<span class="refAuthor">Galimberti, G.</span>, <span class="refAuthor">Hiremagalur, D.</span>, <span class="refAuthor">Grammel, G.</span>, <span class="refAuthor">Manzotti, R.</span>, and <span class="refAuthor">D. Breuer</span>, <span class="refTitle">"A YANG data model to manage configurable DWDM optical interfaces"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-dwdm-if-param-yang-14</span>, <time datetime="2025-10-20" class="refDate">20 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-dwdm-if-param-yang-14">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-dwdm-if-param-yang-14</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-ccamp-optical-impairment-topology-yang">[I-D.ietf-ccamp-optical-impairment-topology-yang]</dt>
         <dd>
-<span class="refAuthor">Beller, D.</span>, <span class="refAuthor">Le Rouzic, E.</span>, <span class="refAuthor">Belotti, S.</span>, <span class="refAuthor">Galimberti, G.</span>, and <span class="refAuthor">I. Busi</span>, <span class="refTitle">"A YANG Data Model for Optical Impairment-aware Topology"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-optical-impairment-topology-yang-18</span>, <time datetime="2025-04-11" class="refDate">11 April 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-optical-impairment-topology-yang-18">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-optical-impairment-topology-yang-18</a>&gt;</span>. </dd>
+<span class="refAuthor">Beller, D.</span>, <span class="refAuthor">Le Rouzic, E.</span>, <span class="refAuthor">Belotti, S.</span>, <span class="refAuthor">Galimberti, G.</span>, and <span class="refAuthor">I. Busi</span>, <span class="refTitle">"A YANG Data Model for Optical Impairment-aware Topology"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-optical-impairment-topology-yang-20</span>, <time datetime="2025-10-10" class="refDate">10 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-optical-impairment-topology-yang-20">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-optical-impairment-topology-yang-20</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-ccamp-optical-path-computation-yang">[I-D.ietf-ccamp-optical-path-computation-yang]</dt>
+        <dd>
+<span class="refAuthor">Busi, I.</span>, <span class="refAuthor">Guo, A.</span>, and <span class="refAuthor">S. Belotti</span>, <span class="refTitle">"YANG Data Models for requesting Path Computation in WDM Optical Networks"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-optical-path-computation-yang-06</span>, <time datetime="2025-08-29" class="refDate">29 August 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-optical-path-computation-yang-06">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-optical-path-computation-yang-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-ccamp-rfc9093-bis">[I-D.ietf-ccamp-rfc9093-bis]</dt>
+        <dd>
+<span class="refAuthor">Belotti, S.</span>, <span class="refAuthor">Busi, I.</span>, <span class="refAuthor">Beller, D.</span>, <span class="refAuthor">Le Rouzic, E.</span>, and <span class="refAuthor">A. Guo</span>, <span class="refTitle">"Common YANG Data Types for Layer 0 Optical Networks"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-rfc9093-bis-19</span>, <time datetime="2025-11-03" class="refDate">3 November 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-rfc9093-bis-19">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-rfc9093-bis-19</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-ccamp-wdm-tunnel-yang">[I-D.ietf-ccamp-wdm-tunnel-yang]</dt>
       <dd>
-<span class="refAuthor">Belotti, S.</span>, <span class="refAuthor">Busi, I.</span>, <span class="refAuthor">Beller, D.</span>, <span class="refAuthor">Le Rouzic, E.</span>, and <span class="refAuthor">A. Guo</span>, <span class="refTitle">"Common YANG Data Types for Layer 0 Networks"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-rfc9093-bis-13</span>, <time datetime="2025-03-17" class="refDate">17 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-rfc9093-bis-13">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-rfc9093-bis-13</a>&gt;</span>. </dd>
+<span class="refAuthor">Guo, A.</span>, <span class="refAuthor">Belotti, S.</span>, <span class="refAuthor">Galimberti, G.</span>, <span class="refAuthor">de Madrid, U. A.</span>, and <span class="refAuthor">D. P. Burrero</span>, <span class="refTitle">"A YANG Data Model for WDM Tunnels"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-wdm-tunnel-yang-06</span>, <time datetime="2025-10-20" class="refDate">20 October 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-wdm-tunnel-yang-06">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-wdm-tunnel-yang-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -2846,7 +3396,7 @@ list of attributes
 </address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Gabriele Galimberti</span></div>
-<div dir="auto" class="left"><span class="org">Individual</span></div>
+<div dir="auto" class="left"><span class="org">Nokia</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:ggalimbe56@gmail.com" class="email">ggalimbe56@gmail.com</a>
@@ -2854,10 +3404,10 @@ list of attributes
 </address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Harish Venkatraman</span></div>
-<div dir="auto" class="left"><span class="org">Infinera</span></div>
+<div dir="auto" class="left"><span class="org">Nokia</span></div>
 <div class="email">
 <span>Email:</span>
-<a href="mailto:hvenkatraman@infinera.com" class="email">hvenkatraman@infinera.com</a>
+<a href="mailto:harish.venkatraman@nokia.com" class="email">harish.venkatraman@nokia.com</a>
 </div>
 </address>
 <address class="vcard">
