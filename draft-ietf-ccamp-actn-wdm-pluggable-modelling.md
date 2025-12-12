@@ -3,7 +3,7 @@ title: "Data Modelling and Gap Analysis of Optical Pluggables in Packet Over Opt
 abbrev: "Modelling Optical Pluggables"
 category: info
 
-docname: draft-rokui-ccamp-actn-wdm-pluggable-modelling-latest
+docname: draft-ietf-ccamp-actn-wdm-pluggable-modelling-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
@@ -604,13 +604,13 @@ This draft was initiated to evaluate the completeness of existing IETF models re
 * ITU-T Optical transport network physical layer interfaces {{G.959.1}}
 * Linux Foundation Transport API project {{TAPI-2.5.0}}
 
-The primary objective is to assess the properties and structures within these models that are relevant to coherent optical modules and to identify any missing elements or gaps. 
+The primary objective is to assess the properties and structures within these models that are relevant to coherent optical modules and to identify any missing elements or gaps.
 
 To support this ongoing analysis, relevant properties and structures from both IETF models and external organizations or standards bodies are being collected in Google Sheet. In {{gap-analysis}}, these properties will serve as the foundation for conducting a comprehensive gap analysis.
 
 As discussed in {{plug-capabilities-attributes}}, {{plug-config-attribute}}, and {{plug-pm-definition}}, the google sheet provides the Capabilities, Configuration, and Performance Monitoring attributes for coherent pluggable. The google sheet includes various read-only capability attributes, read-write configuration attributes, and read-only performance monitoring attributes. For a comprehensive list of these attributes, refer to the accompanying optical module Google Sheet.
 
-\[Editorial Note: The reference to the external Google Sheet is used to finalize the gap content, 
+\[Editorial Note: The reference to the external Google Sheet is used to finalize the gap content,
 once all the info are incorporated in the draft, and in any case before publication, this link shall be removed. Please also note that the content of the google sheet is very important and shall be captured in draft as a table or something else in Appendix section]
 
 You can [download the Google sheet](/Users/rrokui/Desktop/optical-pluggable-attributes-v00-GAP.xslx) to see all the details.
@@ -626,7 +626,7 @@ To support gap analysis of optical pluggables in packet-over-optical networks, t
 {: #gap-analysis-capabilities}
 ## List of Missing Optical Pluggable Capability Attributes Based on Gap Analysis
 
-{{figure-gap-analysis-capabilities}} provides the missing capabilities attributes highlights important optical pluggable parameters and features that are defined by other standards development organizations (SDOs) and industry forums, but are currently absent from IETF YANG models. 
+{{figure-gap-analysis-capabilities}} provides the missing capabilities attributes highlights important optical pluggable parameters and features that are defined by other standards development organizations (SDOs) and industry forums, but are currently absent from IETF YANG models.
 
 Note that the "Attribute Number" refers to numbering in Google Sheet.
 
@@ -634,9 +634,9 @@ Harmonizing these attributes between SDOs, and IETF models would support the evo
 
 ~~~~
 
-For each Attribute Name, 
-- First table displays the "Missing Capability Attributes" 
-- Second table displays the "Summary Description of Missing  
+For each Attribute Name,
+- First table displays the "Missing Capability Attributes"
+- Second table displays the "Summary Description of Missing
   Capability Attributes"
 
 | --------- | ------------------------------------------ | --------- |
@@ -855,17 +855,17 @@ Note: The "Attribute Number" refers to numbering in Google Sheet
 ## List of Missing Optical Pluggable Configuration Attributes Based on Gap Analysis
 
 
-{{figure-gap-analysis-Configuration}} identifies configuration attributes for optical pluggables defined by other standards development organizations (SDOs) and industry forums which may not be fully represented in IETF YANG models. 
+{{figure-gap-analysis-Configuration}} identifies configuration attributes for optical pluggables defined by other standards development organizations (SDOs) and industry forums which may not be fully represented in IETF YANG models.
 
 Note that the "Attribute Number" refers to numbering in Google Sheet.
 
 ~~~~
 
-For each Attribute Name, 
-- First table displays the "Missing Configuration Attributes" 
-- Second table displays the "Summary Description of Missing  
+For each Attribute Name,
+- First table displays the "Missing Configuration Attributes"
+- Second table displays the "Summary Description of Missing
   Configuration Attributes"
-  
+
 | --------- | ------------------------------------------ | --------- |
 | Attribute | Missing Configuration Attributes           | source    |
 | Number    |                                            |           |
@@ -896,9 +896,9 @@ Note: The "Attribute Number" refers to numbering in Google Sheet
 
 ~~~~
 
-For each Attribute Name, 
-- First table displays the "Missing PM/States Attributes" 
-- Second table displays the "Summary Description of Missing  
+For each Attribute Name,
+- First table displays the "Missing PM/States Attributes"
+- Second table displays the "Summary Description of Missing
   PM/States Attributes"
 
 | --------- | ------------------------------------------ | --------- |
@@ -1064,7 +1064,7 @@ Note: The "Attribute Number" refers to numbering in Google Sheet
 {: #gap-syntax}
 ## Coherent Pluggable Syntax Gaps
 
-Addressing syntax gaps in coherent pluggable attributes is crucial for achieving consistent and interoperable management across different implementations. One key issue lies in establishing a standardized naming convention. There are some naming inconsistency on existing IETF drafts {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}, {{?I-D.ietf-ccamp-rfc9093-bis}} and {{?I-D.ietf-ccamp-dwdm-if-param-yang}}. 
+Addressing syntax gaps in coherent pluggable attributes is crucial for achieving consistent and interoperable management across different implementations. One key issue lies in establishing a standardized naming convention. There are some naming inconsistency on existing IETF drafts {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}, {{?I-D.ietf-ccamp-rfc9093-bis}} and {{?I-D.ietf-ccamp-dwdm-if-param-yang}}.
 
 {{figure-gap-syntax}} shows a proposal for naming convention of optical pluggable attributes.  The current proposal, while illustrative, may need further refinement to ensure clarity and avoid ambiguity. Specifically, the prefixing of attributes with directions like "tx" or "rx" should be consistently applied to all relevant parameters to clearly identify the directionality of the signal. The example also shows the need to clearly define the value type associated with the attribute, such as min, max, current, or none, for a cohesive and standardized approach. Furthermore, the examples for attribute naming should be universally adopted to establish an attribute mapping that is aligned with IETF, improving the overall clarity and usability of the YANG models for managing coherent pluggables.
 
